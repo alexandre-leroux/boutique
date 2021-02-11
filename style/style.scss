@@ -1,10 +1,71 @@
 @import "dart-sass/reset.scss";
 
 body{
-    background-color: black;
+    background-color: rgb(241, 241, 241);
 }
 
-p{
-    background-color: rgb(177, 72, 72);
-    padding: 15px;
+//display flex générique, à coller dans les classes du html
+.dflex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//-----------------
+
+
+header{
+
+    height: 120px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+
+    
+    & .logo a{
+        display: block;
+        display: flex;
+        height: 100%;
+        width: 200px;
+        background-color: rgb(51, 155, 57);
+    }
+
+   & .accueil{
+        width: 500px;
+        height: 100%;
+        background-color: burlywood;
+        justify-content: space-around;
+    
+        & a{
+            text-decoration: none;
+            color: white;
+            margin: 30px;
+        }
+        & p {
+            color: white;
+        }
+    }
+
+    & .search_bar{
+        background-color: yellow;
+    }
+
+}
+
+
+
+
+.nav{
+    background-color: brown;
+    height: 30px;
+    width: 100%;
+
+    & .liste_nav{
+        background-color: rgb(147, 178, 34);
+        width: 800px;
+        justify-content: space-around;
+    }
+    & a{
+        text-decoration: none;
+        color: floralwhite;
+    }
 }

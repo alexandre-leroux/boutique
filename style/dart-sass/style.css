@@ -44,12 +44,59 @@ td, th {
 }
 
 body {
-  background-color: black;
+  background-color: #f1f1f1;
 }
 
-p {
-  background-color: #b14848;
-  padding: 15px;
+.dflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  height: 120px;
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+}
+header .logo a {
+  display: block;
+  display: flex;
+  height: 100%;
+  width: 200px;
+  background-color: #339b39;
+}
+header .accueil {
+  width: 500px;
+  height: 100%;
+  background-color: burlywood;
+  justify-content: space-around;
+}
+header .accueil a {
+  text-decoration: none;
+  color: white;
+  margin: 30px;
+}
+header .accueil p {
+  color: white;
+}
+header .search_bar {
+  background-color: yellow;
+}
+
+.nav {
+  background-color: brown;
+  height: 30px;
+  width: 100%;
+}
+.nav .liste_nav {
+  background-color: #93b222;
+  width: 800px;
+  justify-content: space-around;
+}
+.nav a {
+  text-decoration: none;
+  color: floralwhite;
 }
 
 /*# sourceMappingURL=style.css.map */
