@@ -1,7 +1,7 @@
 @import "dart-sass/reset.scss";
 
 body{
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(236, 236, 236);
 }
 
 //display flex générique, à coller dans les classes du html
@@ -16,7 +16,7 @@ body{
 header{
 
     height: 120px;
-    background-color: black;
+    background-color: rgb(53, 22, 22);
     display: flex;
     justify-content: space-around;
 
@@ -26,7 +26,7 @@ header{
         display: flex;
         height: 100%;
         width: 200px;
-        background-color: rgb(51, 155, 57);
+        background-color: rgb(22, 75, 25);
     }
 
    & .accueil{
@@ -46,7 +46,7 @@ header{
     }
 
     & .search_bar{
-        background-color: yellow;
+        background-color: rgb(189, 118, 52);
     }
 
 }
@@ -55,7 +55,8 @@ header{
 
 
 .nav{
-    background-color: brown;
+    
+    background-color: rgb(42, 110, 165);
     height: 30px;
     width: 100%;
 

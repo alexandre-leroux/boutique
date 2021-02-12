@@ -44,7 +44,7 @@ td, th {
 }
 
 body {
-  background-color: #f1f1f1;
+  background-color: #ececec;
 }
 
 .dflex {
@@ -55,7 +55,7 @@ body {
 
 header {
   height: 120px;
-  background-color: black;
+  background-color: #351616;
   display: flex;
   justify-content: space-around;
 }
@@ -64,7 +64,7 @@ header .logo a {
   display: flex;
   height: 100%;
   width: 200px;
-  background-color: #339b39;
+  background-color: #164b19;
 }
 header .accueil {
   width: 500px;
@@ -81,11 +81,11 @@ header .accueil p {
   color: white;
 }
 header .search_bar {
-  background-color: yellow;
+  background-color: #bd7634;
 }
 
 .nav {
-  background-color: brown;
+  background-color: #2a6ea5;
   height: 30px;
   width: 100%;
 }
