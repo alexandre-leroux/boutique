@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,400;1,500;1,800;1,900&display=swap");
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -45,9 +46,10 @@ td, th {
 
 body {
   background-color: #ececec;
+  font-family: "Poppins", sans-serif;
 }
 
-.dflex {
+.nav .liste_nav, .nav, header .search_bar, header .accueil {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,6 +60,8 @@ header {
   background-color: #0C0E0D;
   display: flex;
   justify-content: space-around;
+  font-weight: 700;
+  padding: 0px 20px 0px 20px;
 }
 header .logo a {
   display: block;
@@ -78,11 +82,36 @@ header .accueil a {
 header .accueil p {
   color: white;
 }
+header .search_bar .border {
+  border: 2px white solid;
+  border-radius: 2em;
+  padding: 3px;
+}
+header .search_bar input {
+  background-color: transparent;
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: white;
+}
+header .search_bar input::placeholder {
+  color: rgba(255, 255, 255, 0.596);
+  padding: 10px;
+}
+header .search_bar button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
 .nav {
   background-color: #1A1B1D;
   width: 100%;
   padding: 15px;
   text-transform: uppercase;
+  font-weight: 300;
+  font-style: italic;
 }
 .nav .liste_nav {
   width: 800px;
@@ -91,6 +120,10 @@ header .accueil p {
 .nav a {
   text-decoration: none;
   color: floralwhite;
+  transition: 0.5s;
+}
+.nav a:hover {
+  color: #00BAFF;
 }
 
 /*# sourceMappingURL=style.css.map */

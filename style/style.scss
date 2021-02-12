@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,400;1,500;1,800;1,900&display=swap');
 @import "dart-sass/reset.scss";
 
 $color1: #0C0E0D ;
@@ -6,10 +7,11 @@ $color3: #00BAFF;
 
 body{
     background-color: rgb(236, 236, 236);
+    font-family: 'Poppins', sans-serif;
 }
 
-//display flex générique, à coller dans les classes du html
-.dflex{
+//display flex générique, à @extend dans les attributs directement 
+%dflex{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +25,10 @@ header{
     background-color:$color1;
     display: flex;
     justify-content: space-around;
+    font-weight: 700;
+    padding : 0px 20px 0px 20px;
+    //font-style: italic;
 
-    
     & .logo a{
         display: block;
         display: flex;
@@ -33,7 +37,8 @@ header{
         //background-color: rgb(22, 75, 25);
     }
 
-   & .accueil{
+    & .accueil{
+        @extend %dflex; 
         width: 500px;
         height: 100%;
         //background-color: burlywood;
@@ -44,6 +49,7 @@ header{
             color: white;
             margin: 30px;
         }
+       
         & p {
             color: white;
         }
@@ -51,27 +57,57 @@ header{
 
     & .search_bar{
         //background-color: rgb(189, 118, 52);
+        @extend %dflex; 
+        & .border{
+            border: 2px white solid;
+            border-radius: 2em;
+            padding: 3px;
+            
+        }
+        & input {
+            background-color: transparent;
+            padding: 5px;
+            border: none;
+            outline: none;
+            color: white;
+        }
+        & input::placeholder{
+            color: rgba(255, 255, 255, 0.596);
+            padding: 10px;
+        }
+
+        & button{
+            background-color: transparent;
+            border : none; 
+            outline: none;
+            color: white;
+        }
     }
 
 }
 
-
-
-
 .nav{
     
+    @extend %dflex; 
     background-color: $color2;
     width: 100%;
     padding : 15px;
     text-transform: uppercase;
+    font-weight: 300;
+    font-style: italic;
 
     & .liste_nav{
         //background-color: rgb(147, 178, 34);
+        @extend %dflex; 
         width: 800px;
         justify-content: space-around;
     }
     & a{
         text-decoration: none;
         color: floralwhite;
+        transition: .5s;
+    }
+    & a:hover{
+        color: #00BAFF;
     }
 }
