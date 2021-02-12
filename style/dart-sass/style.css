@@ -62,9 +62,9 @@ header {
   justify-content: space-around;
   font-weight: 700;
   padding: 0px 20px 0px 20px;
+  font-size: 1.2vw;
 }
 header .logo a {
-  display: block;
   display: flex;
   height: 100%;
   width: 200px;
@@ -86,6 +86,8 @@ header .search_bar .border {
   border: 2px white solid;
   border-radius: 2em;
   padding: 3px;
+  width: 220px;
+  display: flex;
 }
 header .search_bar input {
   background-color: transparent;
@@ -93,25 +95,31 @@ header .search_bar input {
   border: none;
   outline: none;
   color: white;
+  width: 80%;
 }
 header .search_bar input::placeholder {
   color: rgba(255, 255, 255, 0.596);
   padding: 10px;
+  font-size: 1vw;
 }
 header .search_bar button {
   background-color: transparent;
   border: none;
   outline: none;
   color: white;
+  width: 20%;
 }
 
 .nav {
-  background-color: #1A1B1D;
+  background-color: #0c0e0df1;
   width: 100%;
   padding: 15px;
   text-transform: uppercase;
   font-weight: 300;
   font-style: italic;
+  font-size: 1.2vw;
+  position: sticky;
+  top: 0;
 }
 .nav .liste_nav {
   width: 800px;
@@ -124,6 +132,29 @@ header .search_bar button {
 }
 .nav a:hover {
   color: #00BAFF;
+}
+
+/* On test une nav responsive */
+@media only screen and (max-width: 1024px) {
+  header .logo a {
+    display: flex;
+    height: 100%;
+    width: 125px;
+  }
+  header .accueil {
+    width: 425px;
+  }
+  header .search_bar .border {
+    width: 130px;
+  }
+}
+@media only screen and (max-width : 768px) {
+  header .accueil {
+    display: none;
+  }
+  header .search_bar {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

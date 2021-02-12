@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,900;1,400;1,500;1,800;1,900&display=swap');
 @import "dart-sass/reset.scss";
+@import "dart-sass/libs/responsive.scss";
 
 $color1: #0C0E0D ;
-$color2: #1A1B1D;
+$color2: #0c0e0df1;
 $color3: #00BAFF;
 
 body{
@@ -27,10 +28,10 @@ header{
     justify-content: space-around;
     font-weight: 700;
     padding : 0px 20px 0px 20px;
+    font-size: 1.2vw;
     //font-style: italic;
 
     & .logo a{
-        display: block;
         display: flex;
         height: 100%;
         width: 200px;
@@ -62,6 +63,8 @@ header{
             border: 2px white solid;
             border-radius: 2em;
             padding: 3px;
+            width: 220px;
+            display: flex;
             
         }
         & input {
@@ -70,10 +73,12 @@ header{
             border: none;
             outline: none;
             color: white;
+            width: 80%;
         }
         & input::placeholder{
             color: rgba(255, 255, 255, 0.596);
             padding: 10px;
+            font-size: 1vw;
         }
 
         & button{
@@ -81,6 +86,7 @@ header{
             border : none; 
             outline: none;
             color: white;
+            width: 20%;
         }
     }
 
@@ -95,6 +101,9 @@ header{
     text-transform: uppercase;
     font-weight: 300;
     font-style: italic;
+    font-size: 1.2vw;
+    position: sticky;
+    top: 0 ;
 
     & .liste_nav{
         //background-color: rgb(147, 178, 34);
@@ -109,5 +118,41 @@ header{
     }
     & a:hover{
         color: #00BAFF;
+    }
+
+}
+
+/* On test une nav responsive */ 
+
+@media #{$medium-down} { // Pour les écrans inférieur à 1024px 
+
+    header{
+    
+        & .logo a{
+            display: flex;
+            height: 100%;
+            width: 125px;
+            //background-color: rgb(22, 75, 25);
+        }
+        & .accueil{ 
+            width: 425px;
+        }    
+        & .search_bar{
+            & .border{
+                width: 130px;
+            }
+        }
+    }    
+}
+
+@media #{$light-down} {
+    header{
+        & .accueil{
+            display: none;
+        }
+
+        & .search_bar{
+            display: none;
+        }
     }
 }
