@@ -5,7 +5,7 @@ class PDO{
 
 
 
-    public function connection_bdd()
+    public static function connection_bdd()
     {
 
             try 
