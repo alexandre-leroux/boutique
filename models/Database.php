@@ -1,6 +1,6 @@
 <?php
 
-class PDO{
+class Database{
 
 
 

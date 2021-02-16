@@ -1,5 +1,9 @@
 <?php
 
+echo 'a';
+var_dump($_SERVER);
+echo 'b';
+
 
 $bdd = new PDO('mysql:host=localhost;dbname=boutique;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
@@ -72,59 +76,61 @@ $req_marques = $bdd->query('select * FROM marques');
 
 <div >
 
-    
-    </div>
-    
-    <select name="id_categorie">
-        <option disabled value="CATEGORIES"  selected="selected"  >CATEGORIES</option>
-        <?php while($donnees_categorie = $req_categorie->fetch())
-         {
-             echo  "<option value=". $donnees_categorie['id_categorie'] . ">". $donnees_categorie['categorie_type'] ."</option> " ;  }?>
-    </select>
+ 
+  <select name="id_categorie">
+      <option disabled value="CATEGORIES"  selected="selected"  >CATEGORIES</option>
+      <?php while($donnees_categorie = $req_categorie->fetch())
+       {echo  "<option value=". $donnees_categorie['id_categorie'] . ">". $donnees_categorie['categorie_type'] ."</option> " ;  }?>
+  </select>
     
     
-    <select name='id_marques'>
-        <option disabled value="MARQUES"  selected="selected"  >MARQUES</option>
-        <?php while($donnees_marques = $req_marques->fetch())
-         {echo  "<option value=". $donnees_marques['id_marques'] . ">". $donnees_marques['marques_nom'] ."</option> ";}?>
-    </select>
+  <select name='id_marques'>
+      <option disabled value="MARQUES"  selected="selected"  >MARQUES</option>
+      <?php while($donnees_marques = $req_marques->fetch())
+       {echo  "<option value=". $donnees_marques['id_marques'] . ">". $donnees_marques['marques_nom'] ."</option> ";}?>
+  </select>
     
-    <div >
+  <div >
     <label for="nom">modifier le nom de l'article : </label>
     <input type="text" name="nom" value="<?= $donnees['art_nom']?>"  >
   </div>
 
-
   <div >
     <label for="resume">modifier le résumé : </label>
     <textarea name="resume" ><?= $donnees['art_courte_description']?></textarea>
-
   </div>
+
   <div >
     <label for="description">modifier la  description : </label>
     <textarea name="description"  ><?= $donnees['art_description']?></textarea>
   </div>
+
   <div >
     <label for="poids">modifier le poids : </label>
     <input type="number" name="poids" value="<?= $donnees['raq_poids']?>"  >
   </div>
+
   <div >
     <label for="tamis">modifier le tamis : </label>
     <input type="number" name="tamis" value="<?= $donnees['raq_tamis']?>">
   </div>
-  <div >
+
+  <div>
     <label for="manche">modifier le manche : </label>
     <input type="number" name="manche" value="<?= $donnees['raq_taille_manche']?>" >
   </div>
+
   <div >
     <label for="equilibre">modifier l'équilibre : </label>
     <input type="number" name="equilibre" value="<?= $donnees['raq_equilibre']?>">
   </div>
-  <div >
+
+  <div>
     <label for="prix">modifier le prix : </label>
     <input type="number" name="prix" value="<?= $donnees['prix']?>" >
   </div>
-  <div >
+
+  <div>
     <label for="stock">modifier le stock : </label>
     <input type="number" name="stock" value="<?= $donnees['stock']?>" >
   </div>
@@ -132,6 +138,7 @@ $req_marques = $bdd->query('select * FROM marques');
   <div class="form-example">
     <input type="submit" value="modifier" name="submit">
   </div>
+
 </form>
 
 <?php
@@ -161,7 +168,6 @@ if (@$_POST['submit'] )
         $req_update->execute(array( 
                         'id_marques' => $_POST['id_marques'],
                         'art_nom' => $_POST['nom'],
-                        'id' => $donnees['id_articles'],
                         'id_categorie' => $_POST['id_categorie'],
                         'art_nom' => $_POST['nom'],
                         'resume' => $_POST['resume'],
@@ -171,6 +177,7 @@ if (@$_POST['submit'] )
                         'tamis' => $_POST['tamis'],
                         'manche' => $_POST['manche'],
                         'equilibre' => $_POST['equilibre'],
+                        'id' => $donnees['id_articles']
         ));
         }
 
@@ -194,3 +201,8 @@ $i++;
 }
 ?>
 </div>
+<a href="test.php">lien</a>
+<?php
+
+extract($_POST);
+echo $nom;
