@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 15 fév. 2021 à 13:31
+-- Généré le : mar. 16 fév. 2021 à 00:47
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -32,7 +32,7 @@ CREATE TABLE `articles` (
   `id_articles` int(11) NOT NULL,
   `categorie_id_categorie` int(11) NOT NULL,
   `marques_id_marques` int(11) NOT NULL,
-  `sous_cat_accessoires_id_sous_cat_accessoires` int(11) DEFAULT NULL,
+  `id_sous_cat_acc` int(11) DEFAULT NULL,
   `art_nom` varchar(45) NOT NULL,
   `art_courte_desprition` varchar(255) NOT NULL,
   `art_description` longtext NOT NULL,
@@ -51,6 +51,14 @@ CREATE TABLE `articles` (
   `acc_grip_couleur` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `articles`
+--
+
+INSERT INTO `articles` (`id_articles`, `categorie_id_categorie`, `marques_id_marques`, `id_sous_cat_acc`, `art_nom`, `art_courte_desprition`, `art_description`, `stock`, `prix`, `raq_poids`, `raq_tamis`, `raq_taille_manche`, `raq_equilibre`, `cor_jauge`, `sac_thermobag`, `bal_conditionnement`, `bal_type`, `acc_type`, `acc_grip_eppaisseur`, `acc_grip_couleur`) VALUES
+(2, 1, 1, NULL, 'pure aero test', ' ceci est une belle raquette', ' ceci est une belle raquette, je suis d\'acord', 10, 125, 300, 620, 2, 35, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 1, 1, NULL, 'aero drive', ' ceci est une belle raquette jouée par nadal', ' ceci est une belle raquette, je suis d\'accord en plus elle est formidable', 8, 210, 280, 628, 3, 38, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -61,6 +69,17 @@ CREATE TABLE `categorie` (
   `id_categorie` int(11) NOT NULL,
   `categorie_type` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id_categorie`, `categorie_type`) VALUES
+(1, 'raquette'),
+(2, 'balles'),
+(3, 'cordage'),
+(4, 'sacs'),
+(5, 'accessoires');
 
 -- --------------------------------------------------------
 
@@ -84,6 +103,16 @@ CREATE TABLE `marques` (
   `id_marques` int(11) NOT NULL,
   `marques_nom` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `marques`
+--
+
+INSERT INTO `marques` (`id_marques`, `marques_nom`) VALUES
+(1, 'babolat'),
+(2, 'prince'),
+(3, 'head'),
+(4, 'wilson');
 
 -- --------------------------------------------------------
 
@@ -126,7 +155,7 @@ ALTER TABLE `articles`
   ADD PRIMARY KEY (`id_articles`,`categorie_id_categorie`,`marques_id_marques`),
   ADD KEY `fk_articles_categorie_idx` (`categorie_id_categorie`),
   ADD KEY `fk_articles_marques1_idx` (`marques_id_marques`),
-  ADD KEY `fk_articles_sous_cat_accessoires1_idx` (`sous_cat_accessoires_id_sous_cat_accessoires`);
+  ADD KEY `fk_articles_sous_cat_accessoires1_idx` (`id_sous_cat_acc`);
 
 --
 -- Index pour la table `categorie`
@@ -168,19 +197,19 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `marques`
 --
 ALTER TABLE `marques`
-  MODIFY `id_marques` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_marques` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `sous_cat_accessoires`
@@ -204,7 +233,7 @@ ALTER TABLE `utilisateurs`
 ALTER TABLE `articles`
   ADD CONSTRAINT `fk_articles_categorie` FOREIGN KEY (`categorie_id_categorie`) REFERENCES `categorie` (`id_categorie`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_articles_marques1` FOREIGN KEY (`marques_id_marques`) REFERENCES `marques` (`id_marques`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_articles_sous_cat_accessoires1` FOREIGN KEY (`sous_cat_accessoires_id_sous_cat_accessoires`) REFERENCES `sous_cat_accessoires` (`id_sous_cat_accessoires`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_articles_sous_cat_accessoires1` FOREIGN KEY (`id_sous_cat_acc`) REFERENCES `sous_cat_accessoires` (`id_sous_cat_accessoires`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `commandes`
