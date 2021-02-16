@@ -1,20 +1,14 @@
 
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=boutique', "root", "");
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION) ;
+include("fonctions.php"); 
+
+$bdd = getPdo(); 
 
 var_dump($bdd);
 
-$requete = $bdd->prepare("SELECT * FROM categorie"); 
-$requete->execute();
-
-$result_cat = $requete->fetchAll(); 
-
-$requete = $bdd->prepare("SELECT * FROM marques") ;
-$requete->execute();
-
-$result_mar = $requete->fetchAll(); 
+$result_cat = displayCat(); // renvoie un tableau de toutes les catégorie
+$result_mar = displayMarques(); // renvoie un tableau de toutes les marques
 
 var_dump($result_mar); 
 
@@ -25,6 +19,8 @@ if(isset($_POST['valider'])){
     $art_description = htmlspecialchars($_POST['art_description']); 
     $stock = htmlspecialchars($_POST['stock']); 
     $prix = htmlspecialchars($_POST['prix']);
+    $categories = htmlspecialchars($_POST['cat']);
+    $marques = htmlspecialchars($_POST['marques']);
     $id_sous_cat_acc = NULL; 
     // $raq_poids = NULL;
     // $raq_tamis = NULL;
@@ -37,8 +33,8 @@ if(isset($_POST['valider'])){
                         VALUES (:id_categorie,:id_marques,:id_sous_cat_acc,:art_nom, :art_courte_description , :art_description, :stock, :prix , NULL ,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)'
     );
     
-    $requete->bindParam(':id_categorie', $result_cat[0]['id_categorie']);
-    $requete->bindParam(':id_marques', $result_mar[0]['id_marques']);
+    $requete->bindParam(':id_categorie', $categories);
+    $requete->bindParam(':id_marques', $marques);
     $requete->bindParam(':id_sous_cat_acc',$id_sous_cat_acc);
     $requete->bindParam(':art_nom',$art_nom);
     $requete->bindParam(':art_courte_description',$art_courte_description);
@@ -82,7 +78,7 @@ if(isset($_POST['valider'])){
             <?php
             foreach($result_mar as $value){
                 ?>
-            <option value="marque"><?= $value['marques_nom'] ; ?></option>
+            <option value="<?= $value['id_marques']; ?>"><?= $value['marques_nom'] ; ?></option>
             <?php
             }
             ?>
@@ -91,12 +87,12 @@ if(isset($_POST['valider'])){
         </br>
 
         <label for="categorie"> Catégorie : </label>
-        <select name="marques" id="categorie">
+        <select name="cat" id="categorie">
             <option value="" disabled selected="selected" >Categorie</option>
             <?php
                 foreach($result_cat as $value){
                     ?>
-            <option value="cat"><?= $value['categorie_type'] ; ?></option>
+            <option value="<?= $value['id_categorie']; ?>"><?= $value['categorie_type'] ; ?></option>
             <?php
                 }
                 ?>
