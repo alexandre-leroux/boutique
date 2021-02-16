@@ -39,9 +39,9 @@ var_dump($bdd);
 $req = $bdd->query('SELECT * FROM articles INNER JOIN marques ON articles.marques_id_marques = marques.id_marques INNER JOIN categorie on articles.categorie_id_categorie = categorie.id_categorie  where id_articles = 2');
 $donnees = $req->fetch();
 
-echo '<pre>';
-print_r($donnees);
-echo '</pre>';
+// echo '<pre>';
+// print_r($donnees);
+// echo '</pre>';
 
 $req_categorie = $bdd->query('select * FROM categorie');
 $req_marques = $bdd->query('select * FROM marques');
@@ -141,52 +141,56 @@ echo '</pre>';
 
 
 
-if ($_POST['submit'] )
+if (@$_POST['submit'] )
      {
          if ( @$_POST['id_marques'] == NULL){ $_POST['id_marques'] = $donnees['marques_id_marques'] ;}
          if ( @$_POST['id_categorie'] == NULL){ $_POST['id_categorie'] = $donnees['categorie_id_categorie'] ;}
-        $req_update = $bdd->prepare('UPDATE articles    
-        SET art_nom = :art_nom,
-        categorie_id_categorie= :id_categorie,
-        marques_id_marques= :id_marques
+        $req_update = $bdd->prepare('UPDATE articles SET
+                         art_nom = :art_nom,
+                         categorie_id_categorie= :id_categorie,
+                         marques_id_marques= :id_marques,
+                         art_nom = :art_nom,
+                         art_courte_desprition = :resume,
+                         stock = :stock,
+                         prix = :prix,
+                         raq_tamis = :tamis,
+                         raq_taille_manche = :manche, 
+                         raq_equilibre = :equilibre                                                  
                                                       
-                                                      
-         WHERE id_articles = :id');
+                          WHERE id_articles = :id');
         $req_update->execute(array( 
-            'id_marques' => $_POST['id_marques'],
-            'art_nom' => $_POST['nom'],
-         'id' => $donnees['id_articles'],
-         'id_categorie' => $_POST['id_categorie'],
+                        'id_marques' => $_POST['id_marques'],
+                        'art_nom' => $_POST['nom'],
+                        'id' => $donnees['id_articles'],
+                        'id_categorie' => $_POST['id_categorie'],
+                        'art_nom' => $_POST['nom'],
+                        'resume' => $_POST['resume'],
+                        'stock' => $_POST['stock'],
+                        'prix' => $_POST['prix'],
+                        'poids' => $_POST['poids'],
+                        'tamis' => $_POST['tamis'],
+                        'manche' => $_POST['manche'],
+                        'equilibre' => $_POST['equilibre'],
         ));
         }
 
         
-// if ($_POST['submit'] )
-// {
-//    $req_update = $bdd->prepare('UPDATE articles SET    categorie_id_categorie= :id_categorie, 
-//                                                        marques_id_marques= :id_marques, 
-//                                                        art_nom = :art_nom, 
-//                                                        art_courte_desprition = :resume,
-//                                                        art_description = :description, 
-//                                                        stock = :stock, 
-//                                                        prix = :prix, 
-//                                                        raq_poids = :poids, 
-//                                                        raq_tamis = :tamis, 
-//                                                        raq_taille_manche = :manche, 
-//                                                        raq_equilibre=: equilibre
-//                                                      WHERE id_articles  = :id');
-//    $req_update->execute(array(
-//                                    'id_categorie' => $_POST['id_categorie'],
-//                                    'id_marques' => $_POST['id_marques'],
-//                                    'art_nom' => $_POST['nom'],
-//                                    'resume' => $_POST['resume'],
-//                                    'description' => $_POST['description'],
-//                                    'stock' => $_POST['stock'],
-//                                    'prix' => $_POST['prix'],
-//                                    'poids' => $_POST['poids'],
-//                                    'tamis' => $_POST['tamis'],
-//                                    'manche' => $_POST['manche'],
-//                                    'equilibre' => $_POST['equilibre'],
-//                                    'id' => $donnees['id_articles']
-//    ));
-//    }
+
+
+?>
+
+
+<div style="display:flex">
+<?php
+$i = 0;
+$num_image = 1;
+while ($i<4)
+{
+  ?>
+  <p><img style="height:100px" src="medias/img_articles/pure-aero-vs-<?=$num_image?>.jpg" alt=""></p>
+<?php
+$i++;
+$num_image++;
+}
+?>
+</div>
