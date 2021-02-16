@@ -36,7 +36,7 @@ var_dump($bdd);
 //                      'id' => $id,
 //                                                                       ));
 
-$req = $bdd->query('SELECT * FROM articles INNER JOIN marques ON articles.marques_id_marques = marques.id_marques INNER JOIN categorie on articles.categorie_id_categorie = categorie.id_categorie  where id_articles = 2');
+$req = $bdd->query('SELECT * FROM articles INNER JOIN marques ON articles.id_marques = marques.id_marques INNER JOIN categorie on articles.id_categorie = categorie.id_categorie  where id_articles = 2');
 $donnees = $req->fetch();
 
 // echo '<pre>';
@@ -55,7 +55,7 @@ $req_marques = $bdd->query('select * FROM marques');
 <p>nom du produit : <?= $donnees['art_nom']?> </p>
 <p>catégorie : <?= $donnees['categorie_type']?> </p>
 <p>marque : <?= $donnees['marques_nom']?> </p>
-<p>resumé : <?= $donnees['art_courte_desprition']?> </p>
+<p>resumé : <?= $donnees['art_courte_description']?> </p>
 <p>description : <?= $donnees['art_description']?> </p>
 <p>poids : <?= $donnees['raq_poids']?> gr </p>
 <p>tamis : <?= $donnees['raq_tamis']?> cm2</p>
@@ -97,7 +97,7 @@ $req_marques = $bdd->query('select * FROM marques');
 
   <div >
     <label for="resume">modifier le résumé : </label>
-    <textarea name="resume" ><?= $donnees['art_courte_desprition']?></textarea>
+    <textarea name="resume" ><?= $donnees['art_courte_description']?></textarea>
 
   </div>
   <div >
@@ -143,14 +143,14 @@ echo '</pre>';
 
 if (@$_POST['submit'] )
      {
-         if ( @$_POST['id_marques'] == NULL){ $_POST['id_marques'] = $donnees['marques_id_marques'] ;}
-         if ( @$_POST['id_categorie'] == NULL){ $_POST['id_categorie'] = $donnees['categorie_id_categorie'] ;}
+         if ( @$_POST['id_marques'] == NULL){ $_POST['id_marques'] = $donnees['id_marques'] ;}
+         if ( @$_POST['id_categorie'] == NULL){ $_POST['id_categorie'] = $donnees['id_categorie'] ;}
         $req_update = $bdd->prepare('UPDATE articles SET
                          art_nom = :art_nom,
-                         categorie_id_categorie= :id_categorie,
-                         marques_id_marques= :id_marques,
+                         id_categorie= :id_categorie,
+                         id_marques= :id_marques,
                          art_nom = :art_nom,
-                         art_courte_desprition = :resume,
+                         art_courte_description = :resume,
                          stock = :stock,
                          prix = :prix,
                          raq_tamis = :tamis,
