@@ -182,15 +182,15 @@ if (@$_POST['submit'] )
 
 <div style="display:flex">
 <?php
-$i = 0;
-$num_image = 1;
-while ($i<4)
+$i = 1;
+
+while ($i<8)
 {
   ?>
-  <p><img style="height:100px" src="medias/img_articles/pure-aero-vs-<?=$num_image?>.jpg" alt=""></p>
+  <p><img style="height:100px" src="medias/img_articles/pure-aero-vs-<?=$i?>.jpg" alt=""></p>
 <?php
 $i++;
-$num_image++;
+
 }
 ?>
 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 16 fév. 2021 à 00:47
+-- Généré le : mar. 16 fév. 2021 à 08:15
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -56,7 +56,7 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id_articles`, `categorie_id_categorie`, `marques_id_marques`, `id_sous_cat_acc`, `art_nom`, `art_courte_desprition`, `art_description`, `stock`, `prix`, `raq_poids`, `raq_tamis`, `raq_taille_manche`, `raq_equilibre`, `cor_jauge`, `sac_thermobag`, `bal_conditionnement`, `bal_type`, `acc_type`, `acc_grip_eppaisseur`, `acc_grip_couleur`) VALUES
-(2, 1, 1, NULL, 'pure aero test', ' ceci est une belle raquette', ' ceci est une belle raquette, je suis d\'acord', 10, 125, 300, 620, 2, 35, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 1, 2, NULL, 'pure aero', ' ceci est une belle raquette', ' ceci est une belle raquette, je suis d\'acord', 11, 133, 300, 628, 4, 40, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 1, 1, NULL, 'aero drive', ' ceci est une belle raquette jouée par nadal', ' ceci est une belle raquette, je suis d\'accord en plus elle est formidable', 8, 210, 280, 628, 3, 38, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
