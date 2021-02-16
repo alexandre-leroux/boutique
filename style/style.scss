@@ -90,6 +90,14 @@ header{
         }
     }
 
+    & .burger{
+        display: none;
+
+        & i{
+            color: white;
+        }
+    }
+
 }
 
 .nav{
@@ -147,12 +155,19 @@ header{
 
 @media #{$light-down} {
     header{
+        display: flex;
+        align-items: center;
+
         & .accueil{
             display: none;
         }
 
         & .search_bar{
             display: none;
+        }
+
+        & .burger{
+            display: block;
         }
     }
 }

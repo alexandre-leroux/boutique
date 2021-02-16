@@ -109,6 +109,12 @@ header .search_bar button {
   color: white;
   width: 20%;
 }
+header .burger {
+  display: none;
+}
+header .burger i {
+  color: white;
+}
 
 .nav {
   background-color: #0c0e0df1;
@@ -149,11 +155,18 @@ header .search_bar button {
   }
 }
 @media only screen and (max-width : 768px) {
+  header {
+    display: flex;
+    align-items: center;
+  }
   header .accueil {
     display: none;
   }
   header .search_bar {
     display: none;
+  }
+  header .burger {
+    display: block;
   }
 }
 
