@@ -1,17 +1,20 @@
 
 <?php
 
-include("fonctions.php"); 
+//include("fonctions.php"); 
+require_once("models/bapt_Admin.php"); 
 
-$result_cat = displayCat(); // renvoie un tableau de toutes les catégorie
-$result_mar = displayMarques(); // renvoie un tableau de toutes les marques
+$admin = new Admin(); 
+
+$result_cat = $admin->display("categorie"); // renvoie un tableau de toutes les catégorie
+$result_mar = $admin->display("marques"); // renvoie un tableau de toutes les marques
 
 if(isset($_POST['valider'])){
     
 
-    insertArticle();
+    $admin->insertArticle();
 
-    $result = getAllInfosArticle();
+    $result = $admin->getAllInfosArticle();
 
     if(isset($_FILES['image']) AND !empty($_FILES['image']['name'])){
         var_dump($_FILES['image']);
@@ -29,7 +32,7 @@ if(isset($_POST['valider'])){
                      if($mouvement)
                      {
                          var_dump($_FILES['image']['name'][$i]); 
-                         isertImage($extensionUpload, $i);
+                         $admin->insertImage($extensionUpload, $i);
                      }
                      else{
                          echo "Erreur durant l'importation du fichier"; 
@@ -42,8 +45,6 @@ if(isset($_POST['valider'])){
             else{
                 echo "L'image ne dois pas dépasser 2mo" ; 
             }
-
-            echo 'ca marche' ; 
 
         }
     }

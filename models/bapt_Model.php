@@ -1,5 +1,11 @@
 <?php
 
+require("./fonctions.php"); 
+
 class Models {
-    protected
+    protected $bdd ;
+
+    public function __construct(){
+        $this->bdd = getPdo() ; 
+    }
 }
