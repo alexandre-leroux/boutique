@@ -38,6 +38,7 @@ var_dump($bdd);
 //                      'id' => $id,
 //                                                                       ));
 
+// mettre dans "where" l'id de l'article obtenu en $_GET
 $req = $bdd->query('SELECT * FROM articles INNER JOIN marques ON articles.id_marques = marques.id_marques INNER JOIN categorie on articles.id_categorie = categorie.id_categorie  where id_articles = 1');
 $donnees = $req->fetch();
 
@@ -47,7 +48,6 @@ $donnees = $req->fetch();
 
 $req_categorie = $bdd->query('select * FROM categorie');
 $req_marques = $bdd->query('select * FROM marques');
-$req_img_raquettes = $bdd->query("select * FROM images_articles WHERE id_articles = {$donnees['id_articles']}");
 // $donnees_categorie = $req_categorie->fetchall();
 // echo '<pre>';
 // print_r($donnees_categorie);
@@ -188,33 +188,66 @@ if (@$_POST['submit'] )
 
 <div style="display:flex">
 <?php
+
+$req_img_raquettes = $bdd->query("select * FROM images_articles WHERE id_articles = {$donnees['id_articles']}");
+
 $i=0;
 while ($image = $req_img_raquettes->fetch())
 {
-  ?>
+?>
   <div>
-  <p><img style="height:200px" src="medias/img_articles/<?=$image['chemin']?>" alt=""></p>
 
- <form action="index.php" method="post">
- <input type="checkbox" name="chemin<?=$i?>" value='medias/img_articles/<?=$image['chemin']?>'>
+    <p><img style="height:200px" src="medias/img_articles/<?=$image['chemin']?>" alt=""></p>
+
+    <form action="index.php" method="post">
+    <input type="checkbox" name="chemin<?=$i?>" value='medias/img_articles/<?=$image['chemin']?>'>
 
 
-</div>
-<?php $i++;
+  </div>
+  <?php $i++;
 }
 ?>
-<input type="submit" value="modifier" name="submit2">
-</form>
+
+  <input type="submit" value="supprimer" style="height:20px" name="submit2">
+  </div>
+  
+
+  </form>
+
+</br>
+</br>
+</br>
+</br>
+
 <?php
-if($_POST['submit2'])
-{
-  echo 'ouaisss';
-  var_dump($_POST);
-  echo '/<pre>';
+
+// echo '<pre>';
+// var_dump($image);
+// echo '</pre>';
+if (@$_POST['submit2']){
+
+    foreach($_POST as $value)
+    {
+      if ($value == 'supprimer')
+        {
+          break;
+        }
+      else
+        {
+          echo $value.'</br>';
+          unlink($value);
+          $img_bdd  = $value;
+          $nom_img_bdd = explode("medias/img_articles/", $img_bdd);
+          echo $nom_img_bdd[1].'</br>'; 
+          $bdd->query("DELETE FROM images_articles WHERE chemin = '{$nom_img_bdd[1]}' ");
+
+        }
+
+    }
+
 }
-else{echo 'no';}
+
 ?>
-</div>
 
 
 
