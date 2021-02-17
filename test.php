@@ -18,3 +18,6 @@ echo '</pre>';
 
 $req3 = $test->DeleteOne('articles', 'id_articles', 7);
 var_dump($req3);
+
+
+unlink('medias/img_articles/aaaaa.jpg');

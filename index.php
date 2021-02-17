@@ -1,8 +1,6 @@
 <?php
 
-echo 'a';
-var_dump($_SERVER);
-echo 'b';
+
 
 
 $bdd = new PDO('mysql:host=localhost;dbname=boutique;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -40,7 +38,7 @@ var_dump($bdd);
 //                      'id' => $id,
 //                                                                       ));
 
-$req = $bdd->query('SELECT * FROM articles INNER JOIN marques ON articles.id_marques = marques.id_marques INNER JOIN categorie on articles.id_categorie = categorie.id_categorie  where id_articles = 2');
+$req = $bdd->query('SELECT * FROM articles INNER JOIN marques ON articles.id_marques = marques.id_marques INNER JOIN categorie on articles.id_categorie = categorie.id_categorie  where id_articles = 1');
 $donnees = $req->fetch();
 
 // echo '<pre>';
@@ -49,6 +47,7 @@ $donnees = $req->fetch();
 
 $req_categorie = $bdd->query('select * FROM categorie');
 $req_marques = $bdd->query('select * FROM marques');
+$req_img_raquettes = $bdd->query("select * FROM images_articles WHERE id_articles = {$donnees['id_articles']}");
 // $donnees_categorie = $req_categorie->fetchall();
 // echo '<pre>';
 // print_r($donnees_categorie);
@@ -189,20 +188,37 @@ if (@$_POST['submit'] )
 
 <div style="display:flex">
 <?php
-$i = 1;
-
-while ($i<8)
+$i=0;
+while ($image = $req_img_raquettes->fetch())
 {
   ?>
-  <p><img style="height:100px" src="medias/img_articles/pure-aero-vs-<?=$i?>.jpg" alt=""></p>
-<?php
-$i++;
+  <div>
+  <p><img style="height:200px" src="medias/img_articles/<?=$image['chemin']?>" alt=""></p>
 
+ <form action="index.php" method="post">
+ <input type="checkbox" name="chemin<?=$i?>" value='medias/img_articles/<?=$image['chemin']?>'>
+
+
+</div>
+<?php $i++;
 }
 ?>
+<input type="submit" value="modifier" name="submit2">
+</form>
+<?php
+if($_POST['submit2'])
+{
+  echo 'ouaisss';
+  var_dump($_POST);
+  echo '/<pre>';
+}
+else{echo 'no';}
+?>
 </div>
+
+
+
+</br>
 <a href="test.php">lien</a>
 <?php
 
-extract($_POST);
-echo $nom;
