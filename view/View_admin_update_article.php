@@ -31,7 +31,7 @@ class Affichage_admin_update{
     }
 
 
-    public static function affiche_details_et_form_update($donnees,$req_categorie,$req_marques)
+    public static function affiche_details_et_form_update($donnees,$req_categorie,$req_marques,$req_img_raquettes)
     {
     ?>
                 
@@ -52,7 +52,7 @@ class Affichage_admin_update{
 
 
 
-            <form action="index.php" method="post" >
+            <form action="admin_update_one_article.php" method="post" >
 
             <div >
 
@@ -118,6 +118,34 @@ class Affichage_admin_update{
             </div>
 
             </form>
+
+            <div style="display:flex">
+                    <?php
+
+                    $i=0;
+                    foreach ($req_img_raquettes as $value)
+                    {
+                    ?>
+                    <div>
+
+                        <p><img style="height:200px" src="../medias/img_articles/<?=$value['chemin']?>" alt=""></p>
+
+                        <form action="admin_update_one_article.php" method="post">
+                        <input type="checkbox" name="chemin<?=$i?>" value='../medias/img_articles/<?=$value['chemin']?>'>
+
+
+                    </div>
+                    <?php $i++;
+
+                    }
+                    ?>
+
+                    <input type="submit" value="supprimer" style="height:20px" name="submit2">
+            </div>
+                    
+
+  </form>
+
         <?php
 
     }
