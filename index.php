@@ -3,46 +3,51 @@
 
 include("fonctions.php"); 
 
-$bdd = getPdo(); 
-
-var_dump($bdd);
-
 $result_cat = displayCat(); // renvoie un tableau de toutes les catégorie
 $result_mar = displayMarques(); // renvoie un tableau de toutes les marques
 
-var_dump($result_mar); 
-
 if(isset($_POST['valider'])){
     
-    $art_nom = htmlspecialchars($_POST['art_nom']); 
-    $art_courte_description = htmlspecialchars($_POST['art_courte_description']); 
-    $art_description = htmlspecialchars($_POST['art_description']); 
-    $stock = htmlspecialchars($_POST['stock']); 
-    $prix = htmlspecialchars($_POST['prix']);
-    $categories = htmlspecialchars($_POST['cat']);
-    $marques = htmlspecialchars($_POST['marques']);
-    $id_sous_cat_acc = NULL; 
-    // $raq_poids = NULL;
-    // $raq_tamis = NULL;
-    // $raq_taille_manche = NULL;
-    // $raq_equilibre = NULL ;
-    // $cor_jauge = NULL ; 
-    // $sac_thermobag = NULL;
-    
-    $requete = $bdd->prepare('INSERT INTO articles (id_categorie,id_marques,id_sous_cat_acc,art_nom, art_courte_description, art_description, stock, prix, raq_poids,raq_tamis,raq_taille_manche,raq_equilibre,cor_jauge,sac_thermobag,bal_conditionnement,bal_type,acc_type,acc_grip_eppaisseur,acc_grip_couleur)
-                        VALUES (:id_categorie,:id_marques,:id_sous_cat_acc,:art_nom, :art_courte_description , :art_description, :stock, :prix , NULL ,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)'
-    );
-    
-    $requete->bindParam(':id_categorie', $categories);
-    $requete->bindParam(':id_marques', $marques);
-    $requete->bindParam(':id_sous_cat_acc',$id_sous_cat_acc);
-    $requete->bindParam(':art_nom',$art_nom);
-    $requete->bindParam(':art_courte_description',$art_courte_description);
-    $requete->bindParam(':art_description',$art_description);
-    $requete->bindParam(':stock',$stock);
-    $requete->bindParam(':prix',$prix);
 
-    $requete->execute(); 
+    insertArticle();
+
+    $result = getAllInfosArticle();
+
+    if(isset($_FILES['image']) AND !empty($_FILES['image']['name'])){
+        var_dump($_FILES['image']);
+        for($i = 0 ; isset($_FILES['image']['size'][$i]) ; $i++)
+        {   
+            $tailleMax = 2097152; 
+            $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+            if($_FILES['image']['size'][$i] <= $tailleMax)
+            {
+                 $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'][$i], '.'),1));
+                 if(in_array($extensionUpload, $extensionsValides))
+                 {
+                     $chemin = "medias/img_articles/".$result['id_articles']."-".$i.".".$extensionUpload;
+                     $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][$i], $chemin ); 
+                     if($mouvement)
+                     {
+                         var_dump($_FILES['image']['name'][$i]); 
+                         isertImage($extensionUpload, $i);
+                     }
+                     else{
+                         echo "Erreur durant l'importation du fichier"; 
+                     }
+                 }
+                 else{
+                     echo "Votre image doit etre au format jpg, jpeg, gif ou png" ;
+                 }
+            }
+            else{
+                echo "L'image ne dois pas dépasser 2mo" ; 
+            }
+
+            echo 'ca marche' ; 
+
+        }
+    }
+    
 }
 
 
@@ -55,7 +60,7 @@ if(isset($_POST['valider'])){
     <head>    
 
     <body>
-        <form action="index.php" method="POST">
+        <form action="index.php" method="POST" enctype="multipart/form-data">
         
         <label for="name">Nom du produit :</label>
         <input type="text" id="name" name="art_nom" required>
@@ -107,6 +112,12 @@ if(isset($_POST['valider'])){
 
         <label for="prix">Prix :</label>
         <input type="number" id="prix" name="prix" required>
+
+        </br>
+
+        <label for="image"> Image : </label>
+        <input id="image" type="file" name="image[]" multiple>
+        
 
         </br>
 
