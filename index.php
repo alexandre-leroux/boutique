@@ -141,9 +141,9 @@ $req_marques = $bdd->query('select * FROM marques');
 </form>
 
 <?php
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+// echo '<pre>';
+// print_r($_POST);
+// echo '</pre>';
 
 
 
@@ -252,6 +252,7 @@ if (@$_POST['submit2']){
 
 
 </br>
-<a href="test.php">lien</a>
+<a href="pages/admin_update_article.php">lien vers page générale update</a></br>
+<a href="pages/admin_update_one_article.php">lien vers page un article update</a></br>
 <?php
 
