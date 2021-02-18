@@ -6,14 +6,34 @@ require_once('../controllers/Controller_admin.php');
 
 $admin = new Admin();
 
-//penser à mettre en parametre un $_GET['id']
+
 $donnees = $admin->select_one_articles_updates();
 
 $req_categorie = $admin->SelectAll('categorie');
 $req_marques = $admin->SelectAll('marques');
-$req_img_raquettes = $admin->select_images($donnees);
+$req_img_article = $admin->select_images($donnees);
 
-Affichage_admin_update::affiche_details_et_form_update($donnees,$req_categorie,$req_marques,$req_img_raquettes);
+
+
+
+if($_GET['idcat'] == 1){
+
+    Affichage_admin_update::affiche_details_et_form_update_raquette($donnees,$req_categorie,$req_marques,$req_img_article);
+
+}
+
+if($_GET['idcat'] == 2){
+
+    Affichage_admin_update::affiche_details_et_form_update_sacs($donnees,$req_categorie,$req_marques,$req_img_article);
+
+}
+
+if($_GET['idcat'] == 3){
+
+    Affichage_admin_update::affiche_details_et_form_update_cordage($donnees,$req_categorie,$req_marques,$req_img_article);
+
+}
+
 
 
 if (@$_POST['submit'] )
