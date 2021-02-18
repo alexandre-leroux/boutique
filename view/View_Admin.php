@@ -17,16 +17,17 @@ class Affichage_admin_update{
                     ?>
                 
                     <div style="width:200px;border:solid;margin-right:10px">
-                        <?=$tous_les_articles[$i]['art_nom']?><img style="height:200px" src="../medias/img_articles/<?=$tous_les_articles[$i]['MIN(chemin)']?>" alt="">
+                        <a href="admin_update_one_article.php?id=<?=$tous_les_articles[$i]["id_articles"]?>"><h3><?=$tous_les_articles[$i]['art_nom']?></h2><img style="height:200px" src="../medias/img_articles/<?=$tous_les_articles[$i]['MIN(chemin)']?>" alt=""></a>
                     </div>
                 
                 <?php
                     $i++;
                 }
-            ?>
+                ?>
 
         </div>
         <?php
+
 
     }
 

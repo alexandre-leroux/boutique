@@ -1,6 +1,6 @@
 <?php
-require_once('../models/alx-Admin.php');
-require_once('../View/view_admin_update_article.php');
+require_once('../models/Models_Admin.php');
+require_once('../View/view_Admin.php');
 require_once('../controllers/Controller_admin.php');
 
 

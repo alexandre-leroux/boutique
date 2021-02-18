@@ -21,7 +21,8 @@ public  function select_one_articles_updates()
     {
 
         // mettre dans "where" l'id de l'article obtenu en $_GET
-        $requete = $this->bdd->query('SELECT * FROM articles INNER JOIN marques ON articles.id_marques = marques.id_marques INNER JOIN categorie on articles.id_categorie = categorie.id_categorie  where id_articles = 1');
+        $requete = $this->bdd->prepare('SELECT * FROM articles INNER JOIN marques ON articles.id_marques = marques.id_marques INNER JOIN categorie on articles.id_categorie = categorie.id_categorie  where id_articles = :id');
+        $requete->execute(array('id' => $_GET['id']));
         return $requete->fetch();
 
     }

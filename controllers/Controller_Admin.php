@@ -1,6 +1,6 @@
 <?php
 require_once('Controller.php');
-require_once('../Models/alx-Admin.php');
+require_once('../Models/Models_Admin.php');
 
 
 class Controller_Admin extends Controller{
