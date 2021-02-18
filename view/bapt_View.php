@@ -1,6 +1,6 @@
 <?php
 
-class View {
+class Form {
 
     public function generalForm(){
         ?>
@@ -62,13 +62,14 @@ class View {
         <label for="image"> Image : </label>
         <input id="image" type="file" name="image[]" multiple>
                
-        </form> ' ; 
         <?php
     }
 
     public function formRaquette(){
-        echo '
 
+        //generalForm();
+
+        ?>
         <div>
             <label for="poids"> Poids : </label>
             <input type="number" name="raq_poids" id="poids">
@@ -90,15 +91,17 @@ class View {
         </div>
 
         <input type="submit" value="Envoyer" name="valider">
-    
-        ' ;
 
+        </form> 
+    
+        
+        <?php
     }
 
     public function formSac(){
 
-        echo '
-
+        //generalForm();
+        ?>
         <div>
             <input type="radio" id="choix_3" name="choix_thermo" value="choix_3" checked>             
             <label for="choix_3">3</label>
@@ -124,19 +127,64 @@ class View {
             <label for="choix_15">15</label>
         </div>
         <input type="submit" value="Envoyer" name="valider">
-        ' ;
 
+        </form>
+
+        <?php
+        
     }
 
     public function formCordage(){
-        echo '
+
+        //generalForm();
+        
+        ?>
+        
         <label for="jauge"> Jauge : </label>
         <input type="number" name="cor_jauge" id="jauge">
         <input type="submit" value="Envoyer" name="valider">
-        ' ;
+
+        </form>
+        
+        <?php
+        
     }
 
     public function selectTypeArticle(){
+        ?>
+
+        <h2> Veuillez choisir quel type d'article a ajouter : </h2>
+
+        <form action="index.php" method="post">
+            <div>
+                <input type="radio" id="raquette" name="choix_cat" value="raquette" checked>             
+                <label for="raquette"> Raquette</label>
+            </div>
         
+            <div>
+                <input type="radio" id="sacs" name="choix_cat" value="sacs" checked>             
+                <label for="sacs"> Sacs </label>
+            </div>
+        
+            <div>
+                <input type="radio" id="cordage" name="choix_cat" value="cordage" checked>             
+                <label for="cordage">Cordages</label>
+            </div>
+        
+            <div>
+                <input type="radio" id="balles" name="choix_cat" value="balles" checked>             
+                <label for="balles">Balles</label>
+            </div>
+        
+            <div>
+                <input type="radio" id="accessoires" name="choix_cat" value="accessoires" checked>             
+                <label for="accessoires">Accessoires</label>
+            </div>
+            
+            <input type="submit" value="Envoyer" name="valider_cat">
+
+        </form>
+
+        <?php
     }
 }
