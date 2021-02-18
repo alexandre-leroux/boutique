@@ -2,8 +2,72 @@
 
 class View {
 
+    public function generalForm(){
+        ?>
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+        
+        <label for="name">Nom du produit :</label>
+        <input type="text" id="name" name="art_nom" required>
+
+        </br>
+
+        <label for="courte_description">Courte description :</label>
+        <input type="text" id="courte_description" name="art_courte_description" required>
+
+        </br>
+
+        <label for="description"> Description : </label>
+        <textarea id="description" name="art_description"></textarea>
+
+        </br>
+
+        <label for="marques"> Marques : </label>
+        <select name="marques" id="marques">
+            <option disabled selected="selected">Marques</option>
+            <?php
+            foreach($result_mar as $value){
+                ?>
+            <option value="<?= $value['id_marques']; ?>"><?= $value['marques_nom'] ; ?></option>
+            <?php
+            }
+            ?>
+        </select>
+
+        </br>
+
+        <label for="categorie"> Catégorie : </label>
+        <select name="cat" id="categorie">
+            <option value="" disabled selected="selected" >Categorie</option>
+            <?php
+                foreach($result_cat as $value){
+                    ?>
+            <option value="<?= $value['id_categorie']; ?>"><?= $value['categorie_type'] ; ?></option>
+            <?php
+                }
+                ?>
+        </select>
+
+        </br>
+
+        <label for="stock">Stock :</label>
+        <input type="number" id="stock" name="stock" required>
+
+        </br>
+
+        <label for="prix">Prix :</label>
+        <input type="number" id="prix" name="prix" required>
+
+        </br>
+
+        <label for="image"> Image : </label>
+        <input id="image" type="file" name="image[]" multiple>
+               
+        </form> ' ; 
+        <?php
+    }
+
     public function formRaquette(){
-        echo '<form action="index.php" method="post">
+        echo '
 
         <div>
             <label for="poids"> Poids : </label>
@@ -24,13 +88,16 @@ class View {
             <label for="taille_manche"> Taille manche : </label>
             <input type="number" name="raq_taille_manche" id="taille_manche">
         </div>
+
+        <input type="submit" value="Envoyer" name="valider">
     
-    </form>' ;
+        ' ;
 
     }
 
     public function formSac(){
-        echo '<form action="index.php" method="post">
+
+        echo '
 
         <div>
             <input type="radio" id="choix_3" name="choix_thermo" value="choix_3" checked>             
@@ -56,13 +123,20 @@ class View {
             <input type="radio" id="choix_15" name="choix_thermo" value="choix_15" checked>             
             <label for="choix_15">15</label>
         </div>
-    </form>' ;
+        <input type="submit" value="Envoyer" name="valider">
+        ' ;
+
     }
 
     public function formCordage(){
-        echo '<form action="index.php" method="post">
+        echo '
         <label for="jauge"> Jauge : </label>
         <input type="number" name="cor_jauge" id="jauge">
-    </form>' ;
+        <input type="submit" value="Envoyer" name="valider">
+        ' ;
+    }
+
+    public function selectTypeArticle(){
+        
     }
 }

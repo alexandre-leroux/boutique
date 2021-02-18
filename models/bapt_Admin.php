@@ -43,29 +43,30 @@ class Admin extends Models {
         $requete->execute(); 
     }
 
-    public function insertCordage(): void  {
+    public function insert(): void  {
         
-        $id_sous_cat_acc = NULL; 
+        $id_sous_cat_acc = htmlspecialchars($_POST['type_accessoire']); 
+        $id_bal_conditionnement = htmlspecialchars($_POST['balle_conditionnement']) ;
+        $id_bal_type = htmlspecialchars($_POST['balle_type']) ; 
         $art_nom = htmlspecialchars($_POST['art_nom']); 
         $art_courte_description = htmlspecialchars($_POST['art_courte_description']); 
         $art_description = htmlspecialchars($_POST['art_description']); 
         $stock = htmlspecialchars($_POST['stock']); 
         $prix = htmlspecialchars($_POST['prix']);
+        $art_date = date("Y-m-d H:i:s"); 
         $categories = htmlspecialchars($_POST['cat']);
         $marques = htmlspecialchars($_POST['marques']);
-        $raq_poids = NULL;
-        $raq_tamis = NULL;
-        $raq_taille_manche = NULL;
-        $raq_equilibre = NULL ;
+        $raq_poids = $_POST['raq_poids'];
+        $raq_tamis = $_POST['raq_tamis'];
+        $raq_taille_manche = $_POST['raq_taille_manche'];
+        $raq_equilibre = $_POST['raq_equilibre'] ;
         $cor_jauge = $_POST['cor_jauge'] ; 
-        $sac_thermobag = NULL;
-        $bal_conditionnement = NULL ;
-        $bal_type = NULL; 
-        $acc_grip_eppaisseur = NULL;
-        $acc_grip_couleur = NULL; 
+        $sac_thermobag = $_POST['choix_thermo'];
+        $acc_grip_eppaisseur = $_POST['acc_grip_eppaisseur'];
+        $acc_grip_couleur = $_POST['acc_grip_couleur']; 
     
-        $requete = $this->bdd->prepare("INSERT INTO articles (id_categorie,id_marques,id_sous_cat_acc,art_nom, art_courte_description, art_description,stock, prix, raq_poids,raq_tamis,raq_taille_manche,raq_equilibre,cor_jauge,sac_thermobag,bal_conditionnement,bal_type,acc_grip_eppaisseur,acc_grip_couleur)
-                            VALUES (:id_categorie, :id_marques, :id_sous_cat_acc, :art_nom, :art_courte_description, :art_description, :stock, :prix, :raq_poids ,:raq_tamis,:raq_taille_manche,:raq_equilibre,:cor_jauge,:sac_thermobag,:bal_conditionnement,:bal_type,:acc_grip_eppaisseur,:acc_grip_couleur)"
+        $requete = $this->bdd->prepare("INSERT INTO articles (id_categorie, id_marques, id_sous_cat_acc, id_balle_type, id_balle_conditionnement, art_nom, art_courte_description, art_description, stock, prix, art_date, raq_poids, raq_tamis, raq_taille_manche, raq_equilibre, cor_jauge, sac_thermobag, acc_grip_eppaisseur, acc_grip_couleur)
+                            VALUES (:id_categorie, :id_marques, :id_sous_cat_acc, :id_balle_type, :id_balle_conditionnement, :art_nom, :art_courte_description, :art_description, :stock, :prix, :art_date, :raq_poids, :raq_tamis, :raq_taille_manche, :raq_equilibre, :cor_jauge, :sac_thermobag, :acc_grip_eppaisseur, :acc_grip_couleur)"
         );
         
         $requete->bindParam(':id_categorie', $categories);
@@ -76,18 +77,40 @@ class Admin extends Models {
         $requete->bindParam(':art_description',$art_description);
         $requete->bindParam(':stock',$stock);
         $requete->bindParam(':prix',$prix);
+        $requete->bindParam(':art_date',$art_date);
         $requete->bindParam(':raq_poids',$raq_poids);
         $requete->bindParam(':raq_tamis',$raq_tamis);
         $requete->bindParam(':raq_taille_manche',$raq_taille_manche);
         $requete->bindParam(':raq_equilibre',$raq_equilibre);
         $requete->bindParam(':cor_jauge',$cor_jauge);
         $requete->bindParam(':sac_thermobag',$sac_thermobag);
-        $requete->bindParam(':bal_conditionnement',$bal_conditionnement);
-        $requete->bindParam(':bal_type',$bal_type);
+        $requete->bindParam(':id_bal_conditionnement',$id_bal_conditionnement);
+        $requete->bindParam(':id_bal_type',$id_bal_type);
         $requete->bindParam(':acc_grip_eppaisseur',$acc_grip_eppaisseur);
         $requete->bindParam(':acc_grip_couleur',$acc_grip_couleur);
+
+        var_dump($categories);
+        var_dump($marques);
+        var_dump($id_sous_cat_acc);
+        var_dump($art_nom);
+        var_dump($art_courte_description);
+        var_dump($art_description);
+        var_dump($stock);
+        var_dump($prix);
+        var_dump($art_date);
+        var_dump($raq_poids);
+        var_dump($raq_tamis);
+        var_dump($raq_taille_manche);
+        var_dump($raq_equilibre);
+        var_dump($cor_jauge);
+        var_dump($sac_thermobag);
+        var_dump($id_bal_conditionnement);
+        var_dump($id_bal_type);
+        var_dump($acc_grip_eppaisseur);
+        var_dump($acc_grip_couleur);
+
     
-        $requete->execute(); 
+        $requete->execute();
     }
 
     
