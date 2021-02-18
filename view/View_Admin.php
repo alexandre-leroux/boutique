@@ -65,7 +65,7 @@ class Affichage_admin_update
     public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
     {
     ?>
-        <?php var_dump($_GET)?>
+      
         <p><b>données actuelles :</b></p>
         <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
         <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
@@ -162,7 +162,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php" method="post">
+                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
@@ -200,7 +200,7 @@ class Affichage_admin_update
 
 
 
-        <form action="admin_update_one_article.php" method="post">
+        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
 
             <div>
 
@@ -264,7 +264,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php" method="post">
+                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
@@ -302,7 +302,7 @@ class Affichage_admin_update
 
 
 
-        <form action="admin_update_one_article.php" method="post">
+        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
 
             <div>
 
@@ -366,7 +366,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php" method="post">
+                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
@@ -407,7 +407,7 @@ class Affichage_admin_update
 
 
 
-        <form action="admin_update_one_article.php" method="post">
+        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
 
             <div>
 
@@ -480,7 +480,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php" method="post">
+                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 

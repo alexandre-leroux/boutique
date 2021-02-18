@@ -39,7 +39,7 @@ class Admin extends Model
     }
 
 
-    public function update_article($donnees)
+    public function update_raquette($donnees)
     {
         if (@$_POST['id_marques'] == NULL) {
             $_POST['id_marques'] = $donnees['id_marques'];
@@ -53,6 +53,7 @@ class Admin extends Model
                         id_marques= :id_marques,
                         art_nom = :art_nom,
                         art_courte_description = :resume,
+                        art_description = :description,
                         stock = :stock,
                         prix = :prix,
                         raq_tamis = :tamis,
@@ -67,12 +68,81 @@ class Admin extends Model
             'id_categorie' => $_POST['id_categorie'],
             'art_nom' => $_POST['nom'],
             'resume' => $_POST['resume'],
+            'description' => $_POST['description'],
             'stock' => $_POST['stock'],
             'prix' => $_POST['prix'],
             'poids' => $_POST['poids'],
             'tamis' => $_POST['tamis'],
             'manche' => $_POST['manche'],
             'equilibre' => $_POST['equilibre'],
+            'id' => $donnees['id_articles']
+        ));
+    }
+
+    public function update_sacs($donnees)
+    {
+        if (@$_POST['id_marques'] == NULL) {
+            $_POST['id_marques'] = $donnees['id_marques'];
+        }
+        if (@$_POST['id_categorie'] == NULL) {
+            $_POST['id_categorie'] = $donnees['id_categorie'];
+        }
+        $req_update = $this->bdd->prepare('UPDATE articles SET
+                        art_nom = :art_nom,
+                        id_categorie= :id_categorie,
+                        id_marques= :id_marques,
+                        art_nom = :art_nom,
+                        art_courte_description = :resume,
+                        art_description = :description,
+                        stock = :stock,
+                        prix = :prix,
+                        sac_thermobag = :thermobag                                           
+                                                    
+                        WHERE id_articles = :id');
+        $req_update->execute(array(
+            'id_marques' => $_POST['id_marques'],
+            'art_nom' => $_POST['nom'],
+            'id_categorie' => $_POST['id_categorie'],
+            'art_nom' => $_POST['nom'],
+            'resume' => $_POST['resume'],
+            'description' => $_POST['description'],
+            'stock' => $_POST['stock'],
+            'prix' => $_POST['prix'],
+            'thermobag' => $_POST['thermobag'],
+            'id' => $donnees['id_articles']
+        ));
+    }
+
+    public function update_cordage($donnees)
+    {
+        if (@$_POST['id_marques'] == NULL) {
+            $_POST['id_marques'] = $donnees['id_marques'];
+        }
+        if (@$_POST['id_categorie'] == NULL) {
+            $_POST['id_categorie'] = $donnees['id_categorie'];
+        }
+        $req_update = $this->bdd->prepare('UPDATE articles SET
+                        art_nom = :art_nom,
+                        id_categorie= :id_categorie,
+                        id_marques= :id_marques,
+                        art_nom = :art_nom,
+                        art_courte_description = :resume,
+                        art_description = :description,
+                        stock = :stock,
+                        prix = :prix,
+                        cor_jauge = :jauge                                           
+                                                    
+                        WHERE id_articles = :id');
+        $req_update->execute(array(
+            'id_marques' => $_POST['id_marques'],
+            'art_nom' => $_POST['nom'],
+            'id_categorie' => $_POST['id_categorie'],
+            'art_nom' => $_POST['nom'],
+            'resume' => $_POST['resume'],
+            'description' => $_POST['description'],
+            'stock' => $_POST['stock'],
+            'prix' => $_POST['prix'],
+            'jauge' => $_POST['jauge'],
             'id' => $donnees['id_articles']
         ));
     }
