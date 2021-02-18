@@ -65,7 +65,7 @@ class Affichage_admin_update
     public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
     {
     ?>
-
+        <?php var_dump($_GET)?>
         <p><b>données actuelles :</b></p>
         <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
         <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
@@ -83,7 +83,7 @@ class Affichage_admin_update
 
 
 
-        <form action="admin_update_one_article.php" method="post">
+        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
 
             <div>
 
@@ -177,7 +177,7 @@ class Affichage_admin_update
 
         </form>
 
-<?php
+    <?php
 
     }
 
@@ -279,7 +279,7 @@ class Affichage_admin_update
 
         </form>
 
-<?php
+    <?php
 
     }
 
@@ -381,21 +381,121 @@ class Affichage_admin_update
 
         </form>
 
-<?php
+    <?php
 
     }
 
 
 
+    public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle,$req_conditionnement_balle)
+    {
+    ?>
+
+        <p><b>données actuelles :</b></p>
+        <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
+        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
+        <p>marque : <?= $donnees['marques_nom'] ?> </p>
+        <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
+        <p>description : <?= $donnees['art_description'] ?> </p>
+
+        <p>type de balle : <?= $donnees['balle_type'] ?> </p>
+        <p>type de conditionnement : <?= $donnees['balle_conditionnement'] ?> </p>
+        <p>stock : <?= $donnees['stock'] ?> </p>
+        <p>prix : <?= $donnees['prix'] ?> €</p>
+
+        <p><b>modifier l'article :</b></p>
 
 
 
+        <form action="admin_update_one_article.php" method="post">
+
+            <div>
+
+                <select name="id_categorie">
+                    <option disabled value="CATEGORIES" selected="selected">MODIFIER LA CATEGORIES</option>
+                    <?php foreach ($req_categorie as $value) {
+                        echo  "<option value=" . $value['id_categorie'] . ">" . $value['categorie_type'] . "</option> ";
+                    } ?>
+                </select>
+
+                <select name='id_marques'>
+                    <option disabled value="MARQUES" selected="selected">MODIFIER LA MARQUES</option>
+                    <?php foreach ($req_marques as $value) {
+                        echo  "<option value=" . $value['id_marques'] . ">" . $value['marques_nom'] . "</option> ";
+                    } ?>
+                </select>
+
+                <div>
+                    <label for="nom">modifier le nom de l'article : </label>
+                    <input type="text" name="nom" value="<?= $donnees['art_nom'] ?>">
+                </div>
+
+                <div>
+                    <label for="resume">modifier le résumé : </label>
+                    <textarea name="resume"><?= $donnees['art_courte_description'] ?></textarea>
+                </div>
+
+                <div>
+                    <label for="description">modifier la description : </label>
+                    <textarea name="description"><?= $donnees['art_description'] ?></textarea>
+                </div>
+
+                <select name="balle_type">
+                    <option disabled value="TYPE DE BALLE" selected="selected">MODIFIER LE TYPE</option>
+                    <?php foreach ($req_type_balle as $value) {
+                        echo  "<option value=" . $value['id_balle_type'] . ">" . $value['balle_type'] . "</option> ";
+                    } ?>
+                </select>
+
+                <select name="balle_type">
+                    <option disabled value="TYPE DE CONDITIONNEMENT" selected="selected">MODIFIER LE CONDITIONNEMENT</option>
+                    <?php foreach ($req_conditionnement_balle as $value) {
+                        echo  "<option value=" . $value['id_balle_conditionnement'] . ">" . $value['balle_conditionnement'] . "</option> ";
+                    } ?>
+                </select>
+
+                <div>
+                    <label for="prix">modifier le prix : </label>
+                    <input type="number" name="prix" value="<?= $donnees['prix'] ?>">
+                </div>
+
+                <div>
+                    <label for="stock">modifier le stock : </label>
+                    <input type="number" name="stock" value="<?= $donnees['stock'] ?>">
+                </div>
+
+                <div class="form-example">
+                    <input type="submit" value="modifier" name="submit">
+                </div>
+
+        </form>
+
+        <div style="display:flex">
+            <?php
+
+            $i = 0;
+            foreach ($req_img_article as $value) {
+            ?>
+                <div>
+
+                    <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
+
+                    <form action="admin_update_one_article.php" method="post">
+                        <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
+                </div>
+            <?php $i++;
+            }
+            ?>
+
+            <input type="submit" value="supprimer" style="height:20px" name="submit2">
+        </div>
 
 
+        </form>
 
+<?php
 
-
-
+    }
 }

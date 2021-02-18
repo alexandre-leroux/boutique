@@ -19,8 +19,21 @@ class Admin extends Model
     public  function select_one_articles_updates()
     {
 
-        // mettre dans "where" l'id de l'article obtenu en $_GET
-        $requete = $this->bdd->prepare('SELECT * FROM articles INNER JOIN marques ON articles.id_marques = marques.id_marques INNER JOIN categorie on articles.id_categorie = categorie.id_categorie  where id_articles = :id');
+        $requete = $this->bdd->prepare('SELECT * FROM articles  INNER JOIN marques ON articles.id_marques = marques.id_marques 
+                                                                INNER JOIN categorie on articles.id_categorie = categorie.id_categorie         
+                                                                WHERE id_articles = :id');
+        $requete->execute(array('id' => $_GET['id']));
+        return $requete->fetch();
+    }
+
+    public  function select_one_articles_updates_balle()
+    {
+
+        $requete = $this->bdd->prepare('SELECT * FROM articles  INNER JOIN marques ON articles.id_marques = marques.id_marques 
+                                                                INNER JOIN categorie on articles.id_categorie = categorie.id_categorie 
+                                                                INNER JOIN balle_type on articles.id_balle_type = balle_type.id_balle_type
+                                                                INNER JOIN balle_conditionnement on articles.id_balle_conditionnement = balle_conditionnement.id_balle_conditionnement
+                                                                WHERE id_articles = :id');
         $requete->execute(array('id' => $_GET['id']));
         return $requete->fetch();
     }
@@ -43,6 +56,7 @@ class Admin extends Model
                         stock = :stock,
                         prix = :prix,
                         raq_tamis = :tamis,
+                        raq_poids = :poids,
                         raq_taille_manche = :manche, 
                         raq_equilibre = :equilibre                                                  
                                                     
@@ -91,8 +105,8 @@ class Admin extends Model
 
     public function select_images($donnees)
     {
-        $req_img_raquettes = $this->bdd->query("select * FROM images_articles WHERE id_articles = {$donnees['id_articles']}");
-        return $req_img_raquettes->fetchall();
+        $req_img_article = $this->bdd->query("select * FROM images_articles WHERE id_articles = {$donnees['id_articles']}");
+        return $req_img_article->fetchall();
     }
 
 
