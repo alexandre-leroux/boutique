@@ -3,7 +3,7 @@
 class Affichage_admin_update
 {
 
-
+  
 
 
     public static function affiche_all_articles($tous_les_articles, $req_categorie, $req_marques)
@@ -62,28 +62,41 @@ class Affichage_admin_update
     }
 
 
-    public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
+    public static function donnees_generales_communes($donnees)
     {
     ?>
-      
         <p><b>données actuelles :</b></p>
         <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
         <p>marque : <?= $donnees['marques_nom'] ?> </p>
+        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
         <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
         <p>description : <?= $donnees['art_description'] ?> </p>
+        <p>stock : <?= $donnees['stock'] ?> </p>
+        <p>prix : <?= $donnees['prix'] ?> €</p>
+    <?php
+    }
+
+    public static function formulaire_general_commun()
+    {
+        ?>
+
+        <?php
+    }
+
+
+    public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
+    {  Affichage_admin_update::donnees_generales_communes($donnees);
+    ?>
+
         <p>poids : <?= $donnees['raq_poids'] ?> gr </p>
         <p>tamis : <?= $donnees['raq_tamis'] ?> cm2</p>
         <p>manche : <?= $donnees['raq_taille_manche'] ?> </p>
         <p>équilibre : <?= $donnees['raq_equilibre'] ?> nr</p>
-        <p>stock : <?= $donnees['stock'] ?> </p>
-        <p>prix : <?= $donnees['prix'] ?> €</p>
-
         <p><b>modifier l'article :</b></p>
 
 
 
-        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
             <div>
 
@@ -162,7 +175,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+                    <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
@@ -183,24 +196,16 @@ class Affichage_admin_update
 
 
     public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article)
-    {
+    {Affichage_admin_update::donnees_generales_communes($donnees);
     ?>
 
-        <p><b>données actuelles :</b></p>
-        <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
-        <p>marque : <?= $donnees['marques_nom'] ?> </p>
-        <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
-        <p>description : <?= $donnees['art_description'] ?> </p>
+      
         <p>thermobag : <?= $donnees['sac_thermobag'] ?> raquettes </p>
-        <p>stock : <?= $donnees['stock'] ?> </p>
-        <p>prix : <?= $donnees['prix'] ?> €</p>
-
         <p><b>modifier l'article :</b></p>
 
 
 
-        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
             <div>
 
@@ -264,7 +269,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+                    <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
@@ -285,24 +290,18 @@ class Affichage_admin_update
 
 
     public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article)
-    {
+    {Affichage_admin_update::donnees_generales_communes($donnees);
     ?>
 
-        <p><b>données actuelles :</b></p>
-        <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
-        <p>marque : <?= $donnees['marques_nom'] ?> </p>
-        <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
-        <p>description : <?= $donnees['art_description'] ?> </p>
+      
         <p>jauge : <?= $donnees['cor_jauge'] ?> mm </p>
-        <p>stock : <?= $donnees['stock'] ?> </p>
-        <p>prix : <?= $donnees['prix'] ?> €</p>
+
 
         <p><b>modifier l'article :</b></p>
 
 
 
-        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
             <div>
 
@@ -366,7 +365,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+                    <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
@@ -387,27 +386,18 @@ class Affichage_admin_update
 
 
 
-    public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle,$req_conditionnement_balle)
-    {
+    public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle)
+    {Affichage_admin_update::donnees_generales_communes($donnees);
     ?>
-
-        <p><b>données actuelles :</b></p>
-        <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
-        <p>marque : <?= $donnees['marques_nom'] ?> </p>
-        <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
-        <p>description : <?= $donnees['art_description'] ?> </p>
 
         <p>type de balle : <?= $donnees['balle_type'] ?> </p>
         <p>type de conditionnement : <?= $donnees['balle_conditionnement'] ?> </p>
-        <p>stock : <?= $donnees['stock'] ?> </p>
-        <p>prix : <?= $donnees['prix'] ?> €</p>
 
         <p><b>modifier l'article :</b></p>
 
 
 
-        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
             <div>
 
@@ -480,7 +470,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+                    <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
@@ -495,30 +485,28 @@ class Affichage_admin_update
 
         </form>
 
-<?php
+    <?php
 
     }
 
-    
+
+
+
+
     public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires)
     {
+        Affichage_admin_update::donnees_generales_communes($donnees);
     ?>
 
-        <p><b>données actuelles :</b></p>
-        <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-        <p>marque : <?= $donnees['marques_nom'] ?> </p>
-        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
+
         <p>sous catégorie : <?= $donnees['sous_cat_acc_type'] ?> </p>
-        <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
-        <p>description : <?= $donnees['art_description'] ?> </p>
-        <p>stock : <?= $donnees['stock'] ?> </p>
-        <p>prix : <?= $donnees['prix'] ?> €</p>
+
 
         <p><b>modifier l'article :</b></p>
 
 
 
-        <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
             <div>
 
@@ -542,7 +530,7 @@ class Affichage_admin_update
                         echo  "<option value=" . $value['id_sous_cat_accessoires'] . ">" . $value['sous_cat_acc_type'] . "</option> ";
                     }    ?>
                 </select>
-   
+
                 <div>
                     <label for="nom">modifier le nom de l'article : </label>
                     <input type="text" name="nom" value="<?= $donnees['art_nom'] ?>">
@@ -585,7 +573,7 @@ class Affichage_admin_update
 
                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                    <form action="admin_update_one_article.php?id=<?=$_GET['id']?>&idcat=<?=$_GET['idcat']?>&idsouscat=<?=$_GET['idsouscat']?>" method="post">
+                    <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                         <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
 
