@@ -28,7 +28,7 @@ class Form {
             <option disabled selected="selected">Marques</option>
             <?php
             foreach($result_mar as $value){
-                ?>sd
+                ?>
             <option value="<?= $value['id_marques']; ?>"><?= $value['marques_nom'] ; ?></option>
             <?php
             }
@@ -92,18 +92,18 @@ class Form {
             <input type="number" name="raq_taille_manche" id="taille_manche">
         </div>
 
-        <div>
+        <!-- <div>
+          
             <input type="number" name="type_accessoire">
             <input type="number" name="balle_type">
             <input type="number" name="balle_conditionnement">
-            <input type="number" name="choix_thermo" >
-            <input type="number" name="acc_grip_eppaisseur" >
-            <input type="text" name="acc_grip_couleur" >
+            <input type="number" name="choix_thermo">
+            <input type="number" name="acc_grip_eppaisseur">
+            <input type="text" name="acc_grip_couleur">
             <input type="number" name="cor_jauge">
-        </div>
+        </div> -->
 
-        
-
+    
         <input type="submit" value="Envoyer" name="valider">
 
         </form> 
