@@ -444,14 +444,14 @@ class Affichage_admin_update
                     <option disabled value="TYPE DE BALLE" selected="selected">MODIFIER LE TYPE</option>
                     <?php foreach ($req_type_balle as $value) {
                         echo  "<option value=" . $value['id_balle_type'] . ">" . $value['balle_type'] . "</option> ";
-                    } ?>
+                    }    ?>
                 </select>
 
-                <select name="balle_type">
+                <select name="balle_conditionnement">
                     <option disabled value="TYPE DE CONDITIONNEMENT" selected="selected">MODIFIER LE CONDITIONNEMENT</option>
                     <?php foreach ($req_conditionnement_balle as $value) {
                         echo  "<option value=" . $value['id_balle_conditionnement'] . ">" . $value['balle_conditionnement'] . "</option> ";
-                    } ?>
+                    }    ?>
                 </select>
 
                 <div>

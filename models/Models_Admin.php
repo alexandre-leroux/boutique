@@ -26,6 +26,8 @@ class Admin extends Model
         return $requete->fetch();
     }
 
+
+
     public  function select_one_articles_updates_balle()
     {
 
@@ -37,6 +39,8 @@ class Admin extends Model
         $requete->execute(array('id' => $_GET['id']));
         return $requete->fetch();
     }
+
+
 
 
     public function update_raquette($donnees)
@@ -147,6 +151,42 @@ class Admin extends Model
         ));
     }
 
+    public function update_balle($donnees)
+    {
+        if (@$_POST['id_marques'] == NULL) {
+            $_POST['id_marques'] = $donnees['id_marques'];
+        }
+        if (@$_POST['id_categorie'] == NULL) {
+            $_POST['id_categorie'] = $donnees['id_categorie'];
+        }
+        $req_update = $this->bdd->prepare('UPDATE articles SET
+                        art_nom = :art_nom,
+                        id_categorie= :id_categorie,
+                        id_marques= :id_marques,
+                        art_nom = :art_nom,
+                        art_courte_description = :resume,
+                        art_description = :description,
+                        stock = :stock,
+                        prix = :prix,
+                        id_balle_type = :id_balle_type,
+                        id_balle_conditionnement = :id_balle_conditionnement                      
+                                                    
+                        WHERE id_articles = :id');
+        $req_update->execute(array(
+            'id_marques' => $_POST['id_marques'],
+            'art_nom' => $_POST['nom'],
+            'id_categorie' => $_POST['id_categorie'],
+            'art_nom' => $_POST['nom'],
+            'resume' => $_POST['resume'],
+            'description' => $_POST['description'],
+            'stock' => $_POST['stock'],
+            'prix' => $_POST['prix'],
+            'id_balle_type' => $_POST['balle_type'],
+            'id_balle_conditionnement' => $_POST['balle_conditionnement'],
+            'id' => $donnees['id_articles']
+        ));
+    }
+    
 
 
     public function update_name_categorie()

@@ -60,10 +60,17 @@ if($_GET['idcat'] == 3){
 if($_GET['idcat'] == 4){
     $donnees = $admin->select_one_articles_updates_balle();
     Affichage_admin_update::affiche_details_et_form_update_balle($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle);
-    echo '<pre>';
-    print_r($donnees);
-    echo '/<pre>';
-    
+    if (@$_POST['submit'] )
+    {
+        echo '<pre>';
+        print_r($_POST);
+        echo '/<pre>';
+       $admin->update_balle($donnees);
+       
+       header('Location: messages_et_redirections/article_modifie.php');
+       exit();
+
+    }
 }
 
 
