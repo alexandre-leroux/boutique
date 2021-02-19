@@ -17,22 +17,22 @@ $result_sous_cat_accessoires = $admin->display("sous_cat_accessoires");
 // Choix de la la catégorie pour générer le bon form 
 $choix_cat = $form->selectTypeArticle();
 
-
 if(isset($_POST['valider_cat']))
 {
     if($_POST['choix_cat'] == "raquette")
     {
-        $form->generalForm();
+        
+        $form->generalForm($result_cat,$result_mar);
         $form->formRaquette();
     }
     elseif($_POST['choix_cat'] == "sacs")
     {
-        $form->generalForm();
+        $form->generalForm($result_cat,$result_mar);
         $form->formSac();
     }
     elseif($_POST['choix_cat'] == "cordage")
     {
-        $form->generalForm();
+        $form->generalForm($result_cat,$result_mar);
         $form->formCordage();
     }
     else{
@@ -44,9 +44,18 @@ if(isset($_POST['valider_cat']))
 
 if(isset($_POST['valider'])){
     
+    
+    $_POST['type_accessoire'] = NULL;
+    $_POST['balle_type'] = NULL;
+    $_POST['balle_conditionnement'] = NULL;
+    $_POST['choix_thermo'] = NULL;
+    $_POST['acc_grip_eppaisseur'] = NULL;
+    $_POST['acc_grip_couleur'] = NULL;
+    $_POST['cor_jauge'] = NULL;
+    var_dump($_POST);
 
     $admin->insert();
-
+    
     $result = $admin->getAllInfosArticle();
 
     if(isset($_FILES['image']) AND !empty($_FILES['image']['name'])){

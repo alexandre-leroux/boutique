@@ -13,17 +13,17 @@ class Admin extends Models {
 
     public function insert(): void  {
         
-        $id_sous_cat_acc = htmlspecialchars($_POST['type_accessoire']); 
-        $id_bal_conditionnement = htmlspecialchars($_POST['balle_conditionnement']) ;
+        $categories = htmlspecialchars($_POST['cat']);
+        $marques = htmlspecialchars($_POST['marques']);
+        $id_sous_cat_acc = $_POST['type_accessoire']; 
         $id_bal_type = htmlspecialchars($_POST['balle_type']) ; 
+        $id_bal_conditionnement = htmlspecialchars($_POST['balle_conditionnement']) ;
         $art_nom = htmlspecialchars($_POST['art_nom']); 
         $art_courte_description = htmlspecialchars($_POST['art_courte_description']); 
         $art_description = htmlspecialchars($_POST['art_description']); 
         $stock = htmlspecialchars($_POST['stock']); 
         $prix = htmlspecialchars($_POST['prix']);
         $art_date = date("Y-m-d H:i:s"); 
-        $categories = htmlspecialchars($_POST['cat']);
-        $marques = htmlspecialchars($_POST['marques']);
         $raq_poids = $_POST['raq_poids'];
         $raq_tamis = $_POST['raq_tamis'];
         $raq_taille_manche = $_POST['raq_taille_manche'];

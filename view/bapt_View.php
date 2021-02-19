@@ -1,11 +1,13 @@
 <?php
 
+
 class Form {
 
-    public function generalForm(){
+    public function generalForm($result_cat,$result_mar){
+        
         ?>
         <form action="index.php" method="POST" enctype="multipart/form-data">
-        
+    
         <label for="name">Nom du produit :</label>
         <input type="text" id="name" name="art_nom" required>
 
@@ -26,7 +28,7 @@ class Form {
             <option disabled selected="selected">Marques</option>
             <?php
             foreach($result_mar as $value){
-                ?>
+                ?>sd
             <option value="<?= $value['id_marques']; ?>"><?= $value['marques_nom'] ; ?></option>
             <?php
             }
@@ -90,12 +92,23 @@ class Form {
             <input type="number" name="raq_taille_manche" id="taille_manche">
         </div>
 
+        <div>
+            <input type="number" name="type_accessoire">
+            <input type="number" name="balle_type">
+            <input type="number" name="balle_conditionnement">
+            <input type="number" name="choix_thermo" >
+            <input type="number" name="acc_grip_eppaisseur" >
+            <input type="text" name="acc_grip_couleur" >
+            <input type="number" name="cor_jauge">
+        </div>
+
+        
+
         <input type="submit" value="Envoyer" name="valider">
 
         </form> 
-    
-        
         <?php
+ 
     }
 
     public function formSac(){
