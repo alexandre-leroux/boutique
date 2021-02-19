@@ -40,6 +40,17 @@ class Admin extends Model
         return $requete->fetch();
     }
 
+    public  function select_one_articles_update_accessoire()
+    {
+
+        $requete = $this->bdd->prepare('SELECT * FROM articles  INNER JOIN marques ON articles.id_marques = marques.id_marques 
+                                                                INNER JOIN categorie on articles.id_categorie = categorie.id_categorie    
+                                                                INNER JOIN sous_cat_accessoires on articles.id_sous_cat_acc = sous_cat_accessoires.id_sous_cat_accessoires        
+                                                                WHERE id_articles = :id');
+        $requete->execute(array('id' => $_GET['id']));
+        return $requete->fetch();
+    }
+
 
 
 
@@ -159,30 +170,71 @@ class Admin extends Model
         if (@$_POST['id_categorie'] == NULL) {
             $_POST['id_categorie'] = $donnees['id_categorie'];
         }
+        if (@$_POST['balle_type'] == NULL) {
+            $_POST['balle_type'] = $donnees['id_balle_type'];
+        }
+        if (@$_POST['balle_conditionnement'] == NULL) {
+            $_POST['balle_conditionnement'] = $donnees['id_balle_conditionnement'];
+        }
         $req_update = $this->bdd->prepare('UPDATE articles SET
                         art_nom = :art_nom,
                         id_categorie= :id_categorie,
                         id_marques= :id_marques,
-                        art_nom = :art_nom,
                         art_courte_description = :resume,
                         art_description = :description,
                         stock = :stock,
                         prix = :prix,
                         id_balle_type = :id_balle_type,
-                        id_balle_conditionnement = :id_balle_conditionnement                      
-                                                    
+                        id_balle_conditionnement = :id_balle_conditionnement                                                                      
                         WHERE id_articles = :id');
         $req_update->execute(array(
-            'id_marques' => $_POST['id_marques'],
             'art_nom' => $_POST['nom'],
             'id_categorie' => $_POST['id_categorie'],
-            'art_nom' => $_POST['nom'],
+            'id_marques' => $_POST['id_marques'],     
             'resume' => $_POST['resume'],
             'description' => $_POST['description'],
             'stock' => $_POST['stock'],
             'prix' => $_POST['prix'],
             'id_balle_type' => $_POST['balle_type'],
             'id_balle_conditionnement' => $_POST['balle_conditionnement'],
+            'id' => $donnees['id_articles']
+        ));
+    }
+
+
+    public function update_accessoire($donnees)
+    {
+        if (@$_POST['id_marques'] == NULL) {
+            $_POST['id_marques'] = $donnees['id_marques'];
+        }
+        if (@$_POST['id_categorie'] == NULL) {
+            $_POST['id_categorie'] = $donnees['id_categorie'];
+        }
+        if (@$_POST['sous_cat_acc'] == NULL) {
+            $_POST['sous_cat_acc'] = $donnees['id_sous_cat_accessoires'];
+        }
+
+        $req_update = $this->bdd->prepare('UPDATE articles SET
+                        art_nom = :art_nom,
+                        id_categorie= :id_categorie,
+                        id_marques= :id_marques,
+                        art_courte_description = :resume,
+                        art_description = :description,
+                        stock = :stock,
+                        prix = :prix,
+                        id_sous_cat_acc = :id_sous_cat_acc
+                                                                    
+                        WHERE id_articles = :id');
+        $req_update->execute(array(
+            'art_nom' => $_POST['nom'],
+            'id_categorie' => $_POST['id_categorie'],
+            'id_marques' => $_POST['id_marques'],     
+            'resume' => $_POST['resume'],
+            'description' => $_POST['description'],
+            'stock' => $_POST['stock'],
+            'prix' => $_POST['prix'],
+            'id_sous_cat_acc' => $_POST['sous_cat_acc'],
+
             'id' => $donnees['id_articles']
         ));
     }
