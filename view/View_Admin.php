@@ -1,6 +1,6 @@
 <?php
 
-class Affichage_admin_update
+class View_Admin_Update
 {
 
 
@@ -189,7 +189,7 @@ class Affichage_admin_update
 
     public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
         {
-            Affichage_admin_update::donnees_generales_communes($donnees);
+            View_Admin_Update::donnees_generales_communes($donnees);
         ?>
 
             <p>poids : <?= $donnees['raq_poids'] ?> gr </p>
@@ -200,7 +200,7 @@ class Affichage_admin_update
 
 
             <?php
-                Affichage_admin_update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
+                View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
             ?>
             <div>
                 <label for="poids">modifier le poids : </label>
@@ -229,7 +229,7 @@ class Affichage_admin_update
             </form>
 
         <?php
-                Affichage_admin_update::affichage_modif_photo($req_img_article);
+                View_Admin_Update::affichage_modif_photo($req_img_article);
         }
 
 
@@ -237,14 +237,14 @@ class Affichage_admin_update
 
     public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article)
         {
-                Affichage_admin_update::donnees_generales_communes($donnees);
+                View_Admin_Update::donnees_generales_communes($donnees);
             ?>
 
                 <p>thermobag : <?= $donnees['sac_thermobag'] ?> raquettes </p>
                 <p><b>modifier l'article :</b></p>
 
             <?php
-                Affichage_admin_update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
+                View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
             ?>
 
                 <div>
@@ -258,7 +258,7 @@ class Affichage_admin_update
 
                 </form>
             <?php
-                Affichage_admin_update::affichage_modif_photo($req_img_article);
+                View_Admin_Update::affichage_modif_photo($req_img_article);
         }
 
 
@@ -267,14 +267,14 @@ class Affichage_admin_update
 
     public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article)
         {
-                Affichage_admin_update::donnees_generales_communes($donnees);
+                View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
 
                     <p>jauge : <?= $donnees['cor_jauge'] ?> mm </p>
                     <p><b>modifier l'article :</b></p>
 
                 <?php
-                    Affichage_admin_update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
+                    View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
                 ?>
 
                     <div>
@@ -291,7 +291,7 @@ class Affichage_admin_update
                     </form>
 
                 <?php
-                    Affichage_admin_update::affichage_modif_photo($req_img_article);
+                    View_Admin_Update::affichage_modif_photo($req_img_article);
         }
 
 
@@ -299,7 +299,7 @@ class Affichage_admin_update
 
     public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle)
         {
-                Affichage_admin_update::donnees_generales_communes($donnees);
+                View_Admin_Update::donnees_generales_communes($donnees);
             ?>
 
                 <p>type de balle : <?= $donnees['balle_type'] ?> </p>
@@ -307,7 +307,7 @@ class Affichage_admin_update
                 <p><b>modifier l'article :</b></p>
 
             <?php
-                Affichage_admin_update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
+                View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
             ?>
 
                 <select name="balle_type">
@@ -331,7 +331,7 @@ class Affichage_admin_update
                 </form>
 
             <?php
-                Affichage_admin_update::affichage_modif_photo($req_img_article);
+                View_Admin_Update::affichage_modif_photo($req_img_article);
         }
 
 
@@ -340,14 +340,14 @@ class Affichage_admin_update
 
     public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires)
         {
-                Affichage_admin_update::donnees_generales_communes($donnees);
+                View_Admin_Update::donnees_generales_communes($donnees);
             ?>
 
                 <p>sous catégorie : <?= $donnees['sous_cat_acc_type'] ?> </p>
                 <p><b>modifier l'article :</b></p>
 
                 <?php
-                        Affichage_admin_update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
+                        View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
                     ?>
 
                         <select name="sous_cat_acc">
@@ -364,7 +364,7 @@ class Affichage_admin_update
                 </form>
 
             <?php
-            Affichage_admin_update::affichage_modif_photo($req_img_article);
+            View_Admin_Update::affichage_modif_photo($req_img_article);
         }
 
 
