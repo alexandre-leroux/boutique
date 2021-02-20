@@ -10,18 +10,29 @@ $admin = new Admin();
 $req_categorie = $admin->SelectAll('categorie');
 
 $req_marques = $admin->SelectAll('marques');
+$req_sous_categorie_acc = $admin->SelectAll('sous_cat_accessoires');
 
 $tous_les_articles = $admin->select_all_articles_updates();
 
 
-Affichage_admin_update::affiche_all_articles($tous_les_articles, $req_categorie, $req_marques);
+Affichage_admin_update::affiche_all_articles($tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc);
 
 
 
 if (@$_POST['submit_cat']) {
     $admin->update_name_categorie();
+    header('Location: messages_et_redirections/article_modifie.php');
+    exit();
 }
 
 if (@$_POST['submit_marque']) {
     $admin->update_name_marque();
+    header('Location: messages_et_redirections/article_modifie.php');
+    exit();
+}
+
+if (@$_POST['submit_sous_cat_acc']) {
+    $admin->update_name_sous_act_acc();
+    header('Location: messages_et_redirections/article_modifie.php');
+    exit();
 }

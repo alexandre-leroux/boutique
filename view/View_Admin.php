@@ -6,7 +6,7 @@ class Affichage_admin_update
 
 
 
-    public static function affiche_all_articles($tous_les_articles, $req_categorie, $req_marques)
+    public static function affiche_all_articles($tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc)
     {
 ?>
         <!-- formulaire modif catégorie, marques...Etc -->
@@ -33,6 +33,20 @@ class Affichage_admin_update
             <input type="text" name="new_nom_marque">
             <input type="submit" value="modifier" name="submit_marque">
         </form>
+
+        <form action="admin_update_article.php" method="post">
+            <select name='id_sous_cat_accessoires'>
+                <option disabled value="sous_cat" selected="selected">SOUS CATEGORIE</option>
+                <?php foreach ($req_sous_categorie_acc as $value) {
+                    echo  "<option value=" . $value['id_sous_cat_accessoires'] . ">" . $value['sous_cat_acc_type'] . "</option> ";
+                } ?>
+            </select>
+            <label for="nom">saisir le nouveau nom : </label>
+            <input type="text" name="new_nom_sous_cat_acc">
+            <input type="submit" value="modifier" name="submit_sous_cat_acc">
+        </form>
+
+<?php echo'<pre>';var_dump($req_sous_categorie_acc);echo'</pre>';?>
 
         <div style="display:flex">
 

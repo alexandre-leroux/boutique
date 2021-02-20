@@ -264,6 +264,17 @@ class Admin extends Model
             'id' => $_POST['id_marques']
         ));
     }
+    public function update_name_sous_act_acc()
+    {
+
+        $req_update = $this->bdd->prepare('UPDATE sous_cat_accessoires SET
+                        sous_cat_acc_type = :sous_cat_acc_type      
+                        WHERE 	id_sous_cat_accessoires = :id');
+        $req_update->execute(array(
+            'sous_cat_acc_type' => $_POST['new_nom_sous_cat_acc'],
+            'id' => $_POST['id_sous_cat_accessoires']
+        ));
+    }
 
     public function select_images($donnees)
     {
