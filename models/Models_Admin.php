@@ -289,6 +289,18 @@ class Admin extends Model
         ));
     }
 
+    public function update_name_balle_conditionnement()
+    {
+
+        $req_update = $this->bdd->prepare('UPDATE balle_conditionnement SET
+                        	balle_conditionnement = :balle_conditionnement      
+                        WHERE id_balle_conditionnement = :id');
+        $req_update->execute(array(
+            'balle_conditionnement' => $_POST['balle_conditionnement'],
+            'id' => $_POST['id_balle_conditionnement']
+        ));
+    }
+
 
     public function select_images($donnees)
     {

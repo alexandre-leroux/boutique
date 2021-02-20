@@ -6,7 +6,7 @@ class Affichage_admin_update
 
 
 
-    public static function affiche_all_articles($tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc,$req_type_balle)
+    public static function affiche_all_articles($tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc,$req_type_balle,$req_balle_conditionnement)
     {
 ?>
         <!-- formulaire modif catégorie, marques...Etc -->
@@ -59,7 +59,19 @@ class Affichage_admin_update
             <input type="submit" value="modifier" name="submit_balle_type">
         </form>
 
-<?php echo'<pre>';var_dump($req_sous_categorie_acc);echo'</pre>';?>
+        <form action="admin_update_article.php" method="post">
+            <select name='id_balle_conditionnement'>
+                <option disabled value="balle_conditionnement" selected="selected">BALLE CONDITIONNEMENT</option>
+                <?php foreach ($req_balle_conditionnement as $value) {
+                    echo  "<option value=" . $value['id_balle_conditionnement'] . ">" . $value['balle_conditionnement'] . "</option> ";
+                } ?>
+            </select>
+            <label for="nom">saisir le nouveau nom : </label>
+            <input type="text" name="balle_conditionnement">
+            <input type="submit" value="modifier" name="submit_balle_conditionnement">
+        </form>
+
+
 
         <div style="display:flex">
 
