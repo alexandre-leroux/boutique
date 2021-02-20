@@ -276,6 +276,20 @@ class Admin extends Model
         ));
     }
 
+
+    public function update_name_type_balle()
+    {
+
+        $req_update = $this->bdd->prepare('UPDATE balle_type SET
+                        	balle_type = :balle_type      
+                        WHERE 	id_balle_type = :id');
+        $req_update->execute(array(
+            'balle_type' => $_POST['balle_type'],
+            'id' => $_POST['id_balle_type']
+        ));
+    }
+
+
     public function select_images($donnees)
     {
         $req_img_article = $this->bdd->query("select * FROM images_articles WHERE id_articles = {$donnees['id_articles']}");

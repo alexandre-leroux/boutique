@@ -11,11 +11,12 @@ $req_categorie = $admin->SelectAll('categorie');
 
 $req_marques = $admin->SelectAll('marques');
 $req_sous_categorie_acc = $admin->SelectAll('sous_cat_accessoires');
+$req_type_balle = $admin->SelectAll('balle_type');
 
 $tous_les_articles = $admin->select_all_articles_updates();
 
 
-Affichage_admin_update::affiche_all_articles($tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc);
+Affichage_admin_update::affiche_all_articles($tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc,$req_type_balle);
 
 
 
@@ -33,6 +34,12 @@ if (@$_POST['submit_marque']) {
 
 if (@$_POST['submit_sous_cat_acc']) {
     $admin->update_name_sous_act_acc();
+    header('Location: messages_et_redirections/article_modifie.php');
+    exit();
+}
+
+if (@$_POST['submit_balle_type']) {
+    $admin->update_name_type_balle();
     header('Location: messages_et_redirections/article_modifie.php');
     exit();
 }
