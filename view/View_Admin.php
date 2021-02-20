@@ -63,22 +63,22 @@ class Affichage_admin_update
 
 
     public static function donnees_generales_communes($donnees)
-    {
-    ?>
-        <p><b>données actuelles :</b></p>
-        <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-        <p>marque : <?= $donnees['marques_nom'] ?> </p>
-        <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
-        <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
-        <p>description : <?= $donnees['art_description'] ?> </p>
-        <p>stock : <?= $donnees['stock'] ?> </p>
-        <p>prix : <?= $donnees['prix'] ?> €</p>
-    <?php
-    }
+        {
+            ?>
+                <p><b>données actuelles :</b></p>
+                <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
+                <p>marque : <?= $donnees['marques_nom'] ?> </p>
+                <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
+                <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
+                <p>description : <?= $donnees['art_description'] ?> </p>
+                <p>stock : <?= $donnees['stock'] ?> </p>
+                <p>prix : <?= $donnees['prix'] ?> €</p>
+            <?php
+        }
 
     public static function formulaire_general_commun($donnees, $req_categorie, $req_marques)
-    {
-    ?>
+        {
+            ?>
         <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
             <div>
@@ -123,7 +123,8 @@ class Affichage_admin_update
             <?php
         }
 
-        public static function affichage_modif_photo($req_img_article)
+
+    public static function affichage_modif_photo($req_img_article)
         {
             ?>
                 <div style="display:flex">
@@ -151,10 +152,10 @@ class Affichage_admin_update
 
         </form>
 
-    <?php
+        <?php
         }
 
-        public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
+    public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
         {
             Affichage_admin_update::donnees_generales_communes($donnees);
         ?>
@@ -202,7 +203,7 @@ class Affichage_admin_update
 
 
 
-        public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article)
+    public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article)
         {
                 Affichage_admin_update::donnees_generales_communes($donnees);
             ?>
@@ -232,7 +233,7 @@ class Affichage_admin_update
 
 
 
-        public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article)
+    public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article)
         {
                 Affichage_admin_update::donnees_generales_communes($donnees);
                 ?>
@@ -264,7 +265,7 @@ class Affichage_admin_update
 
 
 
-        public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle)
+    public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle)
         {
                 Affichage_admin_update::donnees_generales_communes($donnees);
             ?>
@@ -305,7 +306,7 @@ class Affichage_admin_update
 
 
 
-        public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires)
+    public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires)
         {
                 Affichage_admin_update::donnees_generales_communes($donnees);
             ?>
@@ -333,4 +334,8 @@ class Affichage_admin_update
             <?php
             Affichage_admin_update::affichage_modif_photo($req_img_article);
         }
+
+
+
+        
     }
