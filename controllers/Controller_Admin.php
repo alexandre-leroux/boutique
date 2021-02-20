@@ -146,4 +146,6 @@ public static function update_un_article($donnees,$req_categorie,$req_marques,$r
             }
     }
 
+
+
 }
