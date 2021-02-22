@@ -38,12 +38,22 @@
             $form->generalForm($result_cat,$result_mar);
             $form->formCordage();
         }
+        elseif($_POST['choix_cat'] == "balles")
+        {
+            $_SESSION['cat'] = $_POST['choix_cat'];
+            $form->generalForm($result_cat,$result_mar);
+            $form->formBalle($result_balle_conditionnement,$result_balle_type);
+        }
+        elseif($_POST['choix_cat'] == "accessoires")
+        {
+            $_SESSION['cat'] = $_POST['choix_cat'];
+            $form->generalForm($result_cat,$result_mar);
+            $form->formAccessoires($result_sous_cat_accessoires);
+        }
         else{
             echo 'erreur' ;
         }
     }
-
-    var_dump($_SESSION['cat']);
 
     if(isset($_POST['valider']) && $_SESSION['cat'] == "raquette")
     {
@@ -64,10 +74,28 @@
         echo 'ajout' ;
         session_unset();
     }
+    elseif(isset($_POST['valider']) &&  $_SESSION['cat'] == "balles")
+    {
+        $admin->insert(NULL,$_POST['balle_type'],$_POST['balle_conditionnement'],NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+        echo 'ajout' ;
+        session_unset();
+    }
+    elseif(isset($_POST['valider']) && $_SESSION['cat'] == "accessoires")
+    {
+        if($_POST['id_sous_cat_acc'] == 1)
+        {
+            $admin->insert(1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$_POST['grip_eppaisseur'],$_POST['grip_couleur']);
+            echo 'ajout' ;
+            session_unset();
+        }
+        else{
+            $admin->insert(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+            echo 'ajout' ;
+            session_unset();
+        }
+    }
     
 
-
-    
     $result = $admin->getAllInfosArticle();
     //var_dump($result);
 

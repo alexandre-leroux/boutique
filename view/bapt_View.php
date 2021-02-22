@@ -57,7 +57,7 @@ class Form {
         </br>
 
         <label for="prix">Prix :</label>
-        <input type="number" id="prix" name="prix" required>
+        <input type="number" id="prix" name="prix" step="0.01" required>
 
         </br>
 
@@ -68,8 +68,6 @@ class Form {
     }
 
     public function formRaquette(){
-
-        //generalForm();
 
         ?>
         <div>
@@ -91,18 +89,6 @@ class Form {
             <label for="taille_manche"> Taille manche : </label>
             <input type="number" name="raq_taille_manche" id="taille_manche">
         </div>
-
-        <!-- <div>
-          
-            <input type="number" name="type_accessoire">
-            <input type="number" name="balle_type">
-            <input type="number" name="balle_conditionnement">
-            <input type="number" name="choix_thermo">
-            <input type="number" name="acc_grip_eppaisseur">
-            <input type="text" name="acc_grip_couleur">
-            <input type="number" name="cor_jauge">
-        </div> -->
-
     
         <input type="submit" value="Envoyer" name="valider">
 
@@ -113,30 +99,29 @@ class Form {
 
     public function formSac(){
 
-        //generalForm();
         ?>
         <div>
-            <input type="radio" id="choix_3" name="choix_thermo" value="choix_3" checked>             
+            <input type="radio" id="choix_3" name="choix_thermo" value="3" checked>             
             <label for="choix_3">3</label>
         </div>
     
         <div>
-            <input type="radio" id="choix_6" name="choix_thermo" value="choix_6" checked>             
+            <input type="radio" id="choix_6" name="choix_thermo" value="6" checked>             
             <label for="choix_3">6</label>
         </div>
     
         <div>
-            <input type="radio" id="choix_9" name="choix_thermo" value="choix_9" checked>             
+            <input type="radio" id="choix_9" name="choix_thermo" value="9" checked>             
             <label for="choix_9">9</label>
         </div>
     
         <div>
-            <input type="radio" id="choix_12" name="choix_thermo" value="choix_12" checked>             
+            <input type="radio" id="choix_12" name="choix_thermo" value="12" checked>             
             <label for="choix_12">12</label>
         </div>
     
         <div>
-            <input type="radio" id="choix_15" name="choix_thermo" value="choix_15" checked>             
+            <input type="radio" id="choix_15" name="choix_thermo" value="15" checked>             
             <label for="choix_15">15</label>
         </div>
         <input type="submit" value="Envoyer" name="valider">
@@ -148,19 +133,78 @@ class Form {
     }
 
     public function formCordage(){
-
-        //generalForm();
-        
+      
         ?>
         
         <label for="jauge"> Jauge : </label>
-        <input type="number" name="cor_jauge" id="jauge">
+        <input type="number" name="cor_jauge" id="jauge" step="0.01">
         <input type="submit" value="Envoyer" name="valider">
 
         </form>
         
         <?php
         
+    }
+
+    public function formBalle($result_balle_conditionnement,$result_balle_type){
+        ?>
+        <label for="conditionnement"> Conditionnement : </label>
+        <select name="balle_conditionnement" id="conditionnement">
+            <option value="" disabled selected="selected" >Conditionnement</option>
+            <?php
+                foreach($result_balle_conditionnement as $value){
+                    ?>
+            <option value="<?= $value['id_balle_conditionnement']; ?>"><?= $value['balle_conditionnement'] ; ?></option>
+            <?php
+                }
+                ?>
+        </select>
+
+        <label for="type"> Type : </label>
+        <select name="balle_type" id="type">
+            <option value="" disabled selected="selected" >Type</option>
+            <?php
+                foreach($result_balle_type as $value){
+                    ?>
+            <option value="<?= $value['id_balle_type']; ?>"><?= $value['balle_type'] ; ?></option>
+            <?php
+                }
+                ?>
+        </select>
+        <input type="submit" value="Envoyer" name="valider">
+        </form>
+        <?php        
+    }
+
+    public function formAccessoires($result_sous_cat_accessoires){
+        ?>
+
+        <label for="accessoires"> Accessoires : </label>
+        <select name="id_sous_cat_acc" id="accessoires">
+            <option value="" disabled selected="selected">Accessoires</option>
+            <?php
+                foreach($result_sous_cat_accessoires as $value){
+                    ?>
+            <option value="<?= $value['id_sous_cat_accessoires']; ?>"><?= $value['sous_cat_acc_type'] ; ?></option>
+            <?php
+                }
+                ?>
+        </select>
+
+        <div class="visibility_grip">
+            <label for="grip_eppaisseur"> Epaisseur grip : </label>
+            <input type="number" id="grip_eppaisseur" name="grip_eppaisseur" step="0.01">
+        </div>
+
+        <div class="visibility_grip">
+            <label for="grip_couleur"> Couleur grip : </label>
+            <input type="text" id="grip_couleur" name="grip_couleur">
+        </div>
+
+        <input type="submit" value="Envoyer" name="valider">
+        </form>
+        <?php
+
     }
 
     public function selectTypeArticle(){
@@ -200,4 +244,5 @@ class Form {
 
         <?php
     }
+
 }
