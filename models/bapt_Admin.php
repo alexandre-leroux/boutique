@@ -2,9 +2,10 @@
 
 require_once("bapt_Model.php") ;
 
+
 class Admin extends Models {
 
-    public function display(string $table){
+    public function display(string $table): array{
         $requete = $this->bdd->prepare("SELECT * FROM {$table}") ;
         $requete->execute();
     

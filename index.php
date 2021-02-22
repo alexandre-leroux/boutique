@@ -4,6 +4,7 @@
     //include("fonctions.php"); 
     require_once("models/bapt_Admin.php"); 
     require_once("view/bapt_View.php");
+    require("controllers/bapt_Controller.php");
 
     $admin = new Admin(); 
     $form = new Form();
@@ -99,38 +100,12 @@
     $result = $admin->getAllInfosArticle();
     //var_dump($result);
 
-    if(isset($_FILES['image']) AND !empty($_FILES['image']['name'])){
-        var_dump($_FILES['image']);
-        for($i = 0 ; isset($_FILES['image']['size'][$i]) ; $i++)
-        {   
-            $tailleMax = 2097152; 
-            $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
-            if($_FILES['image']['size'][$i] <= $tailleMax)
-            {
-                 $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'][$i], '.'),1));
-                 if(in_array($extensionUpload, $extensionsValides))
-                 {
-                     $chemin = "medias/img_articles/".$result['id_articles']."-".$i.".".$extensionUpload;
-                     $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][$i], $chemin ); 
-                     if($mouvement)
-                     {
-                         var_dump($_FILES['image']['name'][$i]); 
-                         $admin->insertImage($extensionUpload, $i);
-                     }
-                     else{
-                         echo "Erreur durant l'importation du fichier"; 
-                     }
-                 }
-                 else{
-                     echo "Votre image doit etre au format jpg, jpeg, gif ou png" ;
-                 }
-            }
-            else{
-                echo "L'image ne dois pas dépasser 2mo" ; 
-            }
+    $controller = new Controller(); 
 
-        }
-    }
+    // Check du format des images + insert dans la bdd 
+
+    $controller->checkImage($result);
+
     
 
 ?>
