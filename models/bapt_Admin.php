@@ -16,7 +16,7 @@ class Admin extends Models {
         $requete = $this->bdd->prepare("INSERT INTO marques (marques_nom)
                                             VALUES (:marques_nom)"
         );
-        $requete->bindParam(':marques_nom', $marque)
+        $requete->bindParam(':marques_nom', $marque);
         $requete->execute();
     }
 
