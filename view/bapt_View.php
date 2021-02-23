@@ -6,7 +6,7 @@ class Form {
     public function generalForm($result_cat,$result_mar){
         
         ?>
-        <form action="index.php" method="POST" enctype="multipart/form-data">
+        <form action="admin_insert.php" method="POST" enctype="multipart/form-data">
     
         <label for="name">Nom du produit :</label>
         <input type="text" id="name" name="art_nom" required>
@@ -212,7 +212,7 @@ class Form {
 
         <h2> Veuillez choisir quel type d'article a ajouter : </h2>
 
-        <form action="index.php" method="post">
+        <form action="admin_insert.php" method="post">
             <div>
                 <input type="radio" id="raquette" name="choix_cat" value="raquette" checked>             
                 <label for="raquette"> Raquette</label>

@@ -6,10 +6,18 @@ require_once("bapt_Model.php") ;
 class Admin extends Models {
 
     public function display(string $table): array{
-        $requete = $this->bdd->prepare("SELECT * FROM {$table}") ;
+        $requete = $this->bdd->prepare("SELECT * FROM {$table} ") ;
         $requete->execute();
     
         return $requete->fetchAll(); 
+    }
+
+    public function addMarque($marque){
+        $requete = $this->bdd->prepare("INSERT INTO marques (marques_nom)
+                                            VALUES (:marques_nom)"
+        );
+        $requete->bindParam(':marques_nom', $marque)
+        $requete->execute();
     }
 
     public function insert($p_sous_cat, $p_balle_type, $p_balle_condi, $p_poids, $p_tamis, $p_manche, $p_equilibre, $p_jauge , $p_sac, $p_ep, $p_cou): void  {

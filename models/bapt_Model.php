@@ -1,6 +1,6 @@
 <?php
 
-require("./fonctions.php"); 
+require("../fonctions.php"); 
 
 class Models {
     protected $bdd ;

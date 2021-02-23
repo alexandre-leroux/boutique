@@ -1,7 +1,7 @@
 <?php
 
-require_once("models/bapt_Model.php") ;
-require_once("models/bapt_Admin.php");
+require_once("../models/bapt_Model.php") ;
+require_once("../models/bapt_Admin.php");
 
 class Controller extends Models {
 
@@ -18,7 +18,7 @@ class Controller extends Models {
                      $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'][$i], '.'),1));
                      if(in_array($extensionUpload, $extensionsValides))
                      {
-                         $chemin = "medias/img_articles/".$result['id_articles']."-".$i.".".$extensionUpload;
+                         $chemin = "../medias/img_articles/".$result['id_articles']."-".$i.".".$extensionUpload;
                          $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][$i], $chemin ); 
                          if($mouvement)
                          {
