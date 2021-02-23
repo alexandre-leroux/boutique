@@ -3,7 +3,7 @@
     session_start();
     //include("fonctions.php"); 
     require_once("../models/bapt_Admin.php"); 
-    require_once("../view/bapt_View.php");
+    require_once("../view/bapt_Form.php");
     require("../controllers/bapt_Controller.php");
     
     $admin = new Admin(); // Model

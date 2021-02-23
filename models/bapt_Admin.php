@@ -5,13 +5,6 @@ require_once("bapt_Model.php") ;
 
 class Admin extends Models {
 
-    public function display(string $table): array{
-        $requete = $this->bdd->prepare("SELECT * FROM {$table} ") ;
-        $requete->execute();
-    
-        return $requete->fetchAll(); 
-    }
-
     public function addMarque($marque){
         $requete = $this->bdd->prepare("INSERT INTO marques (marques_nom)
                                             VALUES (:marques_nom)"
@@ -95,5 +88,6 @@ class Admin extends Models {
         $requete->execute();
     
     }
+
 }
 

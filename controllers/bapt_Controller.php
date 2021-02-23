@@ -3,7 +3,7 @@
 require_once("../models/bapt_Model.php") ;
 require_once("../models/bapt_Admin.php");
 
-class Controller extends Models {
+class Controller {
 
     public function checkImage($result,$admin){
         

@@ -20,9 +20,9 @@ class Article extends Models {
         return $requete->fetchAll();
     }
 
-    public function displayAllArticles(?string $order = "")
+    public function findAllArticles(?string $order = "") : array
     {
-        $sql = "SELECT articles.id_articles,art_nom,art_courte_description,prix,chemin 
+        $sql = "SELECT articles.id_articles,art_nom,art_courte_description,prix,chemin,id_marques 
                     FROM articles 
                         INNER JOIN images_articles
                              ON articles.id_articles = images_articles.id_articles
@@ -30,7 +30,7 @@ class Article extends Models {
                                     AND images_articles.chemin REGEXP '([0])' ";
 
         if($order){
-            $sql .= " ORDER BY " .$order;
+            $sql .= $order;
         }
 
         $requete = $this->bdd->prepare($sql) ; 
@@ -38,6 +38,7 @@ class Article extends Models {
 
         return $requete->fetchAll();
     }
+
 
 }
 

@@ -8,4 +8,11 @@ class Models {
     public function __construct(){
         $this->bdd = getPdo() ; 
     }
+
+    public function display(string $table): array{
+        $requete = $this->bdd->prepare("SELECT * FROM {$table} ") ;
+        $requete->execute();
+    
+        return $requete->fetchAll(); 
+    }
 }
