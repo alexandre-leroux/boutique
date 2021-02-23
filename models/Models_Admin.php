@@ -190,7 +190,7 @@ class Admin extends Model
         $req_update->execute(array(
             'art_nom' => $_POST['nom'],
             'id_categorie' => $_POST['id_categorie'],
-            'id_marques' => $_POST['id_marques'],     
+            'id_marques' => $_POST['id_marques'],
             'resume' => $_POST['resume'],
             'description' => $_POST['description'],
             'stock' => $_POST['stock'],
@@ -228,7 +228,7 @@ class Admin extends Model
         $req_update->execute(array(
             'art_nom' => $_POST['nom'],
             'id_categorie' => $_POST['id_categorie'],
-            'id_marques' => $_POST['id_marques'],     
+            'id_marques' => $_POST['id_marques'],
             'resume' => $_POST['resume'],
             'description' => $_POST['description'],
             'stock' => $_POST['stock'],
@@ -238,7 +238,7 @@ class Admin extends Model
             'id' => $donnees['id_articles']
         ));
     }
-    
+
 
 
     public function update_name_categorie()
@@ -313,4 +313,57 @@ class Admin extends Model
     {
         $this->bdd->query("DELETE FROM images_articles WHERE chemin = '{$nom_img_bdd[1]}' ");
     }
+
+
+
+    public function update_droits_user($colonne)
+    {
+        $req_update = $this->bdd->prepare('UPDATE utilisateurs SET '.$colonne.' = :'.$colonne.'      
+                                          WHERE id_utilisateurs = :id_utilisateur');
+        $req_update->execute(array( ''.$colonne.'' => $_POST[''.$colonne.''], 'id_utilisateur' => $_GET['id_utilisateur']
+        ));
+    }
+
+    public function select_mail_connexion($mail)
+        {
+            $resultat_users = $this->bdd->prepare('SELECT * from utilisateurs WHERE uti_mail = :mail');
+            $resultat_users->execute(array('mail' => $mail));
+            return $resultat_users->fetch();
+        }
+
+    public function recherche_mail_existant()
+        {
+            $resultat_users = $this->bdd->prepare('SELECT uti_mail from utilisateurs WHERE uti_mail = :uti_mail');
+            $resultat_users->execute(array('uti_mail'=> @$_POST['mail']));
+            return $resultat_users->fetchall();
+        }
+
+    public function inscription_user()
+        {
+
+ 
+
+            $nom = htmlspecialchars($_POST['nom']) ;
+            $prenom = htmlspecialchars($_POST['prenom']) ;
+            $mail = htmlspecialchars($_POST['mail']) ;
+            $telephone = htmlspecialchars($_POST['telephone']) ;
+            $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT) ; 
+            $rue = htmlspecialchars($_POST['rue']) ;
+            $code_postal = htmlspecialchars($_POST['code_postal']) ;
+            $ville = htmlspecialchars($_POST['ville']) ;
+
+            $requete = $this->bdd->prepare("INSERT INTO utilisateurs(uti_nom,uti_prenom,uti_mail,uti_tel,uti_motdepasse,uti_rue,uti_code_postal,uti_ville) 
+            VALUES (:nom,:prenom,:mail,:telephone,:mdp,:rue,:code_postal,:ville)"); 
+
+            $requete->bindParam(':nom', $nom);
+            $requete->bindParam(':prenom', $prenom);
+            $requete->bindParam(':mail', $mail);
+            $requete->bindParam(':telephone', $telephone);
+            $requete->bindParam(':mdp', $mdp);
+            $requete->bindParam(':rue', $rue);
+            $requete->bindValue(':code_postal', $code_postal);
+            $requete->bindValue(':ville', $ville);
+
+            $requete->execute();
+        }
 }
