@@ -8,11 +8,13 @@ class Model_Admin extends Model
 
     public function select_all_articles_updates()
     {
-
-        // si erreur sql, copier ça dans mysql, jusqu'au dernier ";" : SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY','')); | source: https://stackoverflow.com/questions/41887460/select-list-is-not-in-group-by-clause-and-contains-nonaggregated-column-inc
-        $requete = $this->bdd->query("SELECT articles.*, MIN(chemin) FROM articles INNER JOIN images_articles ON articles.id_articles = images_articles.id_articles GROUP BY art_nom");
+        $requete = $this->bdd->query("  SELECT articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc, MIN(chemin)
+                                        FROM articles 
+                                        INNER JOIN images_articles ON articles.id_articles = images_articles.id_articles
+                                        GROUP BY articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc");
         return $requete->fetchall();
     }
+
 
 
 
@@ -318,9 +320,24 @@ class Model_Admin extends Model
 
     public function update_droits_user($colonne)
     {
-        $req_update = $this->bdd->prepare('UPDATE utilisateurs SET '.$colonne.' = :'.$colonne.'      
-                                          WHERE id_utilisateurs = :id_utilisateur');
-        $req_update->execute(array( ''.$colonne.'' => $_POST[''.$colonne.''], 'id_utilisateur' => $_GET['id_utilisateur']
+        $req_update = $this->bdd->prepare(' UPDATE utilisateurs
+                                            SET '.$colonne.' = :'.$colonne.'      
+                                            WHERE id_utilisateurs = :id_utilisateur');
+
+        $req_update->execute(array( ''.$colonne.'' => $_POST[''.$colonne.''], 
+                                    'id_utilisateur' => $_GET['id_utilisateur']
+        ));
+    }
+
+
+    public function update_droits_user_sans_variable()
+    {
+        $req_update = $this->bdd->prepare(' UPDATE utilisateurs
+                                            SET nom_colonne = :nom_colonne      
+                                            WHERE id_utilisateurs = :id_utilisateur');
+
+        $req_update->execute(array( 'nom_colonne' => $_POST['nom_colonne'], 
+                                    'id_utilisateur' => $_GET['id_utilisateur']
         ));
     }
 
