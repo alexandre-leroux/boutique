@@ -13,7 +13,7 @@ class Controller_Admin extends Controller
             if ($value == 'supprimer') {
                 break;
             } else {
-                $admin = new Admin();
+                $admin = new Model_Admin();
                 unlink($value);
                 $img_bdd  = $value;
                 $nom_img_bdd = explode("../medias/img_articles/", $img_bdd);
@@ -25,7 +25,7 @@ class Controller_Admin extends Controller
 
     public static function changement_nom_categorie()
     {
-        $admin = new Admin();
+        $admin = new Model_Admin();
 
         if (@$_POST['submit_cat']) {
             $admin->update_name_categorie();
@@ -65,7 +65,7 @@ class Controller_Admin extends Controller
 
     {
 
-        $admin = new Admin();
+        $admin = new Model_Admin();
         if ($_GET['idcat'] == 1) {
 
             View_Admin_Update::affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article);

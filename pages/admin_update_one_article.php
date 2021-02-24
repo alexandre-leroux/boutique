@@ -3,7 +3,7 @@ require_once('../models/Models_Admin.php');
 require_once('../View/view_Admin.php');
 require_once('../controllers/Controller_admin.php');
 
-$admin = new Admin();
+$admin = new Model_Admin();
 
 $donnees = $admin->select_one_articles_updates();
 $req_categorie = $admin->SelectAll('categorie');

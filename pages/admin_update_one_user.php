@@ -3,7 +3,7 @@ require_once('../models/Models_Admin.php');
 require_once('../View/view_Admin.php');
 require_once('../controllers/Controller_admin.php');
 
-$admin = new Admin();
+$admin = new Model_Admin();
 
 $requete_one_user = $admin->SelectOne("utilisateurs","id_utilisateurs","{$_GET['id_utilisateur']}");
 
