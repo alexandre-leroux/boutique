@@ -42,4 +42,81 @@ class viewArticle {
         <?php
     }
 
+    public function formTrierParCat($result_cat){
+        echo 'test';
+        ?>
+        
+        <form action="boutique.php" method="post">
+            <label for="categories"> Trier par catégories : </label>
+            <select name="categories" id="categories">
+                <option disabled selected="selected">Catégorie</option>
+                <?php
+                foreach($result_cat as $value){
+                    ?>
+                <option value="<?= $value['id_categorie']; ?>"><?= $value['categorie_type'] ; ?></option>
+                <?php
+                }
+                ?>
+            </select>
+            hello
+            <input type="submit" name="tri_cat" value="Envoyer"> 
+        </form>
+        <?php
+    }
+
+    public function displayOneArticle($resultat,$result)
+    {
+        for($i = 0 ; isset($resultat[$i]) ; $i++){
+            echo '<img src="../medias/img_articles/'.$resultat[$i]['chemin'].'">';
+        }
+        foreach($result as $key => $value)
+        {
+            if($value == NULL){
+                echo '<p class="dp_none">'.$value.'</p>'; 
+            }
+            else{
+                if($value == $result['prix']){
+        
+                    echo '<p>'.$value.' € </p>'; 
+                }
+                elseif($value == $result['raq_poids'])
+                {
+                    echo '<p> Poids : '.$value.' g </p>'; 
+                }
+                elseif($value == $result['raq_tamis'])
+                {
+                    echo '<p> Tamis : '.$value.' cm² </p>'; 
+                }
+                elseif($value == $result['raq_equilibre'])
+                {
+                    echo '<p> Equilibre : '.$value.' mm </p>'; 
+                }
+                elseif($value == $result['raq_taille_manche'])
+                {
+                    echo '<p> Taille du manche : '.$value.'</p>'; 
+                }
+                elseif($value == $result['cor_jauge'])
+                {
+                    echo '<p> Jauge : '.$value. ' mm </p>'; 
+                }
+                elseif($value == $result['sac_thermobag'])
+                {
+                    echo '<p> Thermobag : '.$value. '</p>'; 
+                }
+                elseif($value == $result['acc_grip_eppaisseur'])
+                {
+                    echo '<p> Epaisseur : '.$value. ' mm </p>'; 
+                }
+                elseif($value == $result['acc_grip_couleur'])
+                {
+                    echo '<p> Couleur : '.$value. '</p>'; 
+                }
+                else{
+                    echo '<p>'.$value.'</p>';
+                }
+            }
+             
+        }
+    }
+
 }
