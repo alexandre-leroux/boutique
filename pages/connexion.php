@@ -1,11 +1,11 @@
 <?php
-require_once('../models/Models_Admin.php');
-require_once('../View/view_Admin.php');
-require_once('../controllers/Controller_Admin.php');
+require_once('../models/Model_User.php');
+require_once('../View/view_User.php');
+require_once('../controllers/Controller_User.php');
 
-$error = Controller_Admin::connexion();
+$error = Controller_User::connexion();
 
-View_Admin_Update::form_connexion(@$error);  
+View_User::form_connexion(@$error);  
 
 
 

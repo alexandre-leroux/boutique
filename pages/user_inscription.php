@@ -1,13 +1,14 @@
 <?php
-require_once('../models/Models_Admin.php');
-require_once('../View/view_Admin.php');
-require_once('../controllers/Controller_Admin.php');
+require_once('../models/Model_User.php');
+require_once('../View/view_User.php');
+require_once('../controllers/Controller_User.php');
 
 
 
-Controller_Admin::inscription();
+Controller_User::inscription();
 
 
-View_Admin_Update::form_inscription($error_mail_pris,$error_mdp);
+View_User::form_inscription($error_mail_pris,$error_mdp);
+
 ?>
 
