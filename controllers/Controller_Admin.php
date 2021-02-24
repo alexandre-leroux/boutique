@@ -58,6 +58,15 @@ class Controller_Admin extends Controller
     }
 
 
+    public static function recherche_dans_articles($mot_cle)
+        {
+            if($_POST['rechercher'])
+            {
+                $admin = new Model_Admin();
+               return $admin->recherche_dans_articles($mot_cle);
+        
+            }
+        }
 
 
     public static function update_un_article($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle, $req_sous_cat_accessoires)

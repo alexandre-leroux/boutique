@@ -7,9 +7,14 @@ class View_Admin_Update
 
 
     public static function affiche_all_articles($tous_les_articles, $req_categorie, $req_marques, $req_sous_categorie_acc, $req_type_balle, $req_balle_conditionnement)
-    {
-?>
+        {
+        ?>
         <!-- formulaire modif catégorie, marques...Etc -->
+        <form action="admin_update_article.php" method="post">
+            <input type="text" name="mot_cle" placeholder="chercher">
+            <input type="submit" value="rechercher" name="rechercher">
+        </form>
+
         <form action="admin_update_article.php" method="post">
             <select name="id_categorie">
                 <option disabled value="CATEGORIES" selected="selected">CATEGORIES</option>

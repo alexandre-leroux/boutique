@@ -330,15 +330,11 @@ class Model_Admin extends Model
     }
 
 
-    public function update_droits_user_sans_variable()
+    public function recherche_dans_articles($mot_cle)
     {
-        $req_update = $this->bdd->prepare(' UPDATE utilisateurs
-                                            SET nom_colonne = :nom_colonne      
-                                            WHERE id_utilisateurs = :id_utilisateur');
-
-        $req_update->execute(array( 'nom_colonne' => $_POST['nom_colonne'], 
-                                    'id_utilisateur' => $_GET['id_utilisateur']
-        ));
+        $req_search = $this->bdd->query("SELECT * FROM articles WHERE art_description LIKE '%$mot_cle%' ");
+     
+        return $req_search->fetchAll();
     }
 
 
