@@ -4,6 +4,13 @@ require_once("bapt_View.php") ;
 
 class Form extends View {
 
+    /**
+     * Affichage du formulaire commun de tous les produits  
+     *
+     * @param [type] $result_cat
+     * @param [type] $result_mar
+     * @return void
+     */
     public function generalForm($result_cat,$result_mar){
         
         ?>
@@ -68,6 +75,11 @@ class Form extends View {
         <?php
     }
 
+    /**
+     * Affichage form spécifique -> raquette
+     *
+     * @return void
+     */
     public function formRaquette(){
 
         ?>
@@ -98,6 +110,11 @@ class Form extends View {
  
     }
 
+    /**
+     * Affichage form spécifique -> sac
+     *
+     * @return void
+     */
     public function formSac(){
 
         ?>
@@ -133,6 +150,11 @@ class Form extends View {
         
     }
 
+    /**
+     * Affichage form spécifique -> cordage
+     *
+     * @return void
+     */
     public function formCordage(){
       
         ?>
@@ -147,6 +169,13 @@ class Form extends View {
         
     }
 
+    /**
+     * Affichage form spécifique -> balle
+     *
+     * @param [type] $result_balle_conditionnement
+     * @param [type] $result_balle_type
+     * @return void
+     */
     public function formBalle($result_balle_conditionnement,$result_balle_type){
         ?>
         <label for="conditionnement"> Conditionnement : </label>
@@ -177,6 +206,12 @@ class Form extends View {
         <?php        
     }
 
+    /**
+     * Affichage form spécifique -> accessoires
+     *
+     * @param [type] $result_sous_cat_accessoires
+     * @return void
+     */
     public function formAccessoires($result_sous_cat_accessoires){
         ?>
 
@@ -208,6 +243,11 @@ class Form extends View {
 
     }
 
+    /**
+     * Affichage du form pour choisir quel type de produit à ajouté
+     *
+     * @return void
+     */
     public function selectTypeArticle(){
         ?>
 

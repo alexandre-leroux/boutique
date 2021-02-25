@@ -5,6 +5,12 @@ require_once("bapt_Model.php") ;
 
 class Admin extends Models {
 
+    /**
+     * Ajout d'une marque 
+     *
+     * @param [type] $marque
+     * @return void
+     */
     public function addMarque($marque){
         $requete = $this->bdd->prepare("INSERT INTO marques (marques_nom)
                                             VALUES (:marques_nom)"
@@ -13,6 +19,22 @@ class Admin extends Models {
         $requete->execute();
     }
 
+    /**
+     * Insertion générique d'un produit 
+     *
+     * @param [type] $p_sous_cat
+     * @param [type] $p_balle_type
+     * @param [type] $p_balle_condi
+     * @param [type] $p_poids
+     * @param [type] $p_tamis
+     * @param [type] $p_manche
+     * @param [type] $p_equilibre
+     * @param [type] $p_jauge
+     * @param [type] $p_sac
+     * @param [type] $p_ep
+     * @param [type] $p_cou
+     * @return void
+     */
     public function insert($p_sous_cat, $p_balle_type, $p_balle_condi, $p_poids, $p_tamis, $p_manche, $p_equilibre, $p_jauge , $p_sac, $p_ep, $p_cou): void  {
         
         $categories = htmlspecialchars($_POST['cat']);
@@ -63,7 +85,11 @@ class Admin extends Models {
     }
 
     
-
+    /**
+     * Renvoie les informarmation du dernier article ajouté 
+     *
+     * @return array
+     */
     public function getAllInfosArticle(): array{
     
         $requete = $this->bdd->prepare("SELECT * FROM articles ORDER BY id_articles DESC"); /* ORDER BY : Permet d'avoir l'id du dernier produit ajouter */
@@ -73,6 +99,13 @@ class Admin extends Models {
     
     }
 
+    /**
+     * Insertion d'une ou plusieurs images lors de l'ajout de l'article
+     *
+     * @param [type] $extensionUpload
+     * @param [type] $i
+     * @return void
+     */
     public function insertImage($extensionUpload, $i): void {
 
         $result = getAllInfosArticle();
