@@ -70,7 +70,7 @@ class viewArticle {
         }
         foreach($result as $key => $value)
         {
-            if($value == NULL){
+            if($value == NULL || $value == $result['id_articles'] || $value == $result['id_categorie']){
                 echo '<p class="dp_none">'.$value.'</p>'; 
             }
             else{
@@ -118,8 +118,24 @@ class viewArticle {
         }
     }
 
-    public function displayArticlesSimilaires(){
-        
+    public function displayArticlesSimilaires(array $array_art_similaire){
+
+        for($i = 0; isset($array_art_similaire[$i]) ; $i++)
+        {
+        ?>
+
+        <div>
+            <div>
+                <a href="article.php?id=<?= $array_art_similaire[$i]['id_articles'];?>"><img src="../medias/img_articles/<?= $array_art_similaire[$i]['MIN(chemin)']; ?>"></a>
+                <h3> <?= $array_art_similaire[$i]['art_nom'] ; ?></h3>
+                <p> <?= $array_art_similaire[$i]['prix'] ; ?> €</p>
+            </div>
+
+        </div>
+
+        <?php
+
+        }
     }
 
 }

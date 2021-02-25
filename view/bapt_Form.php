@@ -58,7 +58,7 @@ class Form extends View {
         </br>
 
         <label for="prix">Prix :</label>
-        <input type="number" id="prix" name="prix" step="0.01" required>
+        <input type="number" id="prix" name="prix" step="0.01" min=1 max=400 required>
 
         </br>
 

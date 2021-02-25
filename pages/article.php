@@ -23,6 +23,8 @@ $findArticle = $article->findArticleSimilaires($result);
 
 var_dump($findArticle);
 
+$view_article->displayArticlesSimilaires($findArticle); 
+
 ?>
 
 
