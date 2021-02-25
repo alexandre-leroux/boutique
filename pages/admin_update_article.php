@@ -15,17 +15,13 @@ $tous_les_articles = $admin->select_all_articles_updates();
 //Controllers - execute le changement de nom, avec update et redirection de validation
 Controller_Admin::changement_nom_categorie();
 
+// recherche dans articles
+$recherche = Controller_Admin::recherche_dans_articles(@$_POST['mot_cle']);
+
 
 //View - boucle qui affiche tous les articles
-View_Admin_Update::affiche_all_articles($tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc,$req_type_balle,$req_balle_conditionnement);
+View_Admin_Update::affiche_all_articles($recherche,$tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc,$req_type_balle,$req_balle_conditionnement);
 
-$recherche = Controller_Admin::recherche_dans_articles($_POST['mot_cle']);
-var_dump($recherche);
 
-// if($_POST['rechercher'])
-//             {
-//                 $admin = new Model_Admin();
-//                 $recherche = $admin->recherche_dans_articles($_POST['mot_cle']);
-//                 var_dump($recherche);
-//             }
+
 

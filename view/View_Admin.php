@@ -6,15 +6,20 @@ class View_Admin_Update
 
 
 
-    public static function affiche_all_articles($tous_les_articles, $req_categorie, $req_marques, $req_sous_categorie_acc, $req_type_balle, $req_balle_conditionnement)
+    public static function affiche_all_articles($recherche,$tous_les_articles, $req_categorie, $req_marques, $req_sous_categorie_acc, $req_type_balle, $req_balle_conditionnement)
         {
         ?>
-        <!-- formulaire modif catégorie, marques...Etc -->
+
+
+
+
+            <!-- input recherche -->
         <form action="admin_update_article.php" method="post">
-            <input type="text" name="mot_cle" placeholder="chercher">
+            <input type="text" minlength="3" name="mot_cle" placeholder="chercher">
             <input type="submit" value="rechercher" name="rechercher">
         </form>
 
+        <!-- formulaire modif catégorie, marques...Etc -->
         <form action="admin_update_article.php" method="post">
             <select name="id_categorie">
                 <option disabled value="CATEGORIES" selected="selected">CATEGORIES</option>
@@ -76,6 +81,24 @@ class View_Admin_Update
         </form>
 
 
+
+        <!-- boucle d'affichage dela recherche -->
+                <div style="display:flex">
+
+                <?php
+                $i = 0;
+                while (@$recherche[$i]) {
+                ?>
+                    <div style="width:200px;border:solid;margin-right:10px">
+                        <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"] ?>">
+                            <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)'] ?>" alt="">
+                        </a>
+                    </div>
+
+                <?php $i++;
+                } ?>
+                </div>
+
         <!-- boucle d'affichage de tous les articles de la bdd -->
         <div style="display:flex">
 
@@ -92,8 +115,8 @@ class View_Admin_Update
             <?php $i++;
             } ?>
         </div>
-    <?php
-    }
+            <?php
+            }
 
 
 

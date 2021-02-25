@@ -332,11 +332,13 @@ class Model_Admin extends Model
 
     public function recherche_dans_articles($mot_cle)
     {
-        $req_search = $this->bdd->query("SELECT * FROM articles WHERE art_description LIKE '%$mot_cle%' ");
-     
+        $req_search = $this->bdd->query("   SELECT articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc, min(chemin)
+                                            FROM articles
+                                            INNER JOIN images_articles ON articles.id_articles = images_articles.id_articles
+                                            WHERE art_description LIKE '%$mot_cle%'
+                                            GROUP BY articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc ");
+                                        
         return $req_search->fetchAll();
     }
-
-
 
 }

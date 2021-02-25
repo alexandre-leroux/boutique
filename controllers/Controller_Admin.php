@@ -60,12 +60,14 @@ class Controller_Admin extends Controller
 
     public static function recherche_dans_articles($mot_cle)
         {
-            if($_POST['rechercher'])
+            if(@$_POST['rechercher'])
             {
                 $admin = new Model_Admin();
                return $admin->recherche_dans_articles($mot_cle);
         
-            }
+            
+              }
+
         }
 
 
