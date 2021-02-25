@@ -17,20 +17,19 @@ $view_article->formTrierParMarques($result_mar); // affiche le form trier par ma
 
 if(!isset($_POST['tri_marque']) && !isset($_POST['tri_cat']))
 {
-    echo 'allo';
-    $result = $article->findAllArticles();
+    $result = $article->findAllArticles(""," GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie");
     $view_article->displayAllArticles($result);
 }
 elseif(isset($_POST['tri_cat']))
 {
-    echo'laaaa';
-    $cat = $article->findAllArticles("AND id_categorie = ".$_POST['categories']); 
+    $cat = $article->findAllArticles("AND id_categorie = ".$_POST['categories'], " GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie"); 
+    
     var_dump($cat);
     $view_article->displayAllArticles($cat); 
 }
 elseif(isset($_POST['tri_marque']))
 {
-    $marque = $article->findAllArticles("AND id_marques = ".$_POST['marques']); 
+    $marque = $article->findAllArticles("AND id_marques = ".$_POST['marques'], " GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie"); 
     var_dump($marque);
     $view_article->displayAllArticles($marque);
     

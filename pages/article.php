@@ -10,11 +10,22 @@ $result = $article->findOneArticle($_GET['id']);
 $resultat = $article->findImagesOneArticles($_GET['id']); 
 
 // var_dump($resultat);
-
-// var_dump($result); 
+ var_dump($result); 
 
 $view_article->displayOneArticle($resultat,$result);
 ?>
+
+<h1> Articles similaires </h1>
+
+<?php
+
+$findArticle = $article->findArticleSimilaires($result);
+
+var_dump($findArticle);
+
+?>
+
+
 
 <style>
     .dp_none{

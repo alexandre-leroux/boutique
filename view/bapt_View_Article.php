@@ -9,7 +9,7 @@ class viewArticle {
 
             <div>
                 <div class="img">
-                    <a href="../pages/article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['chemin'] ; ?>"></a>
+                    <a href="../pages/article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
                 </div>    
                 <h1> <?= $value['art_nom'] ; ?> </h1>
                 <p> <?= $value['prix'] ; ?> € </p>
@@ -43,7 +43,6 @@ class viewArticle {
     }
 
     public function formTrierParCat($result_cat){
-        echo 'test';
         ?>
         
         <form action="boutique.php" method="post">
@@ -58,7 +57,7 @@ class viewArticle {
                 }
                 ?>
             </select>
-            hello
+            
             <input type="submit" name="tri_cat" value="Envoyer"> 
         </form>
         <?php
@@ -117,6 +116,10 @@ class viewArticle {
             }
              
         }
+    }
+
+    public function displayArticlesSimilaires(){
+        
     }
 
 }
