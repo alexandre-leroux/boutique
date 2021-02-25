@@ -2,6 +2,12 @@
 
 class viewArticle {
 
+    /**
+     * Affiche les articles sur la page boutique 
+     *
+     * @param array $result
+     * @return void
+     */
     public function displayAllArticles(array $result): void{
         foreach($result as $value)
         {
@@ -21,6 +27,12 @@ class viewArticle {
         }
     }
 
+    /**
+     * Afficher un form avec un select de toutes les marques 
+     *
+     * @param [type] $result_mar
+     * @return void
+     */
     public function formTrierParMarques($result_mar){
         ?>
         <form action="boutique.php" method="post">
@@ -42,6 +54,12 @@ class viewArticle {
         <?php
     }
 
+    /**
+     * Affiche un form avec un select des catégories
+     *
+     * @param [type] $result_cat
+     * @return void
+     */
     public function formTrierParCat($result_cat){
         ?>
         
@@ -63,6 +81,36 @@ class viewArticle {
         <?php
     }
 
+    /**
+     * Affiche un form avec un select pour trier par prix 
+     *
+     * @return void
+     */
+    public function TrierParPrix()
+    {
+        ?>
+
+        <form action="boutique.php" method="post">
+            <label for="prix"> Trier par prix : </label>
+            <select name="prix" id="prix">
+                <option disabled selected="selected">Prix</option>
+                <option value="asc"> Prix croissant </option>
+                <option value="des"> Prix décroissant </option>
+            </select>
+            
+            <input type="submit" name="tri_prix" value="Envoyer"> 
+        </form>
+
+        <?php
+    }
+
+    /**
+     * Affiche les infos spécifique de l'article sur sa page 
+     *
+     * @param [type] $resultat
+     * @param [type] $result
+     * @return void
+     */
     public function displayOneArticle($resultat,$result)
     {
         for($i = 0 ; isset($resultat[$i]) ; $i++){
@@ -118,6 +166,12 @@ class viewArticle {
         }
     }
 
+    /**
+     * Affiche les articles de meme catégorie en suggestion sur la page de l'article 
+     *
+     * @param array $array_art_similaire
+     * @return void
+     */
     public function displayArticlesSimilaires(array $array_art_similaire){
 
         for($i = 0; isset($array_art_similaire[$i]) ; $i++)

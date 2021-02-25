@@ -4,7 +4,7 @@
     //include("fonctions.php"); 
     require_once("../models/bapt_Admin.php"); 
     require_once("../view/bapt_Form.php");
-    require("../controllers/bapt_Controller.php");
+    require("../controllers/bapt_Admin_Controller.php");
     
     $admin = new Admin(); // Model
     $form = new Form(); // View 
