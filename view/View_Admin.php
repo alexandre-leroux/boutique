@@ -11,7 +11,7 @@ class View_Admin_Update
         ?>
 
 
-
+            <a href="../index.php">RETOUR</a>
 
             <!-- input recherche -->
         <form action="admin_update_article.php" method="post">
@@ -126,6 +126,7 @@ class View_Admin_Update
     public static function donnees_generales_communes($donnees)
     {
     ?>
+    <a href="admin_update_article.php">RETOUR</a>
         <p><b>données actuelles :</b></p>
         <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
         <p>marque : <?= $donnees['marques_nom'] ?> </p>
@@ -398,7 +399,7 @@ class View_Admin_Update
 
 
         public static function affiche_all_user($req_all_users)
-        {
+        {    echo '<a href="../index.php">RETOUR</a>';
             foreach ($req_all_users as $key => $value) {
             ?>
                 <div style='border: solid 1px'>
@@ -419,7 +420,7 @@ class View_Admin_Update
 
 
     public static function affiche_details_et_form_update_user($requete_one_user)
-        {
+        {echo '<a href="admin_affiche_all_user.php">RETOUR</a>';
         ?>
         <div style='border: solid 1px'>
 

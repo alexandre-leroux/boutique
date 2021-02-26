@@ -6,7 +6,7 @@ class View_User
     public static function form_inscription($error_mail_pris,$error_mdp)    
     {
         ?>
-
+        <a href="../index.php">RETOUR</a>
         <form action="user_inscription.php" method="POST" >
         <div class="form-group">
             <label for="user_nom">Votre nom :</label>
@@ -70,6 +70,7 @@ class View_User
     public static function form_connexion($error)    
     {
         ?>
+        <a href="../index.php">RETOUR</a>
         <form action="connexion.php" method="POST">
             <div class="form-group">
                 <label for="mail">Email</label>
