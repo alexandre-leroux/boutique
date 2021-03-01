@@ -93,6 +93,7 @@ class View_User
     public static function form_update_profil($erreur)
         {
             ?>
+            <a href="../index.php">RETOUR</a>
             <form action="user_modification_profil.php" method="POST">
 
                     <div class="form-group">
