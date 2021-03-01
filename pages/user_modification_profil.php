@@ -19,7 +19,7 @@ $_SESSION['uti_code_postal'] = $result['uti_code_postal'];
 $_SESSION['uti_ville'] = $result['uti_ville'];
 $_SESSION['uti_motdepasse'] = $result['uti_motdepasse'];
 
-$mail_deja_pris = Controller_user::update_profil();
+$erreur = Controller_user::update_profil();
 
-View_user::form_update_profil($mail_deja_pris);
+View_user::form_update_profil($erreur);
 

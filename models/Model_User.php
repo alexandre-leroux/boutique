@@ -57,11 +57,11 @@ class Model_User extends Model{
                 $req_update = $this->bdd->prepare('UPDATE utilisateurs SET
                 uti_nom = :uti_nom,
                 uti_prenom = :uti_prenom,
-                            uti_mail = :uti_mail,
-                            uti_tel = :uti_tel,
-                            uti_rue = :uti_rue,
-                            uti_code_postal = :uti_code_postal,
-                            uti_ville = :uti_ville                     
+                uti_mail = :uti_mail,
+                uti_tel = :uti_tel,
+                uti_rue = :uti_rue,
+                uti_code_postal = :uti_code_postal,
+                uti_ville = :uti_ville                     
                                             
                 WHERE id_utilisateurs = :id');
 
@@ -77,7 +77,21 @@ class Model_User extends Model{
                                         ));
             }
 
-    
+    public function update_mot_de_passe($new_mdp)
+            {
+                $mdp_hash = password_hash($new_mdp, PASSWORD_DEFAULT) ;
+
+                $req_update = $this->bdd->prepare('UPDATE utilisateurs SET
+                uti_motdepasse = :uti_motdepasse
+                                  
+                WHERE id_utilisateurs = :id');
+
+                $req_update->execute(array(
+                'uti_motdepasse' => $mdp_hash,
+
+                'id' => $_SESSION['id_utilisateurs']
+                                            ));
+            }
 
         
 }

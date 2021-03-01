@@ -90,7 +90,7 @@ class View_User
     <?php
     }
 
-    public static function form_update_profil($mail_deja_pris)
+    public static function form_update_profil($erreur)
         {
             ?>
             <form action="user_modification_profil.php" method="POST">
@@ -108,7 +108,7 @@ class View_User
                     <div class="form-group">
                     <label for="mail">Votre mail : </label>
                         <input type="text" name="mail" value="<?=$_SESSION['uti_mail']?>">
-                        <?php if(!empty($mail_deja_pris)){echo $mail_deja_pris;}?>
+                        <?php if(@$_POST['submit'] AND !empty($erreur)){echo @$erreur;}?>
                     </div>
 
                     <div class="form-group">
@@ -134,6 +134,23 @@ class View_User
                    
 
                 </form>
+
+                <form action="user_modification_profil.php" method="POST">
+                    <div class="form-group">
+                        <label for="mdp"> Modifier le mot de passe : </label>
+                        <input type="password"  id="mdp" name="mdp" >
+                        <?php if(@$_POST['submit_update_mdp'] AND !empty($erreur)){echo @$erreur;}?>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="confirm_mdp">Confirmer le nouveau mot de passe : </label>
+                        <input type="password"  id="confirm_mdp" name="confirm_pass" >
+                    </div>
+                    <input type="submit" value="modifier le mot de passe" name="submit_update_mdp">
+                </form>
+
+                <?=$erreur?>
 
         <?php
 

@@ -82,10 +82,11 @@ class Controller_User extends Controller{
 
 
 public static function update_profil()
-    {$user = new Model_User();
+    {
+        $user = new Model_User();
 
         if(@$_POST ['submit'])
-            {
+            { 
 
                 if($_POST ['mail']!=$_SESSION ['uti_mail'])
                     {
@@ -131,7 +132,43 @@ public static function update_profil()
 
 
 
+            if(@$_POST['submit_update_mdp'])
 
-    }
+                {  
+                    $user = new Model_User();
+                    $new_mdp = htmlspecialchars($_POST['mdp']) ;
+                    $confirm_new_mpd = htmlspecialchars($_POST['confirm_pass']) ;
+
+                    if($new_mdp == $confirm_new_mpd)
+
+                        {
+
+                          if( preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#',$new_mdp))
+                            {
+                                  $user->update_mot_de_passe($new_mdp);
+                                  header('Location: messages_et_redirections/profil_modifie.php');
+                                  exit();
+                            }
+                          else
+                            {
+                              
+                              return  'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un caractère spécial et un chiffre';
+                              
+                            }    
+                                
+                        }
+                            
+                    else
+                        {
+                            return  'Les deux mots de passe doivent être idnetiques';
+                        }
+                
+                    
+                    
+     
+                }
+            
+            
+            }
 
 }
