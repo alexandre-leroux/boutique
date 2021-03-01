@@ -2,8 +2,8 @@
 
 class controllerArticle {
 
-    public function TrierPar($article, $view_article){
-        if(!isset($_POST['tri_marque']) && !isset($_POST['tri_cat']) && !isset($_POST['tri_prix']))
+    public function TrierPar($article, $view_article, $get=""){
+        if(!isset($_POST['tri_marque']) && !isset($_POST['tri_cat']) && !isset($_POST['tri_prix']) && !isset($_GET['id_marques']))
         {
             $result = $article->findAllArticles(""," GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie"); // renvoie un tableaux de tout les articles 
             $view_article->displayAllArticles($result);  // affiche les articles 
@@ -21,6 +21,12 @@ class controllerArticle {
             var_dump($marque);
             $view_article->displayAllArticles($marque);
             
+        }
+        elseif(isset($_GET['id_marques']))
+        {
+            $marque = $article->findAllArticles(" WHERE id_marques = ".$_GET['id_marques'], " GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie"); 
+            var_dump($marque);
+            $view_article->displayAllArticles($marque);
         }
         elseif(isset($_POST['tri_prix']))
         {

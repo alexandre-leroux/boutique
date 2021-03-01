@@ -9,11 +9,15 @@ class viewArticle {
      * @return void
      */
     public function displayAllArticles(array $result): void{
+
+        ?>
+        <section class="galerie_article">
+        <?php
         foreach($result as $value)
         {
             ?>
 
-            <div>
+            <div class="vignette_article">
                 <div class="img">
                     <a href="../pages/article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
                 </div>    
@@ -25,6 +29,10 @@ class viewArticle {
 
             <?php
         }
+
+        ?>
+        </section>
+        <?php
     }
 
     /**
@@ -118,7 +126,7 @@ class viewArticle {
         }
         foreach($result as $key => $value)
         {
-            if($value == NULL || $value == $result['id_articles'] || $value == $result['id_categorie']){
+            if($value == NULL || $value == $result['id_articles'] || $value == $result['id_categorie'] || $value == $result['id_marques']){
                 echo '<p class="dp_none">'.$value.'</p>'; 
             }
             else{
@@ -157,6 +165,9 @@ class viewArticle {
                 elseif($value == $result['acc_grip_couleur'])
                 {
                     echo '<p> Couleur : '.$value. '</p>'; 
+                }
+                elseif($value == $result['marques_nom']){
+                    echo '<a href="boutique.php?id_marques='.$result['id_marques'].'">'.$value.'</a>';
                 }
                 else{
                     echo '<p>'.$value.'</p>';

@@ -15,8 +15,32 @@ $view_article->formTrierParCat($result_cat);
 $view_article->formTrierParMarques($result_mar); // affiche le form trier par marques
 $view_article->TrierParPrix();
 
+$controller_article->TrierPar($article,$view_article,@$_GET['id_marques']); 
 
-$controller_article->TrierPar($article,$view_article); 
+?>
+
+<style>
+    .galerie_article{
+        display: flex; 
+        width: 90%; 
+        margin: auto; 
+        align-item : center; 
+        justify-content: center ; 
+        flex-wrap : wrap; 
+    }
+
+    .galerie_article .vignette_article {
+        width: 25% ; 
+        padding : 10px; 
+        margin: 10px; 
+        border : 2px solid black; 
+    }
+
+    .img img{
+        width: 100%; 
+        object-fit: cover ; 
+    }
+</style>
 
 
 

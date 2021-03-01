@@ -18,7 +18,6 @@ class Article extends Models {
                         NATURAL JOIN images_articles"
         ;
         
-
         if($order){
             $sql .= $order;
             $sql .= $groupby ;
@@ -43,8 +42,9 @@ class Article extends Models {
      */
     public function findOneArticle($id){
 
-        $requete = $this->bdd->prepare("SELECT id_articles,art_nom,id_categorie,art_courte_description,art_description,prix,raq_poids,raq_tamis,raq_taille_manche,raq_equilibre,cor_jauge,sac_thermobag,acc_grip_eppaisseur,acc_grip_couleur
+        $requete = $this->bdd->prepare("SELECT id_articles,art_nom,marques_nom,id_marques,id_categorie,art_courte_description,art_description,prix,raq_poids,raq_tamis,raq_taille_manche,raq_equilibre,cor_jauge,sac_thermobag,acc_grip_eppaisseur,acc_grip_couleur
                                             FROM articles
+                                                NATURAL JOIN marques
                                                 WHERE id_articles = :id 
         "); 
 
