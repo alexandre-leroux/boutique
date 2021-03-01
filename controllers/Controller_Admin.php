@@ -204,12 +204,14 @@ class Controller_Admin extends Controller
                         $tailleMax = 2097152; 
                         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
                         if($_FILES['image']['size'][$i] <= $tailleMax)
+
                         {
                              $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'][$i], '.'),1));
                              if(in_array($extensionUpload, $extensionsValides))
                              {
                                  $chemin = "../medias/img_articles/".$_GET['id']."-".$i.".".$extensionUpload;
                                  $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][$i], $chemin ); 
+                                 var_dump($chemin);
                                  if($mouvement)
                                  {
                                     // $admin->insertImage($extensionUpload, $i);
