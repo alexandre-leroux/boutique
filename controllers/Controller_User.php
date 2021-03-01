@@ -5,6 +5,8 @@ require_once('../Models/Model_user.php');
 
 class Controller_User extends Controller{
 
+    public $bdd;
+
     public static function inscription()
             {  
                 global $error_mdp;
@@ -79,6 +81,35 @@ class Controller_User extends Controller{
             }
 
 
+public static function update_profil($bdd)
+    {
 
+        if($_POST ['submit'])
+            {
+
+                if($_POST ['mail']!=$_SESSION ['uti_mail'])
+                    {
+                       $user = new Model_User();
+                       $result_mail_existant = $user->recherche_mail_existant($_POST['mail']);
+                     
+                        
+                        if($result_mail_existant != null)
+                        {
+
+                            return 'trouvé';
+                        }
+                        else{
+                            return 'rien trouvé';
+                        }
+                    }
+
+
+
+            }
+
+
+
+
+    }
 
 }

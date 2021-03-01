@@ -200,15 +200,20 @@ class View_Admin_Update
                             <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
                             <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
-                                <input type="checkbox" name="chemin<?= $i ?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
+                                <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
 
-
+                              
                         </div>
                     <?php $i++;
                     }
                     ?>
 
                     <input type="submit" value="supprimer" style="height:20px" name="submit2">
+                    </br>
+                    <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
+                    <?php var_dump($_POST);
+                    if($_POST['photo_principale'])
+                    {echo $value['chemin'];} ?>
                 </div>
 
 

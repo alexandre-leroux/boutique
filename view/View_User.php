@@ -90,6 +90,52 @@ class View_User
     <?php
     }
 
-    
+    public static function form_update_profil()
+        {
+            ?>
+            <form action="user_modification_profil.php" method="POST">
+
+                    <div class="form-group">
+                    <label for="nom">Votre nom : </label>
+                        <input type="text" name="nom" value="<?=$_SESSION['uti_nom']?>">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="prenom">Votre prénom : </label>
+                        <input type="text" name="prenom" value="<?=$_SESSION['uti_prenom']?>">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="mail">Votre mail : </label>
+                        <input type="text" name="mail" value="<?=$_SESSION['uti_mail']?>">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="tel">Votre numéro de téléphone : </label>
+                        <input type="tel" name="tel" value="<?=$_SESSION['uti_tel']?>">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="rue">Votre adresse : </label>
+                        <input type="text" name="rue" value="<?=$_SESSION['uti_rue']?>">
+                    </div>
+                    
+                    <div class="form-group">
+                    <label for="code_postal">Votre code postal : </label>
+                        <input type="text" name="code_postal" value="<?=$_SESSION['uti_code_postal']?>">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="ville">Votre ville : </label>
+                        <input type="text" name="ville" value="<?=$_SESSION['uti_ville']?>">
+                    </div>
+                        <input type="submit" value="enregistrer les modifications" name="submit">
+                   
+
+                </form>
+
+        <?php
+
+        }
 
 }

@@ -51,5 +51,7 @@ class Model_User extends Model{
             return $resultat_users->fetch();
         }
 
+    
+
         
 }
