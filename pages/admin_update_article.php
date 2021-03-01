@@ -19,8 +19,11 @@ Controller_Admin::changement_nom_categorie();
 $recherche = Controller_Admin::recherche_dans_articles(@$_POST['mot_cle']);
 
 
+
+
 //View - boucle qui affiche tous les articles
 View_Admin_Update::affiche_all_articles($recherche,$tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc,$req_type_balle,$req_balle_conditionnement);
+
 
 
 

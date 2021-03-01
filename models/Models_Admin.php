@@ -341,4 +341,17 @@ class Model_Admin extends Model
         return $req_search->fetchAll();
     }
 
+    public function ajout_image_updtae_article($nom)
+        {
+
+            $requete = $this->bdd->prepare('INSERT INTO images_articles (id_articles, chemin)
+            VALUES (:id_articles, :chemin)'
+            );
+
+            $requete->bindParam(':id_articles', $_GET['id']);
+            $requete->bindParam(':chemin',$nom);
+
+            $requete->execute();
+        }
+    
 }

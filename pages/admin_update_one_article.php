@@ -18,6 +18,13 @@ Controller_Admin::update_un_article($donnees,$req_categorie,$req_marques,$req_im
 
 
 
+$test = Controller_Admin::ajouter_image_update_article();
+echo $test;
+// var_dump($test);
+// var_dump($_POST);
+
+
+
 
 
 

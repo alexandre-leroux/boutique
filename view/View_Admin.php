@@ -210,15 +210,25 @@ class View_Admin_Update
                             <input type="submit" value="supprimer" style="height:20px" name="submit2">
                             </br>
 
-
                             <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
-                            <?php var_dump($_POST);
-                            if($_POST['photo_principale'])
+                            <?php 
+                            if(@$_POST['photo_principale'])
                             {echo $value['chemin'];} ?>
                         </div>
 
 
                 </form>
+
+
+                        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
+                            
+                                <label for="image"> Ajouter des images : </label>
+                                <input  type="file" name="image[]" multiple>
+                                <input type="submit" value="Envoyer" name="ajout_photo">
+                                
+                            </form>
+
+
 
             <?php
                 }
