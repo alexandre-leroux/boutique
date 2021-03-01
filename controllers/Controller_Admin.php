@@ -214,9 +214,9 @@ class Controller_Admin extends Controller
                                  {
                                     // $admin->insertImage($extensionUpload, $i);
                                     $admin = new Model_Admin;
-                                    $nom = ''.$_GET['id'].'-'.$i.'.'.$extensionUpload.''; 
-                                    $admin-> ajout_image_updtae_article($nom);
-                                    return 'victoire';
+                                    
+                                    $admin-> ajout_image_updtae_article($extensionUpload, $i);
+                               
                                 
                                     
                                  }
