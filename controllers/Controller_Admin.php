@@ -199,7 +199,7 @@ class Controller_Admin extends Controller
                 if(isset($_FILES['image']) AND !empty($_FILES['image']['name'])){
  
 
-                    for($i = 0 ; isset($_FILES['image']['size'][$i]) ; $i++)
+                    for($i = 0 ;  isset($_FILES['image']['size'][$i]) ; $i++ )
                     {  
                         $tailleMax = 2097152; 
                         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
@@ -209,16 +209,30 @@ class Controller_Admin extends Controller
                              $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'][$i], '.'),1));
                              if(in_array($extensionUpload, $extensionsValides))
                              {
+                                 $admin = new Model_Admin;
+                    
+                                while(
+                                 $nom_image = $_GET['id']."-".$i.".".$extensionUpload AND
+                                 $chemin_existants = $admin->Select_chemin_image($nom_image) == TRUE)
+                                 {
+                                     $i++ ;
+                                 }
+                               
+                                //  var_dump($nom_image);
+                      
+                                //  var_dump($chemin_existants);
+
                                  $chemin = "../medias/img_articles/".$_GET['id']."-".$i.".".$extensionUpload;
-                                 $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][$i], $chemin ); 
-                                 var_dump($chemin);
+                         
+                                 $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][0], $chemin ); 
+                                 var_dump($i);
                                  if($mouvement)
                                  {
                                     // $admin->insertImage($extensionUpload, $i);
-                                    $admin = new Model_Admin;
                                     
                                     $admin-> ajout_image_updtae_article($extensionUpload, $i);
-                               
+
+                                    $a++;
                                 
                                     
                                  }

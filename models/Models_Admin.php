@@ -341,9 +341,9 @@ class Model_Admin extends Model
         return $req_search->fetchAll();
     }
 
-    public function ajout_image_updtae_article($extensionUpload, $i)
+    public function ajout_image_updtae_article($extensionUpload, $a)
         {
-            $nom = ''.$_GET['id'].'-'.$i.'.'.$extensionUpload.''; 
+            $nom = ''.$_GET['id'].'-'.$a.'.'.$extensionUpload.''; 
             $requete = $this->bdd->prepare('INSERT INTO images_articles (id_articles, chemin)
             VALUES (:id_articles, :chemin)'
             );
@@ -354,4 +354,12 @@ class Model_Admin extends Model
             $requete->execute();
         }
     
-}
+
+        public function Select_chemin_image($chemin)
+        {
+
+            $requete = $this->bdd->query("SELECT * FROM images_articles WHERE chemin = '{$chemin}'");
+            return $requete->fetchall();
+
+        }
+        }
