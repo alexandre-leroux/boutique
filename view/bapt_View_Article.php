@@ -175,6 +175,8 @@ class viewArticle {
             }
              
         }
+
+        echo '<a href="addpanier.php?id='.$result['id_articles'].'"> Ajouter au panier</a>';
     }
 
     /**

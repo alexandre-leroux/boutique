@@ -15,4 +15,17 @@ class Models {
     
         return $requete->fetchAll(); 
     }
+
+    public function selectId(string $table, int $id){
+        $requete = $this->bdd->prepare("SELECT id_articles 
+                                            FROM {$table} 
+                                                WHERE id_articles = :id
+        ") ;
+
+        $requete->bindParam(':id', $id) ;
+
+        $requete->execute(); 
+
+        return $requete->fetchAll( PDO::FETCH_OBJ);
+    }
 }
