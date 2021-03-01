@@ -90,7 +90,7 @@ class View_User
     <?php
     }
 
-    public static function form_update_profil()
+    public static function form_update_profil($mail_deja_pris)
         {
             ?>
             <form action="user_modification_profil.php" method="POST">
@@ -108,6 +108,7 @@ class View_User
                     <div class="form-group">
                     <label for="mail">Votre mail : </label>
                         <input type="text" name="mail" value="<?=$_SESSION['uti_mail']?>">
+                        <?php if(!empty($mail_deja_pris)){echo $mail_deja_pris;}?>
                     </div>
 
                     <div class="form-group">
@@ -122,7 +123,7 @@ class View_User
                     
                     <div class="form-group">
                     <label for="code_postal">Votre code postal : </label>
-                        <input type="text" name="code_postal" value="<?=$_SESSION['uti_code_postal']?>">
+                        <input type="number" name="code_postal" value="<?=$_SESSION['uti_code_postal']?>">
                     </div>
 
                     <div class="form-group">

@@ -84,27 +84,44 @@ class Controller_User extends Controller{
 public static function update_profil()
     {$user = new Model_User();
 
-        if($_POST ['submit'])
+        if(@$_POST ['submit'])
             {
 
                 if($_POST ['mail']!=$_SESSION ['uti_mail'])
                     {
                        $user = new Model_User();
                        $result_mail_existant = $user->recherche_mail_existant($_POST['mail']);
-                     
+                        var_dump($result_mail_existant);
                         
-                        if($result_mail_existant != null)
+                        if($result_mail_existant == null)
                         {
-                            $user->update_profile_user();
-                            return 'trouvé';
+                            $nom = htmlspecialchars($_POST['nom']) ;
+                            $prenom = htmlspecialchars($_POST['prenom']) ;
+                            $mail = htmlspecialchars($_POST['mail']) ;
+                            $telephone = htmlspecialchars($_POST['tel']) ;
+                            $rue = htmlspecialchars($_POST['rue']) ;
+                            $code_postal = htmlspecialchars($_POST['code_postal']) ;
+                            $ville = htmlspecialchars($_POST['ville']) ;
+                            $user->update_profile_user($nom,$prenom,$mail,$telephone,$rue,$code_postal,$ville);
+                            header("location:messages_et_redirections/profil_modifie.php");
                         }
                         else{
-                            return 'rien trouvé';
+                            return 'email deja pris';
+                            
                         }
                     }
                 else
                 {
-                    $user->update_profile_user();
+                    $nom = htmlspecialchars($_POST['nom']) ;
+                    $prenom = htmlspecialchars($_POST['prenom']) ;
+                    $mail = htmlspecialchars($_POST['mail']) ;
+                    $telephone = htmlspecialchars($_POST['tel']) ;
+                    $rue = htmlspecialchars($_POST['rue']) ;
+                    $code_postal = htmlspecialchars($_POST['code_postal']) ;
+                    $ville = htmlspecialchars($_POST['ville']) ;
+
+                    $user->update_profile_user($nom,$prenom,$mail,$telephone,$rue,$code_postal,$ville);
+                    header("location:messages_et_redirections/profil_modifie.php");
 
                 }
 
