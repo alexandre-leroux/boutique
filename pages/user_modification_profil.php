@@ -21,6 +21,8 @@ $_SESSION['uti_motdepasse'] = $result['uti_motdepasse'];
 
 var_dump($_SESSION);
 View_user::form_update_profil();
+echo '<pre>';
 var_dump($_POST);
-$a = Controller_user::update_profil($user);
+echo '</pre>';
+$a = Controller_user::update_profil();
 echo $a;

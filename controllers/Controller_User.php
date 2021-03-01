@@ -81,8 +81,8 @@ class Controller_User extends Controller{
             }
 
 
-public static function update_profil($bdd)
-    {
+public static function update_profil()
+    {$user = new Model_User();
 
         if($_POST ['submit'])
             {
@@ -95,13 +95,18 @@ public static function update_profil($bdd)
                         
                         if($result_mail_existant != null)
                         {
-
+                            $user->update_profile_user();
                             return 'trouvé';
                         }
                         else{
                             return 'rien trouvé';
                         }
                     }
+                else
+                {
+                    $user->update_profile_user();
+
+                }
 
 
 

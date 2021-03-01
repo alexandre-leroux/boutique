@@ -51,6 +51,30 @@ class Model_User extends Model{
             return $resultat_users->fetch();
         }
 
+        public function update_profile_user()
+            {
+                $nom = htmlspecialchars($_POST['nom']) ;
+                $prenom = htmlspecialchars($_POST['prenom']) ;
+                $mail = htmlspecialchars($_POST['mail']) ;
+                $telephone = htmlspecialchars($_POST['tel']) ;
+                $rue = htmlspecialchars($_POST['rue']) ;
+                $code_postal = htmlspecialchars($_POST['code_postal']) ;
+                $ville = htmlspecialchars($_POST['ville']) ;
+
+                $requete = $this->bdd->prepare("UPDATE  utilisateurs SET(uti_nom,uti_prenom,uti_mail,uti_tel,uti_rue,uti_code_postal,uti_ville) 
+                VALUES (:nom,:prenom,:mail,:telephone,:rue,:code_postal,:ville)");
+
+                $requete->bindParam(':nom', $nom);
+                $requete->bindParam(':prenom', $prenom);
+                $requete->bindParam(':mail', $mail);
+                $requete->bindParam(':telephone', $telephone);
+                $requete->bindParam(':rue', $rue);
+                $requete->bindValue(':code_postal', $code_postal);
+                $requete->bindValue(':ville', $ville);
+
+                $requete->execute();
+            }
+
     
 
         
