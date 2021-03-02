@@ -1,6 +1,6 @@
 <?php
 require_once('../models/Model_Admin_Update.php');
-require_once('../View/view_Admin.php');
+require_once('../View/View_Admin_Update.php');
 require_once('../controllers/Controller_Admin_Update.php');
 
 $admin = new Model_Admin_Update();

@@ -1,6 +1,6 @@
 <?php
 
-require_once('../View/view_Admin.php');
+require_once('../View/View_Admin_Update.php');
 include('../models/Model.php');
 
 $admin = new Model();

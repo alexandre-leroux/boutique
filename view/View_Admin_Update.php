@@ -442,7 +442,7 @@ class View_Admin_Update
                     ?>
                     <div style='border: solid 1px'>
 
-                        <p>niveau de droit : <?= $requete_one_user['uti_droits'] ?></p>
+                        <p>niveau de droit : <?=$requete_one_user["uti_droits"]?></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_droits">Modifier le niveau de droit :</label>
                             <select name="uti_droits">
