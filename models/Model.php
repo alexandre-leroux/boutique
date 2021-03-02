@@ -45,7 +45,7 @@ public function SelectAll($table)
 public function SelectOne($table,$id,$id_objet)
 {
 
-    $requete = $this->bdd->query("SELECT * FROM {$table} WHERE {$id} = {$id_objet}");
+    $requete = $this->bdd->query("SELECT * FROM {$table} WHERE {$id} = '{$id_objet}'");
     return $requete->fetch();
 
 }

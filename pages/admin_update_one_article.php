@@ -24,6 +24,8 @@ $test = Controller_admin_Update::ajouter_image_update_article();
 // var_dump($_POST);
 
 
+Controller_admin_Update::choisir_premiere_image();
+
 
 
 

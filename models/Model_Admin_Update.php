@@ -319,27 +319,27 @@ class Model_Admin_Update extends Model
 
 
     public function update_droits_user($colonne)
-    {
-        $req_update = $this->bdd->prepare(' UPDATE utilisateurs
-                                            SET '.$colonne.' = :'.$colonne.'      
-                                            WHERE id_utilisateurs = :id_utilisateur');
+        {
+            $req_update = $this->bdd->prepare(' UPDATE utilisateurs
+                                                SET '.$colonne.' = :'.$colonne.'      
+                                                WHERE id_utilisateurs = :id_utilisateur');
 
-        $req_update->execute(array( ''.$colonne.'' => $_POST[''.$colonne.''], 
-                                    'id_utilisateur' => $_GET['id_utilisateur']
-        ));
-    }
+            $req_update->execute(array( ''.$colonne.'' => $_POST[''.$colonne.''], 
+                                        'id_utilisateur' => $_GET['id_utilisateur']
+            ));
+        }
 
 
     public function recherche_dans_articles($mot_cle)
-    {
-        $req_search = $this->bdd->query("   SELECT articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc, min(chemin)
-                                            FROM articles
-                                            INNER JOIN images_articles ON articles.id_articles = images_articles.id_articles
-                                            WHERE art_description LIKE '%$mot_cle%'
-                                            GROUP BY articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc ");
-                                        
-        return $req_search->fetchAll();
-    }
+        {
+            $req_search = $this->bdd->query("   SELECT articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc, min(chemin)
+                                                FROM articles
+                                                INNER JOIN images_articles ON articles.id_articles = images_articles.id_articles
+                                                WHERE art_description LIKE '%$mot_cle%'
+                                                GROUP BY articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc ");
+                                            
+            return $req_search->fetchAll();
+        }
 
     public function ajout_image_updtae_article($extensionUpload, $i)
         {
@@ -355,11 +355,23 @@ class Model_Admin_Update extends Model
         }
     
 
-        public function Select_chemin_image($chemin)
+    public function Select_chemin_image($chemin)
         {
 
             $requete = $this->bdd->query("SELECT * FROM images_articles WHERE chemin = '{$chemin}'");
             return $requete->fetchall();
 
         }
+
+
+    public function update_nom_chemin_image($chemin,$nouveau_chemin)
+        {
+            $req_update = $this->bdd->prepare('UPDATE images_articles 
+                                               SET chemin = :nouveau_chemin      
+                                                 WHERE chemin = :ancien_chemin');
+            $req_update->execute(array(
+            'nouveau_chemin' => $nouveau_chemin,
+            'ancien_chemin' => $chemin
+            ));
         }
+}

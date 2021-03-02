@@ -207,13 +207,18 @@ class View_Admin_Update
                             <?php $i++;
                             }
                             ?>
+
+
+
                             <input type="submit" value="supprimer" style="height:20px" name="submit2">
                             </br>
 
                             <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
-                            <?php 
-                            if(@$_POST['photo_principale'])
-                            {echo $value['chemin'];} ?>
+       
+
+
+
+                            
                         </div>
 
 

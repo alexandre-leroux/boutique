@@ -191,7 +191,7 @@ class Controller_Admin_Update
 
     public static function ajouter_image_update_article()
         {
-            if($_POST['ajout_photo'])
+            if(@$_POST['ajout_photo'])
             {
                 // var_dump($_FILES['image']);
 
@@ -231,9 +231,6 @@ class Controller_Admin_Update
                                     // $admin->insertImage($extensionUpload, $i);
                                     
                                     $admin-> ajout_image_updtae_article($extensionUpload, $a);
-
-                                
-                                
                                     
                                  }
                                  else{
@@ -255,4 +252,39 @@ class Controller_Admin_Update
             else{return 'fail';}
         }
     
+
+
+
+        public static function choisir_premiere_image()
+            {
+                $admin = new Model_Admin_Update;
+                $id_art = $_GET['id'];
+                $id_art2 = $_GET['id'];
+                $chemin = $id_art.='-0.jpg';
+                $nouveau_chemin = $id_art2.='-100.jpg';
+
+                
+                if(@$_POST['photo_principale'] AND (count($_POST)==2))
+                    {
+                        $chemin_existant = $admin->SelectOne('images_articles','chemin',$chemin);
+                
+                        if($chemin_existant)
+                            {
+                                rename("../medias/img_articles/".$chemin."", "../medias/img_articles/".$_GET['id']."-100.jpg");
+                                $admin->update_nom_chemin_image($chemin,$nouveau_chemin);
+                            }
+                            
+                        $nom_image_a_modif = key($_POST);
+                        
+                        rename("../medias/img_articles/".$nom_image_a_modif."", "../medias/img_articles/".$_GET['id']."-0.jpg");
+                        $admin->update_nom_chemin_image($nom_image_a_modif,$chemin);
+                    }
+                else
+                    {
+                        var_dump('non');
+                    }
+
+            
+
+            }
 }
