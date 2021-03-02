@@ -1,7 +1,7 @@
 <?php
 
-require_once("../models/bapt_Model.php") ;
-require_once("../models/bapt_Admin.php");
+require_once("../models/Model.php") ;
+require_once("../models/Model_Admin_Insert.php");
 
 class Controller {
 

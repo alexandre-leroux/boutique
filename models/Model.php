@@ -1,12 +1,12 @@
 <?php
 
-require("../fonctions.php"); 
+require_once("Database.php"); 
 
-class Models {
-    protected $bdd ;
+class Model extends Database {
+    public $bdd ;
 
     public function __construct(){
-        $this->bdd = getPdo() ; 
+        $this->bdd = Database::connection_bdd();
     }
 
     public function display(string $table): array{

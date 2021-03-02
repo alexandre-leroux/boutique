@@ -1,8 +1,6 @@
 <?php
 
-require_once("bapt_View.php") ;
-
-class Form extends View {
+class Form {
 
     /**
      * Affichage du formulaire commun de tous les produits  

@@ -1,8 +1,8 @@
 <?php
 
-require_once("bapt_Model.php") ;
+require_once("Model.php") ;
 
-class Article extends Models {
+class Article extends Model {
 
     /**
      * Renvoie un tableau avec les infos d'un article + son image principale 
@@ -11,7 +11,7 @@ class Article extends Models {
      * @param [type] $groupby
      * @return array
      */
-    public function findAllArticles(?string $order, $groupby) : array
+    public function findAllArticles(?string $order, $groupby) 
     {
         $sql = "SELECT articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie,MIN(chemin)
                     FROM articles 
@@ -81,7 +81,7 @@ class Article extends Models {
      * @param array $tableau_article
      * @return void
      */
-    public function findArticleSimilaires(array $tableau_article){
+    public function findArticleSimilaires($tableau_article){
         $requete = $this->bdd->prepare("SELECT articles.id_articles,art_nom,prix, MIN(chemin) 
                                             FROM articles
                                                 NATURAL JOIN images_articles

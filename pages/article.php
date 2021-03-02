@@ -1,7 +1,7 @@
 <?php
 
-require_once("../models/bapt_Article.php"); 
-require_once("../view/bapt_View_Article.php"); 
+require_once("../models/Model_Article.php"); 
+require_once("../view/View_Article.php"); 
 
 $article = new Article(); 
 $view_article = new viewArticle();

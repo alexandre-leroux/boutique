@@ -2,9 +2,9 @@
 <?php
     session_start();
     //include("fonctions.php"); 
-    require_once("../models/bapt_Admin.php"); 
-    require_once("../view/bapt_Form.php");
-    require("../controllers/bapt_Admin_Controller.php");
+    require_once("../models/Model_Admin_Insert.php"); 
+    require_once("../view/View_Admin_Insert.php");
+    require("../controllers/Controller_Admin_Insert.php");
     
     $admin = new Admin(); // Model
     $form = new Form(); // View 

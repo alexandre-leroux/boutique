@@ -185,7 +185,7 @@ class viewArticle {
      * @param array $array_art_similaire
      * @return void
      */
-    public function displayArticlesSimilaires(array $array_art_similaire){
+    public function displayArticlesSimilaires($array_art_similaire){
 
         for($i = 0; isset($array_art_similaire[$i]) ; $i++)
         {

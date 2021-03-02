@@ -1,9 +1,9 @@
 <?php
 
-require_once("bapt_Model.php") ;
+require_once("Model.php") ;
 
 
-class Admin extends Models {
+class Admin extends Model {
 
     /**
      * Ajout d'une marque 
@@ -108,7 +108,7 @@ class Admin extends Models {
      */
     public function insertImage($extensionUpload, $i): void {
 
-        $result = getAllInfosArticle();
+        $result = $this->getAllInfosArticle();
         $nom = ''.$result['id_articles'].'-'.$i.'.'.$extensionUpload.''; 
     
         $requete = $this->bdd->prepare('INSERT INTO images_articles (id_articles, chemin)

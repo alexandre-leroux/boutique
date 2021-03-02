@@ -1,6 +1,6 @@
 <?php
 
-require("../models/bapt_Panier.php");
+require("../models/Model_Panier.php");
 
 $panier = new Panier();
 

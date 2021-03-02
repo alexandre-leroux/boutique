@@ -1,8 +1,8 @@
 <?php
 
-require_once("../models/bapt_Article.php");
-require_once("../view/bapt_View_article.php");
-require_once("../controllers/bapt_Article_Controller.php");
+require_once("../models/Model_Article.php");
+require_once("../view/View_Article.php");
+require_once("../controllers/Controller_Article.php");
 
 $article = new Article(); 
 $view_article = new viewArticle();
@@ -24,7 +24,7 @@ $controller_article->TrierPar($article,$view_article,@$_GET['id_marques']);
         display: flex; 
         width: 90%; 
         margin: auto; 
-        align-item : center; 
+        align-items : center; 
         justify-content: center ; 
         flex-wrap : wrap; 
     }
