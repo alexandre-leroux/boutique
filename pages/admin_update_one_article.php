@@ -1,9 +1,9 @@
 <?php
-require_once('../models/Models_Admin.php');
+require_once('../models/Model_Admin_Update.php');
 require_once('../View/view_Admin.php');
 require_once('../controllers/Controller_admin_Update.php');
 
-$admin = new Model_Admin();
+$admin = new Model_Admin_Update();
 
 $donnees = $admin->select_one_articles_updates();
 $req_categorie = $admin->SelectAll('categorie');

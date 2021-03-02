@@ -1,7 +1,7 @@
 <?php
 require_once('Model.php');
 
-class Model_Admin extends Model
+class Model_Admin_Update extends Model
 {
 
 

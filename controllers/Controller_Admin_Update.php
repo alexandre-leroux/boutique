@@ -1,5 +1,5 @@
 <?php
-require_once('../Models/Models_Admin.php');
+require_once('../Models/Model_Admin_Update.php');
 
 
 class Controller_Admin_Update
@@ -12,7 +12,7 @@ class Controller_Admin_Update
             if ($value == 'supprimer') {
                 break;
             } else {
-                $admin = new Model_Admin();
+                $admin = new Model_Admin_Update();
                 unlink($value);
                 $img_bdd  = $value;
                 $nom_img_bdd = explode("../medias/img_articles/", $img_bdd);
@@ -24,7 +24,7 @@ class Controller_Admin_Update
 
     public static function changement_nom_categorie()
     {
-        $admin = new Model_Admin();
+        $admin = new Model_Admin_Update();
 
         if (@$_POST['submit_cat']) {
             $admin->update_name_categorie();
@@ -61,7 +61,7 @@ class Controller_Admin_Update
         {
             if(@$_POST['rechercher'])
             {
-                $admin = new Model_Admin();
+                $admin = new Model_Admin_Update();
                return $admin->recherche_dans_articles($mot_cle);
         
             
@@ -75,7 +75,7 @@ class Controller_Admin_Update
 
     {
 
-        $admin = new Model_Admin();
+        $admin = new Model_Admin_Update();
         if ($_GET['idcat'] == 1) {
 
             View_Admin_Update::affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article);
@@ -208,7 +208,7 @@ class Controller_Admin_Update
                              $extensionUpload = strtolower(substr(strrchr($_FILES['image']['name'][$i], '.'),1));
                              if(in_array($extensionUpload, $extensionsValides))
                              {
-                                 $admin = new Model_Admin;
+                                 $admin = new Model_Admin_Update;
                                  
                                  $a = 0;
                                  while(  
