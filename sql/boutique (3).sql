@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 01 mars 2021 à 13:49
+-- Généré le : mar. 02 mars 2021 à 13:03
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -39,15 +39,15 @@ CREATE TABLE `articles` (
   `art_courte_description` varchar(255) NOT NULL,
   `art_description` longtext NOT NULL,
   `stock` int(11) NOT NULL,
-  `prix` int(11) NOT NULL,
+  `prix` float NOT NULL,
   `art_date` datetime NOT NULL,
   `raq_poids` int(11) DEFAULT NULL,
   `raq_tamis` int(11) DEFAULT NULL,
   `raq_taille_manche` int(11) DEFAULT NULL,
   `raq_equilibre` int(11) DEFAULT NULL,
-  `cor_jauge` int(11) DEFAULT NULL,
+  `cor_jauge` float DEFAULT NULL,
   `sac_thermobag` int(11) DEFAULT NULL,
-  `acc_grip_eppaisseur` int(11) DEFAULT NULL,
+  `acc_grip_eppaisseur` float DEFAULT NULL,
   `acc_grip_couleur` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -155,14 +155,17 @@ CREATE TABLE `images_articles` (
 --
 
 INSERT INTO `images_articles` (`id`, `id_articles`, `chemin`) VALUES
-(1, 1, '1-1.jpg'),
 (3, 2, '2-1.jpg'),
 (4, 2, '2-2.jpg'),
 (7, 3, '3-1.jpg'),
 (8, 4, '4-1.jpg'),
 (9, 5, '5-1.jpg'),
 (10, 6, '6-1.jpg'),
-(11, 6, '6-2.jpg');
+(11, 6, '6-2.jpg'),
+(46, 1, '1-2.jpg'),
+(47, 1, '1-1.jpg'),
+(49, 2, '2-0.jpg'),
+(50, 2, '2-3.jpg');
 
 -- --------------------------------------------------------
 
@@ -180,7 +183,7 @@ CREATE TABLE `marques` (
 --
 
 INSERT INTO `marques` (`id_marques`, `marques_nom`) VALUES
-(1, 'babolat'),
+(1, 'babolatt'),
 (2, 'wilson'),
 (3, 'head'),
 (4, 'prince'),
@@ -231,9 +234,9 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id_utilisateurs`, `uti_droits`, `uti_nom`, `uti_prenom`, `uti_mail`, `uti_tel`, `uti_motdepasse`, `uti_rue`, `uti_code_postal`, `uti_ville`) VALUES
-(1, 0, 'Leroux', 'Alex', 'a@a.fr', '1234', '$2y$10$7c/IiPImurgDrYxOsa8.ne.OtQhBgWcBVhZarWd/Ip8ieS6GyTX6a', 'dfdfdfdfdfd', 43434343, 'creteil'),
+(1, 1, 'Leroux', 'Alex', 'a@a.fr', '1234', '$2y$10$7c/IiPImurgDrYxOsa8.ne.OtQhBgWcBVhZarWd/Ip8ieS6GyTX6a', 'dfdfdfdfdfd', 43434343, 'creteil'),
 (2, NULL, 'johndfgsdgs', 'alex', 'sdv@cdsfz.fr', '0632233223', '$2y$10$0P9DYmor1j.ZKN6X8k6PNO8T8XR5EbIErlqU2nb7G0GjSmbO2UHHC', 'gzergzer', 12432, 'fdgdg'),
-(3, NULL, 'john', 'alex', 'sdvvvvdvdvv@cdsfz.fr', '0632233223', '$2y$10$42PRCg9VnoqzDCym2baVQe9I8I0ZfxLhmdKjNpgIGvKBGDZvTXKt.', 'errrrrr', 12432, 'fdgdg'),
+(3, 1, 'john', 'assses', 'sdvvvvdvdvv@cdsfz.fr', '0632233223', '$2y$10$42PRCg9VnoqzDCym2baVQe9I8I0ZfxLhmdKjNpgIGvKBGDZvTXKt.', 'errrrrr', 12432, 'fdgdg'),
 (4, NULL, 'rene', 'alex', 'sdvvsdvsdvdvvv@cdsfz.fr', '0632233223', '$2y$10$RcTRq9XMesS55nvgANs4KOw8x1h4AWRPVN8NAjbSSxsm/tjM0zCr2', 'rgerg', 12432, 'fdgdg'),
 (5, NULL, 'john', 'alex', 'sdscvvsdcqvvdvdvv@cdsfz.fr', '0632233223', '$2y$10$AbWa8uZ2PCZUep2qq2OotOobqC.q9dmKqF9PkxKM73UY9UwhZFbPG', 'sdvsdv', 12432, 'fdgdg'),
 (6, 1, 'john', 'fdsfdf', 'a@a.fr', '0632233223', '$2y$10$SmG8zouQon620fRc4k/N3.WZ8gyAkyn2dhXUsJnNJM17yK0SdiBZy', 'ssssssssssssss', 12432, 'fdgdg'),
@@ -341,7 +344,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `images_articles`
 --
 ALTER TABLE `images_articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT pour la table `marques`

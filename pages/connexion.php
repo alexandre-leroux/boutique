@@ -8,9 +8,6 @@ $error = Controller_User::connexion();
 View_User::form_connexion(@$error);  
 
 
-
-
-
 ?>
 
 
