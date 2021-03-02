@@ -223,7 +223,7 @@ class View_Admin_Update
                         <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
                             
                                 <label for="image"> Ajouter des images : </label>
-                                <input  type="file" name="image[]" >
+                                <input  type="file" name="image[]" multiple >
                                 <input type="submit" value="Envoyer" name="ajout_photo">
                                 
                             </form>

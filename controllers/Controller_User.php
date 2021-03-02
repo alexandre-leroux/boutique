@@ -1,9 +1,8 @@
 <?php
-require_once('Controller.php');
 require_once('../Models/Model_user.php');
 
 
-class Controller_User extends Controller{
+class Controller_User{
 
     public $bdd;
 

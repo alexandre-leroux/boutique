@@ -1,9 +1,8 @@
 <?php
-require_once('Controller.php');
 require_once('../Models/Models_Admin.php');
 
 
-class Controller_Admin extends Controller
+class Controller_Admin
 {
 
 
@@ -210,29 +209,30 @@ class Controller_Admin extends Controller
                              if(in_array($extensionUpload, $extensionsValides))
                              {
                                  $admin = new Model_Admin;
-                    
-                                while(
-                                 $nom_image = $_GET['id']."-".$i.".".$extensionUpload AND
+                                 
+                                 $a = 0;
+                                 while(  
+                                 $nom_image = $_GET['id']."-".$a.".".$extensionUpload AND
                                  $chemin_existants = $admin->Select_chemin_image($nom_image) == TRUE)
                                  {
-                                     $i++ ;
+                                     $a++ ;
                                  }
                                
-                                //  var_dump($nom_image);
+                                 var_dump($a);
                       
                                 //  var_dump($chemin_existants);
 
-                                 $chemin = "../medias/img_articles/".$_GET['id']."-".$i.".".$extensionUpload;
+                                 $chemin = "../medias/img_articles/".$_GET['id']."-".$a.".".$extensionUpload;
                          
-                                 $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][0], $chemin ); 
+                                 $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][$i], $chemin ); 
                                  var_dump($i);
                                  if($mouvement)
                                  {
                                     // $admin->insertImage($extensionUpload, $i);
                                     
-                                    $admin-> ajout_image_updtae_article($extensionUpload, $i);
+                                    $admin-> ajout_image_updtae_article($extensionUpload, $a);
 
-                                    $a++;
+                                
                                 
                                     
                                  }

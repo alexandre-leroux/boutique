@@ -341,9 +341,9 @@ class Model_Admin extends Model
         return $req_search->fetchAll();
     }
 
-    public function ajout_image_updtae_article($extensionUpload, $a)
+    public function ajout_image_updtae_article($extensionUpload, $i)
         {
-            $nom = ''.$_GET['id'].'-'.$a.'.'.$extensionUpload.''; 
+            $nom = ''.$_GET['id'].'-'.$i.'.'.$extensionUpload.''; 
             $requete = $this->bdd->prepare('INSERT INTO images_articles (id_articles, chemin)
             VALUES (:id_articles, :chemin)'
             );
