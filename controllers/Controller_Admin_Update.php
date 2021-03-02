@@ -2,7 +2,7 @@
 require_once('../Models/Models_Admin.php');
 
 
-class Controller_Admin
+class Controller_Admin_Update
 {
 
 
@@ -135,7 +135,7 @@ class Controller_Admin
 
 
         if (@$_POST['submit2']) {
-            Controller_Admin::supp_image();
+            Controller_admin_Update::supp_image();
             header('Location: messages_et_redirections/article_modifie.php');
             exit();
         }
