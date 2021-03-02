@@ -7,7 +7,7 @@ echo 'vous avez bien été inscrit';
 
 http://localhost/pp2/boutique/pages/admin_update_one_article.php?id=1&idcat=1&idsouscat=
 
-$redirection = explode("http://localhost/pp2/boutique/pages/", $_SERVER['HTTP_REFERER']);
+$redirection = explode("http://localhost/laplateforme/boutique/pages/", $_SERVER['HTTP_REFERER']);
 //---------------------------------------------ATTENTION MODIFIER ADRESSE LOCALE SINON BUG FAIRE UN ECHO DU $_SERVER !!!!!
 
 
