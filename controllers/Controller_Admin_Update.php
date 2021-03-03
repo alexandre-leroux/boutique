@@ -307,85 +307,75 @@ class Controller_Admin_Update
                                     $nom_image_selectionnee = key($_POST); $nom_image_selectionnee_reformate = str_replace('_','.',$nom_image_selectionnee);
                                     
                                     for($i = 0;  $i<=3; $i++ )
-                                    {
+                                    {   
+                                        // prépare la comparaison pour voir si l'image selectionnée n'est pas déjà la "0"
                                         $chemin_a_trouver = $_GET['id']."-0.".$extensionsValides[$i];
 
                                         if($nom_image_selectionnee_reformate != $chemin_a_trouver)
-                                            {
+                                            {//image différente de la "0", on entre dans le if
 
 
 
                                                 for($a = 0; $a<=3; $a++ )
-                                                    {
+                                                    {//boucle qui va cherche si il y a déjà une image "0", pour la renommer en "100" de façon provisoire
                                                         $id_art_ext = $_GET['id']."-0.".$extensionsValides[$a]."";
                                                         $id_art_ext_100 = $_GET['id']."-100.".$extensionsValides[$a]."";
                                                         $chemin_existant_ext = $admin->SelectOne('images_articles','chemin',$id_art_ext);
+
                                                         if($chemin_existant_ext)
-                                                            {
+                                                            {//si image trouvée, elle est renommé en 100
                                                                 rename("../medias/img_articles/".$id_art_ext."", "../medias/img_articles/".$_GET['id']."-100.".$extensionsValides[$a]."");
                                                                 $admin->update_nom_chemin_image($id_art_ext,$id_art_ext_100);
-                                                                var_dump('renomee en 100');echo'</br>';
                                                             }
-                                                            
-                                                            var_dump('pppppppppp');echo'</br>';
                                                                     
                                                     }       
 
+                                                //une fois sorti de la boucle, on renomme l'image selectionnée en "0"
                                                 rename("../medias/img_articles/".$nom_image_selectionnee_reformate."", "../medias/img_articles/".$_GET['id']."-0.".$ext."");var_dump("renome le choix en 0.".$ext."");echo'</br>';
                                                 $admin->update_nom_chemin_image($nom_image_selectionnee_reformate,$chemin);var_dump('insert dans la bdd');echo'</br>';
-                                                // break ;
 
 
                                                 for($e = 0; $e<=3; $e++ )
-                                                    {
+                                                    {//boucle pour vérifier si il y a une image provisoire "100", pour la renommer là ou il y a de la place
                                                         $id_art_ext_100 = $_GET['id']."-100.".$extensionsValides[$e]."";
-                                                        var_dump( 'il est entre dans le 100');echo'</br>';
                                                         
                                                         if($image_100_existe = $admin->Select_chemin_image($id_art_ext_100))
+                                                            {
+                                                                //on recupère l'extention de la photo "100"
+                                                                $ext_image_100 = substr($image_100_existe[0]["chemin"],-3);
 
-                                                        {
-                                                            var_dump( 'il a trouve une image en 100');echo'</br>';
-                                                            var_dump($image_100_existe[0]);echo'</br>';
-                                                           echo $image_100_existe[0]["chemin"];echo'</br>';
-                                                            $ext_image_100 = substr($image_100_existe[0]["chemin"],-3);
-
-                                                            var_dump('test');echo'</br>';
-                                                            var_dump( $ext_image_100);echo'</br>';
-                                                                var_dump( $image_100_existe);echo'</br>';
-
-                                                                for($d = 1; $d<20 ;$d++)
+                                                                //double boucle pour checker cahque incrément avec chaque extention
+                                                                for($d = 1; $d<50 ;$d++)
                                                                     {
                                                                        for (  $c = 0; $c<=3; $c++ )
-                                                                       {var_dump( 'il entre dans la boucle des 100 pour trouver un emplacement');echo'</br>';
+                                                                       {
                                                                            $nom_image_remplacant_100 = $_GET['id']."-".$d.".".$extensionsValides[$c]."";
-                                                                           var_dump( $nom_image_remplacant_100);echo'</br>';
 
                                                                           if( $chemin_existants = $admin->Select_chemin_image($nom_image_remplacant_100))
 
-                                                                          {$chemin_pas_libre = 1; var_dump( 'il a trouve un emplacement deja pris');echo'</br>';}
+                                                                            {
+                                                                                $chemin_pas_libre = 1;
+                                                                            }
 
-                                                                          else{$chemin_libre = 0 ; var_dump( 'rien n\'est pris, tout est libre');echo'</br>';var_dump( $chemin_libre);echo'</br>';}
+                                                                          else
+                                                                            {
+                                                                                $chemin_libre = 0 ; 
+                                                                            }
                                                                        }
                                                        
                                                                            if($chemin_pas_libre == 1)
                                                                            {
+                                                                            //on unset la variable pour repartir à 0 dans la boucle. Cette variable est un repère quand une image existante dans l'incrément existe
                                                                             unset($chemin_pas_libre);
-                                                                               var_dump( 'il est entré dans le chemin pas libre');echo'</br>';
+                                                                             
                                                                            }
                                                                            else
-                                                                           {var_dump( 'il va enfin rennomer cette putain dimage 100');echo'</br>';
-
-                                                                           
-                                                                          
-
-                                                                            //reprendre ici pour l'extention--------------------------------------------------
-                                                                          
-                                                                             $image_100_a_renommer = $_GET['id']."-100.".$ext_image_100."";
-                                                                                 $nouveau_nom_image = $_GET['id']."-".$d.".".$ext_image_100."";
-                                                                                 var_dump( $image_100_a_renommer);echo'</br>';
-                                                                                var_dump( $nouveau_nom_image);echo'</br>';
-                                                                               rename("../medias/img_articles/".$image_100_a_renommer."", "../medias/img_articles/".$nouveau_nom_image."");
-                                                                               $admin->update_nom_chemin_image($image_100_a_renommer,$nouveau_nom_image);
+                                                                           {
+                                                                            //la variable chein pas libre n'a pas été créée au tour de boucle, on lance le renommage de l'image
+                                                                                $image_100_a_renommer = $_GET['id']."-100.".$ext_image_100."";
+                                                                                $nouveau_nom_image = $_GET['id']."-".$d.".".$ext_image_100."";
+                                                                                rename("../medias/img_articles/".$image_100_a_renommer."", "../medias/img_articles/".$nouveau_nom_image."");
+                                                                                $admin->update_nom_chemin_image($image_100_a_renommer,$nouveau_nom_image);
                                                                                // header('Location: messages_et_redirections/article_modifie.php');
                                                                                break 2;
                                                                            }
