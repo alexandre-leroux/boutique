@@ -12,7 +12,7 @@ if(isset($_GET['id']))
     }
     var_dump($product);
     $panier->add($product[0]->id_articles);
-    die('le produit a bien été ajouter au panier ! <a href="boutique.php">Retournez à la boutique</a>'); 
+    die('le produit a bien été ajouter au panier ! <a href="boutique.php">Retournez à la boutique</a> <a href="panier.php"> Voir le panier </a>'); 
 
 }
 else{

@@ -29,13 +29,33 @@ class Panier extends Model {
     }
 
     public function add($product_id) {
-        $_SESSION['panier'][$product_id] = 1;
-        var_dump($_SESSION['panier'][$product_id]) ;
+        if(isset($_SESSION['panier'][$product_id]))
+        {
+            $_SESSION['panier'][$product_id]++; 
+        }
+        else{
+
+            $_SESSION['panier'][$product_id] = 1;
+        }
+        
     }
 
-    // public function findInfosArticlePanier()
-    // {
-    //     $this->bdd->prepare("SELECT * FROM articles WHERE id_article IN ('.implode(',',' ")
-    // }
+    public function findInfosArticlePanier($implode)
+    {
+        $requete = $this->bdd->prepare("SELECT id_articles,art_nom,prix,stock,MIN(chemin)
+                                            FROM articles 
+                                                NATURAL JOIN images_articles
+                                                    WHERE id_articles 
+                                                        IN ({$implode})
+                                                            GROUP BY id_articles,art_nom,prix,stock
+                                                              
+        ");
+
+        $requete->execute(); 
+
+        return $requete->fetchAll(); 
+
+    }
+
 
 }
