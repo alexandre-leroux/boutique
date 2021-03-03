@@ -295,10 +295,10 @@ class Controller_Admin_Update
                         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
 
                         $admin = new Model_Admin_Update;
-                        $id_art = $_GET['id'];
-                        $id_art2 = $_GET['id'];
-                        $chemin = $id_art.="-0.".$ext."";
-                        $image_nomme_100 = $id_art2.="-100.".$ext."";
+                        // $id_art = $_GET['id'];
+                        // $id_art2 = $_GET['id'];
+                        // $chemin = $id_art.="-0.".$ext."";
+                        // $image_nomme_100 = $id_art2.="-100.".$ext."";
 
 
                             if(count($_POST)==2)
@@ -377,22 +377,20 @@ class Controller_Admin_Update
                                                                                 rename("../medias/img_articles/".$image_100_a_renommer."", "../medias/img_articles/".$nouveau_nom_image."");
                                                                                 $admin->update_nom_chemin_image($image_100_a_renommer,$nouveau_nom_image);
                                                                                header('Location: messages_et_redirections/article_modifie.php');
-                                                                               break 2;
+                                                                              
                                                                            }
          
-                                                                      
                                                                     }
                                                             } 
 
                                                     }  
                                                     header('Location: messages_et_redirections/article_modifie.php');      
-                                                break 1;
                                             }
 
                                         else
                                         {
                                             return 'dejà image principale';
-                                            exit;
+                                        
                                         }    
                                             
                                     }
