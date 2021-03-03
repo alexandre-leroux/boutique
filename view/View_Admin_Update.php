@@ -187,62 +187,62 @@ class View_Admin_Update
 
 
                 public static function affichage_modif_photo($req_img_article,$erreur_choix_premiere_image)
-                {
-                    ?>
-                        <div style="display:flex">
-                            <?php
-
-                            $i = 0;
-                            foreach ($req_img_article as $value) {
+                    {
                             ?>
-                                <div>
-
-                                    <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
-
-                                    <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
-                                        <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
-                                     
-
-                                    
-                                </div>
-                            <?php $i++;
-                            }
-                            ?>
-
-
-
-                            <input type="submit" value="supprimer" style="height:20px" name="submit2">
-                            </br>
-
-                            <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
-                            <?=$erreur_choix_premiere_image?>
-       
-
-
+                            <div style="display:flex">
+                                <?php
 
                             
-                        </div>
+                                foreach ($req_img_article as $value) {
+                                ?>
+                                    <div>
+
+                                        <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
+
+                                        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
+                                            <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
+                                        
+
+                                        
+                                    </div>
+                                <?php 
+                                }
+                                ?>
 
 
-                </form>
+
+                                <input type="submit" value="supprimer" style="height:20px" name="submit2">
+                                </br>
+
+                                <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
+                                <?=$erreur_choix_premiere_image?>
+        
 
 
-                        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
-                            
-                                <label for="image"> Ajouter des images : </label>
-                                <input  type="file" name="image[]" multiple >
-                                <input type="submit" value="Envoyer" name="ajout_photo">
+
                                 
+                            </div>
+
+
                             </form>
 
 
+                            <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
+                                
+                                    <label for="image"> Ajouter des images : </label>
+                                    <input  type="file" name="image[]" multiple >
+                                    <input type="submit" value="Envoyer" name="ajout_photo">
+                                    
+                                </form>
 
-            <?php
-                }
+
+
+                            <?php
+                    }
 
 
 
-        public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article)
+        public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
             {
                         View_Admin_Update::donnees_generales_communes($donnees);
                         ?>

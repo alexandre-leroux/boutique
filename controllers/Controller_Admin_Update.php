@@ -70,7 +70,7 @@ class Controller_Admin_Update
         }
 
 
-    public static function update_un_article($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle, $req_sous_cat_accessoires)
+    public static function update_un_article($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle, $req_sous_cat_accessoires,$erreur_choix_premiere_image)
 
 
     {
@@ -78,7 +78,7 @@ class Controller_Admin_Update
         $admin = new Model_Admin_Update();
         if ($_GET['idcat'] == 1) {
 
-            View_Admin_Update::affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article);
+            View_Admin_Update::affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
             if (@$_POST['submit']) {
                 $admin->update_raquette($donnees);
 
@@ -89,7 +89,7 @@ class Controller_Admin_Update
 
         if ($_GET['idcat'] == 2) {
 
-            View_Admin_Update::affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article);
+            View_Admin_Update::affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
             if (@$_POST['submit']) {
                 $admin->update_sacs($donnees);
 
@@ -100,7 +100,7 @@ class Controller_Admin_Update
 
         if ($_GET['idcat'] == 3) {
 
-            View_Admin_Update::affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article);
+            View_Admin_Update::affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
             if (@$_POST['submit']) {
                 $admin->update_cordage($donnees);
 
@@ -112,7 +112,7 @@ class Controller_Admin_Update
         if ($_GET['idcat'] == 4) {
 
             $donnees = $admin->select_one_articles_updates_balle();
-            View_Admin_Update::affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle);
+            View_Admin_Update::affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle,$erreur_choix_premiere_image);
             if (@$_POST['submit']) {
                 $admin->update_balle($donnees);
 
@@ -124,7 +124,7 @@ class Controller_Admin_Update
         if ($_GET['idcat'] == 5) {
 
             $donnees = $admin->select_one_articles_update_accessoire();
-            View_Admin_Update::affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires);
+            View_Admin_Update::affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires,$erreur_choix_premiere_image);
             if (@$_POST['submit']) {
                 $admin->update_accessoire($donnees);
 
@@ -264,62 +264,71 @@ class Controller_Admin_Update
                 $id_art2 = $_GET['id'];
                 $chemin = $id_art.='-0.jpg';
                 $image_nomme_100 = $id_art2.='-100.jpg';
-
                 
                 if(@$_POST['photo_principale'] AND (count($_POST)==2))
-                    {var_dump($_POST);
-                        $chemin_existant = $admin->SelectOne('images_articles','chemin',$chemin);
-                
-                        if($chemin_existant)
-                            {
-                                rename("../medias/img_articles/".$chemin."", "../medias/img_articles/".$_GET['id']."-100.jpg");
-                                $admin->update_nom_chemin_image($chemin,$image_nomme_100);
-                            }
-                            
-                        $nom_image_a_modif = key($_POST);
-                        $nom_image_a_modif_renome = str_replace('_','.',$nom_image_a_modif);
-                        // var_dump($nom_image_a_modif_renome);
+                    {
+                        $nom_image_selectionnee = key($_POST);
+                        $nom_image_selectionnee_reformate = str_replace('_','.',$nom_image_selectionnee);
 
-                        if($nom_image_a_modif_renome != $chemin)
+                        if($nom_image_selectionnee_reformate != $chemin)
                             {
-                                rename("../medias/img_articles/".$nom_image_a_modif_renome."", "../medias/img_articles/".$_GET['id']."-0.jpg");
-                                $admin->update_nom_chemin_image($nom_image_a_modif_renome,$chemin);
 
-                            
-                                if($mage_100_existe = $admin->Select_chemin_image($image_nomme_100))
+                                $chemin_existant = $admin->SelectOne('images_articles','chemin',$chemin);
+                        
+                                if($chemin_existant)
                                     {
-                                        // var_dump('image 100 existe');
-                                        for(  
-                                            $a = 0;
-                                            $nom_image_remplacant_100 = $_GET['id']."-".$a.".jpg" AND
-                                            $chemin_existants = $admin->Select_chemin_image($nom_image_remplacant_100);
-                                            $a++ )
-                                        {
-                                            // var_dump($a);
-                                            // echo '</br>';
-                                        }
-                                        // var_dump($a);
-                                        // echo '</br>';
-                                        // var_dump($nom_image_remplacant_100);
-                                        // echo '</br>';
-                                        // var_dump($chemin_existants);
-
-                                        rename("../medias/img_articles/".$image_nomme_100."", "../medias/img_articles/".$nom_image_remplacant_100."");
-                                        $admin->update_nom_chemin_image($image_nomme_100,$nom_image_remplacant_100);
-                                    
+                                        rename("../medias/img_articles/".$chemin."", "../medias/img_articles/".$_GET['id']."-100.jpg");
+                                        $admin->update_nom_chemin_image($chemin,$image_nomme_100);
                                     }
-                                var_dump('fini');   
-                            } 
+                                    
+                                $nom_image_a_modif = key($_POST);
+                                $nom_image_a_modif_renome = str_replace('_','.',$nom_image_a_modif);
+
+                                if($nom_image_a_modif_renome != $chemin)
+                                    {
+                                        rename("../medias/img_articles/".$nom_image_a_modif_renome."", "../medias/img_articles/".$_GET['id']."-0.jpg");
+                                        $admin->update_nom_chemin_image($nom_image_a_modif_renome,$chemin);
+
+                                        if($image_100_existe = $admin->Select_chemin_image($image_nomme_100))
+                                            {
+                                                for(  
+                                                    $a = 0;
+                                                    $nom_image_remplacant_100 = $_GET['id']."-".$a.".jpg" AND
+                                                    $chemin_existants = $admin->Select_chemin_image($nom_image_remplacant_100);
+                                                    $a++ )
+                                                {
+                                                    // var_dump($a);
+                                                    // echo '</br>';
+                                                }
+                                                // var_dump($a);
+                                                // echo '</br>';
+                                                // var_dump($nom_image_remplacant_100);
+                                                // echo '</br>';
+                                                // var_dump($chemin_existants);
+
+                                                rename("../medias/img_articles/".$image_nomme_100."", "../medias/img_articles/".$nom_image_remplacant_100."");
+                                                $admin->update_nom_chemin_image($image_nomme_100,$nom_image_remplacant_100);
+                                                header('Location: messages_et_redirections/article_modifie.php');
+                                                exit();
+                                            }
+                                        var_dump('fini');   
+                                    } 
+                                else
+                                    {
+                                        var_dump('cette image est deja la principale');
+                                        return 'cette image est deja la principale';   
+                                    }
+                            }
                         else
                             {
-                                var_dump('cette image est deja la principale');
-                                return 'cette image est deja la principale';   
-                            }
-                            
+                                // var_dump('deja image principale');
+                                return 'vous ne devez choisir qu\'une seule image';
+                            }    
                     }
+
                     else
                     {
-                        var_dump('vous ne devez choisir qu\'une seule image');
+                        // var_dump('vous ne devez choisir qu\'une seule image');
                         return 'vous ne devez choisir qu\'une seule image';
                     }
 
