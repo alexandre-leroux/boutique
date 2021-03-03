@@ -186,7 +186,7 @@ class View_Admin_Update
                 }
 
 
-                public static function affichage_modif_photo($req_img_article)
+                public static function affichage_modif_photo($req_img_article,$erreur_choix_premiere_image)
                 {
                     ?>
                         <div style="display:flex">
@@ -200,7 +200,8 @@ class View_Admin_Update
                                     <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
                                     <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
-                                        <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin'] ?>'>
+                                        <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
+                                     
 
                                     
                                 </div>
@@ -214,6 +215,7 @@ class View_Admin_Update
                             </br>
 
                             <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
+                            <?=$erreur_choix_premiere_image?>
        
 
 
@@ -282,7 +284,7 @@ class View_Admin_Update
                     </form>
 
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article);
+                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
             }
 
 
@@ -311,7 +313,7 @@ class View_Admin_Update
 
                     </form>
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article);
+                        View_Admin_Update::affichage_modif_photo($req_img_article,@$erreur_choix_premiere_image);
             }
 
 
@@ -344,7 +346,7 @@ class View_Admin_Update
                     </form>
 
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article);
+                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
             }
 
 
@@ -384,7 +386,7 @@ class View_Admin_Update
                     </form>
 
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article);
+                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
         }
 
 
@@ -417,7 +419,7 @@ class View_Admin_Update
                     </form>
 
                     <?php
-                View_Admin_Update::affichage_modif_photo($req_img_article);
+                View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
             }
 
 

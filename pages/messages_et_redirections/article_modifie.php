@@ -7,12 +7,12 @@ echo 'article bien modifié';
 
 http://localhost/pp2/boutique/pages/admin_update_one_article.php?id=1&idcat=1&idsouscat=
 
-// $redirection = explode("http://localhost/pp2/boutique/pages/", $_SERVER['HTTP_REFERER']);
+$redirection = explode("http://localhost/pp2/boutique/pages/", $_SERVER['HTTP_REFERER']);
 //---------------------------------------------ATTENTION MODIFIER ADRESSE LOCALE SINON BUG FAIRE UN ECHO DU $_SERVER !!!!!
 
 
 
-// header('Refresh:0.5 ; ../'.$redirection[1].'');
+header('Refresh:1 ; ../'.$redirection[1].'');
 
 
 // echo '</br>';
@@ -20,9 +20,9 @@ http://localhost/pp2/boutique/pages/admin_update_one_article.php?id=1&idcat=1&id
 // var_dump($redirection);
 
 ?>
-<button onclick="goBack()">RETOUR</button>
+<!-- <button onclick="goBack()">RETOUR</button> -->
 
-<script>
+<!-- <script>
 function goBack() {history.go(-1); event.preventDefault();
 }
-</script>
+</script> -->

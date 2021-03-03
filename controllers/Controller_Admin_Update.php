@@ -231,6 +231,8 @@ class Controller_Admin_Update
                                     // $admin->insertImage($extensionUpload, $i);
                                     
                                     $admin-> ajout_image_updtae_article($extensionUpload, $a);
+                                    header('Location: messages_et_redirections/article_modifie.php');
+                                    exit();
                                     
                                  }
                                  else{
@@ -261,27 +263,64 @@ class Controller_Admin_Update
                 $id_art = $_GET['id'];
                 $id_art2 = $_GET['id'];
                 $chemin = $id_art.='-0.jpg';
-                $nouveau_chemin = $id_art2.='-100.jpg';
+                $image_nomme_100 = $id_art2.='-100.jpg';
 
                 
                 if(@$_POST['photo_principale'] AND (count($_POST)==2))
-                    {
+                    {var_dump($_POST);
                         $chemin_existant = $admin->SelectOne('images_articles','chemin',$chemin);
                 
                         if($chemin_existant)
                             {
                                 rename("../medias/img_articles/".$chemin."", "../medias/img_articles/".$_GET['id']."-100.jpg");
-                                $admin->update_nom_chemin_image($chemin,$nouveau_chemin);
+                                $admin->update_nom_chemin_image($chemin,$image_nomme_100);
                             }
                             
                         $nom_image_a_modif = key($_POST);
-                        
-                        rename("../medias/img_articles/".$nom_image_a_modif."", "../medias/img_articles/".$_GET['id']."-0.jpg");
-                        $admin->update_nom_chemin_image($nom_image_a_modif,$chemin);
+                        $nom_image_a_modif_renome = str_replace('_','.',$nom_image_a_modif);
+                        // var_dump($nom_image_a_modif_renome);
+
+                        if($nom_image_a_modif_renome != $chemin)
+                            {
+                                rename("../medias/img_articles/".$nom_image_a_modif_renome."", "../medias/img_articles/".$_GET['id']."-0.jpg");
+                                $admin->update_nom_chemin_image($nom_image_a_modif_renome,$chemin);
+
+                            
+                                if($mage_100_existe = $admin->Select_chemin_image($image_nomme_100))
+                                    {
+                                        // var_dump('image 100 existe');
+                                        for(  
+                                            $a = 0;
+                                            $nom_image_remplacant_100 = $_GET['id']."-".$a.".jpg" AND
+                                            $chemin_existants = $admin->Select_chemin_image($nom_image_remplacant_100);
+                                            $a++ )
+                                        {
+                                            // var_dump($a);
+                                            // echo '</br>';
+                                        }
+                                        // var_dump($a);
+                                        // echo '</br>';
+                                        // var_dump($nom_image_remplacant_100);
+                                        // echo '</br>';
+                                        // var_dump($chemin_existants);
+
+                                        rename("../medias/img_articles/".$image_nomme_100."", "../medias/img_articles/".$nom_image_remplacant_100."");
+                                        $admin->update_nom_chemin_image($image_nomme_100,$nom_image_remplacant_100);
+                                    
+                                    }
+                                var_dump('fini');   
+                            } 
+                        else
+                            {
+                                var_dump('cette image est deja la principale');
+                                return 'cette image est deja la principale';   
+                            }
+                            
                     }
-                else
+                    else
                     {
-                        var_dump('non');
+                        var_dump('vous ne devez choisir qu\'une seule image');
+                        return 'vous ne devez choisir qu\'une seule image';
                     }
 
             
