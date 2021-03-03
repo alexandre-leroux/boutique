@@ -376,14 +376,16 @@ class Controller_Admin_Update
                                                                                 $nouveau_nom_image = $_GET['id']."-".$d.".".$ext_image_100."";
                                                                                 rename("../medias/img_articles/".$image_100_a_renommer."", "../medias/img_articles/".$nouveau_nom_image."");
                                                                                 $admin->update_nom_chemin_image($image_100_a_renommer,$nouveau_nom_image);
-                                                                               // header('Location: messages_et_redirections/article_modifie.php');
+                                                                               header('Location: messages_et_redirections/article_modifie.php');
                                                                                break 2;
                                                                            }
          
                                                                       
                                                                     }
                                                             } 
-                                                    }        
+
+                                                    }  
+                                                    header('Location: messages_et_redirections/article_modifie.php');      
                                                 break 1;
                                             }
 
