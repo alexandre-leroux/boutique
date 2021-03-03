@@ -290,7 +290,7 @@ class View_Admin_Update
 
 
 
-        public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article)
+        public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
             {
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
@@ -320,7 +320,7 @@ class View_Admin_Update
 
 
 
-        public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article)
+        public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
             {
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
@@ -352,7 +352,7 @@ class View_Admin_Update
 
 
 
-        public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle)
+        public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle,$erreur_choix_premiere_image)
              {
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
@@ -393,7 +393,7 @@ class View_Admin_Update
 
 
 
-        public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires)
+        public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires,$erreur_choix_premiere_image)
             {
                 View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
