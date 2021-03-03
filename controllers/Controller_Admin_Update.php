@@ -295,9 +295,9 @@ class Controller_Admin_Update
                         $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
 
                         $admin = new Model_Admin_Update;
-                        // $id_art = $_GET['id'];
+                        $id_art = $_GET['id'];
                         // $id_art2 = $_GET['id'];
-                        // $chemin = $id_art.="-0.".$ext."";
+                        $chemin = $id_art.="-0.".$ext."";
                         // $image_nomme_100 = $id_art2.="-100.".$ext."";
 
 
