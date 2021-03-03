@@ -85,17 +85,17 @@ class View_Admin_Update
         <!-- boucle d'affichage dela recherche -->
                 <div style="display:flex">
 
-                <?php
+                <?php  
                 $i = 0;
                 while (@$recherche[$i]) {
                 ?>
                     <div style="width:200px;border:solid;margin-right:10px">
-                        <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"] ?>">
-                            <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)'] ?>" alt="">
+                        <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];var_dump('ffffffffffffffffffffff');  ?>">
+                            <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt="">
                         </a>
                     </div>
 
-                <?php $i++;
+                <?php $i++; 
                 } ?>
                 </div>
 
@@ -104,7 +104,7 @@ class View_Admin_Update
 
             <?php
             $i = 0;
-            while (@$tous_les_articles[$i]) {
+            while (@$tous_les_articles[$i]) { 
             ?>
                 <div style="width:200px;border:solid;margin-right:10px">
                     <a href="admin_update_one_article.php?id=<?= $tous_les_articles[$i]["id_articles"] ?>&idcat=<?= $tous_les_articles[$i]["id_categorie"] ?>&idsouscat=<?= $tous_les_articles[$i]["id_sous_cat_acc"] ?>">
