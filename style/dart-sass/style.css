@@ -62,7 +62,7 @@ header {
   justify-content: space-around;
   font-weight: 700;
   padding: 0px 20px 0px 20px;
-  font-size: 10;
+  font-size: 1rem;
 }
 header .logo a {
   display: flex;
@@ -70,7 +70,7 @@ header .logo a {
   width: 200px;
 }
 header .accueil {
-  width: 500px;
+  width: 600px;
   height: 100%;
   justify-content: space-around;
 }
@@ -78,6 +78,7 @@ header .accueil a {
   text-decoration: none;
   color: white;
   margin: 30px;
+  text-align: center;
 }
 header .accueil p {
   color: white;
@@ -100,7 +101,7 @@ header .search_bar input {
 header .search_bar input::placeholder {
   color: rgba(255, 255, 255, 0.596);
   padding: 10px;
-  font-size: 1vw;
+  font-size: 1;
 }
 header .search_bar button {
   background-color: transparent;
@@ -115,15 +116,18 @@ header .burger {
 header .burger i {
   color: white;
 }
+header .menu-burger {
+  display: none;
+}
 
 .nav {
-  background-color: #0c0e0df1;
+  background-color: #1a1f1cf1;
   width: 100%;
   padding: 15px;
   text-transform: uppercase;
   font-weight: 300;
   font-style: italic;
-  font-size: 1.2vw;
+  font-size: 0.8rem;
   position: sticky;
   top: 0;
 }
@@ -142,6 +146,9 @@ header .burger i {
 
 /* On test une nav responsive */
 @media only screen and (max-width: 1024px) {
+  header {
+    font-size: 0.8rem;
+  }
   header .logo a {
     display: flex;
     height: 100%;
@@ -167,6 +174,13 @@ header .burger i {
   }
   header .burger {
     display: block;
+  }
+  header .burger:hover {
+    background-color: #2c2b2b;
+    color: black;
+  }
+  header .menu-burger {
+    display: none;
   }
 }
 

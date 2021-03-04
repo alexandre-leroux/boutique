@@ -3,7 +3,7 @@
 @import "dart-sass/libs/responsive.scss";
 
 $color1: #0C0E0D ;
-$color2: #0c0e0df1;
+$color2: #1a1f1cf1;
 $color3: #00BAFF;
 
 body{
@@ -28,7 +28,7 @@ header{
     justify-content: space-around;
     font-weight: 700;
     padding : 0px 20px 0px 20px;
-    font-size: 10;
+    font-size: 1rem;
     //font-style: italic;
 
     & .logo a{
@@ -40,7 +40,7 @@ header{
 
     & .accueil{
         @extend %dflex; 
-        width: 500px;
+        width: 600px;
         height: 100%;
         //background-color: burlywood;
         justify-content: space-around;
@@ -49,6 +49,7 @@ header{
             text-decoration: none;
             color: white;
             margin: 30px;
+            text-align: center;
         }
        
         & p {
@@ -78,7 +79,7 @@ header{
         & input::placeholder{
             color: rgba(255, 255, 255, 0.596);
             padding: 10px;
-            font-size: 1vw;
+            font-size: 1;
         }
 
         & button{
@@ -97,6 +98,9 @@ header{
             color: white;
         }
     }
+    & .menu-burger{
+        display: none
+    }
 
 }
 
@@ -109,7 +113,7 @@ header{
     text-transform: uppercase;
     font-weight: 300;
     font-style: italic;
-    font-size: 1.2vw;
+    font-size: 0.8rem;
     position: sticky;
     top: 0 ;
 
@@ -135,7 +139,7 @@ header{
 @media #{$medium-down} { // Pour les écrans inférieur à 1024px 
 
     header{
-    
+        font-size: 0.8rem;
         & .logo a{
             display: flex;
             height: 100%;
@@ -168,6 +172,18 @@ header{
 
         & .burger{
             display: block;
+  
         }
+        & .burger:hover{
+            background-color: rgb(44, 43, 43);
+            color: black;
+  
+        }
+        & .menu-burger{
+           
+                display: none;
+
+        }
+
     }
 }

@@ -10,7 +10,7 @@ class Model_Admin_Update extends Model
     {
         $requete = $this->bdd->query("  SELECT articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc, MIN(chemin)
                                         FROM articles 
-                                        INNER JOIN images_articles ON articles.id_articles = images_articles.id_articles
+                                        LEFT JOIN images_articles ON articles.id_articles = images_articles.id_articles
                                         GROUP BY articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc");
         return $requete->fetchall();
     }

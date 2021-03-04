@@ -1,6 +1,9 @@
 <?php
+session_start();
+require_once('view/View_Navigation.php');
+$repere_page_acceuil = 1;
 
-
+View_Navigation::navigation_visiteur($repere_page_acceuil);
 
 
 ?>
