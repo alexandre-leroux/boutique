@@ -71,7 +71,7 @@ class View_User
     {
         ?>
         <a href="../index.php">RETOUR</a>
-        <form action="connexion.php" method="POST">
+        <form action="user_connexion.php" method="POST">
             <div class="form-group">
                 <label for="mail">Email</label>
                 <input type="mail" name="mail">

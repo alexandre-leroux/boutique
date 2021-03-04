@@ -1,5 +1,6 @@
 <?php
 session_start();
+// if(isset($_SESSION['id_utilisateurs'])) {header('location:../index.php');}
 require_once('../models/Model_User.php');
 require_once('../View/view_User.php');
 require_once('../controllers/Controller_User.php');

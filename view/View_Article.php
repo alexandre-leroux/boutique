@@ -19,7 +19,7 @@ class viewArticle {
 
             <div class="vignette_article">
                 <div class="img">
-                    <a href="../pages/article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
+                    <a href="pages/article.php?id=<?= $value['id_articles'] ; ?>"><img src="medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
                 </div>    
                 <h1> <?= $value['art_nom'] ; ?> </h1>
                 <p> <?= $value['prix'] ; ?> € </p>
@@ -122,7 +122,7 @@ class viewArticle {
     public function displayOneArticle($resultat,$result)
     {
         for($i = 0 ; isset($resultat[$i]) ; $i++){
-            echo '<img src="../medias/img_articles/'.$resultat[$i]['chemin'].'">';
+            echo '<img src="medias/img_articles/'.$resultat[$i]['chemin'].'">';
         }
         foreach($result as $key => $value)
         {
@@ -193,7 +193,7 @@ class viewArticle {
 
         <div>
             <div>
-                <a href="article.php?id=<?= $array_art_similaire[$i]['id_articles'];?>"><img src="../medias/img_articles/<?= $array_art_similaire[$i]['MIN(chemin)']; ?>"></a>
+                <a href="article.php?id=<?= $array_art_similaire[$i]['id_articles'];?>"><img src="medias/img_articles/<?= $array_art_similaire[$i]['MIN(chemin)']; ?>"></a>
                 <h3> <?= $array_art_similaire[$i]['art_nom'] ; ?></h3>
                 <p> <?= $array_art_similaire[$i]['prix'] ; ?> €</p>
             </div>

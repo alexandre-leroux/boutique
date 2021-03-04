@@ -1,7 +1,12 @@
 <?php
+session_start();
 require_once('../models/Model_User.php');
 require_once('../View/view_User.php');
 require_once('../controllers/Controller_User.php');
+require_once('../view/View_Navigation.php');
+require_once('../controllers/Controller_Navigation.php');
+
+Controller_Navigation::affichage_navigation(@$repere_page_acceuil);
 $user = new Model();
 
 //modifier le tout avec recupe de l'id en $_SESSION

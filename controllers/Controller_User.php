@@ -6,7 +6,7 @@ class Controller_User{
 
     public $bdd;
 
-    public static function inscription()
+public static function inscription()
             {  
                 global $error_mdp;
                 global $error_mail_pris;
@@ -38,7 +38,7 @@ class Controller_User{
             }
 
 
-            public static function connexion()
+ public static function connexion()
             {
                 $admin = new Model_User();
     
@@ -63,9 +63,7 @@ class Controller_User{
                             $_SESSION['uti_rue'] = $result['uti_rue'];
                             $_SESSION['uti_code_postal'] = $result['uti_code_postal'];
                             $_SESSION['uti_ville'] = $result['uti_ville'];
-                            echo '<pre>';
-                            var_dump($_SESSION);
-                            echo '</pre>';
+                            header('location:messages_et_redirections/connexion_reussie.php');
                             }
     
     

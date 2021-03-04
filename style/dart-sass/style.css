@@ -45,7 +45,7 @@ td, th {
 }
 
 body {
-  background-color: #523b3b;
+  background-color: #a89e9e;
   font-family: "Poppins", sans-serif;
 }
 
@@ -70,7 +70,7 @@ header .logo a {
   width: 200px;
 }
 header .accueil {
-  width: 600px;
+  width: 700px;
   height: 100%;
   justify-content: space-around;
 }
