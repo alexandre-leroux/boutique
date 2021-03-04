@@ -21,4 +21,10 @@ abstract class Controllers
     public function __construct()
     {
         parent::__construct();
-Faut pas oublier d'hériter du construct du parent !
+// Faut pas oublier d'hériter du construct du parent !
+
+
+
+
+
+

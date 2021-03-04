@@ -168,6 +168,73 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
 
 
+    public static function navigation_admin($repere_page_acceuil)
+    {
+        View_Navigation::head_doctype($repere_page_acceuil);
+
+        ?>
+        <header>
+
+            <div class="logo">
+                <?php if($repere_page_acceuil) 
+                        {echo'<a href="index.php"><img src="medias/logo.svg" alt="logo"></a>';}    
+                        else
+                        {echo'<a href="../index.php"><img src="../medias/logo.svg" alt="logo"></a>';}
+                ?>
+            </div>
+
+            <div class="accueil">
+               <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
+               <p>|</p>
+               <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_accueil_gestion_site.php' : 'admin_accueil_gestion_site.php';?>">GESTION DU SITE</a>
+               <p>|</p>
+               <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_affiche_all_user.php' : 'admin_affiche_all_user.php';?>">GESTION DES UTILISATEURS</a>
+               <p>|</p>
+               <a href="<?php echo ($repere_page_acceuil) ? 'pages/messages_et_redirections/deconnexion.php' : 'messages_et_redirections/deconnexion.php';?>">DECONNEXION</a>
+            </div>
+
+            <div class="search_bar">
+                <div class="border">
+                    <input type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
+            <a class="burger" >
+                <i class="fa fa-align-justify fa-3x"></i>
+            </a>
+            <div class="menu-burger" >
+                <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
+                <p>|</p>
+                <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_update_article.php' : 'admin_update_article.php';?>">GESTION DU SITE</a>
+                <p>|</p>
+                <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_affiche_all_user.php' : 'admin_affiche_all_user.php';?>">GESTION DES UTILISATEURS</a>
+                <p>|</p>
+                <a href="<?php echo ($repere_page_acceuil) ? 'pages/messages_et_redirections/deconnexion.php' : 'messages_et_redirections/deconnexion.php';?>">DECONNEXION</a>
+            </div>
+
+            </header>
+
+            <nav class="nav">
+
+            <ul class="liste_nav">
+                
+                <li><a href="">Raquettes</a></li>
+                <li><a href="">Sacs</a></li>
+                <li><a href="">Balles</a></li>
+                <li><a href="">Accessoires</a></li>
+
+            </ul>
+
+        </nav>
+
+        <?php
+
+
+
+    }
+
+
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 02 mars 2021 à 13:03
+-- Généré le : jeu. 04 mars 2021 à 16:01
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -61,7 +61,9 @@ INSERT INTO `articles` (`id_articles`, `id_categorie`, `id_marques`, `id_sous_ca
 (3, 3, 3, NULL, NULL, NULL, 'LYNX TOUR (200M)a', 'Le cordage Heaad aLynx Tour est un nouveau cordage co-polyester avec une coupe unique à 6 facettes pour un mix maximal de contrôle et de lift ! Conditionnement bobine de 200 mètres.', 'Le nouveau cordage Head Lynx Tour aa été développé en collaboration avec les meilleurs joueurs pros Head.\r\n\r\nConditionnement bobine de 200 mètres.\r\n\r\nCette nouvelle version possède 6 facettes afin d\'assurer un mix incroyable entre contrôle et prise d\'effets.\r\n\r\nCe cordage en co-polyester offre toujours un excellent toucher et du contrôle grâce à sa formule co-polymère le rendant plus agréable à jouer qu\'un polyester classique.', 56, 113, '2021-02-18 12:17:18', NULL, NULL, NULL, NULL, 3, NULL, NULL, NULL),
 (4, 4, 4, NULL, 3, 1, 'TUBE 4 BALLES HEAD TOUR XT', 'Laa nouvelle balle de tennis Head 2020 haut de gamme ! La balle Head Tour XT pour une meilleure maitrise des coups..', 'Laa balle de tennis Head Tour XT est d\"rivée de la Head Tour en apportant plus de toucher et de contrôle grâce à sa technologie Impact EnCore qui délivre une meilleure maitrise pour des coups plus précis', 97, 11, '2021-02-18 12:18:23', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (5, 5, 4, 1, NULL, NULL, 'RESI PRO GRIP PRINCE', 'Le grip de remplacement Prince ResiPro est à la fois assez confortable et et procure un toucher qui procure de très bonnes sensations...', 'GRIP PROCURANT UNE EXCELLENTE PRISE DE RAQUETTE \'SECHE\' POUR DE TRES BONNE SENSATIONS ET UNE TRES BONNE ACCROCHE.', 52, 6, '2021-02-18 12:20:01', NULL, NULL, NULL, NULL, NULL, NULL, 2, 'bleu'),
-(6, 5, 3, 2, NULL, NULL, 'ANTIVIBRATEURa aaZVEREV DAMPENER', 'L\'antivibrateur utilisé par aAlexander Sacha Zverev sur le circuit ATP aux couleurs de sa raquette Head Gravity !', 'C\'est al\'antivibrateur utilisé par Alexander Sacha Zverev sur le circuit Atp au couleur de sa fameuse raquette Head Gravity.\r\n\r\nRéduction des vibrations des cordes contre le tennis-elbow. Se clip entre les 2 cordes centrales. \r\n\r\nVendu par 2.', 521, 6, '2021-02-19 12:20:01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(6, 5, 3, 2, NULL, NULL, 'ANTIVIBRATEURa aaZVEREV DAMPENER', 'L\'antivibrateur utilisé par aAlexander Sacha Zverev sur le circuit ATP aux couleurs de sa raquette Head Gravity !', 'C\'est al\'antivibrateur utilisé par Alexander Sacha Zverev sur le circuit Atp au couleur de sa fameuse raquette Head Gravity.\r\n\r\nRéduction des vibrations des cordes contre le tennis-elbow. Se clip entre les 2 cordes centrales. \r\n\r\nVendu par 2.', 521, 6, '2021-02-19 12:20:01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 1, 1, NULL, NULL, NULL, 'zfzef', 'fdsfd', 'sdfsdf', 7, 1.05, '2021-03-03 12:30:33', 41, 24, 2, 14, NULL, NULL, NULL, NULL),
+(8, 1, 4, NULL, NULL, NULL, 'ddddddddddd', 'dddddddddddddd', 'ddddddddddddddd', 125, 12, '2021-03-03 12:32:05', 12, 12, 12, 12, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -155,17 +157,30 @@ CREATE TABLE `images_articles` (
 --
 
 INSERT INTO `images_articles` (`id`, `id_articles`, `chemin`) VALUES
-(3, 2, '2-1.jpg'),
-(4, 2, '2-2.jpg'),
-(7, 3, '3-1.jpg'),
 (8, 4, '4-1.jpg'),
-(9, 5, '5-1.jpg'),
+(9, 5, '5-2.jpg'),
 (10, 6, '6-1.jpg'),
 (11, 6, '6-2.jpg'),
-(46, 1, '1-2.jpg'),
-(47, 1, '1-1.jpg'),
-(49, 2, '2-0.jpg'),
-(50, 2, '2-3.jpg');
+(58, 5, '5-1.jpg'),
+(59, 5, '5-0.jpg'),
+(60, 5, '5-3.jpg'),
+(80, 7, '7-0.jpg'),
+(81, 7, '7-1.jpg'),
+(82, 7, '7-2.jpg'),
+(83, 8, '8-0.jpg'),
+(84, 8, '8-1.png'),
+(85, 8, '8-2.png'),
+(86, 8, '8-3.jpg'),
+(91, 8, '8-4.jpg'),
+(92, 8, '8-0.png'),
+(95, 4, '4-4.jpg'),
+(96, 4, '4-0.jpg'),
+(97, 4, '4-3.jpg'),
+(98, 4, '4-2.jpg'),
+(180, 2, '2-1.jpg'),
+(181, 2, '2-2.jpg'),
+(184, 2, '2-0.jpg'),
+(185, 2, '2-3.png');
 
 -- --------------------------------------------------------
 
@@ -320,7 +335,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `balle_conditionnement`
@@ -344,7 +359,7 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `images_articles`
 --
 ALTER TABLE `images_articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
 
 --
 -- AUTO_INCREMENT pour la table `marques`

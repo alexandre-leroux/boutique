@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once('view/View_Navigation.php');
 require_once('controllers/Controller_Navigation.php');
 $repere_page_acceuil = 1;

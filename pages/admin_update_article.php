@@ -1,8 +1,13 @@
 <?php
+session_start();
+
+require_once('../view/View_Navigation.php');
+require_once('../controllers/Controller_Navigation.php');
 require_once('../models/Model_Admin_Update.php');
 require_once('../View/View_Admin_Update.php');
 require_once('../controllers/Controller_Admin_Update.php');
 
+Controller_Navigation::affichage_navigation(@$repere_page_acceuil);
 $admin = new Model_Admin_Update();
 
 $req_categorie = $admin->SelectAll('categorie');

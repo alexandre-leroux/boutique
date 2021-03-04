@@ -11,7 +11,7 @@ class View_Admin_Update
         ?>
 
 
-            <a href="../index.php">RETOUR</a>
+            <a href="admin_accueil_gestion_site.php">RETOUR</a>
 
             <!-- input recherche -->
         <form action="admin_update_article.php" method="post">
@@ -123,7 +123,7 @@ class View_Admin_Update
 
 
     // ----------------------------------------------------------------formulaire upadate des articles
-    public static function donnees_generales_communes($donnees)
+public static function donnees_generales_communes($donnees)
         {
         ?>
         <a href="admin_update_article.php">RETOUR</a>
@@ -138,7 +138,7 @@ class View_Admin_Update
         <?php
         }
 
-    public static function formulaire_general_commun($donnees, $req_categorie, $req_marques)
+public static function formulaire_general_commun($donnees, $req_categorie, $req_marques)
             {
             ?>
                 <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
@@ -186,7 +186,7 @@ class View_Admin_Update
                 }
 
 
-                public static function affichage_modif_photo($req_img_article,$erreur_choix_premiere_image)
+ public static function affichage_modif_photo($req_img_article,$erreur_choix_premiere_image)
                     {
                             ?>
                             <div style="display:flex">
@@ -242,7 +242,7 @@ class View_Admin_Update
 
 
 
-        public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
+public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
             {
                         View_Admin_Update::donnees_generales_communes($donnees);
                         ?>
