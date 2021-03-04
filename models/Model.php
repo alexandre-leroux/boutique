@@ -17,29 +17,21 @@ class Model extends Database {
         return $requete->fetchAll(); 
     }
 
-    public function selectId(string $table, int $id){
-        $requete = $this->bdd->prepare("SELECT id_articles 
-                                            FROM {$table} 
-                                                WHERE id_articles = :id
-        ") ;
+    public function SelectAll($table)
+    {
 
-        $requete->bindParam(':id', $id) ;
+        $requete = $this->bdd->query("SELECT * FROM {$table}");
+        return $requete->fetchall();
 
-        $requete->execute(); 
-
-        return $requete->fetchAll( PDO::FETCH_OBJ);
     }
 
 
+    // $id correspond à la clef primaire (id, id_articles, id_marques...Etc) et $id_objet à l'id du la valeur recherchée (8, 2, 12...Etc)
+    public function SelectOne($table,$id,$id_objet)
+    {
 
-public function SelectAll($table)
-{
-
-    $requete = $this->bdd->query("SELECT * FROM {$table}");
-    return $requete->fetchall();
-
-}
-
+        $requete = $this->bdd->query("SELECT * FROM {$table} WHERE {$id} = {$id_objet}");
+        return $requete->fetch();
 
 // $id correspond à la clef primaire (id, id_articles, id_marques...Etc) et $id_objet à l'id du la valeur recherchée (8, 2, 12...Etc)
 public function SelectOne($table,$id,$id_objet)
@@ -49,15 +41,16 @@ public function SelectOne($table,$id,$id_objet)
     return $requete->fetch();
 
 }
+    }
 
 
-// $id correspond à la clef primaire (id, id_articles, id_marques...Etc) et $id_objet à l'id du la valeur recherchée (8, 2, 12...Etc)
-public function DeleteOne($table,$id,$id_objet)
-{
+    // $id correspond à la clef primaire (id, id_articles, id_marques...Etc) et $id_objet à l'id du la valeur recherchée (8, 2, 12...Etc)
+    public function DeleteOne($table,$id,$id_objet)
+    {
 
-    $this->bdd->query("DELETE FROM {$table} WHERE {$id} = {$id_objet}");
+        $this->bdd->query("DELETE FROM {$table} WHERE {$id} = {$id_objet}");
 
-}
+    }
 
 
 }

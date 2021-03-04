@@ -119,6 +119,9 @@ header .burger i {
 header .menu-burger {
   display: none;
 }
+header .panier p {
+  color: white;
+}
 
 .nav {
   background-color: #1a1f1cf1;
