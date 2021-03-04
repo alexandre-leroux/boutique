@@ -22,11 +22,7 @@ else{
     
     $product = $panier->findInfosArticlePanier($implode); // renvoie un tableau avec toutes les infos des articles dans le panier 
     
-    $prix = 0 ;
-    for($i = 0 ; isset($product[$i]) ; $i++ )
-    {
-        $prix = $prix + $product[$i]['prix'] * $_SESSION['panier'][$product[$i]['id_articles']] ; 
-    } 
+    $prix = $controller_panier->calcPrixTotal($product);
 }
 
 if(empty($_SESSION['panier']))

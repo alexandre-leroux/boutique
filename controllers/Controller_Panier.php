@@ -25,5 +25,15 @@ class controllerPanier {
         }
     }
 
+    public function calcPrixTotal($product){
+        $prix = 0 ;
+        for($i = 0 ; isset($product[$i]) ; $i++ )
+        {
+            $prix = $prix + $product[$i]['prix'] * $_SESSION['panier'][$product[$i]['id_articles']] ; 
+        } 
+
+        return $prix; 
+    }
+
 
 }

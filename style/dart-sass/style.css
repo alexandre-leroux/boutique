@@ -115,6 +115,9 @@ header .burger {
 header .burger i {
   color: white;
 }
+header .panier p {
+  color: white;
+}
 
 .nav {
   background-color: #0c0e0df1;

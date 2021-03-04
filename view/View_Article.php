@@ -41,9 +41,9 @@ class viewArticle {
      * @param [type] $result_mar
      * @return void
      */
-    public function formTrierParMarques($result_mar){
+    public function formTrierParMarques($result_mar,$cat){
         ?>
-        <form action="boutique.php" method="post">
+        <form action="<?= $cat ; ?>.php" method="post">
             <label for="marques"> Trier par marques : </label>
             <select name="marques" id="marques">
                 <option disabled selected="selected">Marques</option>
@@ -94,11 +94,11 @@ class viewArticle {
      *
      * @return void
      */
-    public function TrierParPrix()
+    public function TrierParPrix($cat)
     {
         ?>
 
-        <form action="boutique.php" method="post">
+        <form action="<?= $cat ; ?>.php" method="post">
             <label for="prix"> Trier par prix : </label>
             <select name="prix" id="prix">
                 <option disabled selected="selected">Prix</option>
