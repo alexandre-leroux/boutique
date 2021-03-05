@@ -21,16 +21,5 @@ Controller_Navigation::affichage_navigation($repere_page_acceuil);
 <a href="pages/article.php">lien vers page article</a></br>
 
 
-<div id="slider">
-  <figure>
-    <img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt>
-    <img src="medias/img_pub/slide-radical-2021.jpg" alt>
-    <img src="medias/img_pub/slide-ultra-100-reverse-17022021_602cf872af47a.jpg" alt>
-    <img src="medias/img_pub/slide-radical-2021.jpg" alt>
-    <img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt>
-  </figure>
-</div>
-<?php
 
-// include('pages/boutique.php');
 
