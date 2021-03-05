@@ -121,7 +121,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                             <p>|</p>
                             <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_modification_profil.php' : 'user_modification_profil.php';?>">MON COMPTE</a>
                             <p>|</p>
-                            <a href="<?php echo ($repere_page_acceuil) ? 'pages/messages_et_redirections/deconnexion.php' : 'messages_et_redirections/deconnexion.php';?>">DECONNEXION</a>
+                            <a href="<?php echo ($repere_page_acceuil) ? 'pages/deconnexion.php' : 'deconnexion.php';?>">DECONNEXION</a>
                             <p>|</p>
                             <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : '';?>">PANIER</a>
                         </div>
@@ -191,7 +191,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                <p>|</p>
                <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_affiche_all_user.php' : 'admin_affiche_all_user.php';?>">GESTION DES UTILISATEURS</a>
                <p>|</p>
-               <a href="<?php echo ($repere_page_acceuil) ? 'pages/messages_et_redirections/deconnexion.php' : 'messages_et_redirections/deconnexion.php';?>">DECONNEXION</a>
+               <a href="<?php echo ($repere_page_acceuil) ? 'pages/deconnexion.php' : 'deconnexion.php';?>">DECONNEXION</a>
             </div>
 
             <div class="search_bar">
@@ -211,7 +211,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                 <p>|</p>
                 <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_affiche_all_user.php' : 'admin_affiche_all_user.php';?>">GESTION DES UTILISATEURS</a>
                 <p>|</p>
-                <a href="<?php echo ($repere_page_acceuil) ? 'pages/messages_et_redirections/deconnexion.php' : 'messages_et_redirections/deconnexion.php';?>">DECONNEXION</a>
+                <a href="<?php echo ($repere_page_acceuil) ? 'pages/deconnexion.php' : 'deconnexion.php';?>">DECONNEXION</a>
             </div>
 
             </header>

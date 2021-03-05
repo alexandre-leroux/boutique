@@ -20,10 +20,10 @@ public static function inscription()
                     if ($result == null)
                         {
 
-                            if(($_POST['mdp'] == $_POST['confirm_pass']) &&  preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#',$_POST['mdp'])  ){
+                            if(($_POST['mdp'] == $_POST['confirm_pass']) ){
                     
                                 $admin->inscription_user();
-                                header('Location: messages_et_redirections/inscription_reussie.php');
+                                header('Location:inscription_reussie.php');
                                 exit();
                                 }
                     
@@ -63,7 +63,7 @@ public static function inscription()
                             $_SESSION['uti_rue'] = $result['uti_rue'];
                             $_SESSION['uti_code_postal'] = $result['uti_code_postal'];
                             $_SESSION['uti_ville'] = $result['uti_ville'];
-                            header('location:messages_et_redirections/connexion_reussie.php');
+                            header('location:connexion_reussie.php');
                             }
     
     

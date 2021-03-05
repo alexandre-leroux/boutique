@@ -31,10 +31,11 @@ $req_img_article = $admin->select_images($donnees);
 
 Controller_admin_Update::update_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image);
 
-Controller_Redirection::redirection_admin();
+// Controller_Redirection::redirection_admin();
 
-
-
+echo '<pre>';
+var_dump($donnees);
+echo '</pre>';
 
 
 
