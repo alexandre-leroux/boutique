@@ -2,7 +2,20 @@
 
 spl_autoload_register(function($className)  {
 
-    $dossiers = array('controllers/','view/');
+    // var_dump($className);
+    $dossiers = array(
+    'controllers/',
+    'view/',
+    'models/',
+    'utils/',
+    '../controllers/',
+    '../view/',
+    '../models/',
+    '../utils/',
+    '../../controllers/',
+    '../../view/',
+    '../../models/',
+    '../../utils/');
 
 
     foreach($dossiers as $dossier)
@@ -15,6 +28,7 @@ spl_autoload_register(function($className)  {
                     return;
                 }           
         }
+
 
 
 });

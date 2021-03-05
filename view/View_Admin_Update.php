@@ -513,7 +513,22 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     }
 
 
+       public static function admin_message_update()
+        {
+            ?>
+            <section class="update_admin">
+                <div >
+                    <p>MODIFICATION ENREGISTREE</p>
+                    <button onclick="goBack()">RETOUR</button>
 
+                    <script>
+                    function goBack() {history.go(-1); event.preventDefault();}
+                    </script>
+                </div>
+            </section>
+            <?php
+
+        }             
 
     
     }

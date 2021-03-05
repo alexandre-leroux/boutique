@@ -28,30 +28,35 @@ class Controller_Admin_Update
 
         if (@$_POST['submit_cat']) {
             $admin->update_name_categorie();
-            header('Location: messages_et_redirections/article_modifie.php');
+            // header('Location: messages_et_redirections/article_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
 
         if (@$_POST['submit_marque']) {
             $admin->update_name_marque();
-            header('Location: messages_et_redirections/article_modifie.php');
+            // header('Location: messages_et_redirections/article_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
 
         if (@$_POST['submit_sous_cat_acc']) {
             $admin->update_name_sous_act_acc();
-            header('Location: messages_et_redirections/article_modifie.php');
+            // header('Location: messages_et_redirections/article_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
 
         if (@$_POST['submit_balle_type']) {
             $admin->update_name_type_balle();
-            header('Location: messages_et_redirections/article_modifie.php');
+            // header('Location: messages_et_redirections/article_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['submit_balle_conditionnement']) {
             $admin->update_name_balle_conditionnement();
-            header('Location: messages_et_redirections/article_modifie.php');
+            // header('Location: messages_et_redirections/article_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
     }
@@ -82,7 +87,8 @@ class Controller_Admin_Update
             if (@$_POST['submit']) {
                 $admin->update_raquette($donnees);
 
-                header('Location: messages_et_redirections/article_modifie.php');
+                // header('Location: messages_et_redirections/article_modifie.php');
+                return $_GET['admin_message_update_article'] = 1;
                 exit();
             }
         }
@@ -93,7 +99,8 @@ class Controller_Admin_Update
             if (@$_POST['submit']) {
                 $admin->update_sacs($donnees);
 
-                header('Location: messages_et_redirections/article_modifie.php');
+                // header('Location: messages_et_redirections/article_modifie.php');
+                return $_GET['admin_message_update_article'] = 1;
                 exit();
             }
         }
@@ -104,7 +111,8 @@ class Controller_Admin_Update
             if (@$_POST['submit']) {
                 $admin->update_cordage($donnees);
 
-                header('Location: messages_et_redirections/article_modifie.php');
+                // header('Location: messages_et_redirections/article_modifie.php');
+                return $_GET['admin_message_update_article'] = 1;
                 exit();
             }
         }
@@ -116,7 +124,8 @@ class Controller_Admin_Update
             if (@$_POST['submit']) {
                 $admin->update_balle($donnees);
 
-                header('Location: messages_et_redirections/article_modifie.php');
+                // header('Location: messages_et_redirections/article_modifie.php');
+                return $_GET['admin_message_update_article'] = 1;
                 exit();
             }
         }
@@ -128,7 +137,8 @@ class Controller_Admin_Update
             if (@$_POST['submit']) {
                 $admin->update_accessoire($donnees);
 
-                header('Location: messages_et_redirections/article_modifie.php');
+                // header('Location: messages_et_redirections/article_modifie.php');
+                return $_GET['admin_message_update_article'] = 1;
                 exit();
             }
         }
@@ -136,7 +146,8 @@ class Controller_Admin_Update
 
         if (@$_POST['submit2']) {
             Controller_admin_Update::supp_image();
-            header('Location: messages_et_redirections/article_modifie.php');
+            // header('Location: messages_et_redirections/article_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
     }
@@ -146,42 +157,50 @@ class Controller_Admin_Update
     {
         if (@$_POST['droit']) {
             $admin->update_droits_user('uti_droits');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['nom']) {
             $admin->update_droits_user('uti_nom');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['prenom']) {
             $admin->update_droits_user('uti_prenom');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['email']) {
             $admin->update_droits_user('uti_mail');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['tel']) {
             $admin->update_droits_user('uti_tel');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['uti_rue']) {
             $admin->update_droits_user('uti_rue');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['code_postal']) {
             $admin->update_droits_user('uti_code_postal');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
         if (@$_POST['ville']) {
             $admin->update_droits_user('uti_ville');
-            header('Location: messages_et_redirections/user_modifie.php');
+            // header('Location: messages_et_redirections/user_modifie.php');
+            return $_GET['admin_message_update_article'] = 1;
             exit();
         }
     }
@@ -238,7 +257,7 @@ class Controller_Admin_Update
                                  $chemin = "../medias/img_articles/".$_GET['id']."-".$a.".".$extensionUpload;
                          
                                  $mouvement = move_uploaded_file($_FILES['image']['tmp_name'][$i], $chemin ); 
-                                 var_dump($i);
+                               
                                  if($mouvement)
                                  {
                                     // $admin->insertImage($extensionUpload, $i);
@@ -246,6 +265,7 @@ class Controller_Admin_Update
                                     $admin-> ajout_image_updtae_article($extensionUpload, $a);
                                     // header('Location: messages_et_redirections/article_modifie.php');
                                     // exit();
+                                $_GET['admin_message_update_article'] = 1;
                                     
                                  }
                                  else{
@@ -376,7 +396,7 @@ public static function choisir_premiere_image()
                                                                     $nouveau_nom_image = $_GET['id']."-".$d.".".$ext_image_100."";
                                                                     rename("../medias/img_articles/".$image_100_a_renommer."", "../medias/img_articles/".$nouveau_nom_image."");
                                                                     $admin->update_nom_chemin_image($image_100_a_renommer,$nouveau_nom_image);
-                                                                   return $_POST['redirection_article_modifie'] = 1;
+                                                                   return $_GET['admin_message_update_article'] = 1;
                                                                    break 2;
                                                                }
 
@@ -385,7 +405,7 @@ public static function choisir_premiere_image()
                                                 } 
 
                                         }  
-                                        return $_POST['redirection_article_modifie'] = 1;    
+                                        return $_GET['admin_message_update_article'] = 1;    
                                     break 1;
                                 }
 
