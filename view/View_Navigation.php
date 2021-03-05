@@ -72,7 +72,7 @@ public static function navigation_visiteur($repere_page_acceuil)
                     <p>|</p>
                     <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_inscription.php' : 'user_inscription.php';?>">INSCRIPTION</a>
                     <p>|</p>
-                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : 'user_connexion.php';?>">CONNEXION</a>
+                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : 'user_connexion.php';?>">CONNEXION</a>         
                 </div>
             </div>
 
@@ -87,6 +87,8 @@ public static function navigation_visiteur($repere_page_acceuil)
                 <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
                 <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
                 <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart"></i></a><span class="compteur_panier"><?= count($_SESSION['panier']) ; ?></span></li>
+        
 
             </ul>
 

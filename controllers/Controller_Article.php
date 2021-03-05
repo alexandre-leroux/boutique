@@ -39,4 +39,15 @@ class controllerArticle {
             }
         }
     }
+
+    public function catProduits(string $cat,int $id_categorie,$model,$view)
+    {
+        $result_mar = $model->display("marques"); // renvoie un tableaux de toute les marques 
+
+        $view->formTrierParMarques($result_mar,$cat); // affiche le form trier par marques
+        $view->TrierParPrix($cat);
+
+        $this->TrierPar($model,$view," WHERE id_categorie = {$id_categorie}","AND id_categorie = {$id_categorie}",@$_GET['id_marques']); 
+    }
+
 }

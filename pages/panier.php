@@ -14,7 +14,7 @@ $id_produit_panier = array_keys($_SESSION['panier']) ; // renvoie un tableau qui
 if(empty($id_produit_panier))
 {
     $product = array(); 
-    echo 'Le panier est vide ! <a href="boutique.php"> Revenir à la boutique </a>' ;
+    echo 'Le panier est vide ! <a href="../index.php"> Revenir à la boutique </a>' ;
 }
 else{
     

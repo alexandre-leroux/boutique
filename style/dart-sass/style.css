@@ -138,6 +138,10 @@ header .panier p {
   width: 800px;
   justify-content: space-around;
 }
+.nav .liste_nav .compteur_panier {
+  color: white;
+  padding: 5px;
+}
 .nav a {
   text-decoration: none;
   color: floralwhite;
