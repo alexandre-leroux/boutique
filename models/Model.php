@@ -30,7 +30,7 @@ class Model extends Database {
     public function SelectOne($table,$id,$id_objet)
     {
 
-        $requete = $this->bdd->query("SELECT * FROM {$table} WHERE {$id} = {$id_objet}");
+        $requete = $this->bdd->query("SELECT * FROM {$table} WHERE {$id} = '{$id_objet}'");
         return $requete->fetch();
 
 // $id correspond à la clef primaire (id, id_articles, id_marques...Etc) et $id_objet à l'id du la valeur recherchée (8, 2, 12...Etc)
