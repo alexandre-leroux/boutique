@@ -331,8 +331,8 @@ public static function choisir_premiere_image()
                                         }       
 
                                     //une fois sorti de la boucle, on renomme l'image selectionnée en "0"
-                                    rename("../medias/img_articles/".$nom_image_selectionnee_reformate."", "../medias/img_articles/".$_GET['id']."-0.".$ext."");var_dump("renome le choix en 0.".$ext."");echo'</br>';
-                                    $admin->update_nom_chemin_image($nom_image_selectionnee_reformate,$chemin);var_dump('insert dans la bdd');echo'</br>';
+                                    rename("../medias/img_articles/".$nom_image_selectionnee_reformate."", "../medias/img_articles/".$_GET['id']."-0.".$ext."");
+                                    $admin->update_nom_chemin_image($nom_image_selectionnee_reformate,$chemin);
 
 
                                     for($e = 0; $e<=3; $e++ )
@@ -363,7 +363,7 @@ public static function choisir_premiere_image()
                                                                 }
                                                            }
                                            
-                                                               if($chemin_pas_libre == 1)
+                                                               if(@$chemin_pas_libre == 1)
                                                                {
                                                                 //on unset la variable pour repartir à 0 dans la boucle. Cette variable est un repère quand une image existante dans l'incrément existe
                                                                 unset($chemin_pas_libre);
@@ -376,7 +376,7 @@ public static function choisir_premiere_image()
                                                                     $nouveau_nom_image = $_GET['id']."-".$d.".".$ext_image_100."";
                                                                     rename("../medias/img_articles/".$image_100_a_renommer."", "../medias/img_articles/".$nouveau_nom_image."");
                                                                     $admin->update_nom_chemin_image($image_100_a_renommer,$nouveau_nom_image);
-                                                                   header('Location: messages_et_redirections/article_modifie.php');
+                                                                   return $_POST['redirection_article_modifie'] = 1;
                                                                    break 2;
                                                                }
 
@@ -385,7 +385,7 @@ public static function choisir_premiere_image()
                                                 } 
 
                                         }  
-                                        header('Location: messages_et_redirections/article_modifie.php');      
+                                        return $_POST['redirection_article_modifie'] = 1;    
                                     break 1;
                                 }
 
