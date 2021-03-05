@@ -82,10 +82,11 @@ public static function navigation_visiteur($repere_page_acceuil)
 
             <ul class="liste_nav">
                 
-                <li><a href="">Raquettes</a></li>
-                <li><a href="">Sacs</a></li>
-                <li><a href="">Balles</a></li>
-                <li><a href="">Accessoires</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/raquettes.php' : 'raquettes.php';?>">Raquettes</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/sacs.php' : 'sacs.php';?>">Sacs</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
 
             </ul>
 

@@ -1,8 +1,8 @@
 <?php 
 
-require_once("models/Model_Article.php");
-require_once("view/View_Article.php");
-require_once("controllers/Controller_Article.php");
+require_once("../models/Model_Article.php");
+require_once("../view/View_Article.php");
+require_once("../controllers/Controller_Article.php");
 
 $article = new Article(); 
 $view_article = new viewArticle();

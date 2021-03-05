@@ -22,5 +22,5 @@ Controller_Navigation::affichage_navigation($repere_page_acceuil);
 
 <?php
 
-include('pages/boutique.php');
+// include('pages/boutique.php');
 
