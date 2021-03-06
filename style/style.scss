@@ -201,6 +201,107 @@ header{
 
 }
 
+// -----------------------page d'acueil index.php
+
+#slider { 
+    width: 100%;
+     overflow: hidden;
+
+    & figure{
+        position: relative; 
+        width: 500%;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        text-align: left;
+        animation: 30s slidy infinite;
+    }
+    & figure img{
+        width: 20%; height: auto; float: left; 
+    }
+
+ } 
+ @keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+  }
+
+#section_slider{
+    width: 100vw;
+    @extend %dflex; 
+}
+
+
+#section_selection_tennisworld{
+    @extend %dflex; 
+    width: 100vw;
+    & #titre_et_affichage_art{
+        @extend %dflex; 
+        flex-direction: column;
+        width: 80%;
+        background-color: #00BAFF;
+
+
+
+        & h1{
+            background-color: burlywood;
+            text-transform: uppercase;
+            font-size: 3rem;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 50px;
+
+            & span{
+
+                font-style: italic;
+                font-weight: lighter;
+            }
+        }
+
+        & #div_article_avant{
+            @extend %dflex; 
+            flex-wrap: wrap;
+
+            & div{
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-top: 50px
+            }
+
+            & div a{
+                @extend %dflex; 
+                flex-direction: column;
+                justify-content: space-between;
+                width: 300px;
+                height: 370px;
+                text-align: center;
+                text-decoration: none;
+                color: #000;
+
+                background-color: brown;
+
+            }
+        }
+    }
+
+}
+
+
+
+
+
+// ----------------------------------fin page accueil
+
+
+
+
 .user_connecte{
 
     @extend %dflex;
@@ -226,34 +327,3 @@ header{
 
 
 }
-
-#slider { 
-    width: 80%;
-     overflow: hidden;
-     max-width: 1920px;
-    & figure{
-
-        position: relative; 
-        width: 500%;
-        margin: 0;
-        padding: 0;
-        font-size: 0;
-        text-align: left;
-        animation: 30s slidy infinite;
-    }
-    & figure img{
-        width: 20%; height: auto; float: left; 
-    }
-
- } 
- @keyframes slidy {
-    0% { left: 0%; }
-    20% { left: 0%; }
-    25% { left: -100%; }
-    45% { left: -100%; }
-    50% { left: -200%; }
-    70% { left: -200%; }
-    75% { left: -300%; }
-    95% { left: -300%; }
-    100% { left: -400%; }
-  }

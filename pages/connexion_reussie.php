@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 require_once('../utils/autoload.php');
 
 View_Navigation::affichage_navigation(@$repere_page_acceuil);
