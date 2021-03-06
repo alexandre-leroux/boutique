@@ -1,12 +1,7 @@
 <?php
 session_start();
-require_once('../models/Model_User.php');
-require_once('../View/view_User.php');
-require_once('../controllers/Controller_User.php');
-require_once('../view/View_Navigation.php');
-require_once('../controllers/Controller_Navigation.php');
+require_once('../utils/autoload.php');
 
-Controller_Navigation::affichage_navigation(@$repere_page_acceuil);
 $user = new Model();
 
 //modifier le tout avec recupe de l'id en $_SESSION
@@ -26,5 +21,6 @@ $_SESSION['uti_motdepasse'] = $result['uti_motdepasse'];
 
 $erreur = Controller_user::update_profil();
 
+View_Navigation::affichage_navigation(@$repere_page_acceuil);
 View_user::form_update_profil($erreur);
 

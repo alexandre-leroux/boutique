@@ -6,7 +6,7 @@ require_once('utils/autoload.php');
 $repere_page_acceuil = 1;
 
 
-Controller_Navigation::affichage_navigation($repere_page_acceuil);
+View_Navigation::affichage_navigation(@$repere_page_acceuil);
 
 ?>
 </br>
