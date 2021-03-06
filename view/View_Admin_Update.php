@@ -518,7 +518,7 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
                     public static function affiche_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image)
 
-                    {
+                    { $admin = new Model_Admin_Update();
 
                         if ($_GET['idcat'] == 1) {
 
@@ -539,7 +539,12 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
     
                         }
 
+                        if ($_GET['idcat'] == 4) {
 
+                            $donnees = $admin->select_one_articles_updates_balle();
+                            View_Admin_Update::affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle,$erreur_choix_premiere_image);
+
+                        }
 
 
 
