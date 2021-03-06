@@ -153,12 +153,18 @@ header{
 
     header{
         font-size: 0.8rem;
-        & .logo a{
-            display: flex;
-            height: 100%;
-            width: 125px;
-            //background-color: rgb(22, 75, 25);
+        & .logo{
+            @extend %dflex; 
+            
         }
+    
+        & .logo a{
+        
+            display: flex;
+            height: 50%;
+            width: 150px;
+        }
+
         & .accueil{ 
             width: 425px;
         }    
@@ -311,7 +317,8 @@ header{
             margin-bottom: 80px;
 
             & img{
-                height: 600px;
+                height: auto;
+                width: 600px;
             }
         }
     }

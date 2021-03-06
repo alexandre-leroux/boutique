@@ -154,8 +154,8 @@ header .panier p {
   }
   header .logo a {
     display: flex;
-    height: 100%;
-    width: 125px;
+    height: 50%;
+    width: 150px;
   }
   header .accueil {
     width: 425px;
@@ -281,7 +281,8 @@ header .panier p {
   margin-bottom: 80px;
 }
 .section_accueil #affichage_pub a img {
-  height: 600px;
+  height: auto;
+  width: 600px;
 }
 .section_accueil #affichage_presentation {
   width: 80%;
