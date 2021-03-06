@@ -123,7 +123,7 @@ public static function Affiche_bandeau_logos_newletter()
                             <p>NEWLETTER TENNISWORLD</br> Recevez toutes les nouveautés en avant première</p>
                             <div id="input_newletter">
                                 <input type="text" value="Saisissez votre adresse e-mail">
-                                <button><i class="fa fa-arrow-right"></i></i></button>
+                                <button  onclick="document.location.href='index.php';"><i class="fa fa-arrow-right"></i></i></button>
                             </div>
                         </div>
 
@@ -136,7 +136,7 @@ public static function Affiche_bandeau_logos_newletter()
 
     }
 
-    
+
 
 
 

@@ -45,11 +45,11 @@ td, th {
 }
 
 body {
-  background-color: #a89e9e;
+  background-color: white;
   font-family: "Poppins", sans-serif;
 }
 
-.user_connecte div, .user_connecte, .section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos, .section_accueil #bandeau_et_logo #debut_fond_bleu, .section_accueil #bandeau_et_logo, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil {
+.user_connecte div, .user_connecte, .section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos, .section_accueil #bandeau_et_logo #debut_fond_bleu, .section_accueil #bandeau_et_logo, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,8 +66,8 @@ header {
 }
 header .logo a {
   display: flex;
-  height: 100%;
-  width: 200px;
+  height: 70%;
+  width: 260px;
 }
 header .accueil {
   width: 700px;
@@ -240,10 +240,8 @@ header .panier p {
 .section_accueil #titre_et_affichage_articles {
   flex-direction: column;
   width: 80%;
-  background-color: #00BAFF;
 }
 .section_accueil #titre_et_affichage_articles h1 {
-  background-color: burlywood;
   text-transform: uppercase;
   font-size: 3rem;
   font-weight: bold;
@@ -275,7 +273,6 @@ header .panier p {
 }
 .section_accueil #affichage_pub {
   width: 80%;
-  background-color: chartreuse;
 }
 .section_accueil #affichage_pub a {
   margin-left: 40px;
@@ -304,11 +301,9 @@ header .panier p {
 .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos {
   justify-content: space-around;
   align-items: flex-start;
-  background-color: burlywood;
-  width: 80%;
+  width: 70%;
 }
 .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan {
-  background-color: blue;
   flex-direction: column;
   justify-content: center;
   width: 150px;
@@ -326,7 +321,7 @@ header .panier p {
   justify-content: space-around;
   margin-top: 50px;
   background-color: black;
-  width: 900px;
+  width: 1200px;
   height: 120px;
   color: white;
   transform: skewX(-0.06turn);
