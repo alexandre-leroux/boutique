@@ -82,23 +82,18 @@ class Controller_Admin_Update
 
         $admin = new Model_Admin_Update();
 
-            if (@$_POST['submit']) {
+            if (@$_POST['submit'] AND $_GET['idcat'] == 1) {
                 $admin->update_raquette($donnees);
  
             }
         
 
-        if ($_GET['idcat'] == 2) {
 
-            View_Admin_Update::affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
-            if (@$_POST['submit']) {
+            if (@$_POST['submit'] AND $_GET['idcat'] == 2){
                 $admin->update_sacs($donnees);
 
-                // header('Location: messages_et_redirections/article_modifie.php');
-                return $_GET['admin_message_update_article'] = 1;
-                exit();
             }
-        }
+        
 
         if ($_GET['idcat'] == 3) {
 
