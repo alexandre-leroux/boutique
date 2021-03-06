@@ -533,8 +533,18 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                         }
 
 
+                        if ($_GET['idcat'] == 3) {
+
+                            View_Admin_Update::affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
+    
+                        }
 
 
+
+
+
+
+                        
 
                         }
 
