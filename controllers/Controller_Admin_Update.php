@@ -107,27 +107,20 @@ class Controller_Admin_Update
                 $admin->update_balle($donnees);
             }
 
+            if (@$_POST['submit'] AND $_GET['idcat'] == 5) {
 
-        if ($_GET['idcat'] == 5) {
-
-            $donnees = $admin->select_one_articles_update_accessoire();
-            View_Admin_Update::affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires,$erreur_choix_premiere_image);
-            if (@$_POST['submit']) {
+                $donnees = $admin->select_one_articles_update_accessoire();
+    
                 $admin->update_accessoire($donnees);
+            }
 
+
+            if (@$_POST['submit2']) {
+                Controller_admin_Update::supp_image();
                 // header('Location: messages_et_redirections/article_modifie.php');
                 return $_GET['admin_message_update_article'] = 1;
                 exit();
             }
-        }
-
-
-        if (@$_POST['submit2']) {
-            Controller_admin_Update::supp_image();
-            // header('Location: messages_et_redirections/article_modifie.php');
-            return $_GET['admin_message_update_article'] = 1;
-            exit();
-        }
     }
 
 

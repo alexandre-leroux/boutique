@@ -546,7 +546,12 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
                         }
 
+                        if ($_GET['idcat'] == 5) {
 
+                            $donnees = $admin->select_one_articles_update_accessoire();
+                            View_Admin_Update::affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires,$erreur_choix_premiere_image);
+    
+                        }
 
 
                         
