@@ -201,7 +201,7 @@ header{
 
 }
 
-// -----------------------page d'acueil index.php
+// -----------------------page d'accueil index.php
 
 #slider { 
     width: 100%;
@@ -220,8 +220,8 @@ header{
         width: 20%; height: auto; float: left; 
     }
 
- } 
- @keyframes slidy {
+} 
+@keyframes slidy {
     0% { left: 0%; }
     20% { left: 0%; }
     25% { left: -100%; }
@@ -231,18 +231,18 @@ header{
     75% { left: -300%; }
     95% { left: -300%; }
     100% { left: -400%; }
-  }
-
-#section_slider{
-    width: 100vw;
-    @extend %dflex; 
 }
 
 
-#section_selection_tennisworld{
+
+
+.section_accueil{
+
     @extend %dflex; 
     width: 100vw;
-    & #titre_et_affichage_art{
+
+
+    & #titre_et_affichage_articles{
         @extend %dflex; 
         flex-direction: column;
         width: 80%;
@@ -272,7 +272,8 @@ header{
             & div{
                 margin-left: 30px;
                 margin-right: 30px;
-                margin-top: 50px
+                margin-top: 50px;
+                margin-bottom: 50px;
             }
 
             & div a{
@@ -290,6 +291,25 @@ header{
             }
         }
     }
+
+
+    & #affichage_pub{
+        @extend %dflex; 
+        width: 80%;
+        background-color: chartreuse;
+
+        & a{
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+
+            & img{
+                height: 600px;
+            }
+        }
+    }
+
 
 }
 

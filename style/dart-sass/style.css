@@ -49,7 +49,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.user_connecte div, .user_connecte, #section_selection_tennisworld #titre_et_affichage_art #div_article_avant div a, #section_selection_tennisworld #titre_et_affichage_art #div_article_avant, #section_selection_tennisworld #titre_et_affichage_art, #section_selection_tennisworld, #section_slider, .nav .liste_nav, .nav, header .search_bar, header .accueil {
+.user_connecte div, .user_connecte, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,19 +234,15 @@ header .panier p {
     left: -400%;
   }
 }
-#section_slider {
+.section_accueil {
   width: 100vw;
 }
-
-#section_selection_tennisworld {
-  width: 100vw;
-}
-#section_selection_tennisworld #titre_et_affichage_art {
+.section_accueil #titre_et_affichage_articles {
   flex-direction: column;
   width: 80%;
   background-color: #00BAFF;
 }
-#section_selection_tennisworld #titre_et_affichage_art h1 {
+.section_accueil #titre_et_affichage_articles h1 {
   background-color: burlywood;
   text-transform: uppercase;
   font-size: 3rem;
@@ -254,19 +250,20 @@ header .panier p {
   width: 100%;
   margin-top: 50px;
 }
-#section_selection_tennisworld #titre_et_affichage_art h1 span {
+.section_accueil #titre_et_affichage_articles h1 span {
   font-style: italic;
   font-weight: lighter;
 }
-#section_selection_tennisworld #titre_et_affichage_art #div_article_avant {
+.section_accueil #titre_et_affichage_articles #div_article_avant {
   flex-wrap: wrap;
 }
-#section_selection_tennisworld #titre_et_affichage_art #div_article_avant div {
+.section_accueil #titre_et_affichage_articles #div_article_avant div {
   margin-left: 30px;
   margin-right: 30px;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
-#section_selection_tennisworld #titre_et_affichage_art #div_article_avant div a {
+.section_accueil #titre_et_affichage_articles #div_article_avant div a {
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
@@ -275,6 +272,19 @@ header .panier p {
   text-decoration: none;
   color: #000;
   background-color: brown;
+}
+.section_accueil #affichage_pub {
+  width: 80%;
+  background-color: chartreuse;
+}
+.section_accueil #affichage_pub a {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.section_accueil #affichage_pub a img {
+  height: 600px;
 }
 
 .user_connecte {

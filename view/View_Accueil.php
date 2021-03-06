@@ -8,7 +8,7 @@ class View_Accueil{
 public static function Affiche_Slider()
     {
         ?>
-        <section id="section_slider">
+        <section class="section_accueil">
             <div id="slider">
             <figure>
                 <img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt>
@@ -30,10 +30,10 @@ public static function Affiche_Selection_TennisWorld()
         $articles_en_avant = $new_model->select_all_articles_mis_en_avant(); 
 
         ?>
-        <section id="section_selection_tennisworld">
-            <div id="titre_et_affichage_art">
+         <section class="section_accueil">
+            <div id="titre_et_affichage_articles">
 
-                <h1>selection<span>tennisworld</span></h1>
+                <h1>selection <span> tennisworld</span></h1>
 
                 <div id="div_article_avant">
                     <?php
@@ -50,23 +50,30 @@ public static function Affiche_Selection_TennisWorld()
                     } ?>
                 </div>
 
-
-              
-               
-              
             </div>
         </section>
         <?php
 
 
-
-
-
-
     }
 
 
+public static function Affiche_pub()
+    {
 
+        ?>
+        <section class="section_accueil">
+            <div id="affichage_pub">
+
+                <a href=""><img src="medias/img_pub/bloc-home-promo-03032021-2.jpg" alt=""></a>
+                <a href=""><img src="medias/img_pub/bloc-home-nouveautes-03032021_1.jpg" alt=""></a>
+
+            </div>
+        </section>
+        <?php
+
+
+    }
 
 
 

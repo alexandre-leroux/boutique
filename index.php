@@ -22,6 +22,7 @@ View_Navigation::affichage_navigation(@$repere_page_acceuil);
 <?php
 View_Accueil:: Affiche_Slider();
 View_Accueil:: Affiche_Selection_TennisWorld();
+View_Accueil:: Affiche_pub();
 
 
 // include('pages/boutique.php');
