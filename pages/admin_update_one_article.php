@@ -1,13 +1,6 @@
 <?php
 session_start();
 
-// require_once('../view/View_Navigation.php');
-// require_once('../controllers/Controller_Navigation.php');
-// require_once('../models/Model_Admin_Update.php');
-// require_once('../View/View_Admin_Update.php');
-// require_once('../controllers/Controller_admin_Update.php');
-// require_once('../utils/redirections.php');
-
 require_once('../utils/autoload.php');
 
 
@@ -33,9 +26,7 @@ Controller_admin_Update::update_un_article($donnees,$req_categorie,$req_marques,
 
 // Controller_Redirection::redirection_admin();
 
-echo '<pre>';
-var_dump($donnees);
-echo '</pre>';
+
 
 
 
