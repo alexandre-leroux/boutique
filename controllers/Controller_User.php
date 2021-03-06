@@ -53,7 +53,6 @@ public static function inscription()
                         
                         if($result AND  password_verify($pass, $result['uti_motdepasse'] ))
                         {
-                            echo 'connecté';
                             $_SESSION['id_utilisateurs'] = $result['id_utilisateurs'];
                             $_SESSION['uti_droits'] = $result['uti_droits'];
                             $_SESSION['uti_nom'] = $result['uti_nom'];
@@ -101,7 +100,16 @@ public static function update_profil()
                             $code_postal = htmlspecialchars($_POST['code_postal']) ;
                             $ville = htmlspecialchars($_POST['ville']) ;
                             $user->update_profile_user($nom,$prenom,$mail,$telephone,$rue,$code_postal,$ville);
-                            header("location:messages_et_redirections/profil_modifie.php");
+  
+                            $_SESSION['uti_nom'] = $nom;
+                            $_SESSION['uti_mail'] = $mail;
+                            $_SESSION['uti_prenom'] = $prenom;
+                            $_SESSION['uti_tel'] = $telephone;
+                            $_SESSION['uti_rue'] = $rue;
+                            $_SESSION['uti_code_postal'] = $code_postal;
+                            $_SESSION['uti_ville'] = $ville;
+                           
+
                         }
                         else{
                             return 'email deja pris';
@@ -119,8 +127,14 @@ public static function update_profil()
                     $ville = htmlspecialchars($_POST['ville']) ;
 
                     $user->update_profile_user($nom,$prenom,$mail,$telephone,$rue,$code_postal,$ville);
-                    header("location:messages_et_redirections/profil_modifie.php");
 
+                    $_SESSION['uti_nom'] = $nom;
+                    $_SESSION['uti_mail'] = $mail;
+                    $_SESSION['uti_prenom'] = $prenom;
+                    $_SESSION['uti_tel'] = $telephone;
+                    $_SESSION['uti_rue'] = $rue;
+                    $_SESSION['uti_code_postal'] = $code_postal;
+                    $_SESSION['uti_ville'] = $ville;
                 }
 
 
