@@ -309,6 +309,66 @@ header{
             }
         }
     }
+    & #affichage_presentation{
+        width: 80%;
+        text-align: justify;
+        font-size: 1.2rem;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+
+
+// ----------------------------Affiche_bandeau_et_logos
+
+    & #bandeau_et_logo{
+
+        @extend %dflex; 
+        flex-direction: column;
+
+            & #debut_fond_bleu{
+                @extend %dflex; 
+                width: 100%;
+                background-color:#00BED5 ;
+
+
+                & #conteneur_logos{
+                    @extend %dflex; 
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    background-color: burlywood;
+                    width: 80%;
+        
+                    & .logo_et_mini_slogan{
+                        background-color: blue ; 
+                        @extend %dflex; 
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 150px;
+                    }
+        
+                    & img{
+                        height: 100px;
+                    }
+        
+                    & p{
+                        margin-top: 20px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+        
+        
+                }
+
+
+            }
+
+
+    }
+
+
+
 
 
 }

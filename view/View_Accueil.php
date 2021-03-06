@@ -75,7 +75,54 @@ public static function Affiche_pub()
 
     }
 
+public static function Affiche_Texte_Presentation()
+    {
 
+        ?>
+        <section class="section_accueil">
+            <div id="affichage_presentation">
+
+                <p>Tennis World, le spécialiste tennis depuis 20 ans avec ses magasins sur Marseille et son site internet,
+                    vous propose la vente du matériel de tennis pour les joueurs avec des raquettes Babolat, Wilson, Head,
+                    Yonex, Tecnifibre, des sacs, des cordages, des balles et aussi les accessoires de tennis des champions dans
+                    les meilleures marques : Nike, Adidas, Asics, Fila... Vous pouvez aussi trouver les toutes dernières
+                    nouveautés et les meilleures promotions. Des 
+                    articles de tennis pro et amateurs parmi des centaines de références pour tous vos achats tennis...
+                </p>
+
+            </div>
+        </section>
+        <?php
+
+
+    }
+
+
+public static function Affiche_bandeau_et_logos()
+    {
+
+        ?>
+        <section class="section_accueil">
+            <div id="bandeau_et_logo">
+
+                  <img src="medias/bandeau_accueil.png" alt="">
+                    <div id="debut_fond_bleu">
+                        <div id="conteneur_logos">
+                        
+                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/shop1.png" alt="logo_magasin"><p>Retrait gratuit en magasin</p> </div>
+                            <div class="logo_et_mini_slogan">    <img src="medias/126091-ecommerce-set/png/headphones1.png" alt="logo_service_client"><p>Service client 04.43.02.45.71</p> </div>
+                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/like1.png" alt="logo_satisait_ou_remboursé"><p>Satisfait ou remboursé</p> </div>
+                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/settings1.png" alt="logo paiement securisé"><p>Paiement sécurisé</p> </div>
+                            <div class="logo_et_mini_slogan"> <img id="trucks" src="medias/126091-ecommerce-set/png/truck-1.png" alt="logo"><p>Frais de port gratuits > 75€ en France métropolitaine</p> </div>
+            
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <?php
+
+
+    }
 
 
 

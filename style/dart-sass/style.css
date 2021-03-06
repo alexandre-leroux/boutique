@@ -49,7 +49,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.user_connecte div, .user_connecte, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil {
+.user_connecte div, .user_connecte, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos, .section_accueil #bandeau_et_logo #debut_fond_bleu, .section_accueil #bandeau_et_logo, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,6 +285,41 @@ header .panier p {
 }
 .section_accueil #affichage_pub a img {
   height: 600px;
+}
+.section_accueil #affichage_presentation {
+  width: 80%;
+  text-align: justify;
+  font-size: 1.2rem;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.section_accueil #bandeau_et_logo {
+  flex-direction: column;
+}
+.section_accueil #bandeau_et_logo #debut_fond_bleu {
+  width: 100%;
+  background-color: #00BED5;
+}
+.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos {
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: burlywood;
+  width: 80%;
+}
+.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan {
+  background-color: blue;
+  flex-direction: column;
+  justify-content: center;
+  width: 150px;
+}
+.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos img {
+  height: 100px;
+}
+.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos p {
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
 }
 
 .user_connecte {

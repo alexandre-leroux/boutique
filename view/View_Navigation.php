@@ -44,9 +44,9 @@ public static function navigation_visiteur($repere_page_acceuil)
             <div class="logo">
         
                 <?php if($repere_page_acceuil) 
-                        {echo'<a href="index.php"><img src="medias/logo.svg" alt="logo"></a>';}    
+                        {echo'<a href="index.php"><img src="medias/logo.png" alt="logo"></a>';}    
                         else
-                        {echo'<a href="../index.php"><img src="../medias/logo.svg" alt="logo"></a>';}
+                        {echo'<a href="../index.php"><img src="../medias/logo.png" alt="logo"></a>';}
                 ?>
             </div>
 
@@ -110,9 +110,9 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
                         <div class="logo">
                         <?php if($repere_page_acceuil) 
-                        {echo'<a href="index.php"><img src="medias/logo.svg" alt="logo"></a>';}    
+                        {echo'<a href="index.php"><img src="medias/logo.png" alt="logo"></a>';}    
                         else
-                        {echo'<a href="../index.php"><img src="../medias/logo.svg" alt="logo"></a>';}
+                        {echo'<a href="../index.php"><img src="../medias/logo.png" alt="logo"></a>';}
                 ?>
                         </div>
 
@@ -178,9 +178,9 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
             <div class="logo">
                 <?php if($repere_page_acceuil) 
-                        {echo'<a href="index.php"><img src="medias/logo.svg" alt="logo"></a>';}    
+                        {echo'<a href="index.php"><img src="medias/logo.png" alt="logo"></a>';}    
                         else
-                        {echo'<a href="../index.php"><img src="../medias/logo.svg" alt="logo"></a>';}
+                        {echo'<a href="../index.php"><img src="../medias/logo.png" alt="logo"></a>';}
                 ?>
             </div>
 
