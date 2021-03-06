@@ -514,5 +514,25 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
 
 
+
+
+                    public static function affiche_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image)
+
+                    {
+
+                        if ($_GET['idcat'] == 1) {
+
+                            View_Admin_Update::affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
+                          
+                        }
+
+
+
+
+
+
+
+                        }
+
     
     }
