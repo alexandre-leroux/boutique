@@ -221,7 +221,7 @@ class Controller_Admin_Update
                                         $a++ ;
                                     }
                                
-                                 var_dump($a);
+                                //  var_dump($a);
                       
                                 //  var_dump($chemin_existants);
 
