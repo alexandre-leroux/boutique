@@ -98,43 +98,6 @@ public static function Affiche_Texte_Presentation()
     }
 
 
-public static function Affiche_bandeau_logos_newletter()
-    {
-
-        ?>
-        <section class="section_accueil">
-            <div id="bandeau_et_logo">
-
-                  <img src="medias/bandeau_accueil.png" alt="">
-
-                    <div id="debut_fond_bleu">
-                        <div id="conteneur_logos">
-                        
-                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/shop1.png" alt="logo_magasin"><p>Retrait gratuit en magasin</p> </div>
-                            <div class="logo_et_mini_slogan">    <img src="medias/126091-ecommerce-set/png/headphones1.png" alt="logo_service_client"><p>Service client 04.43.02.45.71</p> </div>
-                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/like1.png" alt="logo_satisait_ou_remboursé"><p>Satisfait ou remboursé</p> </div>
-                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/settings1.png" alt="logo paiement securisé"><p>Paiement sécurisé</p> </div>
-                            <div class="logo_et_mini_slogan"> <img id="trucks" src="medias/126091-ecommerce-set/png/truck-1.png" alt="logo"><p>Frais de port gratuits > 75€ en France métropolitaine</p> </div>
-
-                        </div>
-
-                        <div id="accueil_newletter"> 
-                        
-                            <p>NEWLETTER TENNISWORLD</br> Recevez toutes les nouveautés en avant première</p>
-                            <div id="input_newletter">
-                                <input type="text" value="Saisissez votre adresse e-mail">
-                                <button  onclick="document.location.href='index.php';"><i class="fa fa-arrow-right"></i></i></button>
-                            </div>
-                        </div>
-
-                    </div>
-
-            </div>
-        </section>
-        <?php
-
-
-    }
 
 
 

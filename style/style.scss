@@ -247,11 +247,12 @@ header{
 
 
 
+// -----------------------------page d'accueil
 
 .section_accueil{
 
     @extend %dflex; 
-    width: 100vw;
+    width: 100%;
 
 
     & #titre_et_affichage_articles{
@@ -331,19 +332,30 @@ header{
     }
 
 
+}
+// ----------------------------------fin page d'accueil
 
-// ----------------------------Affiche_bandeau_logos_newletter
 
-    & #bandeau_et_logo{
+
+
+// ------------------------------------footer
+#footer{
+    @extend %dflex; 
+    flex-direction: column;
+    // background-color:#d500a0 ;
+    flex-direction: column;
+
+    & >img{
+        width: 100%;
+    }
+    
+    & #conteneur_footer{
 
         @extend %dflex; 
         flex-direction: column;
-
-            & #debut_fond_bleu{
-                @extend %dflex; 
-                flex-direction: column;
-                width: 100%;
-                background-color:#00BED5 ;
+        background-color:#00BED5 ;
+        flex-direction: column;
+        width: 100%;
 
 
                 & #conteneur_logos{
@@ -415,57 +427,53 @@ header{
 
                 }
 
-            }
+                & #conteneur_footer_infos{
+                    @extend %dflex; 
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    // background-color: blueviolet;
+                    width: 1000px;
+                    margin-top: 100px;
+                    margin-bottom: 30px;
+        
+                    & .footer_infos{
+                        width: 300px;
+                        background-color: #00BED5;
+                        @extend %dflex; 
+                        flex-direction: column;
+                        color: white;
+        
+                        & a{
+                            margin-top: 30px;
+                            text-decoration: none;
+                            color: white;
+                        }
+
+                        & p{
+                            margin-top: 30px;
+                        }
+        
+                        & h2{
+                            color: black;
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                        }
+        
+                    }
+                }
 
 
     }
 
 
-    & #conteneur_footer{
-        @extend %dflex; 
-                
-        width: 100%;
-        background-color:#00BED5 ;
-
-        & #footer{
-            @extend %dflex; 
-            justify-content: space-around;
-            align-items: flex-start;
-            background-color: blueviolet;
-            width: 70%;
-            margin-top: 100px;
-
-            & .footer_infos{
-                width: 300px;
-                background-color: #00BED5;
-                @extend %dflex; 
-                flex-direction: column;
-                color: white;
-
-                & a{
-                    margin-top: 30px;
-                    text-decoration: none;
-                    color: white;
-                }
-
-                & h2{
-                    color: black;
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                }
-
-            }
-        }
-    }
 
 
+
+    
 }
 
 
-
-
-
-// ----------------------------------fin page accueil
+// ----------------------------------fin footer
 
 
 

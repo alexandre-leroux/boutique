@@ -49,7 +49,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.user_connecte div, .user_connecte, .section_accueil #conteneur_footer #footer .footer_infos, .section_accueil #conteneur_footer #footer, .section_accueil #conteneur_footer, .section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos, .section_accueil #bandeau_et_logo #debut_fond_bleu, .section_accueil #bandeau_et_logo, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
+.user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +235,7 @@ header .panier p {
   }
 }
 .section_accueil {
-  width: 100vw;
+  width: 100%;
 }
 .section_accueil #titre_et_affichage_articles {
   flex-direction: column;
@@ -291,34 +291,40 @@ header .panier p {
   margin-top: 80px;
   margin-bottom: 80px;
 }
-.section_accueil #bandeau_et_logo {
+
+#footer {
+  flex-direction: column;
   flex-direction: column;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu {
+#footer > img {
+  width: 100%;
+}
+#footer #conteneur_footer {
+  flex-direction: column;
+  background-color: #00BED5;
   flex-direction: column;
   width: 100%;
-  background-color: #00BED5;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos {
+#footer #conteneur_footer #conteneur_logos {
   justify-content: space-around;
   align-items: flex-start;
   width: 70%;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan {
+#footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan {
   flex-direction: column;
   justify-content: center;
   width: 150px;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos img {
+#footer #conteneur_footer #conteneur_logos img {
   height: 100px;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos p {
+#footer #conteneur_footer #conteneur_logos p {
   margin-top: 20px;
   text-align: center;
   text-transform: uppercase;
   color: white;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter {
+#footer #conteneur_footer #accueil_newletter {
   justify-content: space-around;
   margin-top: 50px;
   background-color: black;
@@ -327,20 +333,20 @@ header .panier p {
   color: white;
   transform: skewX(-0.06turn);
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter div {
+#footer #conteneur_footer #accueil_newletter div {
   transform: skewX(0.06turn);
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter p {
+#footer #conteneur_footer #accueil_newletter p {
   transform: skewX(0.06turn);
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter #input_newletter {
+#footer #conteneur_footer #accueil_newletter #input_newletter {
   position: relative;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter #input_newletter input {
+#footer #conteneur_footer #accueil_newletter #input_newletter input {
   width: 300px;
   height: 40px;
 }
-.section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter #input_newletter button {
+#footer #conteneur_footer #accueil_newletter #input_newletter button {
   position: absolute;
   /*important*/
   background-color: transparent;
@@ -353,29 +359,28 @@ header .panier p {
   /*Tu peux changer ici*/
   width: 50px;
 }
-.section_accueil #conteneur_footer {
-  width: 100%;
-  background-color: #00BED5;
-}
-.section_accueil #conteneur_footer #footer {
-  justify-content: space-around;
+#footer #conteneur_footer #conteneur_footer_infos {
+  justify-content: space-between;
   align-items: flex-start;
-  background-color: blueviolet;
-  width: 70%;
+  width: 1000px;
   margin-top: 100px;
+  margin-bottom: 30px;
 }
-.section_accueil #conteneur_footer #footer .footer_infos {
+#footer #conteneur_footer #conteneur_footer_infos .footer_infos {
   width: 300px;
   background-color: #00BED5;
   flex-direction: column;
   color: white;
 }
-.section_accueil #conteneur_footer #footer .footer_infos a {
+#footer #conteneur_footer #conteneur_footer_infos .footer_infos a {
   margin-top: 30px;
   text-decoration: none;
   color: white;
 }
-.section_accueil #conteneur_footer #footer .footer_infos h2 {
+#footer #conteneur_footer #conteneur_footer_infos .footer_infos p {
+  margin-top: 30px;
+}
+#footer #conteneur_footer #conteneur_footer_infos .footer_infos h2 {
   color: black;
   font-size: 1.2rem;
   font-weight: bold;
