@@ -27,4 +27,7 @@ View_Accueil:: Affiche_Texte_Presentation();
 View_Accueil:: Affiche_bandeau_logos_newletter();
 
 
+View_Footer::Footer();
+
+
 

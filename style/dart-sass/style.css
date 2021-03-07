@@ -49,7 +49,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.user_connecte div, .user_connecte, .section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos, .section_accueil #bandeau_et_logo #debut_fond_bleu, .section_accueil #bandeau_et_logo, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
+.user_connecte div, .user_connecte, .section_accueil #conteneur_footer #footer .footer_infos, .section_accueil #conteneur_footer #footer, .section_accueil #conteneur_footer, .section_accueil #bandeau_et_logo #debut_fond_bleu #accueil_newletter, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos .logo_et_mini_slogan, .section_accueil #bandeau_et_logo #debut_fond_bleu #conteneur_logos, .section_accueil #bandeau_et_logo #debut_fond_bleu, .section_accueil #bandeau_et_logo, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -352,6 +352,33 @@ header .panier p {
   font-size: 21px;
   /*Tu peux changer ici*/
   width: 50px;
+}
+.section_accueil #conteneur_footer {
+  width: 100%;
+  background-color: #00BED5;
+}
+.section_accueil #conteneur_footer #footer {
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: blueviolet;
+  width: 70%;
+  margin-top: 100px;
+}
+.section_accueil #conteneur_footer #footer .footer_infos {
+  width: 300px;
+  background-color: #00BED5;
+  flex-direction: column;
+  color: white;
+}
+.section_accueil #conteneur_footer #footer .footer_infos a {
+  margin-top: 30px;
+  text-decoration: none;
+  color: white;
+}
+.section_accueil #conteneur_footer #footer .footer_infos h2 {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .user_connecte {

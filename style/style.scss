@@ -421,7 +421,42 @@ header{
     }
 
 
+    & #conteneur_footer{
+        @extend %dflex; 
+                
+        width: 100%;
+        background-color:#00BED5 ;
 
+        & #footer{
+            @extend %dflex; 
+            justify-content: space-around;
+            align-items: flex-start;
+            background-color: blueviolet;
+            width: 70%;
+            margin-top: 100px;
+
+            & .footer_infos{
+                width: 300px;
+                background-color: #00BED5;
+                @extend %dflex; 
+                flex-direction: column;
+                color: white;
+
+                & a{
+                    margin-top: 30px;
+                    text-decoration: none;
+                    color: white;
+                }
+
+                & h2{
+                    color: black;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+
+            }
+        }
+    }
 
 
 }
