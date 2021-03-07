@@ -9,11 +9,11 @@ class View_Footer{
             ?>
             <section id="footer">
 
-            <img src="medias/bandeau_accueil.png" alt="">
+            <!-- <img src="medias/bandeau_accueil.png" alt=""> -->
 
                 <div id="conteneur_footer">
     
-                   <div id="conteneur_logos">
+                        <div id="conteneur_logos">
                         
                             <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/shop1.png" alt="logo_magasin"><p>Retrait gratuit en magasin</p> </div>
                             <div class="logo_et_mini_slogan">    <img src="medias/126091-ecommerce-set/png/headphones1.png" alt="logo_service_client"><p>Service client 04.43.02.45.71</p> </div>
@@ -70,10 +70,14 @@ class View_Footer{
                                 <a href="">Contactez-nous</a>
                             </div>
                      
-    
                         </div>
     
                 </div>
+
+                <div id="cache_espace_blanc"></div>
+
+      
+
             </section>
             <?php
 
