@@ -40,11 +40,20 @@ public static function Affiche_Selection_TennisWorld()
                     $i = 0;
                     while (@$articles_en_avant[$i]) { 
                     ?>
-                        <div>
+                        <div id="conteneur_lien_promo">
+
                             <a href="admin_update_one_article.php?id=<?= $articles_en_avant[$i]["id_articles"] ?>&idcat=<?= $articles_en_avant[$i]["id_categorie"] ?>&idsouscat=<?= $articles_en_avant[$i]["id_sous_cat_acc"] ?>">
-                                <h3><?= $articles_en_avant[$i]['art_nom'] ?></h2><img src="medias/img_articles/<?= $articles_en_avant[$i]['MIN(chemin)'] ?>" alt="">
+                                <h2><?= $articles_en_avant[$i]['art_nom'] ?></h2>
+                                <img src="medias/img_articles/<?= $articles_en_avant[$i]['MIN(chemin)'] ?>" alt="">
+
                             </a>
+                            <div id="affichage_promotion">
+                                <p id="poucentage">-20%</p>
+                                <p id="stock_restant">Plus que 11 restants</p>
+                            </div>
                         </div>
+
+              
 
                     <?php $i++;
                     } ?>

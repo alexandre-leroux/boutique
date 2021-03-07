@@ -49,7 +49,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant div a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
+.user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,15 +261,37 @@ header .panier p {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-.section_accueil #titre_et_affichage_articles #div_article_avant div a {
+.section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a {
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
   height: 370px;
   text-align: center;
+  font-size: 1.2rem;
   text-decoration: none;
   color: #000;
-  background-color: brown;
+}
+.section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion {
+  background-color: #0084ff;
+  transform: skewX(-0.03turn);
+  height: 30px;
+  color: white;
+}
+.section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage {
+  background-color: #ff8800;
+  display: block;
+  width: 20%;
+  height: 100%;
+  padding-left: 3px;
+  padding-top: 2px;
+}
+.section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant {
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  width: 80%;
+  height: 100%;
+  padding-top: 2px;
 }
 .section_accueil #affichage_pub {
   width: 80%;

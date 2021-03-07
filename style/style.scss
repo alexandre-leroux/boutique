@@ -290,19 +290,57 @@ header{
                 margin-bottom: 50px;
             }
 
-            & div a{
+            & #conteneur_lien_promo a{
                 @extend %dflex; 
                 flex-direction: column;
                 justify-content: space-between;
                 width: 300px;
                 height: 370px;
                 text-align: center;
+                font-size: 1.2rem;
                 text-decoration: none;
                 color: #000;
 
-                background-color: brown;
+                // background-color: brown;
 
             }
+
+            & #conteneur_lien_promo #affichage_promotion {
+                @extend %dflex; 
+                background-color: #0084ff;
+                transform: skewX(-0.03turn);
+                height: 30px;
+                color: white;
+            }
+            & #conteneur_lien_promo #affichage_promotion >*{
+
+                // transform: skewX(0.03turn);
+            }
+            & #conteneur_lien_promo #affichage_promotion #poucentage{
+
+                background-color: rgb(255, 136, 0);
+                display: block;
+                @extend %dflex; 
+                width: 20%;
+                height: 100%;
+                padding-left: 3px;
+                padding-top: 2px;
+            }
+            & #conteneur_lien_promo #affichage_promotion #stock_restant{
+
+           
+                display: block;
+                @extend %dflex; 
+                text-align: center;
+                vertical-align: middle;
+                width: 80%;
+                height: 100%;
+                padding-top: 2px;
+             
+            }
+
+
+
         }
     }
 
