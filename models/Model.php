@@ -56,10 +56,10 @@ public function DeleteOne($table,$id,$id_objet)
 
     public function select_all_articles_mis_en_avant()
     {
-        $requete = $this->bdd->query("  SELECT articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc, MIN(chemin)
+        $requete = $this->bdd->query("  SELECT articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc,articles.art_courte_description,articles.prix,articles.stock, MIN(chemin)
                                         FROM articles 
                                         LEFT JOIN images_articles ON articles.id_articles = images_articles.id_articles WHERE  articles.mise_en_avant = 1
-                                        GROUP BY articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc
+                                        GROUP BY articles.id_articles,articles.art_nom,articles.id_categorie,articles.id_sous_cat_acc,articles.art_courte_description,articles.prix,articles.stock
                                         ");
         return $requete->fetchall();
     }

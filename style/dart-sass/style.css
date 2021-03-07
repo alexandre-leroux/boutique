@@ -263,13 +263,43 @@ header .panier p {
 }
 .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a {
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   width: 300px;
-  height: 370px;
+  height: 400px;
   text-align: center;
   font-size: 1.2rem;
   text-decoration: none;
   color: #000;
+}
+.section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a h2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 0.9rem;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a #courte_description {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.85rem;
+  padding: 2px;
+}
+.section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a #prix_mise_en_avant {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  padding: 2px;
+  font-weight: bold;
 }
 .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion {
   background-color: #0084ff;
