@@ -87,7 +87,7 @@ public static function navigation_visiteur($repere_page_acceuil)
                 <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
                 <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
                 <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart"></i></a><span class="compteur_panier"><?= count($_SESSION['panier']) ; ?></span></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart fa-lg"></i></a><span class="compteur_panier"><?php if(isset($_SESSION['panier'])) { echo count($_SESSION['panier']) ;} ?></span></li>
         
 
             </ul>
