@@ -206,6 +206,35 @@ public static function user_message_deconnexion()
 
 
 
+public static function afficher_resultat_recherche($recherche)
+    {
+        ?>
+
+
+        <div style="display:flex">
+    
+        <?php  
+        $i = 0;
+        while (@$recherche[$i]) {
+        ?>
+            <div style="width:200px;border:solid;margin-right:10px"  >
+                <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];var_dump('ffffffffffffffffffffff');  ?>">
+                    <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt="">
+                </a>
+            </div>
+    
+        <?php $i++; 
+        } ?>
+        </div>
+
+        <?php
+
+    }    
+
+
+
+
+
 
 
 

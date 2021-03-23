@@ -12,7 +12,7 @@ $resultat = $article->findImagesOneArticles($_GET['id']); // renvoie un tableau 
 $repere_page_acceuil = 0;
 
 
-Controller_Navigation::affichage_navigation($repere_page_acceuil);
+View_Navigation::affichage_navigation($repere_page_acceuil);
 
 // var_dump($resultat);
 //  var_dump($result); 
@@ -40,4 +40,5 @@ $view_article->displayArticlesSimilaires($findArticle); // Boucle qui affiche le
     }
 </style>
 
-
+<?php
+View_Footer::Footer();

@@ -47,7 +47,7 @@ public static function Affiche_Selection_TennisWorld()
                                 <p id="stock_restant">Plus que <?=$articles_en_avant[$i]['stock']?> restants</p>
                             </div>
 
-                            <a href="admin_update_one_article.php?id=<?= $articles_en_avant[$i]["id_articles"] ?>&idcat=<?= $articles_en_avant[$i]["id_categorie"] ?>&idsouscat=<?= $articles_en_avant[$i]["id_sous_cat_acc"] ?>">
+                            <a href="pages/article.php?id=<?= $articles_en_avant[$i]["id_articles"] ?>&idcat=<?= $articles_en_avant[$i]["id_categorie"] ?>&idsouscat=<?= $articles_en_avant[$i]["id_sous_cat_acc"] ?>">
                                 
                                 <img src="medias/img_articles/<?= $articles_en_avant[$i]['MIN(chemin)'] ?>" alt="">
 

@@ -60,8 +60,14 @@ public static function navigation_visiteur($repere_page_acceuil)
 
             <div class="search_bar">
                 <div class="border">
-                    <input type="search" aria-label="Search through site content" placeholder="Rechercher..." >
-                    <button><i class="fa fa-search"></i></button>
+
+              
+
+                <form action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
+                    <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                    <button  type="submit"><i class="fa fa-search"></i></button>
+                    <!-- <input class="fa fa-search" value="" type="submit"> -->
+                    </form>
                 </div>
             </div>
 <!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
@@ -129,8 +135,11 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
                         <div class="search_bar">
                             <div class="border">
-                                <input type="search" aria-label="Search through site content" placeholder="Rechercher..." >
-                                <button><i class="fa fa-search"></i></button>
+                            <form action="pages/recherche.php" method="post">
+                                <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                                <button  type="submit"><i class="fa fa-search"></i></button>
+                                <!-- <input class="fa fa-search" value="" type="submit"> -->
+                            </form>
                             </div>
                         </div>
                         <!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
@@ -199,8 +208,11 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
             <div class="search_bar">
                 <div class="border">
-                    <input type="search" aria-label="Search through site content" placeholder="Rechercher..." >
-                    <button><i class="fa fa-search"></i></button>
+                    <form action="pages/recherche.php" method="post">
+                        <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                        <button  type="submit"><i class="fa fa-search"></i></button>
+                        <!-- <input class="fa fa-search" value="" type="submit"> -->
+                    </form>
                 </div>
             </div>
             <!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
