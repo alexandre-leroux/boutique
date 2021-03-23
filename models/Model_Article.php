@@ -2,7 +2,7 @@
 
 require_once("Model.php") ;
 
-class Article extends Model {
+class Model_Article extends Model {
 
     /**
      * Renvoie un tableau avec les infos d'un article + son image principale 

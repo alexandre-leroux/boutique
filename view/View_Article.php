@@ -1,6 +1,6 @@
 <?php
 
-class viewArticle {
+class view_Article {
 
     /**
      * Affiche les articles sur la page boutique 

@@ -1,6 +1,6 @@
 <?php
 
-class controllerArticle {
+class controller_Article {
 
     public function TrierPar($article, $view_article,$cat="",$condition="", $get=""){
         if(!isset($_POST['tri_marque'])  && !isset($_POST['tri_prix']) && !isset($_GET['id_marques']))
