@@ -1,7 +1,7 @@
 <?php
 
 require_once('../utils/autoload.php');
-
+View_Navigation::affichage_navigation(@$repere_page_acceuil);
 $panier = new Model_Panier(); // Model panier
 $display = new View_Panier(); // View Panier 
 $controller_panier = new Controller_Panier();

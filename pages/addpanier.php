@@ -1,7 +1,8 @@
 <?php
 
-require_once('../utils/autoload.php');
 
+require_once('../utils/autoload.php');
+View_Navigation::affichage_navigation(@$repere_page_acceuil);
 $panier = new Model_Panier();
 
 if(isset($_GET['id']))
