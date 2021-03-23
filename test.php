@@ -27,4 +27,15 @@ abstract class Controllers
 
 
 
+spl_autoload_register(
+    function ($className) {
+        // var_dump($className);
+        $className = str_replace("\\", "/", $className);
+            include_once __DIR__ . "/" . $className . ".php";
+    }
+);
 
+
+
+
+&&  preg_match('#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#',$_POST['mdp']) 

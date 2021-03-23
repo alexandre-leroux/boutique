@@ -190,16 +190,16 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
                     {
                             ?>
                             <div style="display:flex">
+                            <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                                 <?php
 
                             
                                 foreach ($req_img_article as $value) {
                                 ?>
-                                    <div  >
+                                    <div style="display:flex" >
 
                                         <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                                        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                                             <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
                                         
                                             <?php  if(substr_count($value['chemin'],'-0.'))  {echo ' photo principale';} ?>
@@ -218,13 +218,11 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
                                 <?=$erreur_choix_premiere_image?>
         
 
-
-
+                            </form>
                                 
                             </div>
 
 
-                            </form>
 
 
                             <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
@@ -514,6 +512,49 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
 
 
+
+
+                    public static function affiche_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image)
+
+                    { $admin = new Model_Admin_Update();
+
+                        if ($_GET['idcat'] == 1) {
+
+                            View_Admin_Update::affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
+                          
+                        }
+
+                        if ($_GET['idcat'] == 2) {
+
+                            View_Admin_Update::affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
+  
+                        }
+
+
+                        if ($_GET['idcat'] == 3) {
+
+                            View_Admin_Update::affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image);
+    
+                        }
+
+                        if ($_GET['idcat'] == 4) {
+
+                            $donnees = $admin->select_one_articles_updates_balle();
+                            View_Admin_Update::affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle,$erreur_choix_premiere_image);
+
+                        }
+
+                        if ($_GET['idcat'] == 5) {
+
+                            $donnees = $admin->select_one_articles_update_accessoire();
+                            View_Admin_Update::affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires,$erreur_choix_premiere_image);
+    
+                        }
+
+
+                        
+
+                        }
 
     
     }

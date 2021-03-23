@@ -70,7 +70,7 @@ class View_User
     public static function form_connexion($error)    
     {
         ?>
-        <a href="../index.php">RETOUR</a>
+        <!-- <a href="../index.php">RETOUR</a> -->
         <form action="user_connexion.php" method="POST">
             <div class="form-group">
                 <label for="mail">Email</label>
@@ -156,5 +156,62 @@ class View_User
         <?php
 
         }
+public static function user_message_inscription()
+        {
+            ?>
+            <section class="user_connecte">
+                <div >
+                    <p>inscription validée</p>
+                    <button onclick="document.location.href = 'user_connexion.php';">se connecter</button>
+
+         
+                </div>
+            </section>
+            <?php
+
+        }     
+
+
+public static function user_message_connexion()
+        {
+            ?>
+            <section class="user_connecte">
+                <div >
+                    <p>vous êtes connecté</p>
+                    <button onclick="document.location.href = '../index.php';">retour à l'accueil</button>
+
+         
+                </div>
+            </section>
+            <?php
+
+        }             
+
+
+public static function user_message_deconnexion()
+        {
+            ?>
+            <section class="user_connecte">
+                <div >
+                    <p>vous êtes déconnecté</p>
+                    <button onclick="document.location.href = '../index.php';">retour à l'accueil</button>
+
+         
+                </div>
+            </section>
+            <?php
+
+        }     
+
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -6,8 +6,9 @@ $color1: #0C0E0D ;
 $color2: #1a1f1cf1;
 $color3: #00BAFF;
 
+
 body{
-    background-color: rgb(168, 158, 158);
+    background-color: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -31,10 +32,16 @@ header{
     font-size: 1rem;
     //font-style: italic;
 
+    & .logo{
+        @extend %dflex; 
+        
+    }
+
     & .logo a{
+    
         display: flex;
-        height: 100%;
-        width: 200px;
+        height: 70%;
+        width: 260px;
         //background-color: rgb(22, 75, 25);
     }
 
@@ -147,12 +154,18 @@ header{
 
     header{
         font-size: 0.8rem;
-        & .logo a{
-            display: flex;
-            height: 100%;
-            width: 125px;
-            //background-color: rgb(22, 75, 25);
+        & .logo{
+            @extend %dflex; 
+            
         }
+    
+        & .logo a{
+        
+            display: flex;
+            height: 50%;
+            width: 150px;
+        }
+
         & .accueil{ 
             width: 425px;
         }    
@@ -201,14 +214,13 @@ header{
 
 }
 
-
+// -----------------------page d'accueil index.php
 
 #slider { 
-    width: 80%;
+    width: 100%;
      overflow: hidden;
-     max-width: 1920px;
-    & figure{
 
+    & figure{
         position: relative; 
         width: 500%;
         margin: 0;
@@ -221,8 +233,8 @@ header{
         width: 20%; height: auto; float: left; 
     }
 
- } 
- @keyframes slidy {
+} 
+@keyframes slidy {
     0% { left: 0%; }
     20% { left: 0%; }
     25% { left: -100%; }
@@ -232,4 +244,381 @@ header{
     75% { left: -300%; }
     95% { left: -300%; }
     100% { left: -400%; }
-  }
+}
+
+
+
+// -----------------------------page d'accueil
+
+.section_accueil{
+
+    @extend %dflex; 
+    width: 100%;
+
+
+    & #titre_et_affichage_articles{
+        @extend %dflex; 
+        flex-direction: column;
+        width: 80%;
+        // background-color: #00BAFF;
+
+
+
+        & h1{
+            // background-color: burlywood;
+            text-transform: uppercase;
+            font-size: 3rem;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 50px;
+
+            & span{
+
+                font-style: italic;
+                font-weight: lighter;
+            }
+        }
+
+        & #div_article_avant{
+            @extend %dflex; 
+            flex-wrap: wrap;
+            // background-color: rgb(54, 42, 165);
+
+            & div{
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+
+            & #conteneur_lien_promo a{
+                @extend %dflex; 
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                width: 300px;
+                height: 350px;
+                text-align: center;
+                font-size: 1.2rem;
+                text-decoration: none;
+                color: #000;
+
+
+                // background-color: brown;
+
+            }
+
+            & #conteneur_lien_promo img{
+                    width: 250px;
+                    margin-bottom: 20px;
+
+                // background-color: brown;
+
+            }
+
+            & #conteneur_lien_promo a h2{
+  
+             
+                // background-color: rgb(42, 110, 165);
+                text-align: left;
+                font-weight: bold;
+                font-size: 0.9rem;
+
+                width: 100%;
+                height: 90px;
+                overflow: hidden;
+                white-space: nowrap; 
+                text-overflow: ellipsis;
+
+            }
+
+            & #conteneur_lien_promo a #courte_description{
+  
+             
+                // background-color: rgb(165, 136, 42);
+                width: 100%;
+                height: 100px;
+                overflow: hidden;
+                white-space: nowrap; 
+                text-overflow: ellipsis;
+                font-size: 0.85rem;
+                padding: 2px;
+
+            }
+            & #conteneur_lien_promo a #prix_mise_en_avant{
+  
+             
+                // background-color: rgb(151, 42, 165);
+                width: 100%;
+                height: 100px;
+                overflow: hidden;
+                white-space: nowrap; 
+                text-overflow: ellipsis;
+                font-size: 0.9rem;
+                padding: 2px;
+                font-weight: bold;
+
+            }
+
+            & #conteneur_lien_promo #affichage_promotion {
+                @extend %dflex; 
+                background-color: #0084ff;
+                transform: skewX(-0.03turn);
+                height: 30px;
+                color: white;
+                position: relative;
+                top: 20px;
+
+            }
+
+            & #conteneur_lien_promo #affichage_promotion #poucentage{
+
+                background-color: rgb(255, 136, 0);
+                display: block;
+                @extend %dflex; 
+                width: 20%;
+                height: 100%;
+                padding-left: 3px;
+                padding-top: 2px;
+            }
+            & #conteneur_lien_promo #affichage_promotion #stock_restant{
+
+           
+                display: block;
+                @extend %dflex; 
+                text-align: center;
+                vertical-align: middle;
+                width: 80%;
+                height: 100%;
+                padding-top: 2px;
+             
+            }
+
+
+
+        }
+    }
+
+
+    & #affichage_pub{
+        @extend %dflex; 
+        width: 80%;
+        // background-color: chartreuse;
+
+        & a{
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+
+            & img{
+                height: auto;
+                width: 600px;
+            }
+        }
+    }
+    & #affichage_presentation{
+        width: 80%;
+        text-align: justify;
+        font-size: 1.2rem;
+        margin-top: 80px;
+        margin-bottom: 180px;
+    }
+
+
+}
+// ----------------------------------fin page d'accueil
+
+
+
+
+// ------------------------------------footer
+#footer{
+    @extend %dflex; 
+    flex-direction: column;
+    // background-color:#d500a0 ;
+    flex-direction: column;
+
+    & >img{
+        width: 100%;
+    }
+    
+    & #conteneur_footer{
+        z-index: 1000;
+        padding-top: 100px;
+        @extend %dflex; 
+        flex-direction: column;
+        background-color:#00BED5 ;
+        flex-direction: column;
+        width: 100%;
+        transform: skewY(-0.02turn);
+
+
+        & > *{
+            transform: skewY(0.02turn);
+        }
+
+                & #conteneur_logos{
+                    @extend %dflex; 
+                    transform: skewY(0.02turn);
+                    justify-content: space-around;
+                    align-items: flex-start;
+                    // background-color: burlywood;
+                    width: 70%;
+        
+                    & .logo_et_mini_slogan{
+                        // background-color: blue ; 
+                        @extend %dflex; 
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 150px;
+                    }
+        
+                    & img{
+                        height: 100px;
+                    }
+        
+                    & p{
+                        margin-top: 20px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+        
+        
+                }
+
+                & #accueil_newletter{
+              
+                   
+                    @extend %dflex; 
+                    justify-content: space-around;
+                    margin-top: 100px;
+                    background-color: rgb(0, 0, 0);
+                    width: 1200px;
+                    height: 120px;
+                    color: white;
+                    transform: skewX(-0.06turn)  skewY(0.02turn);
+              
+
+                        & div{
+                            transform: skewX(0.06turn);
+                        }
+                        & p{
+                            transform: skewX(0.06turn);
+                        }
+
+                        & #input_newletter{
+                            position: relative;
+
+                            & input{
+                                width: 300px;
+                                height: 40px;
+                            }
+
+                            & button{
+                                position: absolute; /*important*/
+                                background-color: transparent;
+                                top: 6px;
+                                border: none;
+                                color: rgb(0, 0, 0); /*Tu peux changer ici*/
+                                left: 245px;
+                                font-size: 21px; /*Tu peux changer ici*/
+                                width: 50px;
+                            }
+                        }
+
+
+                }
+
+                & #conteneur_footer_infos{
+              
+                    @extend %dflex; 
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    // background-color: blueviolet;
+                    width: 1000px;
+                    margin-top: 180px;
+                    margin-bottom: 30px;
+        
+                    & .footer_infos{
+                        width: 300px;
+                        background-color: #00BED5;
+                        @extend %dflex; 
+                        flex-direction: column;
+                        color: white;
+        
+                        & a{
+                            margin-top: 30px;
+                            text-decoration: none;
+                            color: white;
+                        }
+
+                        & p{
+                            margin-top: 30px;
+                        }
+        
+                        & h2{
+                            color: black;
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                        }
+        
+                    }
+                }
+
+
+    }
+
+
+
+
+
+    
+}
+
+
+#cache_espace_blanc{
+    
+    width: 99.2vw;
+    height: 350px;
+    background-color: #00BED5;
+    position: relative;
+    top: -180px;
+z-index: 10;
+// margin-top: -100px;
+margin-bottom: -180px;
+      
+}
+
+// ----------------------------------fin footer
+
+
+
+
+.user_connecte{
+
+    @extend %dflex;
+    width: 100vw;
+    height: 80vh;
+  
+
+    & div{
+        @extend %dflex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: rgb(231, 231, 231);
+        width: 300px;
+        height: 200px;
+    }
+    & div p{
+        margin-top: 20px;
+        font-size: 1.2rem;
+    }
+    & button{
+        margin-bottom: 20px;
+    }
+
+
+}
