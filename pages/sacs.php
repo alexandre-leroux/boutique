@@ -11,3 +11,6 @@ $repere_page_acceuil = 0;
 View_Navigation::affichage_navigation($repere_page_acceuil);
 
 $controller_article->catProduits("sacs",2,$article,$display);
+
+
+View_Footer::Footer($repere_page_acceuil);

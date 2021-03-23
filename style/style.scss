@@ -65,14 +65,21 @@ header{
     }
 
     & .search_bar{
+
         //background-color: rgb(189, 118, 52);
         @extend %dflex; 
+        
         & .border{
+            @extend %dflex ; 
             border: 2px white solid;
             border-radius: 2em;
             padding: 3px;
-            width: 220px;
+            width: 290px;
             display: flex;
+
+            & #form_recherche{
+                @extend %dflex; 
+            }
             
         }
         & input {

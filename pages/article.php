@@ -41,4 +41,4 @@ $view_article->displayArticlesSimilaires($findArticle); // Boucle qui affiche le
 </style>
 
 <?php
-View_Footer::Footer();
+View_Footer::Footer($repere_page_acceuil);

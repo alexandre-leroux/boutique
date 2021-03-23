@@ -15,3 +15,4 @@ $controller_article->catProduits("cordages",3,$article,$display);
 
 
 
+View_Footer::Footer($repere_page_acceuil);

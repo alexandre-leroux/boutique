@@ -18,3 +18,7 @@ if(isset($_GET['id']))
 else{
     die('Aucun produit n\'a été ajouter au panier') ; 
 }
+
+
+
+View_Footer::Footer($repere_page_acceuil);

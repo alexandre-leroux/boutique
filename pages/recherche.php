@@ -12,4 +12,4 @@ $recherche = Controller_Admin_Update::recherche_dans_articles($_POST['rechercher
 
 View_User::afficher_resultat_recherche($recherche);
 
-View_Footer::Footer();
+View_Footer::Footer(@$repere_page_acceuil);

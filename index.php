@@ -27,7 +27,7 @@ View_Accueil:: Affiche_Texte_Presentation();
 
 
 
-View_Footer::Footer();
+View_Footer::Footer($repere_page_acceuil);
 
 
 

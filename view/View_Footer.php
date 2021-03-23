@@ -3,7 +3,7 @@
 
 class View_Footer{
 
-    public static function Footer()
+    public static function Footer($repere_page_acceuil)
         {
 
             ?>
@@ -14,12 +14,12 @@ class View_Footer{
                 <div id="conteneur_footer">
     
                         <div id="conteneur_logos">
-                        
-                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/shop1.png" alt="logo_magasin"><p>Retrait gratuit en magasin</p> </div>
-                            <div class="logo_et_mini_slogan">    <img src="medias/126091-ecommerce-set/png/headphones1.png" alt="logo_service_client"><p>Service client 04.43.02.45.71</p> </div>
-                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/like1.png" alt="logo_satisait_ou_remboursé"><p>Satisfait ou remboursé</p> </div>
-                            <div class="logo_et_mini_slogan">   <img src="medias/126091-ecommerce-set/png/settings1.png" alt="logo paiement securisé"><p>Paiement sécurisé</p> </div>
-                            <div class="logo_et_mini_slogan"> <img id="trucks" src="medias/126091-ecommerce-set/png/truck-1.png" alt="logo"><p>Frais de port gratuits > 75€ en France métropolitaine</p> </div>
+
+                            <div class="logo_et_mini_slogan"><img src='<?php echo ($repere_page_acceuil) ? 'medias/126091-ecommerce-set/png/shop1.png' : '../medias/126091-ecommerce-set/png/shop1.png';?>' alt="logo_magasin"><p>Retrait gratuit en magasin</p> </div>
+                            <div class="logo_et_mini_slogan"><img src="<?php echo ($repere_page_acceuil) ? 'medias/126091-ecommerce-set/png/headphones1.png' : '../medias/126091-ecommerce-set/png/headphones1.png';?>" alt="logo_service_client"><p>Service client 04.43.02.45.71</p> </div>
+                            <div class="logo_et_mini_slogan">   <img src="<?php echo ($repere_page_acceuil) ? 'medias/126091-ecommerce-set/png/like1.png' : '../medias/126091-ecommerce-set/png/like1.png';?>" alt="logo_satisait_ou_remboursé"><p>Satisfait ou remboursé</p> </div>
+                            <div class="logo_et_mini_slogan">   <img src="<?php echo ($repere_page_acceuil) ? 'medias/126091-ecommerce-set/png/settings1.png' : '../medias/126091-ecommerce-set/png/settings1.png';?>" alt="logo paiement securisé"><p>Paiement sécurisé</p> </div>
+                            <div class="logo_et_mini_slogan"> <img id="trucks" src=" <?php echo ($repere_page_acceuil) ? 'medias/126091-ecommerce-set/png/truck-1.png' : '../medias/126091-ecommerce-set/png/truck-1.png';?>" alt="logo"><p>Frais de port gratuits > 75€ en France métropolitaine</p> </div>
 
                         </div>
 

@@ -15,6 +15,7 @@ $view_article->TrierParPrix("boutique");
 
 $controller_article->TrierPar($article,$view_article,@$_GET['id_marques']); 
 
+View_Footer::Footer($repere_page_acceuil);
 ?>
 </main>
 </body>

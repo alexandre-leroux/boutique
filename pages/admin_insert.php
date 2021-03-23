@@ -28,7 +28,8 @@ View_Navigation::affichage_navigation(@$repere_page_acceuil);
     // Check du format des images + insert dans la bdd 
     
     $controller->checkImage($result,$admin);
-
+    
+    View_Footer::Footer($repere_page_acceuil);
 ?>
 
 

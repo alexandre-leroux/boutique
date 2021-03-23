@@ -15,3 +15,4 @@ View_Navigation::affichage_navigation($repere_page_acceuil);
 $controller_article->catProduits("balles",4,$article,$display);
 
 
+View_Footer::Footer($repere_page_acceuil);

@@ -46,3 +46,6 @@ if(isset($_GET['quantite_moins']))
 </html>
 <?php
 $display->displayInfosPanier($product, @$prix); // Affiche ces infos 
+
+
+View_Footer::Footer($repere_page_acceuil);
