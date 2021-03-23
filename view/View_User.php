@@ -218,7 +218,7 @@ public static function afficher_resultat_recherche($recherche)
         while (@$recherche[$i]) {
         ?>
             <div style="width:200px;border:solid;margin-right:10px"  >
-                <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];var_dump('ffffffffffffffffffffff');  ?>">
+                <a target="_blank" href="article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];?>">
                     <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt="">
                 </a>
             </div>

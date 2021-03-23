@@ -87,7 +87,7 @@ header .search_bar .border {
   border: 2px white solid;
   border-radius: 2em;
   padding: 3px;
-  width: 290px;
+  width: 210px;
   display: flex;
 }
 header .search_bar input {

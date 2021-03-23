@@ -49,7 +49,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar, header .accueil, header .logo {
+.user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar .border #form_recherche, header .search_bar .border, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,7 +87,7 @@ header .search_bar .border {
   border: 2px white solid;
   border-radius: 2em;
   padding: 3px;
-  width: 220px;
+  width: 210px;
   display: flex;
 }
 header .search_bar input {
