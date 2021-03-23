@@ -124,8 +124,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                             <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_modification_profil.php' : 'user_modification_profil.php';?>">MON COMPTE</a>
                             <p>|</p>
                             <a href="<?php echo ($repere_page_acceuil) ? 'pages/deconnexion.php' : 'deconnexion.php';?>">DECONNEXION</a>
-                            <p>|</p>
-                            <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : '';?>">PANIER</a>
+    
                         </div>
 
                         <div class="search_bar">
