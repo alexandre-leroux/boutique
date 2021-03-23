@@ -11,11 +11,11 @@ public static function Affiche_Slider()
         <section class="section_accueil">
             <div id="slider">
             <figure>
-                <img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt>
-                <img src="medias/img_pub/slide-radical-2021.jpg" alt>
-                <img src="medias/img_pub/slide-ultra-100-reverse-17022021_602cf872af47a.jpg" alt>
-                <img src="medias/img_pub/slide-radical-2021.jpg" alt>
-                <img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt>
+               <a href=""><img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt></a> 
+               <a href=""><img src="medias/img_pub/slide-radical-2021.jpg" alt></a> 
+               <a href=""><img src="medias/img_pub/slide-ultra-100-reverse-17022021_602cf872af47a.jpg" alt></a> 
+               <a href=""><img src="medias/img_pub/slide-radical-2021.jpg" alt></a> 
+               <a href=""><img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt></a> 
             </figure>
             </div>
         </section>

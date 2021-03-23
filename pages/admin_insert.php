@@ -3,10 +3,10 @@
 session_start();
 require_once('../utils/autoload.php');
 
-$admin = new Model_Admin(); // Model
+$admin = new Model_Admin_Insert(); // Model
 $form = new View_Admin_Insert(); // View 
 $controller = new Controller_Admin_Insert(); // Controller 
-Controller_Navigation::affichage_navigation(@$repere_page_acceuil);
+View_Navigation::affichage_navigation(@$repere_page_acceuil);
     
     $result_cat = $admin->display("categorie"); // renvoie un tableau de toutes les catégorie
     $result_mar = $admin->display("marques"); // renvoie un tableau de toutes les marques
