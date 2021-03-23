@@ -190,16 +190,16 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
                     {
                             ?>
                             <div style="display:flex">
+                            <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                                 <?php
 
                             
                                 foreach ($req_img_article as $value) {
                                 ?>
-                                    <div  >
+                                    <div style="display:flex" >
 
                                         <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                                        <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
                                             <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
                                         
                                             <?php  if(substr_count($value['chemin'],'-0.'))  {echo ' photo principale';} ?>
@@ -218,13 +218,11 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
                                 <?=$erreur_choix_premiere_image?>
         
 
-
-
+                            </form>
                                 
                             </div>
 
 
-                            </form>
 
 
                             <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
