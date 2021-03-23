@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require_once("../models/Model_Article.php"); 
 require_once("../view/View_Article.php"); 
@@ -14,6 +15,7 @@ $repere_page_acceuil = 0;
 
 Controller_Navigation::affichage_navigation($repere_page_acceuil);
 
-$controller_article->catProduits("raquettes",1,$article,$display);
+
+$controller_article->catProduits("balles",4,$article,$display);
 
 

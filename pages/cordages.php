@@ -14,6 +14,8 @@ $repere_page_acceuil = 0;
 
 Controller_Navigation::affichage_navigation($repere_page_acceuil);
 
-$controller_article->catProduits("raquettes",1,$article,$display);
+
+$controller_article->catProduits("cordages",3,$article,$display);
+
 
 
