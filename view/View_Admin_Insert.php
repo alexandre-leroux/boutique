@@ -1,6 +1,6 @@
 <?php
 
-class Form {
+class View_Admin_Insert {
 
     /**
      * Affichage du formulaire commun de tous les produits  

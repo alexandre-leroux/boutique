@@ -1,6 +1,6 @@
 <?php
 
-class controllerPanier {
+class Controller_Panier {
 
     public function deleteProduct($id){
         unset($_SESSION['panier'][$id]) ;

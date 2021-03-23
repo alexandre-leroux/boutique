@@ -3,7 +3,7 @@
 require_once("Model.php") ;
 
 
-class Admin extends Model {
+class Model_Admin_Insert extends Model {
 
     /**
      * Ajout d'une marque 

@@ -3,7 +3,7 @@
 require_once("../models/Model.php") ;
 require_once("../models/Model_Admin_Insert.php");
 
-class Controller {
+class Controller_Admin_Insert {
 
     public function checkImage($result,$admin){
         

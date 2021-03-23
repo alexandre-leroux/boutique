@@ -1,6 +1,6 @@
 <?php
 
-class viewPanier {
+class View_Panier {
 
     function displayInfosPanier($tableau_produits,$prix)
     {

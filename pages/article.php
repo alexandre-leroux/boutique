@@ -1,13 +1,11 @@
 <?php
 
 session_start();
-require_once("../models/Model_Article.php"); 
-require_once("../view/View_Article.php"); 
+require_once('../utils/autoload.php');
 
-$article = new Article(); 
-$view_article = new viewArticle();
-require_once('../view/View_Navigation.php');
-require_once('../controllers/Controller_Navigation.php');
+$article = new Model_Article(); 
+$view_article = new View_Article();
+
 
 $result = $article->findOneArticle($_GET['id']); // renvoie un tableau avec toute les infos d'un articles
 $resultat = $article->findImagesOneArticles($_GET['id']); // renvoie un tableau avec toutes les images d'un article 

@@ -1,18 +1,11 @@
 
 <?php
 session_start();
+require_once('../utils/autoload.php');
 
-require_once('../view/View_Navigation.php');
-require_once('../controllers/Controller_Navigation.php');
-
-//include("fonctions.php"); 
-require_once("../models/Model_Admin_Insert.php"); 
-require_once("../view/View_Admin_Insert.php");
-require("../controllers/Controller_Admin_Insert.php");
-
-$admin = new Admin(); // Model
-$form = new Form(); // View 
-$controller = new Controller(); // Controller 
+$admin = new Model_Admin(); // Model
+$form = new View_Admin_Insert(); // View 
+$controller = new Controller_Admin_Insert(); // Controller 
 Controller_Navigation::affichage_navigation(@$repere_page_acceuil);
     
     $result_cat = $admin->display("categorie"); // renvoie un tableau de toutes les catégorie

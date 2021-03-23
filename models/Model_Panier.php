@@ -2,7 +2,7 @@
 
 require_once('Model.php') ;
 
-class Panier extends Model {
+class Model_Panier extends Model {
 
     public function __construct(){
         parent::__construct();

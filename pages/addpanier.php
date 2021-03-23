@@ -1,8 +1,8 @@
 <?php
 
-require_once("../models/Model_Panier.php");
+require_once('../utils/autoload.php');
 
-$panier = new Panier();
+$panier = new Model_Panier();
 
 if(isset($_GET['id']))
 {

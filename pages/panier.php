@@ -1,12 +1,10 @@
 <?php
 
-require_once("../models/Model_Panier.php");
-require_once("../view/View_Panier.php"); 
-require_once("../controllers/Controller_Panier.php");
+require_once('../utils/autoload.php');
 
-$panier = new Panier(); // Model panier
-$display = new viewPanier(); // View Panier 
-$controller_panier = new controllerPanier();
+$panier = new Model_Panier(); // Model panier
+$display = new View_Panier(); // View Panier 
+$controller_panier = new Controller_Panier();
 
 var_dump($_SESSION);
 

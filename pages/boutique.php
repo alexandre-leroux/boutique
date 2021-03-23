@@ -1,12 +1,10 @@
 <?php 
 
-require_once("../models/Model_Article.php");
-require_once("../view/View_Article.php");
-require_once("../controllers/Controller_Article.php");
+require_once('../utils/autoload.php');
 
-$article = new Article(); 
-$view_article = new viewArticle();
-$controller_article = new controllerArticle();
+$article = new Model_Article(); 
+$view_article = new View_Article();
+$controller_article = new Controller_Article();
 
 $result_mar = $article->display("marques"); // renvoie un tableaux de toute les marques 
 $result_cat = $article->display("categorie"); // renvoie un tableaux de toute les catégories
