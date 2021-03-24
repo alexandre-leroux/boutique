@@ -20,7 +20,7 @@ View_Navigation::affichage_navigation($repere_page_acceuil);
 $view_article->displayOneArticle($resultat,$result);  // affichage infos + images 
 ?>
 
-<h1> Articles similaires </h1>
+
 
 <?php
 
@@ -33,12 +33,6 @@ $view_article->displayArticlesSimilaires($findArticle); // Boucle qui affiche le
 ?>
 
 
-
-<style>
-    .dp_none{
-        display:none; 
-    }
-</style>
 
 <?php
 View_Footer::Footer($repere_page_acceuil);

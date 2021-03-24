@@ -201,22 +201,29 @@ class view_Article {
      */
     public function displayArticlesSimilaires($array_art_similaire){
 
-        for($i = 0; isset($array_art_similaire[$i]) ; $i++)
-        {
         ?>
+        <section id="articles_similaires">
+            <h1> Articles similaires </h1>
+                <?php
+                for($i = 0; isset($array_art_similaire[$i]) ; $i++)
+                {
+                ?>
 
-        <div>
-            <div>
-                <a href="article.php?id=<?= $array_art_similaire[$i]['id_articles'];?>"><img src="../medias/img_articles/<?= $array_art_similaire[$i]['MIN(chemin)']; ?>"></a>
-                <h3> <?= $array_art_similaire[$i]['art_nom'] ; ?></h3>
-                <p> <?= $array_art_similaire[$i]['prix'] ; ?> €</p>
-            </div>
+                <div>
+                    <div>
+                        <a href="article.php?id=<?= $array_art_similaire[$i]['id_articles'];?>"><img src="../medias/img_articles/<?= $array_art_similaire[$i]['MIN(chemin)']; ?>"></a>
+                        <h3> <?= $array_art_similaire[$i]['art_nom'] ; ?></h3>
+                        <p> <?= $array_art_similaire[$i]['prix'] ; ?> €</p>
+                    </div>
 
-        </div>
+                </div>
 
+                <?php
+
+                }
+                ?>
+        </section>
         <?php
-
-        }
     }
 
 }

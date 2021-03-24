@@ -859,7 +859,9 @@ min-height: 100vh;
         padding: 10px;
         font-size: 0.8rem;
         width: 40%;
-
+        & .dp_none{
+            display:none; 
+        }
         & p{
             margin: 10px;
         }
@@ -893,6 +895,25 @@ min-height: 100vh;
         }
     }
     
+
+
+}
+
+#articles_similaires{
+    margin-top: 100px;
+    @extend %dflex; 
+    flex-direction: column;
+
+    & h1{
+        background-color: rgb(231, 231, 231);
+        width: 50%;
+        height: 40px;
+        @extend %dflex; 
+        justify-content: flex-start;
+        padding-left: 30px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
 
 
 
