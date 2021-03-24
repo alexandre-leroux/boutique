@@ -11,27 +11,27 @@ class view_Article {
     public function displayAllArticles(array $result): void{
 
         ?>
-        <section class="galerie_article">
-        <?php
-        foreach($result as $value)
-        {
-            ?>
+            <section class="galerie_article">
+                <?php
+                    foreach($result as $value)
+                    {
+                        ?>
 
-            <div class="vignette_article">
-                <div class="img">                    
-                    <a href="article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
-                </div>    
-                <h1> <?= $value['art_nom'] ; ?> </h1>
-                <p> <?= $value['prix'] ; ?> € </p>
-                <p> <?= $value['art_courte_description'] ; ?> </p>
+                        <div class="vignette_article">
+                            <div class="img">                    
+                                <a href="article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
+                            </div>    
+                            <h1> <?= $value['art_nom'] ; ?> </h1>
+                            <p id="courte_descr_aff_article"> <?= $value['art_courte_description'] ; ?> </p>
+                            <p> <?= $value['prix'] ; ?> € </p>
 
-            </div>    
+                        </div>    
 
-            <?php
-        }
+                        <?php
+                    }
 
-        ?>
-        </section>
+                 ?>
+            </section>
         <?php
     }
 

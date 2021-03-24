@@ -21,7 +21,7 @@ class Model_Article extends Model {
         if($order){
             $sql .= $order;
             $sql .= $groupby ;
-            var_dump($sql);
+            // var_dump($sql);
         }
         else{
             $sql .= $groupby;

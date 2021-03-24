@@ -714,17 +714,17 @@ margin-bottom: -180px;
         color: red;
     }
 
-//---------------------------------------------page recherche article user
-
-
-
-
-
+    
+    
+    
+    
+    
 }
 
 
 
 
+//---------------------------------------------page recherche article user
 #recherche_user{
 
     @extend %dflex;
@@ -756,6 +756,69 @@ margin-bottom: -180px;
             }
         }
     }
+
+}
+
+
+
+
+
+
+
+
+// -----------------------------affichage des articles
+.galerie_article{
+
+@extend %dflex;
+align-items: flex-start;
+padding-top: 10vh;
+min-height: 100vh;
+background-color: blue;
+
+    & .vignette_article{
+        background-color: rgb(28, 128, 25);
+
+     
+            @extend %dflex; 
+            margin-left: 30px;
+            align-items: flex-start;
+            flex-direction: column;
+            // align-items: center
+            justify-content: space-between;
+            padding: 10px;
+            width: 250px;
+            height: 350px;
+            text-align: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #000;
+            box-shadow: 0px 0px 10px rgb(199, 199, 199);
+
+
+
+            & h1{
+                font-weight: bold;
+                font-size: 1rem;
+            }
+
+            & #courte_descr_aff_article{
+                font-size: 0.8rem;
+                white-space: nowrap; 
+                width: 90%; 
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                text-align: left;
+                // border: 1px solid #000000;
+            }
+
+
+
+        }
+    
+
+
+
+
 
 
 

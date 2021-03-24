@@ -11,15 +11,15 @@ class controller_Article {
         elseif(isset($_POST['tri_marque']))
         {
             $marque = $article->findAllArticles(" WHERE id_marques = {$_POST['marques']} {$condition}", " GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie"); 
-            var_dump($marque);
-            var_dump($condition);
+            // var_dump($marque);
+            // var_dump($condition);
             $view_article->displayAllArticles($marque);
             
         }
         elseif(isset($_GET['id_marques']))
         {
             $marque = $article->findAllArticles(" WHERE id_marques = ".$_GET['id_marques'], " GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie"); 
-            var_dump($marque);
+            // var_dump($marque);
             $view_article->displayAllArticles($marque);
         }
         elseif(isset($_POST['tri_prix']))
