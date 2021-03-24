@@ -10,6 +10,7 @@ $color3: #00BAFF;
 body{
     background-color: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 //display flex générique, à @extend dans les attributs directement 
@@ -637,6 +638,59 @@ margin-bottom: -180px;
     & button{
         margin-bottom: 20px;
     }
+
+
+}
+
+
+// -------------------------------------------------section inscription
+
+#section_formulaire_inscription{
+
+    @extend %dflex;
+    align-items: flex-start;
+    height: 130vh;
+
+    // background-color: blue;
+
+    & #conteneur_form_inscription{
+        margin-top: 50px;
+        margin-bottom: 100px;
+        width: 500px;
+        // height:500px;
+        border: solid 1px grey;
+        padding: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
+        // margin-top: 30px;
+        background-color: rgb(250, 250, 250)
+    }
+
+    &  #conteneur_form_inscription .form-group{
+        @extend %dflex;
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    &  #conteneur_form_inscription .form-group .input_form_inscription{
+        height: 35px;
+        width: 100%;
+    }
+    &  #conteneur_form_inscription #validation_inscription{
+        @extend %dflex;
+        height: 35px;
+        width: 100%;
+        & input{
+            height: 30px;
+            // background-color: aqua;
+        }
+    }
+
+
+
+
+
 
 
 }

@@ -47,9 +47,10 @@ td, th {
 body {
   background-color: white;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
-.user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar .border #form_recherche, header .search_bar .border, header .search_bar, header .accueil, header .logo {
+#section_formulaire_inscription #conteneur_form_inscription #validation_inscription, #section_formulaire_inscription #conteneur_form_inscription .form-group, #section_formulaire_inscription, .user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar .border #form_recherche, header .search_bar .border, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -489,6 +490,38 @@ header .panier p {
 }
 .user_connecte button {
   margin-bottom: 20px;
+}
+
+#section_formulaire_inscription {
+  align-items: flex-start;
+  height: 130vh;
+}
+#section_formulaire_inscription #conteneur_form_inscription {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  width: 500px;
+  border: solid 1px grey;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #fafafa;
+}
+#section_formulaire_inscription #conteneur_form_inscription .form-group {
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+#section_formulaire_inscription #conteneur_form_inscription .form-group .input_form_inscription {
+  height: 35px;
+  width: 100%;
+}
+#section_formulaire_inscription #conteneur_form_inscription #validation_inscription {
+  height: 35px;
+  width: 100%;
+}
+#section_formulaire_inscription #conteneur_form_inscription #validation_inscription input {
+  height: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */

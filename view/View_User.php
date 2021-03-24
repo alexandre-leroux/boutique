@@ -6,64 +6,67 @@ class View_User
     public static function form_inscription($error_mail_pris,$error_mdp)    
     {
         ?>
-        <a href="../index.php">RETOUR</a>
-        <form action="user_inscription.php" method="POST" >
-        <div class="form-group">
-            <label for="user_nom">Votre nom :</label>
-            <input type="text" id="user_nom" name="nom" >
-        </div>
+            <section id="section_formulaire_inscription">
+                <div id="conteneur_form_inscription">
+                    <form action="user_inscription.php" method="POST" >
+                    <div class="form-group">
+                        <label for="user_nom">Votre nom :</label>
+                        <input class="input_form_inscription" type="text" id="user_nom" name="nom" >
+                    </div>
 
-        <div class="form-group">
-            <label for="prenom">prenom : </label> 
-            <input type="text" id="prenom" name="prenom" >
-        </div>
+                    <div class="form-group">
+                        <label for="prenom">prenom : </label> 
+                        <input class="input_form_inscription"  type="text" id="prenom" name="prenom" >
+                    </div>
 
-        <div class="form-group">
-            <label for="mail">mail : </label>
-            <input type="email"  id="mail" name="mail" >
-            <?php if(@$error_mail_pris){echo $error_mail_pris;}?>
+                    <div class="form-group">
+                        <label for="mail">mail : </label>
+                        <input class="input_form_inscription" type="email"  id="mail" name="mail" >
+                        <?php if(@$error_mail_pris){echo $error_mail_pris;}?>
 
-        </div>
+                    </div>
 
-        <div class="form-group">
-            <label for="telephone">telephone : </label>
-            <input  type="tel" id="telephone" name="telephone">
-        </div>
+                    <div class="form-group">
+                        <label for="telephone">telephone : </label>
+                        <input class="input_form_inscription"  type="tel" id="telephone" name="telephone">
+                    </div>
 
-        <div class="form-group">
-            <label for="mdp"> Mot de passe : </label>
-            <input type="password"  id="mdp" name="mdp" >
-            <?php if(@$error_mdp){echo $error_mdp;}?>
-        </div>
-
-
-        <div class="form-group">
-            <label for="confirm_mdp">Confirmation de mot de passe : </label>
-            <input type="password"  id="confirm_mdp" name="confirm_pass" >
-        </div>
-
-        <div class="form-group">
-            <label for="rue">rue : </label>
-            <input type="text"  id="rue" name="rue" >
-        </div>
+                    <div class="form-group">
+                        <label for="mdp"> Mot de passe : </label>
+                        <input class="input_form_inscription" type="password"  id="mdp" name="mdp" >
+                        <?php if(@$error_mdp){echo $error_mdp;}?>
+                    </div>
 
 
-        <div class="form-group">
-            <label for="code_postal">code_postal : </label>
-            <input  type="number" id="code_postal" name="code_postal">
-        </div>
+                    <div class="form-group">
+                        <label for="confirm_mdp">Confirmation de mot de passe : </label>
+                        <input class="input_form_inscription" type="password"  id="confirm_mdp" name="confirm_pass" >
+                    </div>
 
-        <div class="form-group">
-            <label for="ville">ville : </label>
-            <input type="text"  id="ville" name="ville" >
-        </div>
+                    <div class="form-group">
+                        <label for="rue">rue : </label>
+                        <input class="input_form_inscription" type="text"  id="rue" name="rue" >
+                    </div>
 
-        <div>
-            <input  type="submit" value="Envoyer" name="valider">
-        </div>    
 
-        </form>
-    <?php
+                    <div class="form-group">
+                        <label for="code_postal">code_postal : </label>
+                        <input class="input_form_inscription"  type="number" id="code_postal" name="code_postal">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ville">ville : </label>
+                        <input class="input_form_inscription" type="text"  id="ville" name="ville" >
+                    </div>
+
+                    <div id="validation_inscription">
+                        <input  type="submit" value="VALIDER L'INSCRIPTION" name="valider">
+                    </div>    
+
+                    </form>
+                </div>
+            </section>
+        <?php
     }
 
 
