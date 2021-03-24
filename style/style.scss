@@ -689,6 +689,27 @@ margin-bottom: -180px;
             // background-color: aqua;
         }
     }
+    &  .conteneur_form_inscription #validation_connexion{
+        @extend %dflex;
+        height: 35px;
+        width: 100%;
+        & input{
+            height: 30px;
+            // background-color: aqua;
+        }
+    }
+    &  .conteneur_form_inscription #validation_inscription input{
+        background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+        border: none;
+        color: white;
+
+    }
+    &  .conteneur_form_inscription #validation_connexion input{
+        background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+        border: none;
+        color: white;
+
+    }
     &  .conteneur_form_inscription #erreur_connect{
         color: red;
     }

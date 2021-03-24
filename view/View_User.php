@@ -87,8 +87,8 @@ class View_User
                             <input class="input_form_inscription" type="password" name="pass">
                         </div>
                         <?php if (isset($error)) {echo "<p id='erreur_connect'>".$error."</p>"; } ?>
-                        <div>
-                            <input  type="submit" value="Se connecter" name="valider">
+                        <div  id="validation_connexion">
+                            <input type="submit" value="Se connecter" name="valider">
                         </div>
                     </form>
 
