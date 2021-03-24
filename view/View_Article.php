@@ -121,18 +121,28 @@ class view_Article {
      */
     public function displayOneArticle($resultat,$result)
     {
+        ?>
+        <section id="conteneur_principal_article">
+        <?php
+        echo '<div id="conteneur_image_article"><img id="image_principale_page_article" src="../medias/img_articles/'.$resultat[0]['chemin'].'"><div id="conteneur_image_suivantes_article>"';
+
         for($i = 0 ; isset($resultat[$i]) ; $i++){
-            echo '<img src="../medias/img_articles/'.$resultat[$i]['chemin'].'">';
+            echo '<img class="image_article_en_petite" src="../medias/img_articles/'.$resultat[$i]['chemin'].'">';
         }
+        echo "</div></div><div id='reste_du_cntenu_article'>";
+
+
+
+        
         foreach($result as $key => $value)
         {
             if($value == NULL || $value == $result['id_articles'] || $value == $result['id_categorie'] || $value == $result['id_marques']){
                 echo '<p class="dp_none">'.$value.'</p>'; 
+       
             }
             else{
                 if($value == $result['prix']){
-        
-                    echo '<p>'.$value.' € </p>'; 
+                    echo '<p id="prix_de_article">'.$value.' € </p>'; 
                 }
                 elseif($value == $result['raq_poids'])
                 {
@@ -167,16 +177,20 @@ class view_Article {
                     echo '<p> Couleur : '.$value. '</p>'; 
                 }
                 elseif($value == $result['marques_nom']){
-                    echo '<a href="boutique.php?id_marques='.$result['id_marques'].'">'.$value.'</a>';
+                    echo '<a id="lien_vers_marque" href="boutique.php?id_marques='.$result['id_marques'].'">'.$value.'</a>';
                 }
                 else{
-                    echo '<p>'.$value.'</p>';
+                    echo '<p id="nom_du_produit_article">'.$value.'</p>';
                 }
             }
              
         }
 
-        echo '<a href="addpanier.php?id='.$result['id_articles'].'"> Ajouter au panier</a>';
+        echo '<div id="ajouter_au_panier"><a href="addpanier.php?id='.$result['id_articles'].'"> Ajouter au panier</a></div></div>';
+
+        ?>
+        </section>
+        <?php
     }
 
     /**

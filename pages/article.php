@@ -26,7 +26,7 @@ $view_article->displayOneArticle($resultat,$result);  // affichage infos + image
 
 $findArticle = $article->findArticleSimilaires($result); // renvoie un tableau des article de la même cat que l'article en get 
 
-var_dump($findArticle);
+// var_dump($findArticle);
 
 $view_article->displayArticlesSimilaires($findArticle); // Boucle qui affiche les infos + images 
 
