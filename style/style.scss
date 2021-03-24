@@ -673,6 +673,9 @@ margin-bottom: -180px;
         font-size: 0.8rem;
         margin-bottom: 10px;
     }
+    &  .conteneur_form_inscription #mess_erreur_inscription{
+        color: red;
+    }
     &  .conteneur_form_inscription .form-group .input_form_inscription{
         height: 35px;
         width: 100%;
@@ -685,6 +688,9 @@ margin-bottom: -180px;
             height: 30px;
             // background-color: aqua;
         }
+    }
+    &  .conteneur_form_inscription #erreur_connect{
+        color: red;
     }
 
 

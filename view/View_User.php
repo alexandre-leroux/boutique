@@ -22,7 +22,7 @@ class View_User
                     <div class="form-group">
                         <label for="mail">mail : </label>
                         <input class="input_form_inscription" type="email"  id="mail" name="mail" >
-                        <?php if(@$error_mail_pris){echo $error_mail_pris;}?>
+                        <?php if(@$error_mail_pris){echo "<p id='mess_erreur_inscription'>".$error_mail_pris."</p>";}?>
 
                     </div>
 
@@ -34,7 +34,7 @@ class View_User
                     <div class="form-group">
                         <label for="mdp"> Mot de passe : </label>
                         <input class="input_form_inscription" type="password"  id="mdp" name="mdp" >
-                        <?php if(@$error_mdp){echo $error_mdp;}?>
+                        <?php if(@$error_mdp){echo "<p id='mess_erreur_inscription'>".$error_mdp."</p>";}?>
                     </div>
 
 
@@ -86,7 +86,7 @@ class View_User
                             <label for="mdp"> Mot de passe </label>
                             <input class="input_form_inscription" type="password" name="pass">
                         </div>
-                        <?php if (isset($error)) {echo $error; } ?>
+                        <?php if (isset($error)) {echo "<p id='erreur_connect'>".$error."</p>"; } ?>
                         <div>
                             <input  type="submit" value="Se connecter" name="valider">
                         </div>

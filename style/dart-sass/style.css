@@ -512,6 +512,9 @@ header .panier p {
   font-size: 0.8rem;
   margin-bottom: 10px;
 }
+.section_formulaire_inscription .conteneur_form_inscription #mess_erreur_inscription {
+  color: red;
+}
 .section_formulaire_inscription .conteneur_form_inscription .form-group .input_form_inscription {
   height: 35px;
   width: 100%;
@@ -522,6 +525,9 @@ header .panier p {
 }
 .section_formulaire_inscription .conteneur_form_inscription #validation_inscription input {
   height: 30px;
+}
+.section_formulaire_inscription .conteneur_form_inscription #erreur_connect {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
