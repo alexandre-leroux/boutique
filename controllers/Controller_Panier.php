@@ -1,5 +1,6 @@
 <?php
 
+require_once("../models/Model_Panier.php"); 
 class Controller_Panier {
 
     public function deleteProduct($id){
@@ -35,5 +36,18 @@ class Controller_Panier {
         return $prix; 
     }
 
+    public function addCommande($model,$product){
+        if(isset($_POST['validation_panier']))
+        {
+            $model->insertCommande($product);
+        }
+    }
+
+    // public function recupIdProduits(){
+    //     foreach($_SESSION['panier'] as $key => $value)
+    //     {
+    //         return $key ; 
+    //     }
+    // }
 
 }

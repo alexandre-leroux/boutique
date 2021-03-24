@@ -44,6 +44,11 @@ class View_Panier {
         <div class="panier_total">
             <p> Prix total : <?= $prix ; ?> € </p>
         </div>
+
+        <form action="panier.php" method="POST">
+            <input type="submit" value="Valider le panier" name="validation_panier">
+        </form>
+
         <?php
     }
 }
