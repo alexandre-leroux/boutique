@@ -6,8 +6,8 @@ class View_User
     public static function form_inscription($error_mail_pris,$error_mdp)    
     {
         ?>
-            <section id="section_formulaire_inscription">
-                <div id="conteneur_form_inscription">
+            <section class="section_formulaire_inscription">
+                <div class="conteneur_form_inscription">
                     <form action="user_inscription.php" method="POST" >
                     <div class="form-group">
                         <label for="user_nom">Votre nom :</label>
@@ -73,23 +73,27 @@ class View_User
     public static function form_connexion($error)    
     {
         ?>
-        <!-- <a href="../index.php">RETOUR</a> -->
-        <form action="user_connexion.php" method="POST">
-            <div class="form-group">
-                <label for="mail">Email</label>
-                <input type="mail" name="mail">
-            </div>
+            <section class="section_formulaire_inscription">
+                <div class="conteneur_form_inscription">
 
-            <div class="form-group">
-                <label for="mdp"> Mot de passe </label>
-                <input type="password" name="pass">
-            </div>
-            <?php if (isset($error)) {echo $error; } ?>
-            <div>
-                <input type="submit" value="Se connecter" name="valider">
-            </div>
+                    <form action="user_connexion.php" method="POST">
+                        <div class="form-group">
+                            <label for="mail">Email</label>
+                            <input class="input_form_inscription" type="mail" name="mail">
+                        </div>
 
-        </form>
+                        <div class="form-group">
+                            <label for="mdp"> Mot de passe </label>
+                            <input class="input_form_inscription" type="password" name="pass">
+                        </div>
+                        <?php if (isset($error)) {echo $error; } ?>
+                        <div>
+                            <input  type="submit" value="Se connecter" name="valider">
+                        </div>
+                    </form>
+
+                </div>
+            </section>
     <?php
     }
 

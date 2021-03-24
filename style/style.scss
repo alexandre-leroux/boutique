@@ -645,7 +645,7 @@ margin-bottom: -180px;
 
 // -------------------------------------------------section inscription
 
-#section_formulaire_inscription{
+.section_formulaire_inscription{
 
     @extend %dflex;
     align-items: flex-start;
@@ -653,7 +653,7 @@ margin-bottom: -180px;
 
     // background-color: blue;
 
-    & #conteneur_form_inscription{
+    & .conteneur_form_inscription{
         margin-top: 50px;
         margin-bottom: 100px;
         width: 500px;
@@ -666,18 +666,18 @@ margin-bottom: -180px;
         background-color: rgb(250, 250, 250)
     }
 
-    &  #conteneur_form_inscription .form-group{
+    &  .conteneur_form_inscription .form-group{
         @extend %dflex;
         align-items: flex-start;
         flex-direction: column;
         font-size: 0.8rem;
         margin-bottom: 10px;
     }
-    &  #conteneur_form_inscription .form-group .input_form_inscription{
+    &  .conteneur_form_inscription .form-group .input_form_inscription{
         height: 35px;
         width: 100%;
     }
-    &  #conteneur_form_inscription #validation_inscription{
+    &  .conteneur_form_inscription #validation_inscription{
         @extend %dflex;
         height: 35px;
         width: 100%;
