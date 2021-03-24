@@ -50,7 +50,7 @@ body {
   overflow-x: hidden;
 }
 
-#articles_similaires h1, #articles_similaires, #conteneur_principal_article #reste_du_cntenu_article #ajouter_au_panier a, #conteneur_principal_article .image_article_en_petite, #conteneur_principal_article, .galerie_article .vignette_article, .galerie_article, #recherche_user #conteneur_resultat_recherche, #recherche_user, .section_formulaire_inscription .conteneur_form_inscription #validation_connexion, .section_formulaire_inscription .conteneur_form_inscription #validation_inscription, .section_formulaire_inscription .conteneur_form_inscription .form-group, .section_formulaire_inscription, .user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar .border #form_recherche, header .search_bar .border, header .search_bar, header .accueil, header .logo {
+#articles_similaires #photos_articles_similaires, #articles_similaires h1, #articles_similaires, #conteneur_principal_article #reste_du_cntenu_article #ajouter_au_panier a, #conteneur_principal_article .image_article_en_petite, #conteneur_principal_article, .galerie_article .vignette_article, .galerie_article, #recherche_user #conteneur_resultat_recherche, #recherche_user, .section_formulaire_inscription .conteneur_form_inscription #validation_connexion, .section_formulaire_inscription .conteneur_form_inscription #validation_inscription, .section_formulaire_inscription .conteneur_form_inscription .form-group, .section_formulaire_inscription, .user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, header .search_bar .border #form_recherche, header .search_bar .border, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -669,6 +669,19 @@ header .panier p {
   padding-left: 30px;
   font-size: 1.1rem;
   font-weight: bold;
+  transform: skewX(-0.05turn);
+}
+#articles_similaires #photos_articles_similaires {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+#articles_similaires #photos_articles_similaires img {
+  height: 200px;
+}
+#articles_similaires #photos_articles_similaires div .conteneur_images_art_siilaire {
+  border: 1px solid grey;
+  margin: 20px;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -913,6 +913,24 @@ min-height: 100vh;
         padding-left: 30px;
         font-size: 1.1rem;
         font-weight: bold;
+        transform: skewX(-0.05turn);
+        
+    }
+    & #photos_articles_similaires{
+        @extend %dflex; 
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+
+        & img{
+            height: 200px;
+        }
+
+        & div .conteneur_images_art_siilaire{
+            border: 1px solid grey;
+            margin: 20px;
+            padding: 10px;
+        }
+          
     }
 
 
