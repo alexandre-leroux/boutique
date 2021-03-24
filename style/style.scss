@@ -22,7 +22,7 @@ body{
 
 
 header{
-
+    z-index: 1000;
     height: 120px;
     background-color:$color1;
     display: flex;
@@ -52,6 +52,7 @@ header{
         //background-color: burlywood;
         justify-content: space-around;
     
+        z-index: 1000;
         & a{
             text-decoration: none;
             color: white;
@@ -127,6 +128,7 @@ header{
 
 .nav{
     
+    z-index: 1000;
     @extend %dflex; 
     background-color: $color2;
     width: 100%;
@@ -457,7 +459,7 @@ header{
     }
     
     & #conteneur_footer{
-        z-index: 1000;
+        z-index: 900;
         padding-top: 100px;
         @extend %dflex; 
         flex-direction: column;
