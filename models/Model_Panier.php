@@ -57,5 +57,57 @@ class Model_Panier extends Model {
 
     }
 
+    public function checkNumCommande(){
+        $requete = $this->bdd->query("SELECT id_commande 
+                                        FROM commandes
+                                            ORDER BY id_commande DESC");
+        $result = $requete->fetch(); 
+
+        return $result; 
+    }
+
+    public function insertCommande($prix){
+
+        $commande = $this->checkNumCommande();
+        $id_commande = $commande['id_commande'] + 1; 
+        $i = 0 ; 
+
+        foreach($_SESSION['panier'] as $key => $value)
+        {
+            $cout_art = $prix[$i]['prix'] * $value; 
+            $requete = $this->bdd->prepare("INSERT INTO commandes (id_commande, id_utilisateurs, id_articles, quantite, prix)
+                                                VALUES (:id_commande, :id_utilisateurs, :id_articles, :quantite , :prix)
+            ");
+    
+            $requete->bindParam(':id_commande', $id_commande); 
+            $requete->bindParam(':id_utilisateurs', $_SESSION['id_utilisateurs'] ); 
+            $requete->bindParam(':id_articles', $key ); 
+            $requete->bindParam(':quantite', $value); 
+            $requete->bindParam(':prix', $cout_art) ;
+            
+            if(isset($_SESSION['id_utilisateurs']))
+            {
+                $requete->execute(); 
+                echo 'commande effectué '; 
+            }
+            else{
+                echo '<meta http-equiv="refresh" content="0;URL=../pages/user_connexion.php">';
+            }
+
+            $i++;
+        }
+    }
+
+    public function findInfosCommande($id){
+        $requete = $this->bdd->prepare("SELECT * FROM commandes WHERE id = :id"); 
+
+        $requete->bindParam(':id', $id); 
+
+        $requete->execute(); 
+
+        return $requete->fetchAll(); 
+    }
+
+    
 
 }

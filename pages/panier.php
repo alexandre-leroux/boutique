@@ -1,12 +1,20 @@
 <?php
 
 require_once('../utils/autoload.php');
-View_Navigation::affichage_navigation(@$repere_page_acceuil);
+
+
 $panier = new Model_Panier(); // Model panier
 $display = new View_Panier(); // View Panier 
 $controller_panier = new Controller_Panier();
 
-var_dump($_SESSION);
+$repere_page_acceuil = 0;
+
+View_Navigation::affichage_navigation($repere_page_acceuil);
+
+
+$panier->checkNumCommande();
+
+
 
 $id_produit_panier = array_keys($_SESSION['panier']) ; // renvoie un tableau qui recup tous les id_articles de la session 
 if(empty($id_produit_panier))
@@ -47,5 +55,6 @@ if(isset($_GET['quantite_moins']))
 <?php
 $display->displayInfosPanier($product, @$prix); // Affiche ces infos 
 
+$controller_panier->addCommande($panier,$product); 
 
 View_Footer::Footer($repere_page_acceuil);
