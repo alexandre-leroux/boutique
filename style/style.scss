@@ -317,7 +317,7 @@ header{
                 font-size: 1.2rem;
                 text-decoration: none;
                 color: #000;
-                box-shadow: 0px 0px 15px rgb(199, 199, 199);
+                box-shadow: 0px 0px 10px rgb(199, 199, 199);
 
 
                 // background-color: brown;
@@ -380,10 +380,13 @@ header{
                 @extend %dflex; 
                 background-color: #0084ff;
                 transform: skewX(-0.03turn);
-                height: 30px;
+                font-size: 1rem;
+                width: 90%;
                 color: white;
                 position: relative;
                 top: 20px;
+                left: -20px;
+        
 
             }
 
