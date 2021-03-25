@@ -841,6 +841,12 @@ min-height: 100vh;
        padding: 5px;
 
     }
+    & #conteneur_image_article #conteneur_image_suivantes_article{
+        @extend %dflex; 
+        // background-color: #0084ff;
+        overflow: hidden
+
+    }
 
     & .image_article_en_petite{
         @extend %dflex; 

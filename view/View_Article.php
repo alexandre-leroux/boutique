@@ -124,12 +124,16 @@ class view_Article {
         ?>
         <section id="conteneur_principal_article">
         <?php
-        echo '<div id="conteneur_image_article"><img id="image_principale_page_article" src="../medias/img_articles/'.$resultat[0]['chemin'].'"><div id="conteneur_image_suivantes_article>"';
+        echo '<div id="conteneur_image_article">
+                <img id="image_principale_page_article" src="../medias/img_articles/'.$resultat[0]['chemin'].'">
+                    <div id="conteneur_image_suivantes_article">';
 
         for($i = 0 ; isset($resultat[$i]) ; $i++){
             echo '<img class="image_article_en_petite" src="../medias/img_articles/'.$resultat[$i]['chemin'].'">';
         }
-        echo "</div></div><div id='reste_du_cntenu_article'>";
+        echo "</div>
+            </div>
+            <div id='reste_du_cntenu_article'>";
 
 
 
