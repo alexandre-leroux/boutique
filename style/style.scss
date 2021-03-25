@@ -956,7 +956,7 @@ min-height: 100vh;
         width: 350px;
         background: linear-gradient(0.10turn, #6BE100, #00BDCC);
         margin: 40px;
-        mar
+       
 
         & a{
             @extend %dflex; 
@@ -970,5 +970,85 @@ min-height: 100vh;
 
 
 
+
+}
+
+
+#section_centrale_admin_insert{
+
+
+    @extend %dflex; 
+    justify-content: flex-start;
+    width: 100vw;
+    // height: 100vh;
+    flex-direction: column;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+
+    // background-color: yellow;
+
+    & h2{
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 20px;
+    }
+
+    & #formulaire_choix_ajout_type_article{
+        // background-color: red;
+
+        width: 400px;
+
+        & .boutton_submit_choix_typre_article_insert{
+        background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+        color: white;
+        border: none;
+        width: 80px;
+        height: 30px;
+        margin-top: 20px;
+
+        }
+
+    }
+
+
+}
+
+#section_centrale_admin_insert_type_article{
+    @extend %dflex; 
+    justify-content: flex-start;
+    width: 100vw;
+    flex-direction: column;
+    padding-bottom: 10vh;
+    min-height: 60vh;
+
+    // background-color: rgb(0, 110, 255);
+
+    & form{
+        width: 400px;
+    }
+    & .div_formulaire_insert_par_type_article{
+        @extend %dflex; 
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 5px;
+        & label{
+            font-size: 0.7rem;   
+        }
+        & input{
+            width: 100%;
+        }
+        
+    }
+    & .boutton_submit_choix_typre_article_insert{
+        background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+        color: white;
+        border: none;
+        width: 80px;
+        height: 30px;
+        margin-top: 20px;
+
+        }
 
 }
