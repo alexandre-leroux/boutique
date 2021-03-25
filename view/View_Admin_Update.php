@@ -95,7 +95,7 @@ class View_Admin_Update
                 ?>
                     <div class="vignette_affichage_recherche_photo"   >
                         <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];?>">
-                        <img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt=""><h3><?= $recherche[$i]['art_nom'] ?></h3>
+                        <img  src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt=""><h3><?= $recherche[$i]['art_nom'] ?></h3>
                         </a>
                     </div>
 
@@ -112,7 +112,7 @@ class View_Admin_Update
             ?>
                 <div class="vignette_affichage_recherche_photo">
                     <a href="admin_update_one_article.php?id=<?= $tous_les_articles[$i]["id_articles"] ?>&idcat=<?= $tous_les_articles[$i]["id_categorie"] ?>&idsouscat=<?= $tous_les_articles[$i]["id_sous_cat_acc"] ?>">
-                    <img style="height:200px" src="../medias/img_articles/<?= $tous_les_articles[$i]['MIN(chemin)'] ?>" alt=""> <h3><?= $tous_les_articles[$i]['art_nom'] ?></h3>
+                    <img src="../medias/img_articles/<?= $tous_les_articles[$i]['MIN(chemin)'] ?>" alt=""> <h3><?= $tous_les_articles[$i]['art_nom'] ?></h3>
                     </a>
                 </div>
 
