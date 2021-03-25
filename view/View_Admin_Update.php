@@ -492,32 +492,41 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
 
         public static function affiche_all_user($req_all_users)
-            {    echo '<a href="../index.php">RETOUR</a>';
+            {   
                 foreach ($req_all_users as $key => $value) {
                 ?>
-                    <div style='border: solid 1px'>
-                        <p>id de l'utilisateur : <?= $value['id_utilisateurs'] ?></p>
-                        <p>niveau de droit : <?= $value['uti_droits'] ?></p>
-                        <p>nom : <?= $value['uti_nom'] ?></p>
-                        <p>prénom : <?= $value['uti_prenom'] ?></p>
-                        <p>mail : <?= $value['uti_mail'] ?></p>
-                        <p>téléphone : <?= $value['uti_tel'] ?></p>
-                        <p>rue : <?= $value['uti_rue'] ?></p>
-                        <p>code postal : <?= $value['uti_code_postal'] ?></p>
-                        <p>ville : <?= $value['uti_ville'] ?></p>
-                        <a href="admin_update_one_user.php?id_utilisateur=<?= $value['id_utilisateurs'] ?>">modifier cet utilisateur</a>
+                    <section id="section_principale_all_user">
+                    <div id="div_all_user">
+              
+                            <div id="affichage_recap_user">
+                                <p><b>id de l'utilisateur :</b> <?= $value['id_utilisateurs'] ?></p>
+                                <p><b>niveau de droit :</b> <?= $value['uti_droits'] ?></p>
+                                <p><b>nom :</b> <?= $value['uti_nom'] ?></p>
+                                <p><b>prénom :</b> <?= $value['uti_prenom'] ?></p>
+                                <p><b>mail :</b> <?= $value['uti_mail'] ?></p>
+                                <p><b>téléphone :</b> <?= $value['uti_tel'] ?></p>
+                                <p><b>rue :</b> <?= $value['uti_rue'] ?></p>
+                                <p><b>code postal :</b> <?= $value['uti_code_postal'] ?></p>
+                                <p><b>ville :</b> <?= $value['uti_ville'] ?></p>
+                                <a href="admin_update_one_user.php?id_utilisateur=<?= $value['id_utilisateurs'] ?>">modifier cet utilisateur</a>
+                            </div>
                     </div>
+                    </section>
+
                 <?php
                     }
             }
 
 
         public static function affiche_details_et_form_update_user($requete_one_user)
-                    {echo '<a href="admin_affiche_all_user.php">RETOUR</a>';
-                    ?>
-                    <div style='border: solid 1px'>
+                    {
+                        
+                ?>
+                <section id='update_one_user_details'>
+                    <div id='update_one_user_details'>
+                    <a href="admin_affiche_all_user.php">RETOUR</a></br>
 
-                        <p>niveau de droit : <?=$requete_one_user["uti_droits"]?></p>
+                        <p><b>niveau de droit : <?=$requete_one_user["uti_droits"]?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_droits">Modifier le niveau de droit :</label>
                             <select name="uti_droits">
@@ -525,58 +534,58 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                                 <option value="1">Administrateur</option>
                             </select>
                             <input type="submit" value="modifier" name="droit">
-                        </form>
+                        </form></br>
 
-                        <p>nom : <?= $requete_one_user['uti_nom'] ?></p>
+                        <p><b>nom : <?= $requete_one_user['uti_nom'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_nom">Modifier le nom :</label>
                             <input type="text" id="uti_nom" name="uti_nom">
                             <input type="submit" value="modifier" name="nom">
-                        </form>
+                        </form></br>
 
-                        <p>prénom : <?= $requete_one_user['uti_prenom'] ?></p>
+                        <p><b>prénom : <?= $requete_one_user['uti_prenom'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_prenom">Modifier le prénom :</label>
                             <input type="text" name="uti_prenom">
                             <input type="submit" value="modifier" name="prenom">
-                        </form>
+                        </form></br>
 
-                        <p>mail : <?= $requete_one_user['uti_mail'] ?></p>
+                        <p><b>mail : <?= $requete_one_user['uti_mail'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_mail">Modifier le mail :</label>
                             <input type="email" name="uti_mail">
                             <input type="submit" value="modifier" name="email">
-                        </form>
+                        </form></br>
 
-                        <p>téléphone : <?= $requete_one_user['uti_tel'] ?></p>
+                        <p><b>téléphone : <?= $requete_one_user['uti_tel'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_tel">Modifier le téléphone :</label>
                             <input type="tel" name="uti_tel">
                             <input type="submit" value="modifier" name="tel">
-                        </form>
+                        </form></br>
 
-                        <p>rue : <?= $requete_one_user['uti_rue'] ?></p>
+                        <p><b>rue : <?= $requete_one_user['uti_rue'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_rue">Modifier la rue :</label>
                             <input type="text" name="uti_rue">
                             <input type="submit" value="modifier" name="rue">
-                        </form>
+                        </form></br>
 
-                        <p>code postal : <?= $requete_one_user['uti_code_postal'] ?></p>
+                        <p><b>code postal : <?= $requete_one_user['uti_code_postal'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_code_postal">Modifier le code postal :</label>
                             <input type="number" name="uti_code_postal">
                             <input type="submit" value="modifier" name="code_postal">
-                        </form>
+                        </form></br>
 
-                        <p>ville : <?= $requete_one_user['uti_ville'] ?></p>
+                        <p><b>ville : <?= $requete_one_user['uti_ville'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_ville">Modifier la ville :</label>
                             <input type="text" name="uti_ville">
                             <input type="submit" value="modifier" name="ville">
                         </form>
                     </div>
-
+                    </section>
             <?php
                     }
 
