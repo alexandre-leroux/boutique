@@ -12,6 +12,7 @@ $req_type_balle = $admin->SelectAll('balle_type');
 $req_balle_conditionnement = $admin->SelectAll('balle_conditionnement');
 $tous_les_articles = $admin->select_all_articles_updates();
 
+Controller_Admin_Update::delete_one_article();
 //Controllers - execute le changement de nom
 Controller_Admin_Update::changement_nom_categorie();
 

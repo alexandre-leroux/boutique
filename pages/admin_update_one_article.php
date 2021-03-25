@@ -40,4 +40,4 @@ View_Admin_Update::affiche_un_article($donnees,$req_categorie,$req_marques,$req_
 
 
 
-View_Footer::Footer($repere_page_acceuil);
+View_Footer::Footer(@$repere_page_acceuil);

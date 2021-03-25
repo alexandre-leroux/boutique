@@ -133,6 +133,12 @@ public static function donnees_generales_communes($donnees)
         {
         ?>
         <a href="admin_update_article.php">RETOUR</a>
+
+            <form action="admin_update_article.php?id=<?= $_GET['id'] ?>" method="post">
+       
+            <button type='submit'>SUPPRIMER CET ARTICLE</button>
+            </form>
+
             <p><b>données actuelles :</b></p>
             <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
             <p>marque : <?= $donnees['marques_nom'] ?> </p>
@@ -520,9 +526,10 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
 
 
-                    public static function affiche_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image)
+public static function affiche_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image)
 
-                    { $admin = new Model_Admin_Update();
+    {                   
+                        $admin = new Model_Admin_Update();
 
                         if ($_GET['idcat'] == 1) {
 
@@ -559,8 +566,7 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
 
                         
-
-                        }
+    }
 
     
 
