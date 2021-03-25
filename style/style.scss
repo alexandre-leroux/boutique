@@ -1183,3 +1183,40 @@ min-height: 100vh;
     // background-color: hotpink !important;
     margin: 0 !important;
 }
+
+#section_modif_image_update_art{
+    // background-color: hotpink;
+    margin-bottom: 30vh;
+    @extend %dflex; 
+    flex-direction: column;
+
+    & #conteneur_choix_photo_principale{
+        // background-color: green;
+        border: 1px solid gray;
+        margin-top: 20px;
+        padding: 8px;
+        width: 70vw;
+        @extend %dflex; 
+        & form{
+            @extend %dflex; 
+            // align-items: flex-start;
+
+            & #div_affichage_images{
+                // background-color: rgb(0, 30, 128);
+                @extend %dflex; 
+                flex-direction: column;
+                padding: 5px;
+                justify-content: flex-start;
+                width: 200px;
+                height: 280px;
+                margin: 10px;
+                border: 1px solid gray;
+
+            }
+        }
+    }
+    & #form_ajouter_nouvelles_images{
+        // background-color: greenyellow;
+        margin: 10px;
+    }
+}

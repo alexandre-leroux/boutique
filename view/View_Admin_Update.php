@@ -210,52 +210,52 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
  public static function affichage_modif_photo($req_img_article,$erreur_choix_premiere_image)
                     {
                             ?>
-                            <div style="display:flex">
-                            <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
-                                <?php
+                        <section id="section_modif_image_update_art">
+                            <div id="conteneur_choix_photo_principale">
+                                <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
+                                    <?php
 
-                            
-                                foreach ($req_img_article as $value) {
-                                ?>
-                                    <div style="display:flex" >
+                                
+                                    foreach ($req_img_article as $value) {
+                                    ?>
+                                        <div id="div_affichage_images" >
 
-                                        <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
+                                            <p><img src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                                            <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
-                                        
-                                            <?php  if(substr_count($value['chemin'],'-0.'))  {echo ' photo principale';} ?>
-                                        
-                                    </div>
-                                <?php 
+                                                <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
+                                            
+                                            
+                                                <?php  if(substr_count($value['chemin'],'-0.'))  {echo '<p>photo principale</p>';} ?>
+                                        </div>
+                                    <?php 
                                 }
                                 ?>
 
 
 
-                                <input type="submit" value="supprimer" style="height:20px" name="submit2">
+                                <input type="submit" value="supprimer" name="submit2">
                                 </br>
 
-                                <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
+                                <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE"  name="photo_principale">
                                 <?=$erreur_choix_premiere_image?>
         
 
-                            </form>
-                                
+                                </form>
                             </div>
-
-
-
-
-                            <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
+                            <div id="form_ajouter_nouvelles_images">
+                                <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
                                 
                                     <label for="image"> Ajouter des images : </label>
                                     <input  type="file" name="image[]" multiple >
                                     <input type="submit" value="Envoyer" name="ajout_photo">
                                     
                                 </form>
+                            </div>
 
 
 
+
+                        </section>
                             <?php
                     }
 
@@ -354,9 +354,13 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
             {
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
+                    <section class="donnees_specifique_article">
+                        <div>
+                            <h2>détails articles :</h2>
+                            <p>jauge : <?= $donnees['cor_jauge'] ?> mm </p>
+                         </div>
+                    </section>
 
-                    <p>jauge : <?= $donnees['cor_jauge'] ?> mm </p>
-                    <p><b>modifier l'article :</b></p>
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
@@ -387,10 +391,14 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
              {
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
-
-                    <p>type de balle : <?= $donnees['balle_type'] ?> </p>
-                    <p>type de conditionnement : <?= $donnees['balle_conditionnement'] ?> </p>
-                    <p><b>modifier l'article :</b></p>
+                    <section class="donnees_specifique_article">
+                    <div>
+                        <h2>détails articles :</h2>
+                        <p>type de balle : <?= $donnees['balle_type'] ?> </p>
+                        <p>type de conditionnement : <?= $donnees['balle_conditionnement'] ?> </p>
+                    </div>
+                    </section>
+           
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
@@ -430,9 +438,13 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
             {
                 View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
-
-                    <p>sous catégorie : <?= $donnees['sous_cat_acc_type'] ?> </p>
-                    <p><b>modifier l'article :</b></p>
+                    <section class="donnees_specifique_article">
+                    <div>
+                        <h2>détails articles :</h2>
+                        <p>sous catégorie : <?= $donnees['sous_cat_acc_type'] ?> </p>
+                    </div>
+                    </section>
+       
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
