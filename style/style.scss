@@ -1052,3 +1052,47 @@ min-height: 100vh;
         }
 
 }
+
+#section_centrale_update_article{
+
+    @extend %dflex; 
+    width: 100vw;
+    flex-direction: column;
+    padding-bottom: 10vh;
+    min-height: 60vh;
+    padding-top: 50px;
+    margin-bottom: 5vh;
+
+    // background-color: yellow;
+
+    & #modif_categorie_marques_etc{
+        // background-color: red;
+        margin-top: 50px;
+        margin-bottom: 50px;
+     
+    }
+    & select{
+        width: 220px;
+    }
+
+    & #affichage_resultat_recherche_admin, #affichage_tous_articles_recherche_admin{
+        @extend %dflex; 
+        width: 80vw;
+        flex-wrap: wrap
+    }
+
+    & .vignette_affichage_recherche_photo{
+        @extend %dflex; 
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 200px;
+        height: 260px;
+        margin-right: 20px;
+        border: 1px solid gray;
+        margin-bottom: 50px;
+        font-size: 0.8rem;
+    }
+
+
+
+}

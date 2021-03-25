@@ -11,87 +11,91 @@ class View_Admin_Update
         ?>
 
 
-            <a href="admin_accueil_gestion_site.php">RETOUR</a>
+                    
+    <section id="section_centrale_update_article">        
 
-            <!-- input recherche -->
-        <form action="admin_update_article.php" method="post">
-            <input type="text" minlength="3" name="mot_cle" placeholder="chercher">
-            <input type="submit" value="rechercher" name="rechercher">
-        </form>
+                                <!-- input recherche -->
+                        <div>
+                                <form action="admin_update_article.php" method="post">
+                                    <input type="text" minlength="3" name="mot_cle" placeholder="chercher">
+                                    <input type="submit" value="rechercher" name="rechercher">
+                                </form>
+                        </div>    
 
-        <!-- formulaire modif catégorie, marques...Etc -->
-        <form action="admin_update_article.php" method="post">
-            <select name="id_categorie">
-                <option disabled value="CATEGORIES" selected="selected">CATEGORIES</option>
-                <?php foreach ($req_categorie as $value) {
-                    echo  "<option value=" . $value['id_categorie'] . ">" . $value['categorie_type'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="new_nom_categorie">
-            <input type="submit" value="modifier" name="submit_cat">
-        </form>
+                            <!-- formulaire modif catégorie, marques...Etc -->
+                        <div id="modif_categorie_marques_etc">
+                            <form action="admin_update_article.php" method="post">
+                                <select name="id_categorie">
+                                    <option  disabled value="CATEGORIES" selected="selected">CATEGORIES</option>
+                                    <?php foreach ($req_categorie as $value) {
+                                        echo  "<option value=" . $value['id_categorie'] . ">" . $value['categorie_type'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="new_nom_categorie">
+                                <input type="submit" value="modifier" name="submit_cat">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_marques'>
-                <option disabled value="MARQUES" selected="selected">MARQUES</option>
-                <?php foreach ($req_marques as $value) {
-                    echo  "<option value=" . $value['id_marques'] . ">" . $value['marques_nom'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="new_nom_marque">
-            <input type="submit" value="modifier" name="submit_marque">
-        </form>
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_marques'>
+                                    <option disabled value="MARQUES" selected="selected">MARQUES</option>
+                                    <?php foreach ($req_marques as $value) {
+                                        echo  "<option value=" . $value['id_marques'] . ">" . $value['marques_nom'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="new_nom_marque">
+                                <input type="submit" value="modifier" name="submit_marque">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_sous_cat_accessoires'>
-                <option disabled value="sous_cat" selected="selected">SOUS CATEGORIE</option>
-                <?php foreach ($req_sous_categorie_acc as $value) {
-                    echo  "<option value=" . $value['id_sous_cat_accessoires'] . ">" . $value['sous_cat_acc_type'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="new_nom_sous_cat_acc">
-            <input type="submit" value="modifier" name="submit_sous_cat_acc">
-        </form>
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_sous_cat_accessoires'>
+                                    <option disabled value="sous_cat" selected="selected">SOUS CATEGORIE</option>
+                                    <?php foreach ($req_sous_categorie_acc as $value) {
+                                        echo  "<option value=" . $value['id_sous_cat_accessoires'] . ">" . $value['sous_cat_acc_type'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="new_nom_sous_cat_acc">
+                                <input type="submit" value="modifier" name="submit_sous_cat_acc">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_balle_type'>
-                <option disabled value="balle_type" selected="selected">TYPE DE BALLE</option>
-                <?php foreach ($req_type_balle as $value) {
-                    echo  "<option value=" . $value['id_balle_type'] . ">" . $value['balle_type'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="balle_type">
-            <input type="submit" value="modifier" name="submit_balle_type">
-        </form>
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_balle_type'>
+                                    <option disabled value="balle_type" selected="selected">TYPE DE BALLE</option>
+                                    <?php foreach ($req_type_balle as $value) {
+                                        echo  "<option value=" . $value['id_balle_type'] . ">" . $value['balle_type'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="balle_type">
+                                <input type="submit" value="modifier" name="submit_balle_type">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_balle_conditionnement'>
-                <option disabled value="balle_conditionnement" selected="selected">BALLE CONDITIONNEMENT</option>
-                <?php foreach ($req_balle_conditionnement as $value) {
-                    echo  "<option value=" . $value['id_balle_conditionnement'] . ">" . $value['balle_conditionnement'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="balle_conditionnement">
-            <input type="submit" value="modifier" name="submit_balle_conditionnement">
-        </form>
-
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_balle_conditionnement'>
+                                    <option disabled value="balle_conditionnement" selected="selected">BALLE CONDITIONNEMENT</option>
+                                    <?php foreach ($req_balle_conditionnement as $value) {
+                                        echo  "<option value=" . $value['id_balle_conditionnement'] . ">" . $value['balle_conditionnement'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="balle_conditionnement">
+                                <input type="submit" value="modifier" name="submit_balle_conditionnement">
+                            </form>
+                        </div>    
 
 
         <!-- boucle d'affichage dela recherche -->
-                <div style="display:flex">
+                <div id="affichage_resultat_recherche_admin" >
 
                 <?php  
                 $i = 0;
                 while (@$recherche[$i]) {
                 ?>
-                    <div style="width:200px;border:solid;margin-right:10px"  >
-                        <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];var_dump('ffffffffffffffffffffff');  ?>">
-                            <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt="">
+                    <div class="vignette_affichage_recherche_photo"   >
+                        <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];?>">
+                        <img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt=""><h3><?= $recherche[$i]['art_nom'] ?></h3>
                         </a>
                     </div>
 
@@ -100,23 +104,25 @@ class View_Admin_Update
                 </div>
 
         <!-- boucle d'affichage de tous les articles de la bdd -->
-        <div style="display:flex">
+        <div id="affichage_tous_articles_recherche_admin">
 
             <?php
             $i = 0;
             while (@$tous_les_articles[$i]) { 
             ?>
-                <div style="width:200px;border:solid;margin-right:10px">
+                <div class="vignette_affichage_recherche_photo">
                     <a href="admin_update_one_article.php?id=<?= $tous_les_articles[$i]["id_articles"] ?>&idcat=<?= $tous_les_articles[$i]["id_categorie"] ?>&idsouscat=<?= $tous_les_articles[$i]["id_sous_cat_acc"] ?>">
-                        <h3><?= $tous_les_articles[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $tous_les_articles[$i]['MIN(chemin)'] ?>" alt="">
+                    <img style="height:200px" src="../medias/img_articles/<?= $tous_les_articles[$i]['MIN(chemin)'] ?>" alt=""> <h3><?= $tous_les_articles[$i]['art_nom'] ?></h3>
                     </a>
                 </div>
 
             <?php $i++;
             } ?>
         </div>
+</section>
             <?php
-            }
+
+}
 
 
 
