@@ -557,4 +557,38 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                         }
 
     
+
+
+
+
+
+public static function Page_choix_update_ou_insert()
+    {
+        ?>
+            <div id="section_centrale_accueil_admin">
+            
+                <div class="lien_update_ou_insert">
+                    <a href="admin_insert.php">AJOUTER UN NOUVEL ARTICLE</a></br>
+                </div>
+                <div class="lien_update_ou_insert">
+                    <a href="admin_update_article.php">MODIFIER UN ARTICLE EXISTANT</a></br>
+                </div>
+            
+            </div>
+        
+        <?php
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+}

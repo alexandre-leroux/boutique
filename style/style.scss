@@ -929,11 +929,44 @@ min-height: 100vh;
             border: 1px solid grey;
             margin: 20px;
             padding: 10px;
+
         }
           
     }
 
 
+
+
+
+
+}
+
+
+// ---------------------------------------------------admin accueil
+
+#section_centrale_accueil_admin{
+
+    @extend %dflex; 
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+
+    & .lien_update_ou_insert{
+        height: 80px;
+        width: 350px;
+        background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+        margin: 40px;
+        mar
+
+        & a{
+            @extend %dflex; 
+            text-decoration: none;
+            color: white;
+            height: 100%;
+            width: 100%;
+
+        }
+    }
 
 
 
