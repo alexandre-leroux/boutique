@@ -689,8 +689,9 @@ header .panier p {
 
 #section_centrale_accueil_admin {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   flex-direction: column;
+  margin-bottom: 10vh;
 }
 #section_centrale_accueil_admin .lien_update_ou_insert {
   height: 80px;

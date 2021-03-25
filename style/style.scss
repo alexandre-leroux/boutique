@@ -954,8 +954,9 @@ min-height: 100vh;
 
     @extend %dflex; 
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     flex-direction: column;
+    margin-bottom: 10vh;
 
     & .lien_update_ou_insert{
         height: 80px;
@@ -990,7 +991,7 @@ min-height: 100vh;
     flex-direction: column;
     padding-top: 10vh;
     padding-bottom: 10vh;
-
+    // margin-bottom: 20vh;
     // background-color: yellow;
 
     & h2{

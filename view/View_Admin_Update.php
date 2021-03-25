@@ -507,7 +507,7 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                                 <p><b>téléphone :</b> <?= $value['uti_tel'] ?></p>
                                 <p><b>rue :</b> <?= $value['uti_rue'] ?></p>
                                 <p><b>code postal :</b> <?= $value['uti_code_postal'] ?></p>
-                                <p><b>ville :</b> <?= $value['uti_ville'] ?></p>
+                                <p><b>ville :</b> <?= $value['uti_ville'] ?></p></br>
                                 <a href="admin_update_one_user.php?id_utilisateur=<?= $value['id_utilisateurs'] ?>">modifier cet utilisateur</a>
                             </div>
                     </div>

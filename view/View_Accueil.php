@@ -78,8 +78,8 @@ public static function Affiche_pub()
         <section class="section_accueil">
             <div id="affichage_pub">
 
-                <a href=""><img src="medias/img_pub/bloc-home-promo-03032021-2.jpg" alt=""></a>
-                <a href=""><img src="medias/img_pub/bloc-home-nouveautes-03032021_1.jpg" alt=""></a>
+                <a href="pages/article.php?id=18"><img src="medias/img_pub/bloc-home-promo-03032021-2.jpg" alt=""></a>
+                <a href="pages/article.php?id=19"><img src="medias/img_pub/bloc-home-zoom-sur-25032021.jpg" alt=""></a>
 
             </div>
         </section>
