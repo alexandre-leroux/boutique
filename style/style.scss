@@ -1142,6 +1142,7 @@ min-height: 100vh;
         // background-color: green;
         border: 1px solid gray !important;
         margin: 20px;
+        margin-bottom: 20vh;
         @extend %dflex; 
         flex-direction: column;
         padding: 10px;
@@ -1159,6 +1160,7 @@ min-height: 100vh;
 .donnees_specifique_article{
     // background-color: hotpink;
     @extend %dflex; 
+
     & div{
         border: 1px solid gray;
         margin: 20px;
@@ -1182,11 +1184,12 @@ min-height: 100vh;
     flex-direction: row; 
     // background-color: hotpink !important;
     margin: 0 !important;
+
 }
 
 #section_modif_image_update_art{
     // background-color: hotpink;
-    margin-bottom: 30vh;
+    // margin-bottom: 30vh;
     @extend %dflex; 
     flex-direction: column;
 
@@ -1219,4 +1222,42 @@ min-height: 100vh;
         // background-color: greenyellow;
         margin: 10px;
     }
+}
+#section_boutton_retour_et_supp{
+
+    @extend %dflex; 
+    height: 20vh;
+
+    & #div_boutton_retour_et_supp{
+    @extend %dflex; 
+    flex-direction: column;
+
+        & #lien_retour{
+            height: 40px;
+            width: 100px;
+            background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+            margin-bottom: 30px;
+            margin-top: 30px;
+
+
+            & a{
+                height: 100%;
+                width: 100%;
+                @extend %dflex;
+                text-decoration: none;
+                color: honeydew;
+            }
+        }
+    & button{
+        background-color: red;
+        margin-top: 30px;
+        border: none;
+        height: 30px;
+        color: white;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    }
+
 }

@@ -157,12 +157,12 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
                         <ul class="liste_nav">
                             
-                        <li><a href="<?= ($repere_page_acceuil) ? 'pages/raquettes.php' : 'raquettes.php';?>">Raquettes</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/sacs.php' : 'sacs.php';?>">Sacs</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart fa-lg"></i></a><span class="compteur_panier"><?php if(isset($_SESSION['panier'])) { echo count($_SESSION['panier']) ;} ?></span></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/raquettes.php' : 'raquettes.php';?>">Raquettes</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/sacs.php' : 'sacs.php';?>">Sacs</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart fa-lg"></i></a><span class="compteur_panier"><?php if(isset($_SESSION['panier'])) { echo count($_SESSION['panier']) ;} ?></span></li>
 
                         </ul>
 
@@ -232,10 +232,13 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
             <ul class="liste_nav">
                 
-                <li><a href="">Raquettes</a></li>
-                <li><a href="">Sacs</a></li>
-                <li><a href="">Balles</a></li>
-                <li><a href="">Accessoires</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/raquettes.php' : 'raquettes.php';?>">Raquettes</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/sacs.php' : 'sacs.php';?>">Sacs</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart fa-lg"></i></a><span class="compteur_panier"><?php if(isset($_SESSION['panier'])) { echo count($_SESSION['panier']) ;} ?></span></li>
+
 
             </ul>
 

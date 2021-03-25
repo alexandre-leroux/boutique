@@ -125,7 +125,26 @@ class View_Admin_Update
 }
 
 
+public static function Update_one_article_boutton_retour_et_supp()
+    {?>
+        
+        <section id="section_boutton_retour_et_supp">
+            <div id="div_boutton_retour_et_supp">
 
+                <div id="lien_retour">
+                    <a href="admin_update_article.php">RETOUR</a></br>
+                </div>
+
+                <form action="admin_update_article.php?id=<?= $_GET['id'] ?>" method="post">
+
+                <button type='submit'>SUPPRIMER CET ARTICLE</button>
+                </form>
+            
+            </div>
+        </section>
+
+    <?php
+    }
 
 
     // ----------------------------------------------------------------formulaire upadate des articles
@@ -136,12 +155,7 @@ public static function donnees_generales_communes($donnees)
                 <div>
         
 
-                    <a href="admin_update_article.php">RETOUR</a></br>
-
-                    <form action="admin_update_article.php?id=<?= $_GET['id'] ?>" method="post">
-            
-                    <button type='submit'>SUPPRIMER CET ARTICLE</button>
-                    </form>
+   
                     <div id="affichage_donnees_generales">
                         <h1><b>données actuelles :</b></h1>
                         <p><b>nom du produit :</b> <?= $donnees['art_nom'] ?> </p>
@@ -262,7 +276,8 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
 
 
 public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
-            {
+            {           
+                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
                         View_Admin_Update::donnees_generales_communes($donnees);
                         ?>
                     <section class="donnees_specifique_article">
@@ -308,14 +323,15 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
                     </section>
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+                       
             }
 
 
 
 
         public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
-            {
+            {  
+                        View_Admin_Update::affichage_modif_photo($req_img_article,@$erreur_choix_premiere_image);
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>  
                     <section class="donnees_specifique_article">
@@ -343,7 +359,7 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
                     </section>
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,@$erreur_choix_premiere_image);
+                       
             }
 
 
@@ -352,6 +368,9 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
         public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
             {
+
+                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
                     <section class="donnees_specifique_article">
@@ -381,7 +400,6 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
                     </section>
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
             }
 
 
@@ -389,6 +407,8 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
         public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle,$erreur_choix_premiere_image)
              {
+
+                View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
                     <section class="donnees_specifique_article">
@@ -427,7 +447,7 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </section>
 
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+                        
         }
 
 
@@ -436,6 +456,7 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
         public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires,$erreur_choix_premiere_image)
             {
+                View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
                 View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
                     <section class="donnees_specifique_article">
@@ -466,7 +487,7 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </section>
 
                     <?php
-                View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+                
             }
 
 

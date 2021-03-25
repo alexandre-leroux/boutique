@@ -8,7 +8,7 @@ class Controller_Admin_Insert {
     public function checkImage($result,$admin){
         
         if(isset($_FILES['image']) AND !empty($_FILES['image']['name'])){
-            var_dump($_FILES['image']);
+            // var_dump($_FILES['image']);
             for($i = 0 ; isset($_FILES['image']['size'][$i]) ; $i++)
             {   
                 $tailleMax = 2097152; 
@@ -85,39 +85,39 @@ class Controller_Admin_Insert {
         {
             $admin->insert(NULL,NULL,NULL,$_POST['raq_poids'],$_POST['raq_tamis'],$_POST['raq_taille_manche'],$_POST['raq_equilibre'],NULL,NULL,NULL,NULL);
             //$admin->insertTest();
-            echo 'ajout' ;
-            session_unset();
+            // echo 'ajout' ;
+            // session_unset();
         }
         elseif(isset($_POST['valider']) &&  $_SESSION['cat'] == "sacs")
         {
             $admin->insert(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$_POST['choix_thermo'],NULL,NULL);
-            echo 'ajout' ;
-            session_unset();
+            // echo 'ajout' ;
+            // session_unset();
         }
         elseif(isset($_POST['valider']) &&  $_SESSION['cat'] == "cordage")
         {
             $admin->insert(NULL,NULL,NULL,NULL,NULL,NULL,NULL,$_POST['cor_jauge'],NULL,NULL,NULL);
-            echo 'ajout' ;
-            session_unset();
+            // echo 'ajout' ;
+            // session_unset();
         }
         elseif(isset($_POST['valider']) &&  $_SESSION['cat'] == "balles")
         {
             $admin->insert(NULL,$_POST['balle_type'],$_POST['balle_conditionnement'],NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-            echo 'ajout' ;
-            session_unset();
+            // echo 'ajout' ;
+            // session_unset();
         }
         elseif(isset($_POST['valider']) && $_SESSION['cat'] == "accessoires")
         {
-            if($_POST['id_sous_cat_acc'] == 1)
+            if(@$_POST['id_sous_cat_acc'] == 1)
             {
                 $admin->insert(1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$_POST['grip_eppaisseur'],$_POST['grip_couleur']);
-                echo 'ajout' ;
-                session_unset();
+                // echo 'ajout' ;
+                // session_unset();
             }
             else{
                 $admin->insert(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-                echo 'ajout' ;
-                session_unset();
+                // echo 'ajout' ;
+                // session_unset();
             }
         }
     }
