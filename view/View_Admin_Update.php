@@ -132,31 +132,40 @@ class View_Admin_Update
 public static function donnees_generales_communes($donnees)
         {
         ?>
-        <a href="admin_update_article.php">RETOUR</a>
+            <section id="section_donnees_generales_communes">
+                <div>
+        
 
-            <form action="admin_update_article.php?id=<?= $_GET['id'] ?>" method="post">
-       
-            <button type='submit'>SUPPRIMER CET ARTICLE</button>
-            </form>
+                    <a href="admin_update_article.php">RETOUR</a></br>
 
-            <p><b>données actuelles :</b></p>
-            <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-            <p>marque : <?= $donnees['marques_nom'] ?> </p>
-            <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
-            <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
-            <p>description : <?= $donnees['art_description'] ?> </p>
-            <p>stock : <?= $donnees['stock'] ?> </p>
-            <p>prix : <?= $donnees['prix'] ?> €</p>
+                    <form action="admin_update_article.php?id=<?= $_GET['id'] ?>" method="post">
+            
+                    <button type='submit'>SUPPRIMER CET ARTICLE</button>
+                    </form>
+                    <div id="affichage_donnees_generales">
+                        <h1><b>données actuelles :</b></h1>
+                        <p><b>nom du produit :</b> <?= $donnees['art_nom'] ?> </p>
+                        <p><b>marque :</b> <?= $donnees['marques_nom'] ?> </p>
+                        <p><b>catégorie :</b> <?= $donnees['categorie_type'] ?> </p>
+                        <p><b>resumé :</b> <?= $donnees['art_courte_description'] ?> </p>
+                        <p><b>description :</b> <?= $donnees['art_description'] ?> </p>
+                        <p><b>stock :</b> <?= $donnees['stock'] ?> </p>
+                        <p><b>prix :</b> <?= $donnees['prix'] ?> €</p>
+                    </div>
+                </div>
+            </section>
         <?php
         }
 
 public static function formulaire_general_commun($donnees, $req_categorie, $req_marques)
             {
             ?>
+            <section id="formulaire_update_general_commun">
+            <div>
                 <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
-                    <div>
-
+                    <div id="div_ensemble_formulaire">
+                    <h1><b>modifier l'article :</b></h1>
                         <select name="id_categorie">
                             <option disabled value="CATEGORIES" selected="selected">CATEGORIES</option>
                             <?php foreach ($req_categorie as $value) {
@@ -171,26 +180,26 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
                             } ?>
                         </select>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="nom">modifier le nom de l'article : </label>
                             <input type="text" name="nom" value="<?= $donnees['art_nom'] ?>">
                         </div>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="resume">modifier le résumé : </label>
                             <textarea name="resume"><?= $donnees['art_courte_description'] ?></textarea>
                         </div>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="description">modifier la description : </label>
                             <textarea name="description"><?= $donnees['art_description'] ?></textarea>
                         </div>
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="prix">modifier le prix : </label>
                             <input type="number" name="prix" value="<?= $donnees['prix'] ?>">
                         </div>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="stock">modifier le stock : </label>
                             <input type="number" name="stock" value="<?= $donnees['stock'] ?>">
                         </div>
@@ -256,33 +265,37 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
             {
                         View_Admin_Update::donnees_generales_communes($donnees);
                         ?>
-
-                    <p>poids : <?= $donnees['raq_poids'] ?> gr </p>
-                    <p>tamis : <?= $donnees['raq_tamis'] ?> cm2</p>
-                    <p>manche : <?= $donnees['raq_taille_manche'] ?> </p>
-                    <p>équilibre : <?= $donnees['raq_equilibre'] ?> nr</p>
-                    <p><b>modifier l'article :</b></p>
+                    <section class="donnees_specifique_article">
+                        <div>
+                            <h2>détails articles :</h2>
+                            <p>poids : <?= $donnees['raq_poids'] ?> gr </p>
+                            <p>tamis : <?= $donnees['raq_tamis'] ?> cm2</p>
+                            <p>manche : <?= $donnees['raq_taille_manche'] ?> </p>
+                            <p>équilibre : <?= $donnees['raq_equilibre'] ?> nr</p>
+                        </div>
+                    </section>
 
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
                     ?>
-                    <div>
+                           
+                    <div class="form_changement_details_art">
                         <label for="poids">modifier le poids : </label>
                         <input type="number" name="poids" value="<?= $donnees['raq_poids'] ?>">
                     </div>
 
-                    <div>
+                    <div class="form_changement_details_art">
                         <label for="tamis">modifier le tamis : </label>
                         <input type="number" name="tamis" value="<?= $donnees['raq_tamis'] ?>">
                     </div>
 
-                    <div>
+                    <div class="form_changement_details_art">
                         <label for="manche">modifier le manche : </label>
                         <input type="number" name="manche" value="<?= $donnees['raq_taille_manche'] ?>">
                     </div>
 
-                    <div>
+                    <div class="form_changement_details_art">
                         <label for="equilibre">modifier l'équilibre : </label>
                         <input type="number" name="equilibre" value="<?= $donnees['raq_equilibre'] ?>">
                     </div>
@@ -292,7 +305,8 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
-
+                    </div>
+                    </section>
                 <?php
                         View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
             }
@@ -303,10 +317,14 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
         public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
             {
                         View_Admin_Update::donnees_generales_communes($donnees);
-                ?>
-
-                    <p>thermobag : <?= $donnees['sac_thermobag'] ?> raquettes </p>
-                    <p><b>modifier l'article :</b></p>
+                ?>  
+                    <section class="donnees_specifique_article">
+                        <div>
+                            <h2>détails articles :</h2>
+                            <p>thermobag : <?= $donnees['sac_thermobag'] ?> raquettes </p>
+                            <p><b>modifier l'article :</b></p>
+                        </div>
+                    </section>
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
@@ -322,6 +340,8 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
+                    </div>
+                    </section>
                 <?php
                         View_Admin_Update::affichage_modif_photo($req_img_article,@$erreur_choix_premiere_image);
             }
@@ -354,7 +374,8 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
-
+                    </div>
+                    </section>
                 <?php
                         View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
             }
@@ -394,6 +415,8 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
+                    </div>
+                    </section>
 
                 <?php
                         View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
@@ -427,6 +450,8 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
+                    </div>
+                    </section>
 
                     <?php
                 View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
