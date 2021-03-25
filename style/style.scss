@@ -126,7 +126,41 @@ header{
     }
 
 }
+#menue_depliant{
+     display: none ;
+}
+@media screen and (min-width: 768px) and (max-width: 100000px){
+    .tessssst{
 
+        display: none !important;
+    
+    }
+}
+@media screen and (max-width: 768px){
+    .tessssst{
+
+        display: block !important;
+    
+    }
+}
+
+
+#menue_depliant div{
+
+    height: 150px;
+    background-color: black;
+
+    & a{
+        width: 100%;
+        height: 100%;
+        @extend %dflex;
+        text-decoration: none;
+        color: rgb(228, 228, 228);
+        border-bottom: 1px solid grey;
+        border-top: 1px solid grey;
+    }
+
+}
 .nav{
     
     z-index: 1000;
@@ -168,7 +202,7 @@ header{
 @media #{$medium-down} { // Pour les écrans inférieur à 1024px 
 
     header{
-        font-size: 0.8rem;
+        font-size: 0.7em;
         & .logo{
             @extend %dflex; 
             
@@ -177,8 +211,8 @@ header{
         & .logo a{
         
             display: flex;
-            height: 50%;
-            width: 150px;
+            height: 40%;
+            width: 130px;
         }
 
         & .accueil{ 

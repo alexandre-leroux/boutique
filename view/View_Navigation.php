@@ -67,19 +67,25 @@ public static function navigation_visiteur($repere_page_acceuil)
                     </form>
                 </div>
             </div>
-<!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
+
             <div class="burger">
                 <i class="fa fa-align-justify fa-3x"></i>
-                <div class="accueil">
-                    <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
-                    <p>|</p>
-                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_inscription.php' : 'user_inscription.php';?>">INSCRIPTION</a>
-                    <p>|</p>
-                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : 'user_connexion.php';?>">CONNEXION</a>         
-                </div>
+
             </div>
 
         </header>
+
+                <div id="menue_depliant">
+                    <div>
+                        <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
+                    </div>
+                  <div>
+                      <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_inscription.php' : 'user_inscription.php';?>">INSCRIPTION</a>
+                  </div>
+                  <div>
+                      <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : 'user_connexion.php';?>">CONNEXION</a>         
+                  </div>
+                </div>
 
         <nav class="nav">
 

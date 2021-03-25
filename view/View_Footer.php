@@ -81,7 +81,44 @@ class View_Footer{
             </section>
 
 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script>
 
+
+
+                // $(".burger .fa").click(function(){
+                // var display = $("#menue_depliant").css('display')
+
+                //     if (display == 'none')
+                //         {
+                //             console.log('entre dans if')
+                //             $("#menue_depliant").css('display', 'block')
+                //         }
+                //     else
+                //         {
+                //             $("#menue_depliant").css('display', 'none')
+                //             console.log('entre dans else')
+                //         }
+                // })
+                $(".burger .fa").click(function(){
+                var display = $("#menue_depliant").css('display')
+
+                    if (display == 'none')
+                        {
+                            console.log('entre dans if')
+                            $("#menue_depliant").addClass('tessssst')
+                        }
+                    else
+                        {
+                            $("#menue_depliant").removeClass('tessssst')
+                            console.log('entre dans else')
+                        }
+                })
+
+
+ 
+         
+            </script>
             <?php
 
 
