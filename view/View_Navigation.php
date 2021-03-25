@@ -60,7 +60,7 @@ public static function navigation_visiteur($repere_page_acceuil)
 
             <div class="search_bar">
                 <div class="border">
-                    <form id="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
+                    <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
                         <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
                         <button  type="submit"><i class="fa fa-search"></i></button>
                         <!-- <input class="fa fa-search" value="" type="submit"> -->
@@ -131,14 +131,14 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                         </div>
 
                         <div class="search_bar">
-                            <div class="border">
-                            <form action="pages/recherche.php" method="post">
-                                <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
-                                <button  type="submit"><i class="fa fa-search"></i></button>
-                                <!-- <input class="fa fa-search" value="" type="submit"> -->
-                            </form>
+                                <div class="border">
+                                    <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
+                                        <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                                        <button  type="submit"><i class="fa fa-search"></i></button>
+                                        <!-- <input class="fa fa-search" value="" type="submit"> -->
+                                    </form>
+                                </div>
                             </div>
-                        </div>
                         <!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
                         <a class="burger" >
                             <i class="fa fa-align-justify fa-3x"></i>
@@ -205,7 +205,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
             <div class="search_bar">
                 <div class="border">
-                    <form action="pages/recherche.php" method="post">
+                    <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
                         <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
                         <button  type="submit"><i class="fa fa-search"></i></button>
                         <!-- <input class="fa fa-search" value="" type="submit"> -->

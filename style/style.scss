@@ -79,7 +79,7 @@ header{
             width: 210px;
             display: flex;
 
-            & #form_recherche{
+            & .form_recherche{
                 @extend %dflex; 
             }
             
