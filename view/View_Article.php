@@ -112,6 +112,31 @@ class view_Article {
         <?php
     }
 
+    public function TrierParManche($cat)
+    {
+        ?>
+        <p> Taille du Manche <p>
+        <form action="<?= $cat ; ?>.php" method="post">
+            <input type="radio" id="taille_manche_2" name="taille_manche" value="2" checked>
+            <label for="taille_manche_2"> 2 </label>
+
+            <input type="radio" id="taille_manche_3" name="taille_manche" value="3" >
+            <label for="taille_manche_3"> 3 </label>
+
+            <input type="radio" id="taille_manche_4" name="taille_manche" value="4" >
+            <label for="taille_manche_4"> 4 </label>
+
+            <input type="radio" id="taille_manche_5" name="taille_manche" value="5" >
+            <label for="taille_manche_5"> 5 </label>
+
+            <input type="submit" value="Envoyer" name="tri_manche">
+        </form>  
+
+        <?php
+            
+
+    }
+
     /**
      * Affiche les infos spécifique de l'article sur sa page 
      *

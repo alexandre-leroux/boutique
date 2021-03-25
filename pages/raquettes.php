@@ -18,5 +18,4 @@ View_Navigation::affichage_navigation(@$repere_page_acceuil);
 
 $controller_article->catProduits("raquettes",1,$article,$display);
 
-
 View_Footer::Footer($repere_page_acceuil);

@@ -51,4 +51,36 @@ class View_Panier {
 
         <?php
     }
+
+    function displayInfosCommande($tableau_commande)
+    {
+        
+        for($i = 0 ; isset($tableau_commande[$i]) ; $i++)
+        {
+            if($tableau_commande[$i]['id_commande'] != @$tableau_commande[$i+1]['id_commande'])
+            {
+                ?>
+                
+                <p><b>Commande n° <?= $tableau_commande[$i]['id_commande'] ?> </b></p>
+                <?php
+                $prix_total = 0; 
+                for($a = 0 ; isset($tableau_commande[$a]); $a++)
+                {
+                    if($tableau_commande[$a]['id_commande'] == $tableau_commande[$i]['id_commande'])
+                    {
+                        ?>
+                        <p> Nom du produit : <?= $tableau_commande[$a]['art_nom'] ; ?> </p>
+                        <p> Quantité : <?= $tableau_commande[$a]['quantite'] ; ?> </p>
+                        <p> Prix : <?= $tableau_commande[$a]['prix'] ; ?> € </p>
+                        <?php
+                        $prix_total += $tableau_commande[$a]['prix'] ;
+                    }
+                }
+                ?>
+                <p> Prix Total : <?= $prix_total ; ?> € <p>
+                <?php
+            }
+            
+        }
+    }
 }

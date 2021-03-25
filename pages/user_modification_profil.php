@@ -11,4 +11,4 @@ View_Navigation::affichage_navigation(@$repere_page_acceuil);
 View_user::form_update_profil($erreur);
 
 
-View_Footer::Footer($repere_page_acceuil);
+View_Footer::Footer(@$repere_page_acceuil);

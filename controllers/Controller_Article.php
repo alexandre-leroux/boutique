@@ -3,10 +3,11 @@
 class controller_Article {
 
     public function TrierPar($article, $view_article,$cat="",$condition="", $get=""){
-        if(!isset($_POST['tri_marque'])  && !isset($_POST['tri_prix']) && !isset($_GET['id_marques']))
+        if(!isset($_POST['tri_marque'])  && !isset($_POST['tri_prix']) && !isset($_GET['id_marques']) && !isset($_POST['tri_manche']))
         {
             $result = $article->findAllArticles("{$cat}"," GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie"); // renvoie un tableaux de tout les articles 
             $view_article->displayAllArticles($result);  // affiche les articles 
+            echo 'salut'; 
         }
         elseif(isset($_POST['tri_marque']))
         {
@@ -38,6 +39,11 @@ class controller_Article {
 
             }
         }
+        elseif(isset($_POST['tri_manche']))
+        {
+            $manche = $article->findAllArticles("{$cat} AND raq_taille_manche = ".$_POST['taille_manche'], " GROUP BY articles.id_articles,art_nom,art_courte_description,prix,id_marques,id_categorie") ;
+            $view_article->displayAllArticles($manche);
+        }
     }
 
     public function catProduits(string $cat,int $id_categorie,$model,$view)
@@ -46,8 +52,11 @@ class controller_Article {
 
         $view->formTrierParMarques($result_mar,$cat); // affiche le form trier par marques
         $view->TrierParPrix($cat);
-
+        if($cat == "raquettes"){
+            $view->TrierParManche($cat);
+        }
         $this->TrierPar($model,$view," WHERE id_categorie = {$id_categorie}","AND id_categorie = {$id_categorie}",@$_GET['id_marques']); 
     }
+
 
 }
