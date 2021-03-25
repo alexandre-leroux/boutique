@@ -75,7 +75,7 @@ public static function navigation_visiteur($repere_page_acceuil)
 
         </header>
 
-                <div id="menue_depliant">
+                <div id="menu_depliant">
                     <div>
                         <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
                     </div>

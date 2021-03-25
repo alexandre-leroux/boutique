@@ -126,26 +126,19 @@ header{
     }
 
 }
-#menue_depliant{
+
+#menu_depliant{
      display: none ;
 }
 @media screen and (min-width: 768px) and (max-width: 100000px){
-    .tessssst{
-
+    #menu_depliant{
         display: none !important;
-    
-    }
-}
-@media screen and (max-width: 768px){
-    .tessssst{
-
-        display: block !important;
-    
-    }
+   }
 }
 
 
-#menue_depliant div{
+
+#menu_depliant div{
 
     height: 150px;
     background-color: black;
