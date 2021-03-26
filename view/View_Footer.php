@@ -81,7 +81,20 @@ class View_Footer{
             </section>
 
 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script>
 
+
+                $(".burger .fa").click(function(){
+
+                    $("#menu_depliant").slideToggle();
+                    console.log('click')
+                    })
+
+
+ 
+         
+            </script>
             <?php
 
 

@@ -11,27 +11,27 @@ class view_Article {
     public function displayAllArticles(array $result): void{
 
         ?>
-        <section class="galerie_article">
-        <?php
-        foreach($result as $value)
-        {
-            ?>
+            <section class="galerie_article">
+                <?php
+                    foreach($result as $value)
+                    {
+                        ?>
 
-            <div class="vignette_article">
-                <div class="img">                    
-                    <a href="article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
-                </div>    
-                <h1> <?= $value['art_nom'] ; ?> </h1>
-                <p> <?= $value['prix'] ; ?> € </p>
-                <p> <?= $value['art_courte_description'] ; ?> </p>
+                        <div class="vignette_article">
+                            <div class="img">                    
+                                <a href="article.php?id=<?= $value['id_articles'] ; ?>"><img src="../medias/img_articles/<?=$value['MIN(chemin)'] ; ?>"></a>
+                            </div>    
+                            <h1> <?= $value['art_nom'] ; ?> </h1>
+                            <p id="courte_descr_aff_article"> <?= $value['art_courte_description'] ; ?> </p>
+                            <p> <?= $value['prix'] ; ?> € </p>
 
-            </div>    
+                        </div>    
 
-            <?php
-        }
+                        <?php
+                    }
 
-        ?>
-        </section>
+                 ?>
+            </section>
         <?php
     }
 
@@ -121,18 +121,32 @@ class view_Article {
      */
     public function displayOneArticle($resultat,$result)
     {
+        ?>
+        <section id="conteneur_principal_article">
+        <?php
+        echo '<div id="conteneur_image_article">
+                <img id="image_principale_page_article" src="../medias/img_articles/'.$resultat[0]['chemin'].'">
+                    <div id="conteneur_image_suivantes_article">';
+
         for($i = 0 ; isset($resultat[$i]) ; $i++){
-            echo '<img src="../medias/img_articles/'.$resultat[$i]['chemin'].'">';
+            echo '<img class="image_article_en_petite" src="../medias/img_articles/'.$resultat[$i]['chemin'].'">';
         }
+        echo "</div>
+            </div>
+            <div id='reste_du_cntenu_article'>";
+
+
+
+        
         foreach($result as $key => $value)
         {
             if($value == NULL || $value == $result['id_articles'] || $value == $result['id_categorie'] || $value == $result['id_marques']){
                 echo '<p class="dp_none">'.$value.'</p>'; 
+       
             }
             else{
                 if($value == $result['prix']){
-        
-                    echo '<p>'.$value.' € </p>'; 
+                    echo '<p id="prix_de_article">'.$value.' € </p>'; 
                 }
                 elseif($value == $result['raq_poids'])
                 {
@@ -167,16 +181,20 @@ class view_Article {
                     echo '<p> Couleur : '.$value. '</p>'; 
                 }
                 elseif($value == $result['marques_nom']){
-                    echo '<a href="boutique.php?id_marques='.$result['id_marques'].'">'.$value.'</a>';
+                    echo '<a id="lien_vers_marque" href="boutique.php?id_marques='.$result['id_marques'].'">'.$value.'</a>';
                 }
                 else{
-                    echo '<p>'.$value.'</p>';
+                    echo '<p id="nom_du_produit_article">'.$value.'</p>';
                 }
             }
              
         }
 
-        echo '<a href="addpanier.php?id='.$result['id_articles'].'"> Ajouter au panier</a>';
+        echo '<div id="ajouter_au_panier"><a href="addpanier.php?id='.$result['id_articles'].'"> Ajouter au panier</a></div></div>';
+
+        ?>
+        </section>
+        <?php
     }
 
     /**
@@ -187,22 +205,31 @@ class view_Article {
      */
     public function displayArticlesSimilaires($array_art_similaire){
 
-        for($i = 0; isset($array_art_similaire[$i]) ; $i++)
-        {
         ?>
+        <section id="articles_similaires">
+            <h1> Articles similaires </h1>
+            <div id="photos_articles_similaires">
+                <?php
+                for($i = 0; isset($array_art_similaire[$i]) ; $i++)
+                {
+                ?>
 
-        <div>
-            <div>
-                <a href="article.php?id=<?= $array_art_similaire[$i]['id_articles'];?>"><img src="../medias/img_articles/<?= $array_art_similaire[$i]['MIN(chemin)']; ?>"></a>
-                <h3> <?= $array_art_similaire[$i]['art_nom'] ; ?></h3>
-                <p> <?= $array_art_similaire[$i]['prix'] ; ?> €</p>
-            </div>
+                <div>
+                    <div class="conteneur_images_art_siilaire">
+                        <a href="article.php?id=<?= $array_art_similaire[$i]['id_articles'];?>"><img src="../medias/img_articles/<?= $array_art_similaire[$i]['MIN(chemin)']; ?>"></a>
+                        <h3> <?= $array_art_similaire[$i]['art_nom'] ; ?></h3>
+                        <p> <?= $array_art_similaire[$i]['prix'] ; ?> €</p>
+                    </div>
 
-        </div>
+                </div>
 
+                <?php
+
+                }
+                ?>
+                </div>
+        </section>
         <?php
-
-        }
     }
 
 }

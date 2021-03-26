@@ -11,87 +11,91 @@ class View_Admin_Update
         ?>
 
 
-            <a href="admin_accueil_gestion_site.php">RETOUR</a>
+                    
+    <section id="section_centrale_update_article">        
 
-            <!-- input recherche -->
-        <form action="admin_update_article.php" method="post">
-            <input type="text" minlength="3" name="mot_cle" placeholder="chercher">
-            <input type="submit" value="rechercher" name="rechercher">
-        </form>
+                                <!-- input recherche -->
+                        <div>
+                                <form action="admin_update_article.php" method="post">
+                                    <input type="text" minlength="3" name="mot_cle" placeholder="chercher">
+                                    <input type="submit" value="rechercher" name="rechercher">
+                                </form>
+                        </div>    
 
-        <!-- formulaire modif catégorie, marques...Etc -->
-        <form action="admin_update_article.php" method="post">
-            <select name="id_categorie">
-                <option disabled value="CATEGORIES" selected="selected">CATEGORIES</option>
-                <?php foreach ($req_categorie as $value) {
-                    echo  "<option value=" . $value['id_categorie'] . ">" . $value['categorie_type'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="new_nom_categorie">
-            <input type="submit" value="modifier" name="submit_cat">
-        </form>
+                            <!-- formulaire modif catégorie, marques...Etc -->
+                        <div id="modif_categorie_marques_etc">
+                            <form action="admin_update_article.php" method="post">
+                                <select name="id_categorie">
+                                    <option  disabled value="CATEGORIES" selected="selected">CATEGORIES</option>
+                                    <?php foreach ($req_categorie as $value) {
+                                        echo  "<option value=" . $value['id_categorie'] . ">" . $value['categorie_type'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="new_nom_categorie">
+                                <input type="submit" value="modifier" name="submit_cat">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_marques'>
-                <option disabled value="MARQUES" selected="selected">MARQUES</option>
-                <?php foreach ($req_marques as $value) {
-                    echo  "<option value=" . $value['id_marques'] . ">" . $value['marques_nom'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="new_nom_marque">
-            <input type="submit" value="modifier" name="submit_marque">
-        </form>
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_marques'>
+                                    <option disabled value="MARQUES" selected="selected">MARQUES</option>
+                                    <?php foreach ($req_marques as $value) {
+                                        echo  "<option value=" . $value['id_marques'] . ">" . $value['marques_nom'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="new_nom_marque">
+                                <input type="submit" value="modifier" name="submit_marque">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_sous_cat_accessoires'>
-                <option disabled value="sous_cat" selected="selected">SOUS CATEGORIE</option>
-                <?php foreach ($req_sous_categorie_acc as $value) {
-                    echo  "<option value=" . $value['id_sous_cat_accessoires'] . ">" . $value['sous_cat_acc_type'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="new_nom_sous_cat_acc">
-            <input type="submit" value="modifier" name="submit_sous_cat_acc">
-        </form>
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_sous_cat_accessoires'>
+                                    <option disabled value="sous_cat" selected="selected">SOUS CATEGORIE</option>
+                                    <?php foreach ($req_sous_categorie_acc as $value) {
+                                        echo  "<option value=" . $value['id_sous_cat_accessoires'] . ">" . $value['sous_cat_acc_type'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="new_nom_sous_cat_acc">
+                                <input type="submit" value="modifier" name="submit_sous_cat_acc">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_balle_type'>
-                <option disabled value="balle_type" selected="selected">TYPE DE BALLE</option>
-                <?php foreach ($req_type_balle as $value) {
-                    echo  "<option value=" . $value['id_balle_type'] . ">" . $value['balle_type'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="balle_type">
-            <input type="submit" value="modifier" name="submit_balle_type">
-        </form>
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_balle_type'>
+                                    <option disabled value="balle_type" selected="selected">TYPE DE BALLE</option>
+                                    <?php foreach ($req_type_balle as $value) {
+                                        echo  "<option value=" . $value['id_balle_type'] . ">" . $value['balle_type'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="balle_type">
+                                <input type="submit" value="modifier" name="submit_balle_type">
+                            </form>
 
-        <form action="admin_update_article.php" method="post">
-            <select name='id_balle_conditionnement'>
-                <option disabled value="balle_conditionnement" selected="selected">BALLE CONDITIONNEMENT</option>
-                <?php foreach ($req_balle_conditionnement as $value) {
-                    echo  "<option value=" . $value['id_balle_conditionnement'] . ">" . $value['balle_conditionnement'] . "</option> ";
-                } ?>
-            </select>
-            <label for="nom">saisir le nouveau nom : </label>
-            <input type="text" name="balle_conditionnement">
-            <input type="submit" value="modifier" name="submit_balle_conditionnement">
-        </form>
-
+                            <form action="admin_update_article.php" method="post">
+                                <select name='id_balle_conditionnement'>
+                                    <option disabled value="balle_conditionnement" selected="selected">BALLE CONDITIONNEMENT</option>
+                                    <?php foreach ($req_balle_conditionnement as $value) {
+                                        echo  "<option value=" . $value['id_balle_conditionnement'] . ">" . $value['balle_conditionnement'] . "</option> ";
+                                    } ?>
+                                </select>
+                                <label for="nom">saisir le nouveau nom : </label>
+                                <input type="text" name="balle_conditionnement">
+                                <input type="submit" value="modifier" name="submit_balle_conditionnement">
+                            </form>
+                        </div>    
 
 
         <!-- boucle d'affichage dela recherche -->
-                <div style="display:flex">
+                <div id="affichage_resultat_recherche_admin" >
 
                 <?php  
                 $i = 0;
                 while (@$recherche[$i]) {
                 ?>
-                    <div style="width:200px;border:solid;margin-right:10px"  >
-                        <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];var_dump('ffffffffffffffffffffff');  ?>">
-                            <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt="">
+                    <div class="vignette_affichage_recherche_photo"   >
+                        <a href="admin_update_one_article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];?>">
+                        <img  src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt=""><h3><?= $recherche[$i]['art_nom'] ?></h3>
                         </a>
                     </div>
 
@@ -100,51 +104,82 @@ class View_Admin_Update
                 </div>
 
         <!-- boucle d'affichage de tous les articles de la bdd -->
-        <div style="display:flex">
+        <div id="affichage_tous_articles_recherche_admin">
 
             <?php
             $i = 0;
             while (@$tous_les_articles[$i]) { 
             ?>
-                <div style="width:200px;border:solid;margin-right:10px">
+                <div class="vignette_affichage_recherche_photo">
                     <a href="admin_update_one_article.php?id=<?= $tous_les_articles[$i]["id_articles"] ?>&idcat=<?= $tous_les_articles[$i]["id_categorie"] ?>&idsouscat=<?= $tous_les_articles[$i]["id_sous_cat_acc"] ?>">
-                        <h3><?= $tous_les_articles[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $tous_les_articles[$i]['MIN(chemin)'] ?>" alt="">
+                    <img src="../medias/img_articles/<?= $tous_les_articles[$i]['MIN(chemin)'] ?>" alt=""> <h3><?= $tous_les_articles[$i]['art_nom'] ?></h3>
                     </a>
                 </div>
 
             <?php $i++;
             } ?>
         </div>
+</section>
             <?php
-            }
+
+}
 
 
+public static function Update_one_article_boutton_retour_et_supp()
+    {?>
+        
+        <section id="section_boutton_retour_et_supp">
+            <div id="div_boutton_retour_et_supp">
 
+                <div id="lien_retour">
+                    <a href="admin_update_article.php">RETOUR</a></br>
+                </div>
+
+                <form action="admin_update_article.php?id=<?= $_GET['id'] ?>" method="post">
+
+                <button type='submit'>SUPPRIMER CET ARTICLE</button>
+                </form>
+            
+            </div>
+        </section>
+
+    <?php
+    }
 
 
     // ----------------------------------------------------------------formulaire upadate des articles
 public static function donnees_generales_communes($donnees)
         {
         ?>
-        <a href="admin_update_article.php">RETOUR</a>
-            <p><b>données actuelles :</b></p>
-            <p>nom du produit : <?= $donnees['art_nom'] ?> </p>
-            <p>marque : <?= $donnees['marques_nom'] ?> </p>
-            <p>catégorie : <?= $donnees['categorie_type'] ?> </p>
-            <p>resumé : <?= $donnees['art_courte_description'] ?> </p>
-            <p>description : <?= $donnees['art_description'] ?> </p>
-            <p>stock : <?= $donnees['stock'] ?> </p>
-            <p>prix : <?= $donnees['prix'] ?> €</p>
+            <section id="section_donnees_generales_communes">
+                <div>
+        
+
+   
+                    <div id="affichage_donnees_generales">
+                        <h1><b>données actuelles :</b></h1>
+                        <p><b>nom du produit :</b> <?= $donnees['art_nom'] ?> </p>
+                        <p><b>marque :</b> <?= $donnees['marques_nom'] ?> </p>
+                        <p><b>catégorie :</b> <?= $donnees['categorie_type'] ?> </p>
+                        <p><b>resumé :</b> <?= $donnees['art_courte_description'] ?> </p>
+                        <p><b>description :</b> <?= $donnees['art_description'] ?> </p>
+                        <p><b>stock :</b> <?= $donnees['stock'] ?> </p>
+                        <p><b>prix :</b> <?= $donnees['prix'] ?> €</p>
+                    </div>
+                </div>
+            </section>
         <?php
         }
 
 public static function formulaire_general_commun($donnees, $req_categorie, $req_marques)
             {
             ?>
+            <section id="formulaire_update_general_commun">
+            <div>
                 <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
 
-                    <div>
-
+                    <div id="div_ensemble_formulaire">
+                    <h1><b>modifier l'article :</b></h1>
                         <select name="id_categorie">
                             <option disabled value="CATEGORIES" selected="selected">CATEGORIES</option>
                             <?php foreach ($req_categorie as $value) {
@@ -159,26 +194,26 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
                             } ?>
                         </select>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="nom">modifier le nom de l'article : </label>
                             <input type="text" name="nom" value="<?= $donnees['art_nom'] ?>">
                         </div>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="resume">modifier le résumé : </label>
                             <textarea name="resume"><?= $donnees['art_courte_description'] ?></textarea>
                         </div>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="description">modifier la description : </label>
                             <textarea name="description"><?= $donnees['art_description'] ?></textarea>
                         </div>
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="prix">modifier le prix : </label>
                             <input type="number" name="prix" value="<?= $donnees['prix'] ?>">
                         </div>
 
-                        <div>
+                        <div class="form_changement_details_art">
                             <label for="stock">modifier le stock : </label>
                             <input type="number" name="stock" value="<?= $donnees['stock'] ?>">
                         </div>
@@ -189,88 +224,93 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
  public static function affichage_modif_photo($req_img_article,$erreur_choix_premiere_image)
                     {
                             ?>
-                            <div style="display:flex">
-                            <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
-                                <?php
+                        <section id="section_modif_image_update_art">
+                            <div id="conteneur_choix_photo_principale">
+                                <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post">
+                                    <?php
 
-                            
-                                foreach ($req_img_article as $value) {
-                                ?>
-                                    <div style="display:flex" >
+                                
+                                    foreach ($req_img_article as $value) {
+                                    ?>
+                                        <div id="div_affichage_images" >
 
-                                        <p><img style="height:200px" src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
+                                            <p><img src="../medias/img_articles/<?= $value['chemin'] ?>" alt=""></p>
 
-                                            <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
-                                        
-                                            <?php  if(substr_count($value['chemin'],'-0.'))  {echo ' photo principale';} ?>
-                                        
-                                    </div>
-                                <?php 
+                                                <input type="checkbox" name="<?=$value['chemin']?>" value='../medias/img_articles/<?= $value['chemin']?>'>
+                                            
+                                            
+                                                <?php  if(substr_count($value['chemin'],'-0.'))  {echo '<p>photo principale</p>';} ?>
+                                        </div>
+                                    <?php 
                                 }
                                 ?>
 
 
 
-                                <input type="submit" value="supprimer" style="height:20px" name="submit2">
+                                <input type="submit" value="supprimer" name="submit2">
                                 </br>
 
-                                <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE" style="height:20px" name="photo_principale">
+                                <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE"  name="photo_principale">
                                 <?=$erreur_choix_premiere_image?>
         
 
-                            </form>
-                                
+                                </form>
                             </div>
-
-
-
-
-                            <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
+                            <div id="form_ajouter_nouvelles_images">
+                                <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
                                 
                                     <label for="image"> Ajouter des images : </label>
                                     <input  type="file" name="image[]" multiple >
                                     <input type="submit" value="Envoyer" name="ajout_photo">
                                     
                                 </form>
+                            </div>
 
 
 
+
+                        </section>
                             <?php
                     }
 
 
 
 public static function affiche_details_et_form_update_raquette($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
-            {
+            {           
+                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
                         View_Admin_Update::donnees_generales_communes($donnees);
                         ?>
-
-                    <p>poids : <?= $donnees['raq_poids'] ?> gr </p>
-                    <p>tamis : <?= $donnees['raq_tamis'] ?> cm2</p>
-                    <p>manche : <?= $donnees['raq_taille_manche'] ?> </p>
-                    <p>équilibre : <?= $donnees['raq_equilibre'] ?> nr</p>
-                    <p><b>modifier l'article :</b></p>
+                    <section class="donnees_specifique_article">
+                        <div>
+                            <h2>détails articles :</h2>
+                            <p>poids : <?= $donnees['raq_poids'] ?> gr </p>
+                            <p>tamis : <?= $donnees['raq_tamis'] ?> cm2</p>
+                            <p>manche : <?= $donnees['raq_taille_manche'] ?> </p>
+                            <p>équilibre : <?= $donnees['raq_equilibre'] ?> nr</p>
+                        </div>
+                    </section>
 
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
                     ?>
-                    <div>
+                           
+                    <div class="form_changement_details_art">
                         <label for="poids">modifier le poids : </label>
                         <input type="number" name="poids" value="<?= $donnees['raq_poids'] ?>">
                     </div>
 
-                    <div>
+                    <div class="form_changement_details_art">
                         <label for="tamis">modifier le tamis : </label>
                         <input type="number" name="tamis" value="<?= $donnees['raq_tamis'] ?>">
                     </div>
 
-                    <div>
+                    <div class="form_changement_details_art">
                         <label for="manche">modifier le manche : </label>
                         <input type="number" name="manche" value="<?= $donnees['raq_taille_manche'] ?>">
                     </div>
 
-                    <div>
+                    <div class="form_changement_details_art">
                         <label for="equilibre">modifier l'équilibre : </label>
                         <input type="number" name="equilibre" value="<?= $donnees['raq_equilibre'] ?>">
                     </div>
@@ -280,21 +320,27 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
-
+                    </div>
+                    </section>
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+                       
             }
 
 
 
 
         public static function affiche_details_et_form_update_sacs($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
-            {
+            {  
+                        View_Admin_Update::affichage_modif_photo($req_img_article,@$erreur_choix_premiere_image);
                         View_Admin_Update::donnees_generales_communes($donnees);
-                ?>
-
-                    <p>thermobag : <?= $donnees['sac_thermobag'] ?> raquettes </p>
-                    <p><b>modifier l'article :</b></p>
+                ?>  
+                    <section class="donnees_specifique_article">
+                        <div>
+                            <h2>détails articles :</h2>
+                            <p>thermobag : <?= $donnees['sac_thermobag'] ?> raquettes </p>
+                            <p><b>modifier l'article :</b></p>
+                        </div>
+                    </section>
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
@@ -310,8 +356,10 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
+                    </div>
+                    </section>
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,@$erreur_choix_premiere_image);
+                       
             }
 
 
@@ -320,11 +368,18 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
         public static function affiche_details_et_form_update_cordage($donnees, $req_categorie, $req_marques, $req_img_article,$erreur_choix_premiere_image)
             {
+
+                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
+                    <section class="donnees_specifique_article">
+                        <div>
+                            <h2>détails articles :</h2>
+                            <p>jauge : <?= $donnees['cor_jauge'] ?> mm </p>
+                         </div>
+                    </section>
 
-                    <p>jauge : <?= $donnees['cor_jauge'] ?> mm </p>
-                    <p><b>modifier l'article :</b></p>
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
@@ -342,9 +397,9 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
-
+                    </div>
+                    </section>
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
             }
 
 
@@ -352,12 +407,18 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
         public static function affiche_details_et_form_update_balle($donnees, $req_categorie, $req_marques, $req_img_article, $req_type_balle, $req_conditionnement_balle,$erreur_choix_premiere_image)
              {
+
+                View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
                         View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
-
-                    <p>type de balle : <?= $donnees['balle_type'] ?> </p>
-                    <p>type de conditionnement : <?= $donnees['balle_conditionnement'] ?> </p>
-                    <p><b>modifier l'article :</b></p>
+                    <section class="donnees_specifique_article">
+                    <div>
+                        <h2>détails articles :</h2>
+                        <p>type de balle : <?= $donnees['balle_type'] ?> </p>
+                        <p>type de conditionnement : <?= $donnees['balle_conditionnement'] ?> </p>
+                    </div>
+                    </section>
+           
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
@@ -382,9 +443,11 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
+                    </div>
+                    </section>
 
                 <?php
-                        View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+                        
         }
 
 
@@ -393,11 +456,16 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
         public static function affiche_details_et_form_update_accessoires($donnees, $req_categorie, $req_marques, $req_img_article, $req_sous_cat_accessoires,$erreur_choix_premiere_image)
             {
+                View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
                 View_Admin_Update::donnees_generales_communes($donnees);
                 ?>
-
-                    <p>sous catégorie : <?= $donnees['sous_cat_acc_type'] ?> </p>
-                    <p><b>modifier l'article :</b></p>
+                    <section class="donnees_specifique_article">
+                    <div>
+                        <h2>détails articles :</h2>
+                        <p>sous catégorie : <?= $donnees['sous_cat_acc_type'] ?> </p>
+                    </div>
+                    </section>
+       
 
                     <?php
                         View_Admin_Update::formulaire_general_commun($donnees, $req_categorie, $req_marques)
@@ -415,39 +483,50 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                     </div>
 
                     </form>
+                    </div>
+                    </section>
 
                     <?php
-                View_Admin_Update::affichage_modif_photo($req_img_article,$erreur_choix_premiere_image);
+                
             }
 
 
         public static function affiche_all_user($req_all_users)
-            {    echo '<a href="../index.php">RETOUR</a>';
+            {   
                 foreach ($req_all_users as $key => $value) {
                 ?>
-                    <div style='border: solid 1px'>
-                        <p>id de l'utilisateur : <?= $value['id_utilisateurs'] ?></p>
-                        <p>niveau de droit : <?= $value['uti_droits'] ?></p>
-                        <p>nom : <?= $value['uti_nom'] ?></p>
-                        <p>prénom : <?= $value['uti_prenom'] ?></p>
-                        <p>mail : <?= $value['uti_mail'] ?></p>
-                        <p>téléphone : <?= $value['uti_tel'] ?></p>
-                        <p>rue : <?= $value['uti_rue'] ?></p>
-                        <p>code postal : <?= $value['uti_code_postal'] ?></p>
-                        <p>ville : <?= $value['uti_ville'] ?></p>
-                        <a href="admin_update_one_user.php?id_utilisateur=<?= $value['id_utilisateurs'] ?>">modifier cet utilisateur</a>
+                    <section id="section_principale_all_user">
+                    <div id="div_all_user">
+              
+                            <div id="affichage_recap_user">
+                                <p><b>id de l'utilisateur :</b> <?= $value['id_utilisateurs'] ?></p>
+                                <p><b>niveau de droit :</b> <?= $value['uti_droits'] ?></p>
+                                <p><b>nom :</b> <?= $value['uti_nom'] ?></p>
+                                <p><b>prénom :</b> <?= $value['uti_prenom'] ?></p>
+                                <p><b>mail :</b> <?= $value['uti_mail'] ?></p>
+                                <p><b>téléphone :</b> <?= $value['uti_tel'] ?></p>
+                                <p><b>rue :</b> <?= $value['uti_rue'] ?></p>
+                                <p><b>code postal :</b> <?= $value['uti_code_postal'] ?></p>
+                                <p><b>ville :</b> <?= $value['uti_ville'] ?></p></br>
+                                <a href="admin_update_one_user.php?id_utilisateur=<?= $value['id_utilisateurs'] ?>">modifier cet utilisateur</a>
+                            </div>
                     </div>
+                    </section>
+
                 <?php
                     }
             }
 
 
         public static function affiche_details_et_form_update_user($requete_one_user)
-                    {echo '<a href="admin_affiche_all_user.php">RETOUR</a>';
-                    ?>
-                    <div style='border: solid 1px'>
+                    {
+                        
+                ?>
+                <section id='update_one_user_details'>
+                    <div id='update_one_user_details'>
+                    <a href="admin_affiche_all_user.php">RETOUR</a></br>
 
-                        <p>niveau de droit : <?=$requete_one_user["uti_droits"]?></p>
+                        <p><b>niveau de droit : <?=$requete_one_user["uti_droits"]?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_droits">Modifier le niveau de droit :</label>
                             <select name="uti_droits">
@@ -455,58 +534,58 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
                                 <option value="1">Administrateur</option>
                             </select>
                             <input type="submit" value="modifier" name="droit">
-                        </form>
+                        </form></br>
 
-                        <p>nom : <?= $requete_one_user['uti_nom'] ?></p>
+                        <p><b>nom : <?= $requete_one_user['uti_nom'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_nom">Modifier le nom :</label>
                             <input type="text" id="uti_nom" name="uti_nom">
                             <input type="submit" value="modifier" name="nom">
-                        </form>
+                        </form></br>
 
-                        <p>prénom : <?= $requete_one_user['uti_prenom'] ?></p>
+                        <p><b>prénom : <?= $requete_one_user['uti_prenom'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_prenom">Modifier le prénom :</label>
                             <input type="text" name="uti_prenom">
                             <input type="submit" value="modifier" name="prenom">
-                        </form>
+                        </form></br>
 
-                        <p>mail : <?= $requete_one_user['uti_mail'] ?></p>
+                        <p><b>mail : <?= $requete_one_user['uti_mail'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_mail">Modifier le mail :</label>
                             <input type="email" name="uti_mail">
                             <input type="submit" value="modifier" name="email">
-                        </form>
+                        </form></br>
 
-                        <p>téléphone : <?= $requete_one_user['uti_tel'] ?></p>
+                        <p><b>téléphone : <?= $requete_one_user['uti_tel'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_tel">Modifier le téléphone :</label>
                             <input type="tel" name="uti_tel">
                             <input type="submit" value="modifier" name="tel">
-                        </form>
+                        </form></br>
 
-                        <p>rue : <?= $requete_one_user['uti_rue'] ?></p>
+                        <p><b>rue : <?= $requete_one_user['uti_rue'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_rue">Modifier la rue :</label>
                             <input type="text" name="uti_rue">
                             <input type="submit" value="modifier" name="rue">
-                        </form>
+                        </form></br>
 
-                        <p>code postal : <?= $requete_one_user['uti_code_postal'] ?></p>
+                        <p><b>code postal : <?= $requete_one_user['uti_code_postal'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_code_postal">Modifier le code postal :</label>
                             <input type="number" name="uti_code_postal">
                             <input type="submit" value="modifier" name="code_postal">
-                        </form>
+                        </form></br>
 
-                        <p>ville : <?= $requete_one_user['uti_ville'] ?></p>
+                        <p><b>ville : <?= $requete_one_user['uti_ville'] ?></b></p>
                         <form action="admin_update_one_user.php?id_utilisateur=<?= $_GET['id_utilisateur'] ?>" method="post">
                             <label for="uti_ville">Modifier la ville :</label>
                             <input type="text" name="uti_ville">
                             <input type="submit" value="modifier" name="ville">
                         </form>
                     </div>
-
+                    </section>
             <?php
                     }
 
@@ -514,9 +593,10 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
 
 
-                    public static function affiche_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image)
+public static function affiche_un_article($donnees,$req_categorie,$req_marques,$req_img_article,$req_type_balle,$req_conditionnement_balle,$req_sous_cat_accessoires,$erreur_choix_premiere_image)
 
-                    { $admin = new Model_Admin_Update();
+    {                   
+                        $admin = new Model_Admin_Update();
 
                         if ($_GET['idcat'] == 1) {
 
@@ -553,8 +633,41 @@ public static function affiche_details_et_form_update_raquette($donnees, $req_ca
 
 
                         
-
-                        }
+    }
 
     
+
+
+
+
+
+public static function Page_choix_update_ou_insert()
+    {
+        ?>
+            <div id="section_centrale_accueil_admin">
+            
+                <div class="lien_update_ou_insert">
+                    <a href="admin_insert.php">AJOUTER UN NOUVEL ARTICLE</a></br>
+                </div>
+                <div class="lien_update_ou_insert">
+                    <a href="admin_update_article.php">MODIFIER UN ARTICLE EXISTANT</a></br>
+                </div>
+            
+            </div>
+        
+        <?php
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+}

@@ -12,6 +12,7 @@ $req_type_balle = $admin->SelectAll('balle_type');
 $req_balle_conditionnement = $admin->SelectAll('balle_conditionnement');
 $tous_les_articles = $admin->select_all_articles_updates();
 
+Controller_Admin_Update::delete_one_article();
 //Controllers - execute le changement de nom
 Controller_Admin_Update::changement_nom_categorie();
 
@@ -27,11 +28,15 @@ $req_balle_conditionnement = $admin->SelectAll('balle_conditionnement');
 $tous_les_articles = $admin->select_all_articles_updates();
 
 
+
+
 View_Navigation::affichage_navigation(@$repere_page_acceuil);
+
+
 View_Admin_Update::affiche_all_articles($recherche,$tous_les_articles, $req_categorie, $req_marques,$req_sous_categorie_acc,$req_type_balle,$req_balle_conditionnement);
 
 
-View_Footer::Footer($repere_page_acceuil);
+View_Footer::Footer(@$repere_page_acceuil);
 
 
 

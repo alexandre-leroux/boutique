@@ -20,25 +20,19 @@ View_Navigation::affichage_navigation($repere_page_acceuil);
 $view_article->displayOneArticle($resultat,$result);  // affichage infos + images 
 ?>
 
-<h1> Articles similaires </h1>
+
 
 <?php
 
 $findArticle = $article->findArticleSimilaires($result); // renvoie un tableau des article de la même cat que l'article en get 
 
-var_dump($findArticle);
+// var_dump($findArticle);
 
 $view_article->displayArticlesSimilaires($findArticle); // Boucle qui affiche les infos + images 
 
 ?>
 
 
-
-<style>
-    .dp_none{
-        display:none; 
-    }
-</style>
 
 <?php
 View_Footer::Footer($repere_page_acceuil);

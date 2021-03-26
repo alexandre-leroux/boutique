@@ -60,26 +60,32 @@ public static function navigation_visiteur($repere_page_acceuil)
 
             <div class="search_bar">
                 <div class="border">
-                    <form id="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
+                    <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
                         <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
                         <button  type="submit"><i class="fa fa-search"></i></button>
                         <!-- <input class="fa fa-search" value="" type="submit"> -->
                     </form>
                 </div>
             </div>
-<!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
+
             <div class="burger">
                 <i class="fa fa-align-justify fa-3x"></i>
-                <div class="accueil">
-                    <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
-                    <p>|</p>
-                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_inscription.php' : 'user_inscription.php';?>">INSCRIPTION</a>
-                    <p>|</p>
-                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : 'user_connexion.php';?>">CONNEXION</a>         
-                </div>
+
             </div>
 
         </header>
+
+                <div id="menu_depliant">
+                    <div>
+                        <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
+                    </div>
+                  <div>
+                      <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_inscription.php' : 'user_inscription.php';?>">INSCRIPTION</a>
+                  </div>
+                  <div>
+                      <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_connexion.php' : 'user_connexion.php';?>">CONNEXION</a>         
+                  </div>
+                </div>
 
         <nav class="nav">
 
@@ -131,14 +137,14 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                         </div>
 
                         <div class="search_bar">
-                            <div class="border">
-                            <form action="pages/recherche.php" method="post">
-                                <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
-                                <button  type="submit"><i class="fa fa-search"></i></button>
-                                <!-- <input class="fa fa-search" value="" type="submit"> -->
-                            </form>
+                                <div class="border">
+                                    <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
+                                        <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                                        <button  type="submit"><i class="fa fa-search"></i></button>
+                                        <!-- <input class="fa fa-search" value="" type="submit"> -->
+                                    </form>
+                                </div>
                             </div>
-                        </div>
                         <!-- https://www.w3schools.com/howto/howto_js_mobile_navbar.asp -->
                         <a class="burger" >
                             <i class="fa fa-align-justify fa-3x"></i>
@@ -157,12 +163,12 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
                         <ul class="liste_nav">
                             
-                        <li><a href="<?= ($repere_page_acceuil) ? 'pages/raquettes.php' : 'raquettes.php';?>">Raquettes</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/sacs.php' : 'sacs.php';?>">Sacs</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
-                <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart fa-lg"></i></a><span class="compteur_panier"><?php if(isset($_SESSION['panier'])) { echo count($_SESSION['panier']) ;} ?></span></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/raquettes.php' : 'raquettes.php';?>">Raquettes</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/sacs.php' : 'sacs.php';?>">Sacs</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
+                            <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart fa-lg"></i></a><span class="compteur_panier"><?php if(isset($_SESSION['panier'])) { echo count($_SESSION['panier']) ;} ?></span></li>
 
                         </ul>
 
@@ -205,7 +211,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
             <div class="search_bar">
                 <div class="border">
-                    <form action="pages/recherche.php" method="post">
+                    <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
                         <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
                         <button  type="submit"><i class="fa fa-search"></i></button>
                         <!-- <input class="fa fa-search" value="" type="submit"> -->
@@ -232,10 +238,13 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
 
             <ul class="liste_nav">
                 
-                <li><a href="">Raquettes</a></li>
-                <li><a href="">Sacs</a></li>
-                <li><a href="">Balles</a></li>
-                <li><a href="">Accessoires</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/raquettes.php' : 'raquettes.php';?>">Raquettes</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/sacs.php' : 'sacs.php';?>">Sacs</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/cordages.php' : 'cordages.php';?>">Cordages</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/balles.php' : 'balles.php';?>">Balles</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/accessoires.php' : 'accessoires.php';?>">Accessoires</a></li>
+                <li><a href="<?= ($repere_page_acceuil) ? 'pages/panier.php' : 'panier.php' ;?>"><i class="fa fa-shopping-cart fa-lg"></i></a><span class="compteur_panier"><?php if(isset($_SESSION['panier'])) { echo count($_SESSION['panier']) ;} ?></span></li>
+
 
             </ul>
 

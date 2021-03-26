@@ -215,6 +215,8 @@ public static function user_message_deconnexion()
 
 public static function afficher_resultat_recherche($recherche)
     {
+        if ($recherche != NULL)
+        {
         ?>
 
             <section id="recherche_user">
@@ -224,9 +226,10 @@ public static function afficher_resultat_recherche($recherche)
                 $i = 0;
                 while (@$recherche[$i]) {
                 ?>
-                    <div   >
+                    <div  id="vignette_resultat_recherche" >
                         <a target="_blank" href="article.php?id=<?= $recherche[$i]["id_articles"] ?>&idcat=<?= $recherche[$i]["id_categorie"] ?>&idsouscat=<?= $recherche[$i]["id_sous_cat_acc"];?>">
-                            <h3><?= $recherche[$i]['art_nom'] ?></h2><img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt="">
+                        <img style="height:200px" src="../medias/img_articles/<?= $recherche[$i]['min(chemin)']?>" alt="">
+                            <h3><?= $recherche[$i]['art_nom'] ?></h3>
                         </a>
                     </div>
             
@@ -237,7 +240,17 @@ public static function afficher_resultat_recherche($recherche)
             </section>
 
         <?php
+        }
+        else
+        {?>
+         <section id="recherche_user">
+                 <div id="conteneur_resultat_recherche">
+                     <p>Votre recherche n'a donné aucun résultat</p>
+                 </div>
+            </section>
 
+            <?php
+        }
     }    
 
 

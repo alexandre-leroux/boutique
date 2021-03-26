@@ -14,4 +14,4 @@ View_Admin_Update::affiche_details_et_form_update_user($requete_one_user);
 
 
 
-View_Footer::Footer($repere_page_acceuil);
+View_Footer::Footer(@$repere_page_acceuil);

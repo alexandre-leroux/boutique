@@ -399,5 +399,21 @@ public static function choisir_premiere_image()
 
 }
 
+public static function delete_one_article()
+{
+    $admin = new Model_Admin_Update;
+    if (@$_GET['id'])
+    {
+        var_dump('entre if');
+        $id_article = $_GET['id'];
+        $admin->DeleteOne('images_articles','id_articles',$id_article);
+        $admin->DeleteOne('articles','id_articles',$id_article);
+    }
+
+}
+
+
+
+
             
 }

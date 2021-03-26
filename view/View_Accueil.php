@@ -11,11 +11,11 @@ public static function Affiche_Slider()
         <section class="section_accueil">
             <div id="slider">
             <figure>
-               <a href=""><img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt></a> 
-               <a href=""><img src="medias/img_pub/slide-radical-2021.jpg" alt></a> 
-               <a href=""><img src="medias/img_pub/slide-ultra-100-reverse-17022021_602cf872af47a.jpg" alt></a> 
-               <a href=""><img src="medias/img_pub/slide-radical-2021.jpg" alt></a> 
-               <a href=""><img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt></a> 
+               <a href="pages/article.php?id=16"><img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt></a> 
+               <a href="pages/article.php?id=15"><img src="medias/img_pub/slide-radical-2021.jpg" alt></a> 
+               <a href="pages/article.php?id=17"><img src="medias/img_pub/slide-ultra-100-reverse-17022021_602cf872af47a.jpg" alt></a> 
+               <a href="pages/article.php?id=15"><img src="medias/img_pub/slide-radical-2021.jpg" alt></a> 
+               <a href="pages/article.php?id=16"><img src="medias/img_pub/slide-gravity-2021-03032021.jpg" alt></a> 
             </figure>
             </div>
         </section>
@@ -43,7 +43,7 @@ public static function Affiche_Selection_TennisWorld()
                         <div id="conteneur_lien_promo">
 
                             <div id="affichage_promotion">
-                                <p id="poucentage">-20%</p>
+                                <p id="poucentage">NEW</p>
                                 <p id="stock_restant">Plus que <?=$articles_en_avant[$i]['stock']?> restants</p>
                             </div>
 
@@ -78,8 +78,8 @@ public static function Affiche_pub()
         <section class="section_accueil">
             <div id="affichage_pub">
 
-                <a href=""><img src="medias/img_pub/bloc-home-promo-03032021-2.jpg" alt=""></a>
-                <a href=""><img src="medias/img_pub/bloc-home-nouveautes-03032021_1.jpg" alt=""></a>
+                <a href="pages/article.php?id=18"><img src="medias/img_pub/bloc-home-promo-03032021-2.jpg" alt=""></a>
+                <a href="pages/article.php?id=19"><img src="medias/img_pub/bloc-home-zoom-sur-25032021.jpg" alt=""></a>
 
             </div>
         </section>

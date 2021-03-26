@@ -29,7 +29,7 @@ View_Navigation::affichage_navigation(@$repere_page_acceuil);
     
     $controller->checkImage($result,$admin);
     
-    View_Footer::Footer($repere_page_acceuil);
+    View_Footer::Footer(@$repere_page_acceuil);
 ?>
 
 
