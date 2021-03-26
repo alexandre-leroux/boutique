@@ -112,6 +112,79 @@ class view_Article {
         <?php
     }
 
+    public function TrierParManche($cat)
+    {
+        ?>
+        <p> Taille du Manche <p>
+        <form action="<?= $cat ; ?>.php" method="post">
+            <input type="radio" id="taille_manche_2" name="taille_manche" value="2" checked>
+            <label for="taille_manche_2"> 2 </label>
+
+            <input type="radio" id="taille_manche_3" name="taille_manche" value="3" >
+            <label for="taille_manche_3"> 3 </label>
+
+            <input type="radio" id="taille_manche_4" name="taille_manche" value="4" >
+            <label for="taille_manche_4"> 4 </label>
+
+            <input type="radio" id="taille_manche_5" name="taille_manche" value="5" >
+            <label for="taille_manche_5"> 5 </label>
+
+            <input type="submit" value="Envoyer" name="tri_manche">
+        </form>  
+
+        <?php
+            
+
+    }
+
+    public function TrierParThermo($cat){
+        ?>
+        <p> Thermobag  <p>
+        <form action="<?= $cat ; ?>.php" method="post">
+            <input type="checkbox" id="thermo_3" name="capacite_thermo_3" value="3" checked>
+            <label for="thermo_3"> 3 </label>
+
+            <input type="checkbox" id="thermo_6" name="capacite_thermo_6" value="6" >
+            <label for="thermo_6"> 6 </label>
+
+            <input type="checkbox" id="thermo_9" name="capacite_thermo_9" value="9" >
+            <label for="thermo_9"> 9 </label>
+
+            <input type="checkbox" id="thermo_12" name="capacite_thermo_12" value="12" >
+            <label for="thermo_12"> 12 </label>
+
+            <input type="checkbox" id="thermo_15" name="capacite_thermo_15" value="15" >
+            <label for="thermo_15"> 15 </label>
+
+            <!-- <input type="submit" value="Envoyer" name="tri_thermo"> -->
+            <button name="tri_thermo"> Envoyer </button>
+        </form>  
+            <?php
+
+    }
+
+    public function TrierParCatAcc($result_sous_cat){
+        ?>
+        <!-- <p> Trier par catégories : </p> -->
+        <form action="accessoires.php" method="post">
+            <label for="cat_acc"> Trier par catégories : </label>
+            <select name="cat_acc" id="cat_acc">
+            <option disabled selected="selected">Catégories</option>
+                <?php
+                foreach($result_sous_cat as $value)
+                {
+                    ?>
+                    <option value="<?= $value['id_sous_cat_accessoires']; ?>"> <?= $value['sous_cat_acc_type'] ; ?></option>
+                    <?php
+                }
+                ?>
+            </select>
+
+            <input type="submit" value="Envoyer" name="tri_sous_cat">
+        </form>
+        <?php
+    }
+
     /**
      * Affiche les infos spécifique de l'article sur sa page 
      *

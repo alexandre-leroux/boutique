@@ -96,10 +96,10 @@ class View_User
             </section>
     <?php
     }
-
+    
     public static function form_update_profil($erreur)
-        {
-            ?>
+    {
+        ?>
             <a href="../index.php">RETOUR</a>
             <form action="user_modification_profil.php" method="POST">
 
@@ -157,15 +157,20 @@ class View_User
                     </div>
                     <input type="submit" value="modifier le mot de passe" name="submit_update_mdp">
                 </form>
+                
+                <div class="mescommandes">
+                    <a href="mescommandes.php?id_utilisateurs=<?= $_SESSION['id_utilisateurs'] ; ?> "> Mes commandes </a>
+                </div>
+
 
                 <?=$erreur?>
 
         <?php
 
-        }
+}
 public static function user_message_inscription()
-        {
-            ?>
+{
+    ?>
             <section class="user_connecte">
                 <div >
                     <p>inscription validée</p>
