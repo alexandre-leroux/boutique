@@ -26,6 +26,25 @@ class Controller_Panier {
         }
     }
 
+    public function controlPanier(){
+        if(empty($_SESSION['panier']))
+        {
+            $_SESSION['panier'] = array(); 
+        }
+        if(isset($_GET['del']))
+        {
+            $this->deleteProduct($_GET['del']); 
+        }
+        if(isset($_GET['quantite_plus']))
+        {
+            $this->addQuantite($_GET['quantite_plus']);
+        }
+        if(isset($_GET['quantite_moins']))
+        {
+            $this->reduceQuantite($_GET['quantite_moins']);
+        }
+    }
+
     public function calcPrixTotal($product){
         $prix = 0 ;
         for($i = 0 ; isset($product[$i]) ; $i++ )
@@ -35,6 +54,7 @@ class Controller_Panier {
 
         return $prix; 
     }
+
 
     // public function addCommande($model,$product){
     //     if(isset($_POST['validation_panier']))
