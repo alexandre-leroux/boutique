@@ -71,7 +71,7 @@ class view_Article {
      */
     public function formTrierParCat($result_cat){
         ?>
-        
+        <div style="display: none" >
         <form action="boutique.php" method="post">
             <label for="categories"> Trier par catégories : </label>
             <select name="categories" id="categories">
@@ -87,6 +87,7 @@ class view_Article {
             
             <input type="submit" name="tri_cat" value="Envoyer"> 
         </form>
+        </div>
         <?php
     }
 
@@ -98,7 +99,7 @@ class view_Article {
     public function TrierParPrix($cat)
     {
         ?>
-
+    <div id="trier_par_prix">
         <form action="<?= $cat ; ?>.php" method="post">
             <label for="prix"> Trier par prix : </label>
             <select name="prix" id="prix">
@@ -109,6 +110,7 @@ class view_Article {
             
             <input type="submit" name="tri_prix" value="Envoyer"> 
         </form>
+        </div>
         </section>
         <?php
     }
