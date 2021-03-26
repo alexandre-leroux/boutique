@@ -66,7 +66,7 @@ class Model_Panier extends Model {
         return $result; 
     }
 
-    public function insertCommande($prix){
+    public function insertCommande(array $product){
 
         $commande = $this->checkNumCommande();
         $id_commande = $commande['id_commande'] + 1; 
@@ -74,7 +74,7 @@ class Model_Panier extends Model {
 
         foreach($_SESSION['panier'] as $key => $value)
         {
-            $cout_art = $prix[$i]['prix'] * $value; 
+            // $cout_art = $prix[$i]['prix'] * $value; 
             $requete = $this->bdd->prepare("INSERT INTO commandes (id_commande, id_utilisateurs, id_articles, quantite, prix)
                                                 VALUES (:id_commande, :id_utilisateurs, :id_articles, :quantite , :prix)
             ");
@@ -83,19 +83,22 @@ class Model_Panier extends Model {
             $requete->bindParam(':id_utilisateurs', $_SESSION['id_utilisateurs'] ); 
             $requete->bindParam(':id_articles', $key ); 
             $requete->bindParam(':quantite', $value); 
-            $requete->bindParam(':prix', $cout_art) ;
+            $requete->bindParam(':prix', $product[$i]['prix']) ;
             
             if(isset($_SESSION['id_utilisateurs']))
             {
                 $requete->execute(); 
-                echo '<meta http-equiv="refresh" content="0;URL=../pages/paiement.php"> '; 
             }
             else{
                 echo '<meta http-equiv="refresh" content="0;URL=../pages/user_connexion.php">';
             }
-
+            
             $i++;
         }
+
+        unset($_SESSION['panier']); 
+        echo '<h1 class="redirection_achat">Merci pour votre achat ! Vous allez etre rediriger vers la boutique</h1>';
+        echo '<meta http-equiv="refresh" content="5;URL=../index.php"> '; 
     }
 
     public function findInfosCommande($id){
@@ -113,24 +116,6 @@ class Model_Panier extends Model {
         return $requete->fetchAll(PDO::FETCH_ASSOC); 
     }
 
-    public function recupLastCommande($id){
-        $requete = $this->bdd->prepare("SELECT id_commande,id_utilisateurs,commandes.id_articles,quantite,commandes.prix,art_nom 
-                                            FROM commandes
-                                                INNER JOIN articles
-                                                    ON commandes.id_articles = articles.id_articles 
-                                                        WHERE id_utilisateurs = :id AND id_commande = (SELECT MAX(id_commande) FROM commandes)
-                                                                GROUP BY id_utilisateurs,commandes.id_articles,quantite,commandes.prix,art_nom 
-                                                            -- ORDER BY id_commande DESC
-        ");
 
-        $requete->bindParam(':id', $id);
-
-        $requete->execute(); 
-
-        return $requete->fetchAll(PDO::FETCH_ASSOC); 
-
-    }
-
-    
 
 }

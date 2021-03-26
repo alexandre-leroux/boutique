@@ -45,7 +45,7 @@ class View_Panier {
             <p> Prix total : <?= $prix ; ?> € </p>
         </div>
 
-        <form action="panier.php" method="POST">
+        <form action="paiement.php" method="POST">
             <input type="submit" value="Valider le panier" name="validation_panier">
         </form>
 
@@ -85,7 +85,7 @@ class View_Panier {
     }
 
 
-    function displayPaiement($table)
+    function displayPaiement($table,$prix)
     {
         ?>
         <!DOCTYPE html>
@@ -110,15 +110,15 @@ class View_Panier {
 
                         <div>
                             <h2> Adresse mail </h2>
-                            <p> toto@gmail.com</p>
+                            <p> <?= $_SESSION['uti_mail'] ; ?></p>
                         </div>
 
                         <div>
                             <h2> Adresse de livraison </h2>
-                            <p> rue </p>
-                            <p> Ville </p>
-                            <p> Code postal </p>
-                            <p> Tel </p>
+                            <p> <?= $_SESSION['uti_rue'] ; ?></p>
+                            <p> <?= $_SESSION['uti_ville'] ; ?></p>
+                            <p> <?= $_SESSION['uti_code_postal'] ; ?></p>
+                            <p> <?= $_SESSION['uti_tel'] ; ?></p>
                         </div>
 
                         <div>
@@ -136,22 +136,20 @@ class View_Panier {
                         <h1> Recap de la commande </h1>
                         <a href="panier.php"> Modifier </a>
                         <?php
-                        $prix_total = 0 ; 
-                        foreach($table as $key => $value)
+                        foreach($table as $product)
                         {
                             ?>
                             <div class="recap_produit">
-                                <p> <?= $value['art_nom'] ; ?></p>
-                                <p> Quantité : <?= $value['quantite'] ; ?></p>
-                                <p> <?= $value['prix'] ; ?> € </p>
-                                <?php $prix_total += $value['prix'] ; ?>
+                                <p> <?= $product['art_nom'] ; ?></p>
+                                <p> Quantité : <?= $_SESSION['panier'][$product['id_articles']] ; ?></p>
+                                <p> <?= $product['prix'] ; ?> € </p>
                             </div>
                             <?php
             
                         }
                         ?>
                         <div class="total">
-                            <p> Total à régler <?= $prix_total; ?> € </p>
+                            <p> Total à régler <?= $prix; ?> € </p>
                         </div>
                     </div>
 

@@ -55,6 +55,6 @@ if(isset($_GET['quantite_moins']))
 <?php
 $display->displayInfosPanier($product, @$prix); // Affiche ces infos 
 
-$controller_panier->addCommande($panier,$product); 
+// $controller_panier->addCommande($panier,$product); 
 
 View_Footer::Footer($repere_page_acceuil);
