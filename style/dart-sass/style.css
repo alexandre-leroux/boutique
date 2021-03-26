@@ -50,7 +50,7 @@ body {
   overflow-x: hidden;
 }
 
-#update_one_user_details, #section_principale_all_user, #section_boutton_retour_et_supp #div_boutton_retour_et_supp #lien_retour a, #section_boutton_retour_et_supp #div_boutton_retour_et_supp, #section_boutton_retour_et_supp, #section_modif_image_update_art #conteneur_choix_photo_principale form #div_affichage_images, #section_modif_image_update_art #conteneur_choix_photo_principale form, #section_modif_image_update_art #conteneur_choix_photo_principale, #section_modif_image_update_art, .form_changement_details_art, .donnees_specifique_article div, .donnees_specifique_article, #formulaire_update_general_commun #div_ensemble_formulaire, #formulaire_update_general_commun, #section_donnees_generales_communes div, #section_donnees_generales_communes, #section_centrale_update_article .vignette_affichage_recherche_photo, #section_centrale_update_article #affichage_resultat_recherche_admin, #section_centrale_update_article #affichage_tous_articles_recherche_admin, #section_centrale_update_article, #section_centrale_admin_insert_type_article .div_formulaire_insert_par_type_article, #section_centrale_admin_insert_type_article, #section_centrale_admin_insert, #section_centrale_accueil_admin .lien_update_ou_insert a, #section_centrale_accueil_admin, #articles_similaires #photos_articles_similaires, #articles_similaires h1, #articles_similaires, #conteneur_principal_article #reste_du_cntenu_article #ajouter_au_panier a, #conteneur_principal_article .image_article_en_petite, #conteneur_principal_article #conteneur_image_article #conteneur_image_suivantes_article, #conteneur_principal_article, .galerie_article .vignette_article, .galerie_article, #recherche_user #conteneur_resultat_recherche, #recherche_user, .section_formulaire_inscription .conteneur_form_inscription #validation_connexion, .section_formulaire_inscription .conteneur_form_inscription #validation_inscription, .section_formulaire_inscription .conteneur_form_inscription .form-group, .section_formulaire_inscription, .user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, #menu_depliant div a, header .search_bar .border .form_recherche, header .search_bar .border, header .search_bar, header .accueil, header .logo {
+#section_form_user_modif_profil #lien_mes_commandes a, #section_form_user_modif_profil #div_form_user_modif_profil .form-group, #section_form_user_modif_profil #lien_retour_user a, #section_form_user_modif_profil, #update_one_user_details, #section_principale_all_user, #section_boutton_retour_et_supp #div_boutton_retour_et_supp #lien_retour a, #section_boutton_retour_et_supp #div_boutton_retour_et_supp, #section_boutton_retour_et_supp, #section_modif_image_update_art #conteneur_choix_photo_principale form #div_affichage_images, #section_modif_image_update_art #conteneur_choix_photo_principale form, #section_modif_image_update_art #conteneur_choix_photo_principale, #section_modif_image_update_art, .form_changement_details_art, .donnees_specifique_article div, .donnees_specifique_article, #formulaire_update_general_commun #div_ensemble_formulaire, #formulaire_update_general_commun, #section_donnees_generales_communes div, #section_donnees_generales_communes, #section_centrale_update_article .vignette_affichage_recherche_photo, #section_centrale_update_article #affichage_resultat_recherche_admin, #section_centrale_update_article #affichage_tous_articles_recherche_admin, #section_centrale_update_article, #section_centrale_admin_insert_type_article .div_formulaire_insert_par_type_article, #section_centrale_admin_insert_type_article, #section_centrale_admin_insert, #section_centrale_accueil_admin .lien_update_ou_insert a, #section_centrale_accueil_admin, #articles_similaires #photos_articles_similaires, #articles_similaires h1, #articles_similaires, #conteneur_principal_article #reste_du_cntenu_article #ajouter_au_panier a, #conteneur_principal_article .image_article_en_petite, #conteneur_principal_article #conteneur_image_article #conteneur_image_suivantes_article, #conteneur_principal_article, .galerie_article .vignette_article, .galerie_article, #recherche_user #conteneur_resultat_recherche, #recherche_user, .section_formulaire_inscription .conteneur_form_inscription #validation_connexion, .section_formulaire_inscription .conteneur_form_inscription #validation_inscription, .section_formulaire_inscription .conteneur_form_inscription .form-group, .section_formulaire_inscription, .user_connecte div, .user_connecte, #footer #conteneur_footer #conteneur_footer_infos .footer_infos, #footer #conteneur_footer #conteneur_footer_infos, #footer #conteneur_footer #accueil_newletter, #footer #conteneur_footer #conteneur_logos .logo_et_mini_slogan, #footer #conteneur_footer #conteneur_logos, #footer #conteneur_footer, #footer, .section_accueil #affichage_pub, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #stock_restant, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion #poucentage, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo #affichage_promotion, .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo a, .section_accueil #titre_et_affichage_articles #div_article_avant, .section_accueil #titre_et_affichage_articles, .section_accueil, .nav .liste_nav, .nav, #menu_depliant div a, header .search_bar .border .form_recherche, header .search_bar .border, header .search_bar, header .accueil, header .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -938,6 +938,63 @@ header .panier p {
   align-items: flex-start;
   border: 1px solid grey;
   padding: 10px;
+}
+
+#section_form_user_modif_profil {
+  height: 100vh;
+  flex-direction: column;
+}
+#section_form_user_modif_profil #lien_retour_user {
+  height: 40px;
+  width: 100px;
+  background: linear-gradient(0.1turn, #6BE100, #00BDCC);
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+#section_form_user_modif_profil #lien_retour_user a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: honeydew;
+}
+#section_form_user_modif_profil #div_form_user_modif_profil {
+  width: 40vw;
+  height: 60%;
+  margin-bottom: 20vh;
+}
+#section_form_user_modif_profil #div_form_user_modif_profil .form-group {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+#section_form_user_modif_profil #div_form_user_modif_profil .form-group input {
+  width: 100%;
+  height: 30px;
+}
+#section_form_user_modif_profil #div_form_user_modif_profil .submit_user_profil {
+  background: linear-gradient(0.1turn, #6BE100, #00BDCC);
+  color: white;
+  border: none;
+  height: 30px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+#section_form_user_modif_profil #lien_mes_commandes {
+  height: 40px;
+  background: linear-gradient(0.1turn, #6BE100, #00BDCC);
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+#section_form_user_modif_profil #lien_mes_commandes a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: honeydew;
+}
+#section_form_user_modif_profil .span_erreur_user {
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

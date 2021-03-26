@@ -99,71 +99,80 @@ class View_User
     
     public static function form_update_profil($erreur)
     {
-        ?>
-            <a href="../index.php">RETOUR</a>
-            <form action="user_modification_profil.php" method="POST">
+        ?>  <section id="section_form_user_modif_profil">
 
-                    <div class="form-group">
-                    <label for="nom">Votre nom : </label>
-                        <input type="text" name="nom" value="<?=$_SESSION['uti_nom']?>">
-                    </div>
-
-                    <div class="form-group">
-                    <label for="prenom">Votre prénom : </label>
-                        <input type="text" name="prenom" value="<?=$_SESSION['uti_prenom']?>">
-                    </div>
-
-                    <div class="form-group">
-                    <label for="mail">Votre mail : </label>
-                        <input type="text" name="mail" value="<?=$_SESSION['uti_mail']?>">
-                        <?php if(@$_POST['submit'] AND !empty($erreur)){echo @$erreur;}?>
-                    </div>
-
-                    <div class="form-group">
-                    <label for="tel">Votre numéro de téléphone : </label>
-                        <input type="tel" name="tel" value="<?=$_SESSION['uti_tel']?>">
-                    </div>
-
-                    <div class="form-group">
-                    <label for="rue">Votre adresse : </label>
-                        <input type="text" name="rue" value="<?=$_SESSION['uti_rue']?>">
-                    </div>
-                    
-                    <div class="form-group">
-                    <label for="code_postal">Votre code postal : </label>
-                        <input type="number" name="code_postal" value="<?=$_SESSION['uti_code_postal']?>">
-                    </div>
-
-                    <div class="form-group">
-                    <label for="ville">Votre ville : </label>
-                        <input type="text" name="ville" value="<?=$_SESSION['uti_ville']?>">
-                    </div>
-                        <input type="submit" value="enregistrer les modifications" name="submit">
-                   
-
-                </form>
-
-                <form action="user_modification_profil.php" method="POST">
-                    <div class="form-group">
-                        <label for="mdp"> Modifier le mot de passe : </label>
-                        <input type="password"  id="mdp" name="mdp" >
-                        <?php if(@$_POST['submit_update_mdp'] AND !empty($erreur)){echo @$erreur;}?>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="confirm_mdp">Confirmer le nouveau mot de passe : </label>
-                        <input type="password"  id="confirm_mdp" name="confirm_pass" >
-                    </div>
-                    <input type="submit" value="modifier le mot de passe" name="submit_update_mdp">
-                </form>
-                
-                <div class="mescommandes">
-                    <a href="mescommandes.php?id_utilisateurs=<?= $_SESSION['id_utilisateurs'] ; ?> "> Mes commandes </a>
+                <div id="lien_retour_user">
+                    <a href="../index.php">RETOUR</a>
                 </div>
 
+            <div id="div_form_user_modif_profil">
 
-                <?=$erreur?>
+
+                <form action="user_modification_profil.php" method="POST">
+    
+                        <div class="form-group">
+                        <label for="nom">Votre nom : </label>
+                            <input type="text" name="nom" value="<?=$_SESSION['uti_nom']?>">
+                        </div>
+    
+                        <div class="form-group">
+                        <label for="prenom">Votre prénom : </label>
+                            <input type="text" name="prenom" value="<?=$_SESSION['uti_prenom']?>">
+                        </div>
+    
+                        <div class="form-group">
+                        <label for="mail">Votre mail : </label>
+                            <input type="text" name="mail" value="<?=$_SESSION['uti_mail']?>">
+                            <span class="span_erreur_user"><?php if(@$_POST['submit'] AND !empty($erreur)){echo @$erreur;}?></span>
+                        </div>
+    
+                        <div class="form-group">
+                        <label for="tel">Votre numéro de téléphone : </label>
+                            <input type="tel" name="tel" value="<?=$_SESSION['uti_tel']?>">
+                        </div>
+    
+                        <div class="form-group">
+                        <label for="rue">Votre adresse : </label>
+                            <input type="text" name="rue" value="<?=$_SESSION['uti_rue']?>">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label for="code_postal">Votre code postal : </label>
+                            <input type="number" name="code_postal" value="<?=$_SESSION['uti_code_postal']?>">
+                        </div>
+    
+                        <div class="form-group">
+                        <label for="ville">Votre ville : </label>
+                            <input type="text" name="ville" value="<?=$_SESSION['uti_ville']?>">
+                        </div>
+                            <input  class="submit_user_profil" type="submit" value="enregistrer les modifications" name="submit">
+                       
+    
+                    </form>
+    
+                    <form action="user_modification_profil.php" method="POST">
+                        <div class="form-group">
+                            <label for="mdp"> Modifier le mot de passe : </label>
+                            <input type="password"  id="mdp" name="mdp" >
+                            <span class="span_erreur_user"><?php if(@$_POST['submit_update_mdp'] AND !empty($erreur)){echo @$erreur;}?></span>
+                        </div>
+    
+    
+                        <div class="form-group">
+                            <label for="confirm_mdp">Confirmer le nouveau mot de passe : </label>
+                            <input type="password"  id="confirm_mdp" name="confirm_pass" >
+                        </div>
+                        <input class="submit_user_profil" type="submit" value="modifier le mot de passe" name="submit_update_mdp">
+                    </form>
+                    
+                    <div id="lien_mes_commandes" class="mescommandes">
+                        <a href="mescommandes.php?id_utilisateurs=<?= $_SESSION['id_utilisateurs'] ; ?> "> Mes commandes </a>
+                    </div>
+    
+    
+                   
+            </div>
+            </section>
 
         <?php
 
