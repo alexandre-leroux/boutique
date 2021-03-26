@@ -11,6 +11,7 @@ $repere_page_acceuil = 0;
 
 View_Navigation::affichage_navigation($repere_page_acceuil);
 
+View_Article::Presentation_balles();
 
 $controller_article->catProduits("balles",4,$article,$display);
 

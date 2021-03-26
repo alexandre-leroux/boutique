@@ -10,7 +10,7 @@ $repere_page_acceuil = 0;
 
 View_Navigation::affichage_navigation($repere_page_acceuil);
 
-
+View_Article::Presentation_cordages();
 $controller_article->catProduits("cordages",3,$article,$display);
 
 

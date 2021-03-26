@@ -9,6 +9,7 @@ $controller_article = new Controller_Article();
 $repere_page_acceuil = 0;
 
 View_Navigation::affichage_navigation($repere_page_acceuil);
+View_Article::Presentation_accessoires();
 
 $controller_article->catProduits("accessoires",5,$article,$display);
 

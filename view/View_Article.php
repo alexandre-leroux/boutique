@@ -43,21 +43,22 @@ class view_Article {
      */
     public function formTrierParMarques($result_mar,$cat){
         ?>
-        <form action="<?= $cat ; ?>.php" method="post">
-            <label for="marques"> Trier par marques : </label>
-            <select name="marques" id="marques">
-                <option disabled selected="selected">Marques</option>
-                <?php
-                foreach($result_mar as $value){
+        <section id="section_tri_des_articles_marques_prix">
+            <form action="<?= $cat ; ?>.php" method="post">
+                <label for="marques"> Trier par marques : </label>
+                <select name="marques" id="marques">
+                    <option disabled selected="selected">Marques</option>
+                    <?php
+                    foreach($result_mar as $value){
+                        ?>
+                    <option value="<?= $value['id_marques']; ?>"><?= $value['marques_nom'] ; ?></option>
+                    <?php
+                    }
                     ?>
-                <option value="<?= $value['id_marques']; ?>"><?= $value['marques_nom'] ; ?></option>
-                <?php
-                }
-                ?>
-            </select>
+                </select>
 
-            <input type="submit" name="tri_marque" value="Envoyer"> 
-        </form>
+                <input type="submit" name="tri_marque" value="Envoyer"> 
+            </form>
 
         <?php
     }
@@ -108,13 +109,14 @@ class view_Article {
             
             <input type="submit" name="tri_prix" value="Envoyer"> 
         </form>
-
+        </section>
         <?php
     }
 
     public function TrierParManche($cat)
     {
         ?>
+        <div class=details_par_type_article_filtre>
         <p> Taille du Manche <p>
         <form action="<?= $cat ; ?>.php" method="post">
             <input type="radio" id="taille_manche_2" name="taille_manche" value="2" checked>
@@ -131,7 +133,7 @@ class view_Article {
 
             <input type="submit" value="Envoyer" name="tri_manche">
         </form>  
-
+        </div>
         <?php
             
 
@@ -139,6 +141,7 @@ class view_Article {
 
     public function TrierParThermo($cat){
         ?>
+          <div class=details_par_type_article_filtre>
         <p> Thermobag  <p>
         <form action="<?= $cat ; ?>.php" method="post">
             <input type="checkbox" id="thermo_3" name="capacite_thermo_3" value="3" checked>
@@ -159,6 +162,7 @@ class view_Article {
             <!-- <input type="submit" value="Envoyer" name="tri_thermo"> -->
             <button name="tri_thermo"> Envoyer </button>
         </form>  
+        </div>
             <?php
 
     }
@@ -166,6 +170,7 @@ class view_Article {
     public function TrierParCatAcc($result_sous_cat){
         ?>
         <!-- <p> Trier par catégories : </p> -->
+        <div class=details_par_type_article_filtre>
         <form action="accessoires.php" method="post">
             <label for="cat_acc"> Trier par catégories : </label>
             <select name="cat_acc" id="cat_acc">
@@ -182,6 +187,7 @@ class view_Article {
 
             <input type="submit" value="Envoyer" name="tri_sous_cat">
         </form>
+        </div>
         <?php
     }
 
@@ -304,5 +310,122 @@ class view_Article {
         </section>
         <?php
     }
+
+
+
+
+
+
+public static function Presentation_raquette()
+    {
+        ?>
+            <section class="section_presentation_generale_articles">
+
+                <div class="conteneur_presentation_generale_articles">
+
+                    <img src="../medias/img_articles/raquettes-de-tennis.jpg"  alt="">
+
+                    <div>
+                        <h1>RAQUETTES DE TENNIS</h1>
+                        <p>Retrouvez toutes les raquettes de tennis dans les plus grandes marques chez SPORTSYSTEM : Babolat, Head, Wilson, Dunlop, Prince, Yonex, Tecnifibre, Pro Kennex... Vous pourrez trouver à coup sûr la raquette idéale parmi de nombreux modèles adaptés à votre style et niveau de jeu : puissance, contrôle, polyvalence... </p>
+                    </div>
+                    
+                </div>
+
+            </section>
+        <?php
+
+    }
+
+
+
+public static function Presentation_sacs()
+    {
+        ?>
+            <section class="section_presentation_generale_articles">
+
+                <div class="conteneur_presentation_generale_articles">
+
+                    <img src="../medias/img_articles/sacs-de-tennis.jpg"  alt="">
+
+                    <div>
+                        <h1>SACS DE TENNIS</h1>
+                        <p>Découvrez les sacs de tennis et les thermobags pour ranger vos raquettes et toutes vos affaires de tennis durant les tournois et les entrainements... Une large gamme du grand sac de sport au thermobag large ou moyen en passant par les sacs à dos. Vous trouverez dans la rubrique sacs de tennis, les thermobags pour 3, 6, 9, 12 ou 15 raquettes selon vos besoins avec de nombreuses poches de rangement de tailles diverses et des compartiments avec protection isolante pour vos raquettes... Un grand choix de sacs à dos spécialement conçus pour le tennis avec une poche de rangement dédiée aux raquettes, des compartiment plus grands et plus larges pour les chaussures ou les vêtements et des petites pochettes accessoires.</p>
+                    </div>
+                    
+                </div>
+
+            </section>
+        <?php
+
+    }
+
+public static function Presentation_cordages()
+    {
+        ?>
+            <section class="section_presentation_generale_articles">
+
+                <div class="conteneur_presentation_generale_articles">
+
+                    <img src="../medias/img_articles/cordages-de-tennis.jpg"  alt="">
+
+                    <div>
+                        <h1>CORDAGES DE TENNIS</h1>
+                        <p>Les meilleurs cordages de tennis sont chez SPORTSYSTEM : Babolat, Tecnifibre, Luxilon, West-Gut, Head, Wilson, Signum Pro, Still in Balck... Vous trouverez des cordages monofilament polyester qui apportent de la résistance, du contrôle et du lift mais qui sont peu confortables, aussi les cordages multifilaments plus souples et plus puissants pour un jeu plus dynamique. Vous trouverez également des cordages en boyaux naturels pour plus de puissance et de confort, et des cordages hybrides pour un meilleur compromis...</p>
+                    </div>
+                    
+                </div>
+
+            </section>
+        <?php
+
+    }
+
+public static function Presentation_balles()
+    {
+        ?>
+            <section class="section_presentation_generale_articles">
+
+                <div class="conteneur_presentation_generale_articles">
+
+                    <img src="../medias/img_articles/balles-de-tennis.jpg"  alt="">
+
+                    <div>
+                        <h1>BALLES DE TENNIS</h1>
+                        <p>Toutes les balles de tennis adultes ou juniors : les balles pression haut de gamme pour les tournois et la compétition, les gammes intermédiaires pour les joueurs de club réguliers, les balles enfant avec les balles vertes, oranges, rouges et aussi les balles mousse pour le mini tennis !</p>
+                    </div>
+                    
+                </div>
+
+            </section>
+        <?php
+
+    }
+
+
+public static function Presentation_accessoires()
+    {
+        ?>
+            <section class="section_presentation_generale_articles">
+
+                <div class="conteneur_presentation_generale_articles">
+
+                    <img src="../medias/img_articles/accessoires-tennis.jpg"  alt="">
+
+                    <div>
+                        <h1>ACCESSOIRES POUR LE TENNIS</h1>
+                        <p>Tous les accessoires pour votre raquette de tennis : Surgrip, grip, antivibrateur, coques, joncs de remplacement. toutes les marques sont disponibles : babolat, wilson, head, west gut, yonex, prince. Vous trouverez également une rubrique accessoire du joueur : caquette, poignets éponges, bandeau, bandana, chaussette, semelle disponibles chez sportsystem.fr Nike, Adidas, babolat, head, wilson les plus grandes marques sont ici. En cas de blessures, vous trouverez la solution adapté grâce a un large choix de : chevillères, genouillères, chaussette de maintient, coudière ....</p>
+                    </div>
+                    
+                </div>
+
+            </section>
+        <?php
+
+    }
+
+
+
+
 
 }
