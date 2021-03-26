@@ -99,13 +99,18 @@ class Model_Panier extends Model {
     }
 
     public function findInfosCommande($id){
-        $requete = $this->bdd->prepare("SELECT * FROM commandes WHERE id = :id"); 
+        $requete = $this->bdd->prepare("SELECT id_commande,id_utilisateurs,commandes.id_articles,quantite,commandes.prix,art_nom 
+                                            FROM commandes
+                                                INNER JOIN articles
+                                                    ON commandes.id_articles = articles.id_articles  
+                                                    WHERE id_utilisateurs = :id
+                                                    "); 
 
         $requete->bindParam(':id', $id); 
 
         $requete->execute(); 
 
-        return $requete->fetchAll(); 
+        return $requete->fetchAll(PDO::FETCH_ASSOC); 
     }
 
     
