@@ -802,6 +802,7 @@ width: 100vw;
 
     & .conteneur_presentation_generale_articles{
         @extend %dflex;
+        align-items: flex-start;
         width: 50vw;
         margin-top: 5vh;
         margin-bottom: 5vh;
