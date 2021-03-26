@@ -1,36 +1,20 @@
-<div id="smart-button-container">
-      <div style="text-align: center;">
-        <div id="paypal-button-container"></div>
-      </div>
-    </div>
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
-  <script>
-    function initPayPalButton() {
-      paypal.Buttons({
-        style: {
-          shape: 'pill',
-          color: 'silver',
-          layout: 'vertical',
-          label: 'paypal',
-          
-        },
+<?php
 
-        createOrder: function(data, actions) {
-          return actions.order.create({
-            purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
-          });
-        },
+require_once('../utils/autoload.php');
 
-        onApprove: function(data, actions) {
-          return actions.order.capture().then(function(details) {
-            alert('Transaction completed by ' + details.payer.name.given_name + '!');
-          });
-        },
+$view_paiement = new View_Panier(); 
+$model_paiement = new Model_Panier();
 
-        onError: function(err) {
-          console.log(err);
-        }
-      }).render('#paypal-button-container');
-    }
-    initPayPalButton();
-  </script>
+$repere_page_acceuil = 0;
+
+
+View_Navigation::affichage_navigation(@$repere_page_acceuil);
+
+$result = $model_paiement->recupLastCommande($_SESSION['id_utilisateurs']); 
+var_dump($result); 
+
+$view_paiement->displayPaiement($result);
+
+
+
+View_Footer::Footer($repere_page_acceuil);

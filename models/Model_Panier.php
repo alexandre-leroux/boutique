@@ -88,7 +88,7 @@ class Model_Panier extends Model {
             if(isset($_SESSION['id_utilisateurs']))
             {
                 $requete->execute(); 
-                echo 'commande effectué '; 
+                echo '<meta http-equiv="refresh" content="0;URL=../pages/paiement.php"> '; 
             }
             else{
                 echo '<meta http-equiv="refresh" content="0;URL=../pages/user_connexion.php">';
@@ -111,6 +111,24 @@ class Model_Panier extends Model {
         $requete->execute(); 
 
         return $requete->fetchAll(PDO::FETCH_ASSOC); 
+    }
+
+    public function recupLastCommande($id){
+        $requete = $this->bdd->prepare("SELECT id_commande,id_utilisateurs,commandes.id_articles,quantite,commandes.prix,art_nom 
+                                            FROM commandes
+                                                INNER JOIN articles
+                                                    ON commandes.id_articles = articles.id_articles 
+                                                        WHERE id_utilisateurs = :id AND id_commande = (SELECT MAX(id_commande) FROM commandes)
+                                                                GROUP BY id_utilisateurs,commandes.id_articles,quantite,commandes.prix,art_nom 
+                                                            -- ORDER BY id_commande DESC
+        ");
+
+        $requete->bindParam(':id', $id);
+
+        $requete->execute(); 
+
+        return $requete->fetchAll(PDO::FETCH_ASSOC); 
+
     }
 
     

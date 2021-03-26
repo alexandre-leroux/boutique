@@ -83,4 +83,85 @@ class View_Panier {
             
         }
     }
+
+
+    function displayPaiement($table)
+    {
+        ?>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+            <title>Paiement</title>
+        </head>
+        <body>
+
+            <main>
+                <section id="paiement">
+
+                    <div id="recap_paiement">
+
+                        <div>
+                            <h1> Paiement </h1>
+                        </div>
+
+                        <div>
+                            <h2> Adresse mail </h2>
+                            <p> toto@gmail.com</p>
+                        </div>
+
+                        <div>
+                            <h2> Adresse de livraison </h2>
+                            <p> rue </p>
+                            <p> Ville </p>
+                            <p> Code postal </p>
+                            <p> Tel </p>
+                        </div>
+
+                        <div>
+                            <h2> Type de paiement </h2>
+
+                            <div id="smart-button-container">
+                                <div style="text-align: center;">
+                                    <div id="paypal-button-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="recap_commande">
+                        <h1> Recap de la commande </h1>
+                        <a href="panier.php"> Modifier </a>
+                        <?php
+                        $prix_total = 0 ; 
+                        foreach($table as $key => $value)
+                        {
+                            ?>
+                            <div class="recap_produit">
+                                <p> <?= $value['art_nom'] ; ?></p>
+                                <p> Quantité : <?= $value['quantite'] ; ?></p>
+                                <p> <?= $value['prix'] ; ?> € </p>
+                                <?php $prix_total += $value['prix'] ; ?>
+                            </div>
+                            <?php
+            
+                        }
+                        ?>
+                        <div class="total">
+                            <p> Total à régler <?= $prix_total; ?> € </p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+            
+            <script src="../script/script_paypal.js"></script>
+        </body>
+        </html>
+        <?php
+    }
 }
