@@ -87,39 +87,39 @@ class Controller_Admin_Insert {
             {
                 $admin->insert(NULL,NULL,NULL,$_POST['raq_poids'],$_POST['raq_tamis'],$_POST['raq_taille_manche'],$_POST['raq_equilibre'],NULL,NULL,NULL,NULL);
                 //$admin->insertTest();
-                echo 'ajout' ;
-                session_unset();
+                // echo 'ajout' ;
+                // session_unset();
             }
             elseif($_SESSION['cat'] == "sacs")
             {
                 $admin->insert(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$_POST['choix_thermo'],NULL,NULL);
-                echo 'ajout' ;
-                session_unset();
+                // echo 'ajout' ;
+                // session_unset();
             }
             elseif($_SESSION['cat'] == "cordage")
             {
                 $admin->insert(NULL,NULL,NULL,NULL,NULL,NULL,NULL,$_POST['cor_jauge'],NULL,NULL,NULL);
-                echo 'ajout' ;
-                session_unset();
+                // echo 'ajout' ;
+                // session_unset();
             }
             elseif($_SESSION['cat'] == "balles")
             {
                 $admin->insert(NULL,$_POST['balle_type'],$_POST['balle_conditionnement'],NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-                echo 'ajout' ;
-                session_unset();
+                // echo 'ajout' ;
+                // session_unset();
             }
             elseif($_SESSION['cat'] == "accessoires")
             {
                 if($_POST['id_sous_cat_acc'] == 1)
                 {
                     $admin->insert(1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,$_POST['grip_eppaisseur'],$_POST['grip_couleur']);
-                    echo 'ajout' ;
-                    session_unset();
+                    // echo 'ajout' ;
+                    // session_unset();
                 }
                 else{
                     $admin->insert(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
-                    echo 'ajout' ;
-                    session_unset();
+                    // echo 'ajout' ;
+                    // session_unset();
                 }
             }
 
