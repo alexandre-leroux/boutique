@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 26 mars 2021 à 08:39
+-- Généré le : sam. 27 mars 2021 à 22:30
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -67,7 +67,10 @@ INSERT INTO `articles` (`id_articles`, `id_categorie`, `id_marques`, `id_sous_ca
 (16, 1, 3, NULL, NULL, NULL, 'HEAD GRAVITY PRO', 'La nouvelle gamme de raquette de tennis Head Gravity a été conçue pour assurer aux joueurs de bon niveau Contrôle et tolérance avec une zone de centrage adaptée !', 'La nouvelle gamme de raquettes Head Gravity permet de gagner en précision tout en augmentant la surface de frappe de manière assez considérable !\r\n\r\nLa Head Gravity Pro est une raquette à part dans la gamme car elle possède des caractéristiques techniques assez extrêmes pour procurer un maximum de contrôle et de sensations de jeu aux très bons joueurs de compétition...\r\n\r\nElle est dotée des 3 grandes nouveautés de la gammes Gravity :\r\n\r\n- Un tamis d\'une nouvelle forme pour favoriser un meilleur centrage sur chaque frappe et garantir de meilleurs résultats\r\n\r\n- Le nouveau matériau Graphene 360+ intégré au coeur avec ses fibres Spiralfibers pour une meilleure restitution d\'énergie\r\n\r\n- La nouvelle construction du cadre assure un toucher plus souple et impact plus doux.\r\n', 0, 15, 134.95, '2021-03-25 15:57:15', 315, 645, 3, 315, NULL, NULL, NULL, NULL),
 (17, 1, 2, NULL, NULL, NULL, 'WILSON ULTRA 100 REVERSE', 'La nouvelle raquette de tennis Wilson Ultra 100 en version Customisée Reverse 100 !', 'Voici la nouvelle raquette Wilson Ultra 100 Reverse ! Le même modèle que la Ultra 100 avec ses couleurs inversées...\r\n\r\nLa raquette de tennis Wilson Ultra version 2020 est la 3ème génération de cette gamme. Elle apportera essentiellement plus de puissance que la version précédente grâce notamment à son profil spécial Power Profil et à ses joncs Crush Zone...\r\n\r\nLa Wilson Ultra 100 est la lus lourde de la gamme Ultra 100 avec 300 grammes et procurera une très bonne puissance pour tous les joueurs confirmés de club ou de tournois de bon niveau qui sont à la recherche de plus de puissance.\r\n\r\nSa nouvelle géométrie inversée Power Rib et son PWS intégré assurent au cadre une meilleure stabilité à l\'impact et une bonne zone de centrage pour procurer plus de confort et de précision à chaque coup. L\'intérieur du cadre Sweetspot Channel, creusé à 3h et 9h apporte plus de longueur de corde au travers pour un surcroît de puissance. \r\n\r\nUn super look finition brillante avec 3 couleurs principales à la manière des Wilson Blade et des Wilson Clash avec du bleu, du gris et du noir...\r\n\r\nUne gamme de raquette largement utilisée sur le circuit par Gael Monfils, Kei Nishikori et Borna Coric...', 0, 12, 197.95, '2021-03-25 16:01:19', 300, 645, 3, 320, NULL, NULL, NULL, NULL),
 (18, 1, 4, NULL, NULL, NULL, 'O3 TOUR 100 PRINCE ', 'La nouvelle raquette de tennis Prince O3 Tour 100 reprend l\'ADN des raquettes de la série Tour en ajoutant la technologie Prince O3 pour plus de confort et de performance à chaque frappe...', 'La nouvelle raquette de tennis Prince O3 Tour 100, ici en 310 grammes, est dotée des technologies TeXtreme et O3 exclusives Prince qui permettent de procurer une meilleure stabilité de la raquette à chaque impact pour assurer plus de contrôle, de précision et de confort à la frappe, et d\'amplifier le rôle du cordage en se déformant un peu plus à chaque frappe pour une performance décuplée.\r\n\r\nCe modèle 03 Tour 100 est déclinée en 2 poids (290 et 310 grammes) pour pouvoir être jouer à tous les niveaux, club ou compétition. A vous de choisir votre version !\r\n\r\nElle possède un moyen tamis 100 in2 (645 cm2) mais avec une section un peu plus fine que le reste de la gamme pour une meilleure précision... \r\n\r\nElle est plutôt destinée aux joueurs de bon niveau (tournois) qui recherchent à la fois du toucher de balle, de la précision mais aussi avec un impact assez sec pour une frappe plus puissante.', 0, 12, 99.95, '2021-03-25 16:30:20', 310, 645, 4, 310, NULL, NULL, NULL, NULL),
-(19, 2, 3, NULL, NULL, NULL, 'SAC TENNIS GRAVITY 2021 SPORT BAG R-PET', 'Le 1er sac de tennis conçu à partir de plastique recyclé ! Le sac de tennis Head Sport Bag Gravity R-PET reprend le look des raquettes Head Gravity 2021 et permet de ranger son matériel de façon bien ordonnée grâce à sa taille compacte !', 'Le sac de tennis Head Gravity Sport Bag R-PET a été conçu en partenariat avec Alexander Zverev à partir de bouteilles en plastique PET recyclées ! Il est totalement inspiré de la gamme des raquettes Head Gravity 2021 et de ses couleurs tranchantes ! Il est de taille compacte pour une utilisation régulière.\r\n\r\nIl est doté de parois ajustables et escamotables pour composer la forme et la tailles de l\'intérieur de votre sac. Si vous préférez ranger toutes vos affaires dans un grand compartiment ou les séparer avec plus de précautions, vous avez le choix grâce à ses parois à velcro. Il dispose également d’un compartiment spécial et ventilé pour les chaussures ou le linge humide, ainsi que de multiples poches internes et externes pour vos accessoires.\r\n\r\nIl peut se porter en sac à dos ou à l\'épaule grâce à ses 2 bandoulières réglables et confortables.\r\n \r\nVolume : 67 litres\r\nDimensions (cm.) : L71 x H30,5 x P42', 0, 34, 107.95, '2021-03-25 16:42:47', NULL, NULL, NULL, NULL, NULL, 12, NULL, NULL);
+(19, 2, 3, NULL, NULL, NULL, 'SAC TENNIS GRAVITY 2021 SPORT BAG R-PET', 'Le 1er sac de tennis conçu à partir de plastique recyclé ! Le sac de tennis Head Sport Bag Gravity R-PET reprend le look des raquettes Head Gravity 2021 et permet de ranger son matériel de façon bien ordonnée grâce à sa taille compacte !', 'Le sac de tennis Head Gravity Sport Bag R-PET a été conçu en partenariat avec Alexander Zverev à partir de bouteilles en plastique PET recyclées ! Il est totalement inspiré de la gamme des raquettes Head Gravity 2021 et de ses couleurs tranchantes ! Il est de taille compacte pour une utilisation régulière.\r\n\r\nIl est doté de parois ajustables et escamotables pour composer la forme et la tailles de l\'intérieur de votre sac. Si vous préférez ranger toutes vos affaires dans un grand compartiment ou les séparer avec plus de précautions, vous avez le choix grâce à ses parois à velcro. Il dispose également d’un compartiment spécial et ventilé pour les chaussures ou le linge humide, ainsi que de multiples poches internes et externes pour vos accessoires.\r\n\r\nIl peut se porter en sac à dos ou à l\'épaule grâce à ses 2 bandoulières réglables et confortables.\r\n \r\nVolume : 67 litres\r\nDimensions (cm.) : L71 x H30,5 x P42', 0, 34, 107.95, '2021-03-25 16:42:47', NULL, NULL, NULL, NULL, NULL, 12, NULL, NULL),
+(20, 1, 1, NULL, NULL, NULL, 'PURE DRIVE VS', 'La raquette de tennis Babolat VS est le fruit d\'une nouvelle conception créée pour les compétiteurs exigeants. Envie d\'une Pure Drive qui donne un peu plus de contrôle ? Cette raquette est faite pour vous !', 'Un nouvelle raquette dans la gamme Babolat Pure Drive : la Pure Drive VS !\r\n\r\nElle offre les avantages de la Pure Drive, puissance et polyvalence, avec plus de contrôle et de sensation à la frappe. \r\n\r\nCette raquette est destinée aux bons joueurs exigeants qui recherchent un bon compromis de puissance et de précision.\r\n\r\nLes grandes différences entre la Pure Drive VS et la Pure Drive sont la taille de tamis (plus petit sur le VS : 630 cm2 au lieu de 645 cm2) et le profil (plus fin sur la VS avec 23 mm. au lieu de 26 mm.)\r\n\r\nUne magnifique raquette Babolat avec une finition brillante grise et bleue métallisée !', 0, 54, 233.95, '2021-03-27 22:18:17', 300, 630, 4, 320, NULL, NULL, NULL, NULL),
+(21, 1, 6, NULL, NULL, NULL, 'DUNLOP SX300 TOUR', 'La nouvelle gamme de raquettes de tennis Dunlop SX a été créée pour assurer aux joueurs plus de rotation de balle avec une excellente maîtrise ! La Dunlop SX 300 est la plus lourde de la gamme SX avec son poids à 310 grammes...', 'Cette gamme de raquettes de tennis Dunlop SX ré-invente les bases et redéfinis le compromis ! Ces raquettes assurent une excellente polyvalence de jeu avec de la puissance, de la prise d\'effets et de la maîtrise.\r\n\r\nEn effet, les caractéristiques des raquettes Dunlop SX favorisent la puissance avec un très bon contrôle de balle grâce à la technologie Spin Boost !\r\n\r\nLa raquette Dunlop SX300 Tour est la plus lourde de la gamme pour assurer aux bons joueurs de compétition du poids dans le balle et plus de puissance... Elle procurera également un très bon confort de jeu grâce à un indice de flexibilité assez bas.\r\n\r\nElle possède également les technologies Sonic Core et BASF pour un meilleur retour d\'énergie avec moins de vibrations, et Power Grid pour une zone de centrage agrandie.', 0, 26, 197.95, '2021-03-27 22:22:03', 310, 645, 2, 324, NULL, NULL, NULL, NULL),
+(22, 1, 7, NULL, NULL, NULL, 'VCORE SI LITE', 'La Raquette Yonex Vcore Si Lite est une raquette légère et très performante pur tous les styles de jeu...', 'La raquette de tennis Yonex V-core Si Lite est la plus légère de la gamme utilisée par les champions et championnes sur les circuits Pro.... \r\n\r\nCette raquette offre de la prise d\'effet et du contrôle malgré son tamis de 645cm². Elle est vraiment destinée pour les joueurs et joueuses agressifs cherchant à déborder leur adversaire en quelques coups de raquette.\r\n\r\nElle s\'avère également être très maniable et dispose d\'une bonne stabilité utile pour bien servir et claquer vos volées au filet.\r\n\r\n', 0, 12, 5, '2021-03-27 22:25:00', 270, 645, 4, 330, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -147,6 +150,17 @@ CREATE TABLE `commandes` (
   `prix` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `commandes`
+--
+
+INSERT INTO `commandes` (`id`, `id_commande`, `id_utilisateurs`, `id_articles`, `quantite`, `prix`) VALUES
+(1, 1, 11, 12, 1, 7),
+(2, 1, 11, 17, 1, 197.95),
+(3, 2, 11, 12, 1, 7),
+(4, 2, 11, 17, 1, 197.95),
+(5, 3, 12, 9, 2, 519.9);
+
 -- --------------------------------------------------------
 
 --
@@ -164,10 +178,10 @@ CREATE TABLE `images_articles` (
 --
 
 INSERT INTO `images_articles` (`id`, `id_articles`, `chemin`) VALUES
-(231, 9, '9-0.jpg'),
+(231, 9, '9-3.jpg'),
 (232, 9, '9-2.jpg'),
 (233, 9, '9-1.jpg'),
-(234, 9, '9-3.jpg'),
+(234, 9, '9-0.jpg'),
 (235, 10, '10-0.jpg'),
 (236, 10, '10-1.jpg'),
 (237, 10, '10-2.jpg'),
@@ -184,9 +198,9 @@ INSERT INTO `images_articles` (`id`, `id_articles`, `chemin`) VALUES
 (248, 14, '14-1.jpg'),
 (249, 14, '14-2.jpg'),
 (250, 14, '14-0.jpg'),
-(251, 15, '15-0.jpg'),
+(251, 15, '15-2.jpg'),
 (252, 15, '15-1.jpg'),
-(253, 15, '15-2.jpg'),
+(253, 15, '15-0.jpg'),
 (254, 16, '16-0.jpg'),
 (255, 16, '16-1.jpg'),
 (256, 16, '16-2.jpg'),
@@ -195,14 +209,25 @@ INSERT INTO `images_articles` (`id`, `id_articles`, `chemin`) VALUES
 (259, 17, '17-1.jpg'),
 (260, 17, '17-2.jpg'),
 (261, 17, '17-3.jpg'),
-(262, 18, '18-0.jpg'),
+(262, 18, '18-3.jpg'),
 (263, 18, '18-1.jpg'),
 (264, 18, '18-2.jpg'),
-(265, 18, '18-3.jpg'),
+(265, 18, '18-0.jpg'),
 (266, 19, '19-0.jpg'),
 (267, 19, '19-1.jpg'),
 (268, 19, '19-2.jpg'),
-(269, 19, '19-3.jpg');
+(269, 19, '19-3.jpg'),
+(270, 20, '20-3.jpg'),
+(271, 20, '20-1.jpg'),
+(272, 20, '20-2.jpg'),
+(273, 20, '20-0.jpg'),
+(278, 21, '21-3.jpg'),
+(279, 21, '21-1.jpg'),
+(280, 21, '21-2.jpg'),
+(281, 21, '21-0.jpg'),
+(282, 22, '22-2.jpg'),
+(283, 22, '22-1.jpg'),
+(284, 22, '22-0.jpg');
 
 -- --------------------------------------------------------
 
@@ -357,7 +382,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `balle_conditionnement`
@@ -381,13 +406,13 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `commandes`
 --
 ALTER TABLE `commandes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `images_articles`
 --
 ALTER TABLE `images_articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=285;
 
 --
 -- AUTO_INCREMENT pour la table `marques`
