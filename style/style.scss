@@ -1460,3 +1460,35 @@ min-height: 100vh;
         color: red;
     }
 }
+
+
+// ------------------------------------------------page addpanier
+.section_add_panier{
+
+    height: 100vh;
+    width: 100%;
+    @extend %dflex;
+    flex-direction: column;
+
+    // background-color: #00BDCC;
+
+    & h1{
+        font-size: 2rem;
+    }
+    & div{
+        height: 40px;
+        width: 200px;
+        background-color: #00BED5;
+        margin-top: 10px;
+
+        & a{
+            height: 100%;
+            width: 100%;
+            @extend %dflex;
+            text-decoration: none;
+            background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+            color: white;
+
+        }
+    }
+}
