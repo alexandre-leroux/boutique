@@ -387,6 +387,7 @@ header .panier p {
 #footer {
   flex-direction: column;
   flex-direction: column;
+  margin-top: 20vh;
 }
 #footer > img {
   width: 100%;
