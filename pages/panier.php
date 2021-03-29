@@ -15,7 +15,6 @@ View_Navigation::affichage_navigation($repere_page_acceuil);
 $panier->checkNumCommande();
 
 
-
 $id_produit_panier = array_keys($_SESSION['panier']) ; // renvoie un tableau qui recup tous les id_articles de la session 
 if(empty($id_produit_panier))
 {
@@ -31,22 +30,8 @@ else{
     $prix = $controller_panier->calcPrixTotal($product);
 }
 
-if(empty($_SESSION['panier']))
-{
-    $_SESSION['panier'] = array(); 
-}
-if(isset($_GET['del']))
-{
-    $controller_panier->deleteProduct($_GET['del']); 
-}
-if(isset($_GET['quantite_plus']))
-{
-    $controller_panier->addQuantite($_GET['quantite_plus']);
-}
-if(isset($_GET['quantite_moins']))
-{
-    $controller_panier->reduceQuantite($_GET['quantite_moins']);
-}
+$controller_panier->controlPanier();
+
 ?>
 
 <html>
@@ -55,6 +40,6 @@ if(isset($_GET['quantite_moins']))
 <?php
 $display->displayInfosPanier($product, @$prix); // Affiche ces infos 
 
-$controller_panier->addCommande($panier,$product); 
+// $controller_panier->addCommande($panier,$product); 
 
 View_Footer::Footer($repere_page_acceuil);

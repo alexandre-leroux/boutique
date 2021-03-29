@@ -8,6 +8,7 @@ $controller_article = new controller_Article();
 $repere_page_acceuil = 0;
 
 
+
 View_Navigation::affichage_navigation(@$repere_page_acceuil);
 View_Article::Presentation_raquette();
 $controller_article->catProduits("raquettes",1,$article,$display);

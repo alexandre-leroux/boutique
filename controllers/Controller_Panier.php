@@ -5,12 +5,12 @@ class Controller_Panier {
 
     public function deleteProduct($id){
         unset($_SESSION['panier'][$id]) ;
-        header('Location: panier.php');
+        echo '<meta http-equiv="refresh" content="0;URL=panier.php">';
     }
 
     public function addQuantite($id){
         $_SESSION['panier'][$id]++ ;
-        header('Location: panier.php');
+        echo '<meta http-equiv="refresh" content="0;URL=panier.php">';
     }
 
     public function reduceQuantite($id){
@@ -18,11 +18,30 @@ class Controller_Panier {
         if($_SESSION['panier'][$id] == 0)
         {
             $_SESSION['panier'][$id] = 1; 
-            header('Location: panier.php');
+            echo '<meta http-equiv="refresh" content="0;URL=panier.php">';
 
         }
         else{
-            header('Location: panier.php');
+            echo '<meta http-equiv="refresh" content="0;URL=panier.php">';
+        }
+    }
+
+    public function controlPanier(){
+        if(empty($_SESSION['panier']))
+        {
+            $_SESSION['panier'] = array(); 
+        }
+        if(isset($_GET['del']))
+        {
+            $this->deleteProduct($_GET['del']); 
+        }
+        if(isset($_GET['quantite_plus']))
+        {
+            $this->addQuantite($_GET['quantite_plus']);
+        }
+        if(isset($_GET['quantite_moins']))
+        {
+            $this->reduceQuantite($_GET['quantite_moins']);
         }
     }
 
@@ -36,12 +55,13 @@ class Controller_Panier {
         return $prix; 
     }
 
-    public function addCommande($model,$product){
-        if(isset($_POST['validation_panier']))
-        {
-            $model->insertCommande($product);
-        }
-    }
+
+    // public function addCommande($model,$product){
+    //     if(isset($_POST['validation_panier']))
+    //     {
+    //         $model->insertCommande($product);
+    //     }
+    // }
 
     // public function recupIdProduits(){
     //     foreach($_SESSION['panier'] as $key => $value)
