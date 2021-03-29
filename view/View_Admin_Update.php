@@ -251,10 +251,12 @@ public static function formulaire_general_commun($donnees, $req_categorie, $req_
                                 </br>
 
                                 <input type="submit" value="CHOISIR COMME PHOTO PRINCIPALE"  name="photo_principale">
+                             
                                 <?=$erreur_choix_premiere_image?>
-        
-
-                                </form>
+                                
+                                
+                            </form>
+                            <div id="rafraichir_page_photo"><a href="rafraichir_page_photos.php?id=<?=$_GET['id']?>">rafraichir la page</a></div>
                             </div>
                             <div id="form_ajouter_nouvelles_images">
                                 <form action="admin_update_one_article.php?id=<?= $_GET['id'] ?>&idcat=<?= $_GET['idcat'] ?>&idsouscat=<?= $_GET['idsouscat'] ?>" method="post" enctype="multipart/form-data">
