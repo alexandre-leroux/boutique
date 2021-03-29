@@ -11,8 +11,8 @@ $repere_page_acceuil = 0;
 
 View_Navigation::affichage_navigation(@$repere_page_acceuil);
 
-var_dump($_SESSION['panier']); 
-// $result = $model_paiement->recupLastCommande($_SESSION['id_utilisateurs']); 
+$controller_panier->testSession($_SESSION['id_utilisateurs']); 
+
 $id_produit_panier = array_keys($_SESSION['panier']) ; // renvoie un tableau qui recup tous les id_articles de la session 
 
 $implode = implode(",", $id_produit_panier);
@@ -20,9 +20,6 @@ $implode = implode(",", $id_produit_panier);
 $product = $model_paiement->findInfosArticlePanier($implode); // renvoie un tableau avec toutes les infos des articles dans le panier 
 
 $prix = $controller_panier->calcPrixTotal($product);
-
-var_dump($product); 
-var_dump($prix); 
 
 $view_paiement->displayPaiement($product,$prix);
 

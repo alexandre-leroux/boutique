@@ -19,7 +19,7 @@ $id_produit_panier = array_keys($_SESSION['panier']) ; // renvoie un tableau qui
 if(empty($id_produit_panier))
 {
     $product = array(); 
-    echo 'Le panier est vide ! <a href="../index.php"> Revenir à la boutique </a>' ;
+    echo '<p class="panier_vide"> Le panier est vide ! <a href="../index.php"> Revenir à la boutique </a></p>' ;
 }
 else{
     
@@ -38,7 +38,7 @@ $controller_panier->controlPanier();
     <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
 </html>
 <?php
-$display->displayInfosPanier($product, @$prix); // Affiche ces infos 
+$display->displayInfosPanier($product, @$prix,$id_produit_panier); // Affiche ces infos 
 
 // $controller_panier->addCommande($panier,$product); 
 
