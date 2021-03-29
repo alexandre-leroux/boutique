@@ -1148,5 +1148,14 @@ input[name=validation_panier] {
   margin: 10px auto;
   padding: 20px;
 }
+#paiement #recap_commande a {
+  color: #6BE100;
+  text-decoration: none;
+}
+
+#recap_commande {
+  position: sticky;
+  top: 0;
+}
 
 /*# sourceMappingURL=style.css.map */
