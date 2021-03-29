@@ -1510,3 +1510,95 @@ min-height: 100vh;
         }
     }
 }
+
+// ----------------------------------------------------- page panier 
+
+.contenu_panier {
+    @extend %dflex;
+    border: solid black 1px;
+    //background-color: rgb(212, 212, 171);
+
+    & div {
+        padding: 10px; 
+        width: 13%; 
+        display: flex;
+        justify-content: center;
+    }
+
+    & a {
+        color: black;
+    }
+
+    & .panier_img  {
+        & img{
+            width: 100% ;
+        }
+    }
+
+}
+
+.panier_quantite {
+    @extend %dflex; 
+
+    & a{
+        display: block; 
+        padding: 5px;
+    }
+
+    & p {
+        padding: 10px;
+    } 
+}
+
+input[name="validation_panier"]{
+    background: linear-gradient(0.10turn, #6BE100, #00BDCC);
+    outline: none;
+    border: none;
+    font-size: 1vw;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    margin-left: 10px; 
+}
+
+.panier_total {
+    margin: 10px 10px;
+
+    & p{
+        font-weight: 600;
+        font-size: 1.5vw; 
+    }
+}
+
+// --------------------------------------------------------- style page paiement 
+
+#paiement{
+    display: flex;
+
+    & > div{
+        width: 50%; 
+        background-color: rgb(241, 239, 239);
+        padding: 5px;
+    }
+
+    h1 {
+        font-weight: 600;
+        font-size: 1.7vw;
+        text-transform: uppercase; 
+    }
+
+    & #recap_paiement > div {
+        background-color: rgb(255, 255, 255);
+        width: 70%; 
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    & #recap_commande > div {
+        background-color: rgb(255, 255, 255);
+        width: 70%; 
+        margin: 10px auto;
+        padding: 20px;
+    }
+}

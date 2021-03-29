@@ -2,7 +2,7 @@
 
 class View_Panier {
 
-    function displayInfosPanier($tableau_produits,$prix)
+    function displayInfosPanier($tableau_produits,$prix,$id_produit_panier)
     {
         foreach($tableau_produits as $product)
         {
@@ -21,7 +21,7 @@ class View_Panier {
                         <p> <?= $product['prix'] ; ?> € </p>
                     </div>
 
-                    <div class="panier_quantité">
+                    <div class="panier_quantite">
                         <p> <?= $_SESSION['panier'][$product['id_articles']] ;?> </p>
                         <a href="panier.php?quantite_plus=<?= $product['id_articles'] ; ?>"><i class="fa fa-plus"></i></a>
                         <a href="panier.php?quantite_moins=<?= $product['id_articles'] ; ?>"><i class="fa fa-minus"></i></a>
@@ -40,16 +40,19 @@ class View_Panier {
             <?php
             
         }
-        ?>
-        <div class="panier_total">
-            <p> Prix total : <?= $prix ; ?> € </p>
-        </div>
+        if(!empty($id_produit_panier))
+        {
+            ?>
+            <div class="panier_total">
+                <p> Prix total : <?= $prix ; ?> € </p>
+            </div>
 
-        <form action="paiement.php" method="POST">
-            <input type="submit" value="Valider le panier" name="validation_panier">
-        </form>
+            <form action="paiement.php" method="POST">
+                <input type="submit" value="Valider le panier" name="validation_panier">
+            </form>
+            <?php
+        }
 
-        <?php
     }
 
     function displayInfosCommande($tableau_commande)
@@ -133,8 +136,10 @@ class View_Panier {
                     </div>
 
                     <div id="recap_commande">
-                        <h1> Recap de la commande </h1>
-                        <a href="panier.php"> Modifier </a>
+                        <div>
+                            <h1> Recap de la commande </h1>
+                            <a href="panier.php"> Modifier </a>
+                        </div>
                         <?php
                         foreach($table as $product)
                         {

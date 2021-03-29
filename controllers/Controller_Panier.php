@@ -4,7 +4,7 @@ require_once("../models/Model_Panier.php");
 class Controller_Panier {
 
     public function deleteProduct($id){
-        unset($_SESSION['panier'][$id]) ;
+        unset($_SESSION['panier'][@$id]) ;
         echo '<meta http-equiv="refresh" content="0;URL=panier.php">';
     }
 
@@ -53,6 +53,15 @@ class Controller_Panier {
         } 
 
         return $prix; 
+    }
+
+    public function testSession()
+    {
+        if(!isset($_SESSION['id_utilisateurs']))
+        {
+            // echo '<meta http-equiv="refresh" content="0s;URL=user_connexion.php">';
+            header("Location: user_connexion.php");
+        }
     }
 
 
