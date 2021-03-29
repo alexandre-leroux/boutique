@@ -1001,7 +1001,6 @@ header .panier p {
 }
 
 #section_form_user_modif_profil {
-  height: 100vh;
   flex-direction: column;
 }
 #section_form_user_modif_profil #lien_retour_user {
