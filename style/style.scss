@@ -249,11 +249,6 @@ header{
 
     }
 
-
-
-
-
-
 }
 
 // -----------------------page d'accueil index.php
@@ -636,6 +631,12 @@ z-index: 10;
 // margin-top: -100px;
 margin-bottom: -180px;
       
+}
+
+@media#{$light-down}{
+    #footer{
+        
+    }
 }
 
 // ----------------------------------fin footer
@@ -1580,6 +1581,7 @@ input[name="validation_panier"]{
         width: 50%; 
         background-color: rgb(241, 239, 239);
         padding: 5px;
+        font-size: 1.4vw;
     }
 
     h1 {
@@ -1595,6 +1597,11 @@ input[name="validation_panier"]{
         padding: 20px;
     }
 
+    & .recap_produit img {
+        height: 100px ; 
+        width: 100px ;
+    }
+
     & #recap_commande > div {
         background-color: rgb(255, 255, 255);
         width: 70%; 
@@ -1608,9 +1615,23 @@ input[name="validation_panier"]{
     }
 }
 
-#recap_commande {
-    position: sticky;
-    top: 0; 
-}
+@media #{$light-down}{
+    #paiement{
+        flex-wrap: wrap;
 
+        & > div{
+            width: 100%; 
+            font-size: 2vw;
+        }
+
+        & #recap_paiement
+        {
+           order: 2 ; 
+        }
+
+        h1{
+            font-size: 3vw;
+        }
+    }
+}
 

@@ -496,6 +496,7 @@ header .panier p {
   margin-bottom: -180px;
 }
 
+@mediaonly screen and (max-width : 768px) {}
 .user_connecte {
   width: 100vw;
   height: 80vh;
@@ -1130,6 +1131,7 @@ input[name=validation_panier] {
   width: 50%;
   background-color: #f1efef;
   padding: 5px;
+  font-size: 1.4vw;
 }
 #paiement h1 {
   font-weight: 600;
@@ -1142,6 +1144,10 @@ input[name=validation_panier] {
   margin: 10px auto;
   padding: 20px;
 }
+#paiement .recap_produit img {
+  height: 100px;
+  width: 100px;
+}
 #paiement #recap_commande > div {
   background-color: white;
   width: 70%;
@@ -1153,9 +1159,20 @@ input[name=validation_panier] {
   text-decoration: none;
 }
 
-#recap_commande {
-  position: sticky;
-  top: 0;
+@media only screen and (max-width : 768px) {
+  #paiement {
+    flex-wrap: wrap;
+  }
+  #paiement > div {
+    width: 100%;
+    font-size: 2vw;
+  }
+  #paiement #recap_paiement {
+    order: 2;
+  }
+  #paiement h1 {
+    font-size: 3vw;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
