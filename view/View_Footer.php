@@ -87,7 +87,7 @@ class View_Footer{
 
                 $(".burger .fa").click(function(){
 
-                    $("#menu_depliant").slideToggle();
+                    $(".menu_depliant").slideToggle();
                     console.log('click')
                     })
 

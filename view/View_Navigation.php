@@ -75,7 +75,7 @@ public static function navigation_visiteur($repere_page_acceuil)
 
         </header>
 
-                <div id="menu_depliant">
+                <div class="menu_depliant">
                     <div>
                         <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
                     </div>
@@ -149,15 +149,20 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                         <a class="burger" >
                             <i class="fa fa-align-justify fa-3x"></i>
                         </a>
-                        <div class="menu-burger" >
-                            <a href="">ACCUEIL</a>
-
-                            <a href="">MON COMPTE</a>
-
-                            <a href="">PANIER</a>
-                        </div>
 
                         </header>
+
+                        <div class="menu_depliant">
+                                <div>
+                                    <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
+                                </div>
+                                <div>
+                                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/user_modification_profil.php' : 'user_modification_profil.php';?>">MON COMPTE</a>
+                                </div>
+                                <div>
+                                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/deconnexion.php' : 'deconnexion.php';?>">DECONNEXION</a>        
+                                </div>
+                        </div>
 
                         <nav class="nav">
 
@@ -222,18 +227,22 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
             <a class="burger" >
                 <i class="fa fa-align-justify fa-3x"></i>
             </a>
-            <div class="menu-burger" >
-                <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
-                <p>|</p>
-                <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_update_article.php' : 'admin_update_article.php';?>">GESTION DU SITE</a>
-                <p>|</p>
-                <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_affiche_all_user.php' : 'admin_affiche_all_user.php';?>">GESTION DES UTILISATEURS</a>
-                <p>|</p>
-                <a href="<?php echo ($repere_page_acceuil) ? 'pages/deconnexion.php' : 'deconnexion.php';?>">DECONNEXION</a>
-            </div>
 
             </header>
-
+            <div class="menu_depliant">
+                    <div>
+                        <a href="<?php echo ($repere_page_acceuil) ? 'index.php' : '../index.php';?>">ACCUEIL</a>
+                    </div>
+                  <div>
+                        <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_update_article.php' : 'admin_update_article.php';?>">GESTION DU SITE</a>
+                  </div>
+                  <div>
+                    <a href="<?php echo ($repere_page_acceuil) ? 'pages/admin_affiche_all_user.php' : 'admin_affiche_all_user.php';?>">GESTION DES UTILISATEURS</a> 
+                  </div>
+                  <div>
+                  <a href="<?php echo ($repere_page_acceuil) ? 'pages/deconnexion.php' : 'deconnexion.php';?>">DECONNEXION</a>
+                  </div>
+            </div>
             <nav class="nav">
 
             <ul class="liste_nav">
