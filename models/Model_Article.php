@@ -87,7 +87,8 @@ class Model_Article extends Model {
                                                 NATURAL JOIN images_articles
                                                         WHERE id_categorie = {$tableau_article['id_categorie']}
                                                             AND articles.id_articles <> {$tableau_article['id_articles']}
-                                                                GROUP BY articles.id_articles,art_nom,prix"
+                                                                GROUP BY articles.id_articles,art_nom,prix
+                                                                    LIMIT 5"
         );
 
         $requete->execute();
