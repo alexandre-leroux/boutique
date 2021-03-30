@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 27 mars 2021 à 22:30
+-- Généré le : lun. 29 mars 2021 à 17:54
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.1
 
@@ -70,7 +70,13 @@ INSERT INTO `articles` (`id_articles`, `id_categorie`, `id_marques`, `id_sous_ca
 (19, 2, 3, NULL, NULL, NULL, 'SAC TENNIS GRAVITY 2021 SPORT BAG R-PET', 'Le 1er sac de tennis conçu à partir de plastique recyclé ! Le sac de tennis Head Sport Bag Gravity R-PET reprend le look des raquettes Head Gravity 2021 et permet de ranger son matériel de façon bien ordonnée grâce à sa taille compacte !', 'Le sac de tennis Head Gravity Sport Bag R-PET a été conçu en partenariat avec Alexander Zverev à partir de bouteilles en plastique PET recyclées ! Il est totalement inspiré de la gamme des raquettes Head Gravity 2021 et de ses couleurs tranchantes ! Il est de taille compacte pour une utilisation régulière.\r\n\r\nIl est doté de parois ajustables et escamotables pour composer la forme et la tailles de l\'intérieur de votre sac. Si vous préférez ranger toutes vos affaires dans un grand compartiment ou les séparer avec plus de précautions, vous avez le choix grâce à ses parois à velcro. Il dispose également d’un compartiment spécial et ventilé pour les chaussures ou le linge humide, ainsi que de multiples poches internes et externes pour vos accessoires.\r\n\r\nIl peut se porter en sac à dos ou à l\'épaule grâce à ses 2 bandoulières réglables et confortables.\r\n \r\nVolume : 67 litres\r\nDimensions (cm.) : L71 x H30,5 x P42', 0, 34, 107.95, '2021-03-25 16:42:47', NULL, NULL, NULL, NULL, NULL, 12, NULL, NULL),
 (20, 1, 1, NULL, NULL, NULL, 'PURE DRIVE VS', 'La raquette de tennis Babolat VS est le fruit d\'une nouvelle conception créée pour les compétiteurs exigeants. Envie d\'une Pure Drive qui donne un peu plus de contrôle ? Cette raquette est faite pour vous !', 'Un nouvelle raquette dans la gamme Babolat Pure Drive : la Pure Drive VS !\r\n\r\nElle offre les avantages de la Pure Drive, puissance et polyvalence, avec plus de contrôle et de sensation à la frappe. \r\n\r\nCette raquette est destinée aux bons joueurs exigeants qui recherchent un bon compromis de puissance et de précision.\r\n\r\nLes grandes différences entre la Pure Drive VS et la Pure Drive sont la taille de tamis (plus petit sur le VS : 630 cm2 au lieu de 645 cm2) et le profil (plus fin sur la VS avec 23 mm. au lieu de 26 mm.)\r\n\r\nUne magnifique raquette Babolat avec une finition brillante grise et bleue métallisée !', 0, 54, 233.95, '2021-03-27 22:18:17', 300, 630, 4, 320, NULL, NULL, NULL, NULL),
 (21, 1, 6, NULL, NULL, NULL, 'DUNLOP SX300 TOUR', 'La nouvelle gamme de raquettes de tennis Dunlop SX a été créée pour assurer aux joueurs plus de rotation de balle avec une excellente maîtrise ! La Dunlop SX 300 est la plus lourde de la gamme SX avec son poids à 310 grammes...', 'Cette gamme de raquettes de tennis Dunlop SX ré-invente les bases et redéfinis le compromis ! Ces raquettes assurent une excellente polyvalence de jeu avec de la puissance, de la prise d\'effets et de la maîtrise.\r\n\r\nEn effet, les caractéristiques des raquettes Dunlop SX favorisent la puissance avec un très bon contrôle de balle grâce à la technologie Spin Boost !\r\n\r\nLa raquette Dunlop SX300 Tour est la plus lourde de la gamme pour assurer aux bons joueurs de compétition du poids dans le balle et plus de puissance... Elle procurera également un très bon confort de jeu grâce à un indice de flexibilité assez bas.\r\n\r\nElle possède également les technologies Sonic Core et BASF pour un meilleur retour d\'énergie avec moins de vibrations, et Power Grid pour une zone de centrage agrandie.', 0, 26, 197.95, '2021-03-27 22:22:03', 310, 645, 2, 324, NULL, NULL, NULL, NULL),
-(22, 1, 7, NULL, NULL, NULL, 'VCORE SI LITE', 'La Raquette Yonex Vcore Si Lite est une raquette légère et très performante pur tous les styles de jeu...', 'La raquette de tennis Yonex V-core Si Lite est la plus légère de la gamme utilisée par les champions et championnes sur les circuits Pro.... \r\n\r\nCette raquette offre de la prise d\'effet et du contrôle malgré son tamis de 645cm². Elle est vraiment destinée pour les joueurs et joueuses agressifs cherchant à déborder leur adversaire en quelques coups de raquette.\r\n\r\nElle s\'avère également être très maniable et dispose d\'une bonne stabilité utile pour bien servir et claquer vos volées au filet.\r\n\r\n', 0, 12, 5, '2021-03-27 22:25:00', 270, 645, 4, 330, NULL, NULL, NULL, NULL);
+(22, 1, 7, NULL, NULL, NULL, 'VCORE SI LITE', 'La Raquette Yonex Vcore Si Lite est une raquette légère et très performante pur tous les styles de jeu...', 'La raquette de tennis Yonex V-core Si Lite est la plus légère de la gamme utilisée par les champions et championnes sur les circuits Pro.... \r\n\r\nCette raquette offre de la prise d\'effet et du contrôle malgré son tamis de 645cm². Elle est vraiment destinée pour les joueurs et joueuses agressifs cherchant à déborder leur adversaire en quelques coups de raquette.\r\n\r\nElle s\'avère également être très maniable et dispose d\'une bonne stabilité utile pour bien servir et claquer vos volées au filet.\r\n\r\n', 0, 12, 5, '2021-03-27 22:25:00', 270, 645, 4, 330, NULL, NULL, NULL, NULL),
+(23, 2, 1, NULL, NULL, NULL, 'SAC TENNIS THERMOBAG 12 PURE AERO RAFA', 'Le nouveau thermobag 12 raquettes Pure Aero Rafa aux couleurs des raquettes du champion Babolat Pure Aero Rafa jaune, orang et violet ! ', 'Le nouveau coloris du sac de tennis Babolat Thermobag 12 Pure Aero. Le Racket Holder 12 Pure Aero Rafa reprend les couleurs de la ligne des raquettes de Rafael Nada l pour 2021 en jaune, orang est violet !\r\n\r\nIl est doté des dernières innovations pour apporter protection, tenue, légèreté et solidité à tous les compétiteurs, aux joueurs réguliers et aux joueurs exigeants.\r\n\r\nIl possède 2 compartiments isolants de dernière génération qui apportent une protection ultime à vos raquettes et à la tension de vos cordages. Ses 3 compartiments sont doublés avec un matériaux incolore recyclé et sans colorant pour limiter l\'impact sur la planète. Une pochette chaussures transparente est aussi intégrée dans le compartiment central pour ne pas salir le reste de vos affaires.\r\n\r\nIl possède également 2 poches accessoires sur les côtés pour accueillir et protéger vos petits effets personnels et vos accessoires tennis, ainsi que 2 bretelles matelassées et réglables pour pouvoir le porter en sac à dos sans se fatiguer...\r\n\r\nCette ligne de sacs de tennis est très largement utilisée sur le circuits pro par les plus grands joueurs et les championnes...\r\n\r\nDimensions (cm.) : L75 x P48 x H32\r\nCapacités : 73 litres', 0, 45, 129.95, '2021-03-29 17:41:57', NULL, NULL, NULL, NULL, NULL, 12, NULL, NULL),
+(24, 3, 1, NULL, NULL, NULL, 'RPM HURRICANE (200M)', 'L\'un des best-seller de la marque lyonnaise !! Le Babolat Pro Hurricane Tour change de nom pour devenir le RPM Hurricane ! Bobine de 200 mètre pour corder environ 17 raquettes...', 'Le Babolat RPM Hurricane est un monofilament en co-polymère structuré très résistant.\r\n\r\nIl procure du contrôle et vous permettra de mettre un maximum d\'effet dans la balle.', 0, 45, 112.95, '2021-03-29 17:44:06', NULL, NULL, NULL, NULL, 1.3, NULL, NULL, NULL),
+(25, 3, 6, NULL, NULL, NULL, 'BLACK WIDOW (200M)', 'Black Widow (200m)', 'Ce cordage est l\'arme ultime des compétiteurs actuels ! Son polyester premium apporte de la puissance et sa forme a 7 faces attaque la balle pour générer un maximum d\'effets...', 0, 75, 111.95, '2021-03-29 17:45:14', NULL, NULL, NULL, NULL, 1.26, NULL, NULL, NULL),
+(26, 4, 3, NULL, 3, 2, 'BARIL 60 BALLES TIP RED', 'Une balle plus grosse et plus lente pour les 5/8 ans, vendue en baril de 72 balles !', 'La première balle des joueurs de tennis en herbe 75 % plus lente qu\'une balle de tennis classique ! Elle conviendra parfaitement aux joueurs de mini tennis âgés de 5 à 8 ans. \r\n\r\nSa couleur bicolore permet d\'être mieux perçue dans l\'air. De plus elle est plus grosse et largement plus souple afin de garantir un meilleur contrôle de balle.\r\n\r\n\r\nBaril de 60 balles pour s\'entraîner avec un grand nombre de balles !', 0, 24, 99.95, '2021-03-29 17:47:42', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, 5, 5, 1, NULL, NULL, 'GRIP CUIR LEATHER ATP TOUR', 'Un grip cuir naturel très souple !', 'Le grip Leather de Tecnifibre est composé de cuir naturel très souple.\r\n\r\nC\'est le choix numéro des joueurs de l\'ATP Tour.\r\n\r\nUn maximum de sensations afin de parfaitement trouver vos prises.', 0, 75, 13.5, '2021-03-29 17:49:25', NULL, NULL, NULL, NULL, NULL, NULL, 2, 'marron'),
+(28, 5, 2, 2, NULL, NULL, 'ANTIVIBRATEUR WILSON MINIONS', 'Des antivibrateurs au couleurs des personnages Minions pour tous les fans. Différentes modèles au choix...', 'Les antivibrateurs Wilson Minions débarquent avec leur personnages fun et des couleurs tranchantes... Choisissez votre antivibrateur Minions dans la liste : 1 côté logo Wilson / 1 côté Minions de votre choix !', 0, 87, 2.7, '2021-03-29 17:50:47', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -227,7 +233,22 @@ INSERT INTO `images_articles` (`id`, `id_articles`, `chemin`) VALUES
 (281, 21, '21-0.jpg'),
 (282, 22, '22-2.jpg'),
 (283, 22, '22-1.jpg'),
-(284, 22, '22-0.jpg');
+(284, 22, '22-0.jpg'),
+(285, 23, '23-0.jpg'),
+(286, 23, '23-1.jpg'),
+(287, 23, '23-2.jpg'),
+(288, 23, '23-3.jpg'),
+(289, 24, '24-0.jpg'),
+(290, 24, '24-1.jpg'),
+(291, 24, '24-2.jpg'),
+(292, 25, '25-0.jpg'),
+(293, 25, '25-1.jpg'),
+(294, 26, '26-0.jpg'),
+(295, 27, '27-0.jpg'),
+(296, 28, '28-0.jpg'),
+(297, 28, '28-1.jpg'),
+(298, 28, '28-2.jpg'),
+(299, 28, '28-3.jpg');
 
 -- --------------------------------------------------------
 
@@ -308,7 +329,7 @@ INSERT INTO `utilisateurs` (`id_utilisateurs`, `uti_droits`, `uti_nom`, `uti_pre
 (20, 0, 'fththth', 'alex', 'a@b.comfghfnvbnjgyjnghn', '0632233223', '$2y$10$3Kjf4MwiPV3eSuv4CbreRuYx89ElyDi8MV8XREU7U1d6imXTxjEBq', 'fghfgh', 12432, 'fdgdg'),
 (21, 0, 'fhfgh', 'alex', 'qsqs@ds.comfrhghrthfgh', '0632233223', '$2y$10$P8/4wEx6kiyBaCVigDLVBuZS.NoTMfpRq61XKHbqZ6WnztnimjT.a', 'gdgerg', 12432, 'fdgdg'),
 (22, 0, 'qze', 'alex', 'qsqs@ds.comzefsdfvcv', '0632233223', '$2y$10$uMmJfu9ZAck5aJSzi1qrWuLutvnObz2UhFxIPfUiLtq7ZPNpAojvu', 'sdf', 12432, 'fdgdg'),
-(23, 1, 'b', 'b', 'b@b.b', '1', '$2y$10$zF51ln9Dm7usSfYXKsFLl.TE7NzfXQaPnF4a6Xz2psjmJ43PEaNIC', 'fg', 684, 'fdfdv');
+(23, 1, 'admin', 'admin', 'admin@admin.fr', '1', '$2y$10$zF51ln9Dm7usSfYXKsFLl.TE7NzfXQaPnF4a6Xz2psjmJ43PEaNIC', 'rue de l\'admin', 684, 'amdinland');
 
 --
 -- Index pour les tables déchargées
@@ -382,7 +403,7 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_articles` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `balle_conditionnement`
@@ -412,7 +433,7 @@ ALTER TABLE `commandes`
 -- AUTO_INCREMENT pour la table `images_articles`
 --
 ALTER TABLE `images_articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=285;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300;
 
 --
 -- AUTO_INCREMENT pour la table `marques`
