@@ -238,6 +238,29 @@ header{
         width: 100% !important;
         flex-wrap: wrap !important ; 
     }
+
+    .contenu_panier {
+        & div {
+            width: 20% !important ;
+            font-size: 12px;
+        }
+    }
+
+    .panier_total {
+        & p {
+            font-size: 20px !important;
+        }
+    }
+
+    input[value="Valider le panier"]
+    {
+        font-size: 15px !important;
+    }
+
+    #conteneur_principal_article{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media #{$light-down} {
@@ -362,6 +385,7 @@ header{
                 text-decoration: none;
                 color: #000;
                 box-shadow: 0px 0px 10px rgb(199, 199, 199);
+                padding: 15px;
 
 
                 // background-color: brown;
@@ -1718,6 +1742,15 @@ input[name="validation_panier"]{
         & img{
             display: block;
         }
+    }
+
+    #reste_du_cntenu_article
+    {
+        width: 80% !important;
+    }
+
+    #photos_articles_similaires{
+        flex-wrap: wrap;
     }
 }
 

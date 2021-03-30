@@ -211,6 +211,24 @@ header .panier p {
     width: 100% !important;
     flex-wrap: wrap !important;
   }
+
+  .contenu_panier div {
+    width: 20% !important;
+    font-size: 12px;
+  }
+
+  .panier_total p {
+    font-size: 20px !important;
+  }
+
+  input[value="Valider le panier"] {
+    font-size: 15px !important;
+  }
+
+  #conteneur_principal_article {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media only screen and (max-width : 768px) {
   header {
@@ -321,6 +339,7 @@ header .panier p {
   text-decoration: none;
   color: #000;
   box-shadow: 0px 0px 10px #c7c7c7;
+  padding: 15px;
 }
 .section_accueil #titre_et_affichage_articles #div_article_avant #conteneur_lien_promo img {
   width: 250px;
@@ -1238,6 +1257,14 @@ input[name=validation_panier] {
   }
   .conteneur_presentation_generale_articles img {
     display: block;
+  }
+
+  #reste_du_cntenu_article {
+    width: 80% !important;
+  }
+
+  #photos_articles_similaires {
+    flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 1220px) {
