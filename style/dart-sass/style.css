@@ -193,6 +193,24 @@ header .panier p {
   header .search_bar .border {
     width: 130px;
   }
+
+  .footer_infos {
+    width: 90% !important;
+    margin: 20px auto;
+    font-size: 15px;
+  }
+
+  .conteneur_presentation_generale_articles {
+    flex-direction: column;
+  }
+  .conteneur_presentation_generale_articles img {
+    display: block;
+  }
+
+  #conteneur_footer_infos {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+  }
 }
 @media only screen and (max-width : 768px) {
   header {
@@ -496,7 +514,6 @@ header .panier p {
   margin-bottom: -180px;
 }
 
-@mediaonly screen and (max-width : 768px) {}
 .user_connecte {
   width: 100vw;
   height: 80vh;
@@ -1124,6 +1141,17 @@ input[name=validation_panier] {
   font-size: 1.5vw;
 }
 
+.panier_vide {
+  text-align: center;
+  font-size: 20px;
+  width: 95%;
+  margin: 20px auto;
+}
+.panier_vide a {
+  text-decoration: none;
+  color: #6BE100;
+}
+
 #paiement {
   display: flex;
 }
@@ -1172,6 +1200,52 @@ input[name=validation_panier] {
   }
   #paiement h1 {
     font-size: 3vw;
+  }
+
+  #footer #conteneur_footer #conteneur_logos {
+    display: none !important;
+  }
+  #footer #conteneur_footer #accueil_newletter {
+    width: 80% !important;
+    margin: 100px auto;
+  }
+  #footer #conteneur_footer #accueil_newletter p {
+    font-size: 10px;
+    width: 80% !important;
+    padding: 10px !important;
+    margin: auto;
+    text-align: center;
+  }
+  #footer #conteneur_footer #accueil_newletter #input_newletter {
+    display: flex;
+    justify-content: center;
+    width: 80% !important;
+    margin: 10px auto !important;
+  }
+  #footer #conteneur_footer #accueil_newletter #input_newletter::placeholder {
+    font-size: 8px;
+  }
+  #footer #conteneur_footer #conteneur_footer_infos {
+    width: 100%;
+  }
+
+  #titre_et_affichage_articles h1 {
+    font-size: 15px;
+  }
+
+  .conteneur_presentation_generale_articles {
+    flex-direction: column;
+  }
+  .conteneur_presentation_generale_articles img {
+    display: block;
+  }
+}
+@media screen and (max-width: 1220px) {
+  #accueil_newletter {
+    width: 800px !important;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
   }
 }
 
