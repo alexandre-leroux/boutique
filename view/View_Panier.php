@@ -22,7 +22,7 @@ class View_Panier {
                     </div>
 
                     <div class="panier_quantite">
-                        <p> <?= $_SESSION['panier'][$product['id_articles']] ;?> </p>
+                        <p> <?= @$_SESSION['panier'][$product['id_articles']] ;?> </p>
                         <a href="panier.php?quantite_plus=<?= $product['id_articles'] ; ?>"><i class="fa fa-plus"></i></a>
                         <a href="panier.php?quantite_moins=<?= $product['id_articles'] ; ?>"><i class="fa fa-minus"></i></a>
 
@@ -64,7 +64,8 @@ class View_Panier {
             {
                 ?>
                 
-                <p><b>Commande n° <?= $tableau_commande[$i]['id_commande'] ?> </b></p>
+                <div class="commande">
+                <p class="num_commande"><b>Commande n° <?= $tableau_commande[$i]['id_commande'] ?> </b></p>
                 <?php
                 $prix_total = 0; 
                 for($a = 0 ; isset($tableau_commande[$a]); $a++)
@@ -81,6 +82,7 @@ class View_Panier {
                 }
                 ?>
                 <p> Prix Total : <?= $prix_total ; ?> € <p>
+                </div>
                 <?php
             }
             

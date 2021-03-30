@@ -98,7 +98,7 @@ class Model_Panier extends Model {
 
         unset($_SESSION['panier']); 
         echo '<h1 class="redirection_achat">Merci pour votre achat ! Vous allez etre rediriger vers la boutique</h1>';
-        echo '<meta http-equiv="refresh" content="5;URL=../index.php"> '; 
+        echo '<meta http-equiv="refresh" content="5s;URL=../index.php"> '; 
     }
 
     public function findInfosCommande($id){
@@ -115,7 +115,5 @@ class Model_Panier extends Model {
 
         return $requete->fetchAll(PDO::FETCH_ASSOC); 
     }
-
-
 
 }

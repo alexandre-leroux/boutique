@@ -1266,6 +1266,26 @@ input[name=validation_panier] {
     flex-wrap: wrap;
   }
 }
+.redirection_achat {
+  text-align: center;
+  font-size: 25px;
+  width: 80%;
+  margin: 30px auto;
+  color: #6BE100;
+}
+
+.commande {
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid black;
+}
+.commande p {
+  padding: 5px;
+}
+.commande .num_commande {
+  color: #00BAFF;
+}
+
 @media screen and (max-width: 1220px) {
   #accueil_newletter {
     width: 800px !important;
