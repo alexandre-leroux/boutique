@@ -145,6 +145,7 @@ class View_Panier {
                         {
                             ?>
                             <div class="recap_produit">
+                                <img src="../medias/img_articles/<?= $product['MIN(chemin)'];?>" alt="img_produit">
                                 <p> <?= $product['art_nom'] ; ?></p>
                                 <p> Quantité : <?= $_SESSION['panier'][$product['id_articles']] ; ?></p>
                                 <p> <?= $product['prix'] ; ?> € </p>

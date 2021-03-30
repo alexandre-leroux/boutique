@@ -27,7 +27,7 @@ class View_Footer{
                         
                             <p>NEWLETTER TENNISWORLD</br> Recevez toutes les nouveautés en avant première</p>
                             <div id="input_newletter">
-                                <input type="text" value="Saisissez votre adresse e-mail">
+                                <input type="text" placeholder="Saisissez votre adresse e-mail">
                                 <button  onclick="document.location.href='';"><i class="fa fa-arrow-right"></i></i></button>
                             </div>
                         </div>
