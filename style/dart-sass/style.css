@@ -72,7 +72,7 @@ header .logo a {
   width: 260px;
 }
 header .accueil {
-  width: 700px;
+  width: 800px;
   height: 100%;
   justify-content: space-around;
   z-index: 1000;
@@ -609,14 +609,13 @@ header .panier p {
 
 #recherche_user {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 #recherche_user #conteneur_resultat_recherche {
-  justify-content: flex-start;
-  align-items: flex-start;
+  margin-top: 10vh;
   flex-wrap: wrap;
   width: 80vw;
-  height: 50vh;
+  min-height: 50vh;
 }
 #recherche_user #conteneur_resultat_recherche #vignette_resultat_recherche {
   width: 200px;

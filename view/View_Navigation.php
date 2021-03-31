@@ -61,7 +61,7 @@ public static function navigation_visiteur($repere_page_acceuil)
             <div class="search_bar">
                 <div class="border">
                     <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
-                        <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                        <input name="rechercher" minlength="3" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
                         <button  type="submit"><i class="fa fa-search"></i></button>
                         <!-- <input class="fa fa-search" value="" type="submit"> -->
                     </form>
@@ -139,7 +139,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
                         <div class="search_bar">
                                 <div class="border">
                                     <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
-                                        <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                                        <input name="rechercher" minlength="3" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
                                         <button  type="submit"><i class="fa fa-search"></i></button>
                                         <!-- <input class="fa fa-search" value="" type="submit"> -->
                                     </form>
@@ -217,7 +217,7 @@ public static function navigation_utilisateur_connecte($repere_page_acceuil)
             <div class="search_bar">
                 <div class="border">
                     <form class="form_recherche" action="<?php echo ($repere_page_acceuil) ? 'pages/recherche.php' : '../pages/recherche.php';?>" method="post">
-                        <input name="rechercher" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
+                        <input name="rechercher" minlength="3" type="search" aria-label="Search through site content" placeholder="Rechercher..." >
                         <button  type="submit"><i class="fa fa-search"></i></button>
                         <!-- <input class="fa fa-search" value="" type="submit"> -->
                     </form>

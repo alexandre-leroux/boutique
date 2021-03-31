@@ -48,7 +48,7 @@ header{
 
     & .accueil{
         @extend %dflex; 
-        width: 700px;
+        width: 800px;
         height: 100%;
         //background-color: burlywood;
         justify-content: space-around;
@@ -798,15 +798,14 @@ margin-bottom: -180px;
     @extend %dflex;
     // background-color: yellow;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
     & #conteneur_resultat_recherche{
         @extend %dflex;
-        justify-content: flex-start;
-        align-items: flex-start;
+ margin-top: 10vh;
         flex-wrap: wrap;
         width: 80vw;
-        height: 50vh;
+        min-height: 50vh;
         // background-color: blue;
 
         & #vignette_resultat_recherche{
