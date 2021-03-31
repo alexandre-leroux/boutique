@@ -1270,6 +1270,8 @@ input[name=validation_panier] {
   font-size: 25px;
   width: 80%;
   margin: 30px auto;
+  margin-top: 10vh;
+  margin-bottom: 50vh;
   color: #6BE100;
 }
 
@@ -1277,6 +1279,8 @@ input[name=validation_panier] {
   padding: 10px;
   margin: 20px;
   border: 1px solid black;
+  width: 50%;
+  margin-left: 25vw;
 }
 .commande p {
   padding: 5px;

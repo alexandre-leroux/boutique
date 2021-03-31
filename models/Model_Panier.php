@@ -97,7 +97,7 @@ class Model_Panier extends Model {
         }
 
         unset($_SESSION['panier']); 
-        echo '<h1 class="redirection_achat">Merci pour votre achat ! Vous allez etre rediriger vers la boutique</h1>';
+        echo '<h1 class="redirection_achat">Merci pour votre achat ! Vous allez être redirigé vers la boutique</h1>';
         echo '<meta http-equiv="refresh" content="5s;URL=../index.php"> '; 
     }
 
