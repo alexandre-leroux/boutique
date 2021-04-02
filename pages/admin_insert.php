@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+if($_SESSION['uti_droits'] == 0) {header('location:../index.php');}
 require_once('../utils/autoload.php');
 
 $admin = new Model_Admin_Insert(); // Model
